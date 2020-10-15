@@ -4,6 +4,7 @@
 # Maple {#Maple}
 ## 一句话Tips
 - 多项式降幂排列`sort(x^3*y-y^3*x,[y,x])`
+- 带有附加关系的化简,`simplify(expr, {x*z=1})`
 - 乘号记得输入`*`，各种数学运算：
 - 求导：`diff(f,x)`; 求二阶导数，`diff(f,x$2)`
 - `nops`返回比如向量的元素的数目：

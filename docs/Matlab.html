@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>编程语言笔记</title>
-  <meta name="description" content="编程语言笔记" />
+  <title>4 Matlab | 编程语言笔记</title>
+  <meta name="description" content="4 Matlab | 编程语言笔记" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="编程语言笔记" />
+  <meta property="og:title" content="4 Matlab | 编程语言笔记" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="编程语言笔记" />
+  <meta name="twitter:title" content="4 Matlab | 编程语言笔记" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="Maple.html"/>
+<link rel="prev" href="Stata.html"/>
+<link rel="next" href="git操作流程.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -191,37 +191,75 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">编程语言笔记</h1>
-<p class="author"><em>云腾足下</em></p>
-<p class="date"><em>2020年10月</em></p>
+<div id="Matlab" class="section level1">
+<h1><span class="header-section-number">4</span> Matlab</h1>
+<div id="一句话tips-1" class="section level2">
+<h2><span class="header-section-number">4.1</span> 一句话Tips</h2>
+<ul>
+<li>在Editor中各个窗口之间的切换
+<ul>
+<li>快捷键ctrl+pageup和ctrl+pagedown之间可以实现在editor中所打开文件之间的切换</li>
+</ul></li>
+<li>在IDE中各个窗口之间的切换
+<ul>
+<li>ctrl+Tab 实现IDE中的各个窗口轮流转换</li>
+<li>ctrl+PageUp/PageDown在子窗口的各标签切换</li>
+<li>ctrl+0(或者1、2、3、4)实现转换到特定窗口</li>
+<li>ctrl+shift+0切换到editor窗口</li>
+</ul></li>
+<li>杀死excel进程：system(‘tskill excel’)</li>
+<li>F9运行当前行</li>
+<li>当使用一个函数，输出结果有两个。但第一个结果不需要，只需要第二个时，第一个结果可用<code>~</code>代替。如<code>[~,area] = xlsread('malm.xlsx',1,'b2:aa31');</code></li>
+<li>当使用一个函数，输入需要跳跃时，可用<code>[]</code>代替。如</li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb16-1"><a href="Matlab.html#cb16-1"></a>[x, fval] = fmincon(@loglik, para0,[],[],[],[],...</span>
+<span id="cb16-2"><a href="Matlab.html#cb16-2"></a>  [<span class="fl">0.0001</span>,<span class="fl">0.0001</span>,<span class="fl">0.0001</span>, -<span class="fl">1</span>, <span class="fl">0.00001</span>*ones(<span class="fl">1</span>,ncol)],[ones(<span class="fl">1</span>,length(para0))],...</span>
+<span id="cb16-3"><a href="Matlab.html#cb16-3"></a>  [],[],Y, tau, nrow, ncol);</span></code></pre></div>
 </div>
-<div id="序" class="section level1 unnumbered">
-<h1>序</h1>
-<p>不知道说啥，还是留首诗吧。</p>
-<blockquote>
-<p>赵客缦胡缨，吴钩霜雪明。</p>
-<p>银鞍照白马，飒沓如流星。</p>
-<p>十步杀一人，千里不留行。</p>
-<p>事了拂衣去，深藏功与名。</p>
-<p>闲过信陵饮，脱剑膝前横。</p>
-<p>将炙啖朱亥，持觞劝侯嬴。</p>
-<p>三杯吐然诺，五岳倒为轻。</p>
-<p>眼花耳热后，意气素霓生。</p>
-<p>救赵挥金锤，邯郸先震惊。</p>
-<p>千秋二壮士，烜赫大梁城。</p>
-<p>纵死侠骨香，不惭世上英。</p>
-<p>谁能书阁下，白首太玄经。</p>
-</blockquote>
+<div id="窗口输出到文本" class="section level2">
+<h2><span class="header-section-number">4.2</span> 窗口输出到文本</h2>
+<p>1.把窗口输出写入指定的文件，之后会一直记录窗口输出信息，直到你关闭；</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb17-1"><a href="Matlab.html#cb17-1"></a>diary(<span class="st">&#39;testlog.txt&#39;</span>);</span>
+<span id="cb17-2"><a href="Matlab.html#cb17-2"></a>diary on;</span></code></pre></div>
+<p>2.关闭日志记录</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb18-1"><a href="Matlab.html#cb18-1"></a>diary off;</span></code></pre></div>
+<p>3.删除日志</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb19-1"><a href="Matlab.html#cb19-1"></a>diary off;<span class="co">%先关闭</span></span>
+<span id="cb19-2"><a href="Matlab.html#cb19-2"></a>delete(<span class="st">&#39;testlog.txt&#39;</span>);</span></code></pre></div>
+</div>
+<div id="gvar-toolbox使用报告" class="section level2">
+<h2><span class="header-section-number">4.3</span> GVAR Toolbox使用报告</h2>
+<div id="数据输入" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> 数据输入</h3>
+<ul>
+<li>E-G列中，国家排序会影响后面的估计，结果的呈现都是以该顺序排列的。如果你要用程序内建的加权矩阵，那么G列的国家码需要填充。</li>
+<li>在各变量数据存放的sheet中，sheet名要按照short name来命名，虽然顺序不必一致，但推荐一致。</li>
+<li>变量数据的sheet中，第一列按<code>yyyyMmm</code>形式标识月度数据，<code>yyyyQq</code>的形式标识季度数据。特别注意此时国家的名字都是short name命名，而且顺序和main中的国家顺序精确一致。</li>
+<li>注意，缺失值一定要用123456789替代，不要留空。</li>
+</ul>
+</div>
+<div id="模型设定" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> 模型设定</h3>
+<ul>
+<li>在模型设定中，要注意，空的意味着数据不可行，而不要设置成0.</li>
+<li>有个时候要注意协整rank不能过大，比如3个变量设成4个rank，会报错。</li>
+</ul>
+</div>
+<div id="一些坑" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> 一些坑</h3>
+<p>1.国内变量那些相应的权重矩阵要填满，否则会报错。如都填好<code>wmat1</code>。</p>
+<p>2.<code>GVAR Toolbox</code>主导单元是按全局变量设置的，因此，如果你要将美国作为主导单元，应该将美国的变量单独提出来作为全局变量。（对否？）</p>
 
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="Maple.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="Stata.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="git操作流程.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
