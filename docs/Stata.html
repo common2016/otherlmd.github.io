@@ -147,7 +147,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2" data-path="Julia.html"><a href="Julia.html"><i class="fa fa-check"></i><b>2</b> Julia</a></li>
 <li class="chapter" data-level="3" data-path="Stata.html"><a href="Stata.html"><i class="fa fa-check"></i><b>3</b> Stata</a><ul>
 <li class="chapter" data-level="3.1" data-path="Stata.html"><a href="Stata.html#数据处理"><i class="fa fa-check"></i><b>3.1</b> 数据处理</a></li>
-<li class="chapter" data-level="3.2" data-path="Stata.html"><a href="Stata.html#回归相关"><i class="fa fa-check"></i><b>3.2</b> 回归相关</a></li>
+<li class="chapter" data-level="3.2" data-path="Stata.html"><a href="Stata.html#回归相关"><i class="fa fa-check"></i><b>3.2</b> 回归相关</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="Stata.html"><a href="Stata.html#描述性统计和回归结果导出"><i class="fa fa-check"></i><b>3.2.1</b> 描述性统计和回归结果导出</a></li>
+</ul></li>
 <li class="chapter" data-level="3.3" data-path="Stata.html"><a href="Stata.html#一些外部命令"><i class="fa fa-check"></i><b>3.3</b> 一些外部命令</a></li>
 <li class="chapter" data-level="3.4" data-path="Stata.html"><a href="Stata.html#stata对某个变量随机抽样"><i class="fa fa-check"></i><b>3.4</b> stata对某个变量随机抽样</a></li>
 <li class="chapter" data-level="3.5" data-path="Stata.html"><a href="Stata.html#stata调用r"><i class="fa fa-check"></i><b>3.5</b> Stata调用R</a></li>
@@ -169,9 +171,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4" data-path="git操作流程.html"><a href="git操作流程.html#关联远程库码云"><i class="fa fa-check"></i><b>5.4</b> 关联远程库（码云）</a></li>
 <li class="chapter" data-level="5.5" data-path="git操作流程.html"><a href="git操作流程.html#打开vi后的操作"><i class="fa fa-check"></i><b>5.5</b> 打开VI后的操作</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="Other.html"><a href="Other.html"><i class="fa fa-check"></i><b>6</b> 其他小众语言</a><ul>
-<li class="chapter" data-level="6.1" data-path="Other.html"><a href="Other.html#eviews编程"><i class="fa fa-check"></i><b>6.1</b> Eviews编程</a></li>
-<li class="chapter" data-level="6.2" data-path="Other.html"><a href="Other.html#noteexpress样式设置"><i class="fa fa-check"></i><b>6.2</b> NoteExpress样式设置</a></li>
+<li class="chapter" data-level="6" data-path="C.html"><a href="C.html"><i class="fa fa-check"></i><b>6</b> C语言</a><ul>
+<li class="chapter" data-level="6.1" data-path="C.html"><a href="C.html#一句话tips-2"><i class="fa fa-check"></i><b>6.1</b> 一句话Tips</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="Latex.html"><a href="Latex.html"><i class="fa fa-check"></i><b>7</b> Latex</a><ul>
+<li class="chapter" data-level="7.1" data-path="Latex.html"><a href="Latex.html#一句话tips-3"><i class="fa fa-check"></i><b>7.1</b> 一句话Tips</a></li>
+<li class="chapter" data-level="7.2" data-path="Latex.html"><a href="Latex.html#数学公式左对齐"><i class="fa fa-check"></i><b>7.2</b> 数学公式左对齐</a></li>
+<li class="chapter" data-level="7.3" data-path="Latex.html"><a href="Latex.html#中文字体加粗"><i class="fa fa-check"></i><b>7.3</b> 中文字体加粗</a></li>
+<li class="chapter" data-level="7.4" data-path="Latex.html"><a href="Latex.html#使用某种常用字体"><i class="fa fa-check"></i><b>7.4</b> 使用某种常用字体</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Other.html"><a href="Other.html"><i class="fa fa-check"></i><b>8</b> 其他小众语言</a><ul>
+<li class="chapter" data-level="8.1" data-path="Other.html"><a href="Other.html#eviews编程"><i class="fa fa-check"></i><b>8.1</b> Eviews编程</a></li>
+<li class="chapter" data-level="8.2" data-path="Other.html"><a href="Other.html#noteexpress样式设置"><i class="fa fa-check"></i><b>8.2</b> NoteExpress样式设置</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -200,18 +211,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>回归完成，使用<code>predict</code>可以得到拟合值，残差等序列。如<code>predict yres, resid</code>则得到名为<code>yres</code>的残差。</li>
 <li><code>matrix list A</code>: 显示矩阵</li>
 <li><code>outfile v1 v2 v3 using mydata.csv, comma</code> 输出逗号分割的csv文件。</li>
-<li>输出回归结果到csv文件</li>
-</ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb6-1"><a href="Stata.html#cb6-1"></a><span class="kw">reg</span> <span class="fu">y</span> x</span>
-<span id="cb6-2"><a href="Stata.html#cb6-2"></a><span class="kw">est</span> <span class="kw">store</span> m1</span>
-<span id="cb6-3"><a href="Stata.html#cb6-3"></a>esttab m1 m2 m3 <span class="kw">using</span> rlt.csv, <span class="kw">replace</span> <span class="co">//输出回归结果</span></span>
-<span id="cb6-4"><a href="Stata.html#cb6-4"></a>esttab <span class="fu">e</span>(b) <span class="kw">using</span> rlt.csv, <span class="kw">replace</span>  <span class="co">//输出回归系数</span></span></code></pre></div>
-<ol start="6" style="list-style-type: decimal">
+<li></li>
 <li>季节调整，外部命令<code>sax12</code></li>
 <li>从变量名<code>income</code>生成一个新的变量名如<code>income_y</code>，则可以如下操作：</li>
 </ol>
-<div class="sourceCode" id="cb7"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb7-1"><a href="Stata.html#cb7-1"></a><span class="kw">local</span> xvar income</span>
-<span id="cb7-2"><a href="Stata.html#cb7-2"></a><span class="kw">local</span> yvar <span class="ot">`xvar&#39;</span>_y</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb6-1"><a href="Stata.html#cb6-1"></a><span class="kw">local</span> xvar income</span>
+<span id="cb6-2"><a href="Stata.html#cb6-2"></a><span class="kw">local</span> yvar <span class="ot">`xvar&#39;</span>_y</span></code></pre></div>
 <p>此时的<code>yvar</code>就是<code>income_y</code>。</p>
 </div>
 <div id="回归相关" class="section level2">
@@ -228,34 +233,43 @@ svmat double b, n(beta)</code></pre>
 <li>恩格尔格兰杰两步法：<code>egranger</code>是外部命令。</li>
 <li>滚动估计：<code>_b,_se</code>意味着保存回归系数和标准误，200的窗口样本，原来数据集的变量合并到新的保存的数据集betas中去。</li>
 </ol>
-<div class="sourceCode" id="cb9"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb9-1"><a href="Stata.html#cb9-1"></a><span class="kw">rolling</span> _b _se, <span class="kw">window</span>(200) <span class="kw">saving</span>(betas, <span class="kw">replace</span>) <span class="kw">keep</span>(<span class="fu">date</span>):<span class="kw">regress</span> ibmadj spxadj</span></code></pre></div>
-<ol start="7" style="list-style-type: decimal">
-<li>描述性统计和回归结果导出</li>
-</ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb10-1"><a href="Stata.html#cb10-1"></a><span class="kw">ssc</span> install sum2docx</span>
-<span id="cb10-2"><a href="Stata.html#cb10-2"></a>sum2docx pay stock fund finance income age edu sex hukou marriage bond <span class="co">///</span></span>
-<span id="cb10-3"><a href="Stata.html#cb10-3"></a>insurance deposit income depositDum RiskDum InsDum <span class="kw">using</span>  pm.docx, <span class="kw">replace</span> <span class="co">///</span></span>
-<span id="cb10-4"><a href="Stata.html#cb10-4"></a>        <span class="kw">stats</span>(<span class="kw">N</span> <span class="kw">mean</span>(%9.2f) <span class="fu">sd</span> <span class="fu">min</span>(%9.0g) <span class="co">///</span></span>
-<span id="cb10-5"><a href="Stata.html#cb10-5"></a>        <span class="kw">median</span>(%9.0g) <span class="fu">max</span>(%9.0g))  <span class="co">///</span></span>
-<span id="cb10-6"><a href="Stata.html#cb10-6"></a>        <span class="bn">title</span>(<span class="st">&quot;表 1: 描述性统计&quot;</span>)</span>
-<span id="cb10-7"><a href="Stata.html#cb10-7"></a><span class="kw">ssc</span> install reg2docx</span>
-<span id="cb10-8"><a href="Stata.html#cb10-8"></a><span class="kw">probit</span> depositDum pay income age edu sex hukou marriage</span>
-<span id="cb10-9"><a href="Stata.html#cb10-9"></a><span class="kw">est</span> <span class="kw">store</span> p1</span>
-<span id="cb10-10"><a href="Stata.html#cb10-10"></a><span class="kw">probit</span> RiskDum pay income age edu sex hukou marriage</span>
-<span id="cb10-11"><a href="Stata.html#cb10-11"></a><span class="kw">est</span> <span class="kw">store</span> p2</span>
-<span id="cb10-12"><a href="Stata.html#cb10-12"></a><span class="kw">probit</span> InsDum pay income age edu sex hukou marriage</span>
-<span id="cb10-13"><a href="Stata.html#cb10-13"></a><span class="kw">est</span> <span class="kw">store</span> p3</span>
-<span id="cb10-14"><a href="Stata.html#cb10-14"></a>reg2docx p1 p2 p3 <span class="kw">using</span> pm.docx, <span class="kw">append</span> <span class="bn">title</span>(<span class="st">&quot;表2: Probit回归结果&quot;</span>) scalars(<span class="kw">r2_p</span> <span class="kw">N</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb8-1"><a href="Stata.html#cb8-1"></a><span class="kw">rolling</span> _b _se, <span class="kw">window</span>(200) <span class="kw">saving</span>(betas, <span class="kw">replace</span>) <span class="kw">keep</span>(<span class="fu">date</span>):<span class="kw">regress</span> ibmadj spxadj</span></code></pre></div>
+<div id="描述性统计和回归结果导出" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> 描述性统计和回归结果导出</h3>
 <ul>
-<li><code>diff</code>可以做DID，PSM-DID，分位DID</li>
+<li>一个例子：</li>
 </ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb9-1"><a href="Stata.html#cb9-1"></a><span class="kw">ssc</span> install sum2docx</span>
+<span id="cb9-2"><a href="Stata.html#cb9-2"></a>sum2docx pay stock fund finance income age edu sex hukou marriage bond <span class="co">///</span></span>
+<span id="cb9-3"><a href="Stata.html#cb9-3"></a>insurance deposit income depositDum RiskDum InsDum <span class="kw">using</span>  pm.docx, <span class="kw">replace</span> <span class="co">///</span></span>
+<span id="cb9-4"><a href="Stata.html#cb9-4"></a>        <span class="kw">stats</span>(<span class="kw">N</span> <span class="kw">mean</span>(%9.2f) <span class="fu">sd</span> <span class="fu">min</span>(%9.0g) <span class="co">///</span></span>
+<span id="cb9-5"><a href="Stata.html#cb9-5"></a>        <span class="kw">median</span>(%9.0g) <span class="fu">max</span>(%9.0g))  <span class="co">///</span></span>
+<span id="cb9-6"><a href="Stata.html#cb9-6"></a>        <span class="bn">title</span>(<span class="st">&quot;表 1: 描述性统计&quot;</span>)</span>
+<span id="cb9-7"><a href="Stata.html#cb9-7"></a><span class="kw">ssc</span> install reg2docx</span>
+<span id="cb9-8"><a href="Stata.html#cb9-8"></a><span class="kw">probit</span> depositDum pay income age edu sex hukou marriage</span>
+<span id="cb9-9"><a href="Stata.html#cb9-9"></a><span class="kw">est</span> <span class="kw">store</span> p1</span>
+<span id="cb9-10"><a href="Stata.html#cb9-10"></a><span class="kw">probit</span> RiskDum pay income age edu sex hukou marriage</span>
+<span id="cb9-11"><a href="Stata.html#cb9-11"></a><span class="kw">est</span> <span class="kw">store</span> p2</span>
+<span id="cb9-12"><a href="Stata.html#cb9-12"></a><span class="kw">probit</span> InsDum pay income age edu sex hukou marriage</span>
+<span id="cb9-13"><a href="Stata.html#cb9-13"></a><span class="kw">est</span> <span class="kw">store</span> p3</span>
+<span id="cb9-14"><a href="Stata.html#cb9-14"></a>reg2docx p1 p2 p3 <span class="kw">using</span> pm.docx, <span class="kw">append</span> <span class="bn">title</span>(<span class="st">&quot;表2: Probit回归结果&quot;</span>) scalars(<span class="kw">r2_p</span> <span class="kw">N</span>)</span></code></pre></div>
+<ul>
+<li>另一个例子：输出回归结果到csv文件</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb10-1"><a href="Stata.html#cb10-1"></a><span class="kw">reg</span> <span class="fu">y</span> x</span>
+<span id="cb10-2"><a href="Stata.html#cb10-2"></a><span class="kw">est</span> <span class="kw">store</span> m1</span>
+<span id="cb10-3"><a href="Stata.html#cb10-3"></a>esttab m1 m2 m3 <span class="kw">using</span> rlt.csv, <span class="kw">replace</span> <span class="co">//输出回归结果</span></span>
+<span id="cb10-4"><a href="Stata.html#cb10-4"></a>esttab <span class="fu">e</span>(b) <span class="kw">using</span> rlt.csv, <span class="kw">replace</span>  <span class="co">//输出回归系数</span></span></code></pre></div>
+</div>
 </div>
 <div id="一些外部命令" class="section level2">
 <h2><span class="header-section-number">3.3</span> 一些外部命令</h2>
 <ul>
+<li><code>diff</code>可以做DID，PSM-DID，分位DID</li>
 <li><code>xtnptimevar</code>：非参时变面板固定效应系数估计。方法是Li, Chen and Gao (2011)。</li>
 <li><code>xtfixedcoeftvcu</code>：Hsiao(2014)的书上变系数中的固定系数估计命令。</li>
 <li><code>xtsemipar</code>: Baltagi and Li (2002)的半参部分线性固定效应面板估计。代码缺陷在于非参数只能是一个变量。</li>
+<li><code>xthreg</code>，Hansen(1999)静态面板阈值回归。</li>
 </ul>
 </div>
 <div id="stata对某个变量随机抽样" class="section level2">

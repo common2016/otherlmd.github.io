@@ -1,0 +1,351 @@
+
+# Latex {#Latex}
+## 一句话Tips
+- 如何在beamer中设置颜色？使用普通的color包或者xcolor包都会报错，它有自己的一套办法。
+```tex
+% 首先设置好颜色，并命名为myblue
+\setbeamercolor{myblue}{fg=blue!80!black}
+% 然后在需要的地方使用
+\textbf{\usebeamercolor[fg]{myblue}背景}
+```
+- 表格横置：
+```tex
+\usepackage{lscape}
+\begin{document}
+
+\begin{landscape}
+This is a landscape page.
+\end{landscape}
+
+\end{document}
+```
+- 页面横置
+```tex
+\usepackage{pdflscape}
+
+\begin{landscape}
+...
+\end{landscape}
+```
+- 在命令行输入`texdoc ctex`会打开`ctex`包的说明文件。
+- `input/output`就不会在斜杠符号处被断词。如果希望这类东西被中断，可以将斜杠符号改为`\slash`。
+- 下载TexLive作为Tex的内核，而不是ctex，因为前者不断在更新，更加优化。
+- 表格跨行使用`multirow`包。语法命令格式如下，
+ ```latex
+ \multirow{行数}{宽度}{内容}
+ \multirow{行数}*{内容} 
+ ```
+- 中文标签乱码：使用如下选项即可。
+```tex
+\documentclass[hyperref, UTF8]{ctexart}
+```
+- 图片文件名包含下划线，可用`\string“ 17_Huadong\string”`表达。如
+
+ `\includegraphics[scale=0.8]{\string"E:/17_HuaDong/reserch/GVAR/RltPaper/DesStat\string".png}`
+- 使用`\verb||`时，如果是在其他命令中作为参数使用，是会报错的。例如`\footnote{\verb|abc|}`是不行的。应该加载`fancyvrb`包，然后先保存`\SaveVerb{myverb}|abc|`，再使用`\footnote{\UseVerb{myverb}}`即可。
+- `\renewcommand\refname{Reference}`把“参考文献”四个字修改为“Reference”
+- `\rule[水平高度]{长度}{粗细}`，文档中插入一条横线。如`\rule[0mm]{55em}{0.5mm}`
+- 使用`framed`包，用`\begin{framed}\end{framed}`环境可以给整段文字加边框。
+- `\pagestyle{empty}`当前及后续页无页眉
+- `\renewcommand\refname{参考文献}`把"Reference"变成“参考文献”。
+
+## 章节标题格式修改
+- 如果想从某页开始章节重新编号，可以在该处输入命令，
+```tex
+\setcounter{section}{0} % 下一节编号为1
+```
+- 修改章节的标题，把"Chapter 1"变成"第1章"。
+```tex
+\usepackage{titlesec}
+% \titleformat{command}[shape]{format}{label}{sep}{before}[after]
+\titleformat{\chapter}{\centering\Huge\bfseries}{第\,\thechapter\,章}{1em}{}
+```
+- "Chapter 1"变成"一"
+```tex
+\usepackage{ctexcap}
+\CTEXsetup[number={\chinese{section}}, format + = {\fangsong\zihao{4}}]{section}
+\CTEXsetup[name ={（,）},aftername = {\hspace{0em}},number={\chinese{subsection}}, 
+format + = {\heiti\zihao{-4}}]{subsection} % 小节标题变成(一)
+\CTEXsetup[number={\the\value{subsubsection}}, 
+format + = {\songti\zihao{5}}]{subsubsection} % 第三层标题变成 1，2，...
+```
+- 一个整体地中文修改参考如下
+```tex
+\usepackage{titlesec}
+\newcommand{\sectionname}{节}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\bibname}{参考文献}
+\renewcommand{\contentsname}{目~录}
+\renewcommand{\listfigurename}{图~目~录}
+\renewcommand{\listtablename}{表~目~录}
+\renewcommand{\indexname}{索~引}
+\renewcommand{\abstractname}{\Large{摘~要}}
+\newcommand{\keywords}[1]{\\ \\ \textbf{关~键~词}：#1}
+\titleformat{\chapter}[block]{\center\Large\bf}{\chaptername}{20pt}{}
+\titleformat{\section}[block]{\large\bf}{\thesection}{10pt}{}
+```
+
+## 数学公式左对齐
+如果我们想要全文行间公式(display) 均左对齐，我们有三个方法如下：
+
+• 使用`\documentclass[fleqn]{article}`对整篇文章有效。
+
+• 加载宏包amsmath时，设置fleqn参数`\usepackage[fleqn]{amsmath}`。
+
+上述方法选其一即可实现左对齐，但这个情况有需要注意的地方：
+
+我们使用了fleqn, 当且仅当使用这一参数的时候，行间公式默认有一个缩进mathindent，其值系统定义为27.37506pt minus 27.37506pt 若是我们不想要这个缩进，可以用`\setlength{\mathindent}{0pt}`将其缩进设置为0pt。
+- 如果我们仅仅希望部分公式左对齐，则可以采用下述方法
+```tex
+\begin{flalign}
+
+&\text{your equation}&
+
+\end{flalign}
+```
+
+## 中文字体加粗
+```latex
+% 见胡伟133页
+\setCJKfamilyfont{myfs}[AutoFakeBold=2]{华文仿宋} % 指定仿宋一个新名字myfs，它是可以加粗的
+\renewcommand*{\fangsong}{\CJKfamily{myfs}} % 然后更新原有仿宋
+```
+
+## 使用某种常用字体
+- 设置一个字体一般通过五个属性，即编码、字族、序列、形状和尺寸。然后通过
+```latex
+\DeclareFixedFont{命令}{编码}{字族}{序列}{形状}{尺寸}
+```
+来设置某一种字体。这些字体的例子可以参见胡伟的105页。
+- 如果你在网上下载了某个字体，那么可以如下调用
+```tex
+% 导言区
+\usepackage{xeCJK}
+\setCJKfamilyfont[Path = D:/]{mzd}{maozedong.ttf} % 字体文件是maozedong.ttf，给这个字体文件随便取个名，比如mzd
+\newcommand{\mzd } {\CJKfamily{mzd} } % 给这个字体名设置一个命令
+% 正文
+{\mzd 我是骄阳} % 正文中就可以调用这个命令了。
+```
+
+一个另外的例子：使用Times New Roman字体
+```tex
+% 胡伟129页
+\usepackage{fontspec}
+{\fontspec{times.ttf}I am TImes New Roman}
+```
+## 长表格
+```tex
+\usepackage{supertabular}
+\begin{center}
+\small
+	\tablecaption{变量描述\label{var}}
+	\tablefirsthead{\hline\multicolumn{1}{c}{变量}&\multicolumn{1}{c}{含义}&\multicolumn{1}{c}{2018年变量编码}&\multicolumn{1}{c}{2016年变量编码}&\multicolumn{1}{c}{2014年变量编码}&\multicolumn{1}{c}{2010年变量编码}\\\hline}
+	\tablehead{\multicolumn{6}{r}{表 \ref{var} (续)}\\\hline
+	\multicolumn{1}{l}{变量}&\multicolumn{1}{l}{含义}&\multicolumn{1}{l}{2018年变量编码}&\multicolumn{1}{l}{2016年变量编码}&\multicolumn{1}{l}{2014年变量编码}&\multicolumn{1}{l}{2010年变量编码}\\\hline}
+\tabletail{\hline}
+	\begin{supertabular}{lllllp{10mm}}
+withsons & 同子女关系如何 & qf1\_a\_1 & qf1\_a\_1 &  & qf1\_a\_1\\
+		worktime & 每周工作时间（小时） & qg6   & qg6   & qg6 &qg504\\	
+		\end{supertabular}
+```
+注意三个参数：
+
+- `\tablecaption{}`:整个表格标题
+- `\tablefirsthead{}`:首页表格标题
+- `\tablehead{}`:续页表格标题
+- `\tabletail{}`:分页时表格底部写啥，一根线就直接用`\hline`
+排版效果如下：见有道截图
+
+## 我的R代码排版模版
+### `listings`包
+导言区输入：
+```tex
+\lstset{numbers=left, %设置行号位置
+	basicstyle=\ttfamily\small,
+	numberstyle=\tiny, %设置行号大小
+	keywordstyle=\color{blue!70}, %关键字颜色
+	commentstyle=\color{red!50!green!50!blue!50}, %评论颜色
+	frame= shadowbox, %single, %设置边框格式
+	rulesepcolor = \color{RoyalBlue},
+%    backgroundcolor = \color{RoyalBlue},
+	escapeinside=``, %逃逸字符(1左面的键)，用于显示中文
+	breaklines, %自动折行
+	extendedchars=false, %解决代码跨页时，章节标题，页眉等汉字不显示的问题
+	xleftmargin=2em,xrightmargin=2em, aboveskip=1em, %设置边距
+%	tabsize=4, %设置tab空格数
+	showspaces=false, %不显示空格
+	showtabs=flase, %不显示tab
+	showstringspaces=false	%不显示字符串中的空格
+}
+```
+
+正文插入：
+```tex
+\begin{lstlisting}[language=R]
+data("Affairs",package = 'AER') # `婚外情数据'
+Affairs$ynaffair[Affairs$affairs >0] <- 1
+Affairs$ynaffair[Affairs$affairs == 0] <- 0
+Affairs$ynaffair <- factor(Affairs$ynaffair,levels = c(0,1),labels = c('No','Yes'))
+\end{lstlisting}		
+```
+
+分页时，若页眉页脚有中文，会报错，此时最好把代码再次嵌入figure的浮动体中。
+
+还有个我更喜欢的设置，
+```tex
+\lstset{language = R, basicstyle = {\ttfamily\small},keywordstyle = \color{RoyalBlue},frame = lines, commentstyle=\color{gray}}
+```
+### `fancyvrb`包
+直接用`Verbatim`环境，从R语言里面直接copy. 可以参考胡伟76页对其参数的说明。
+```tex
+\begin{Verbatim}
+a <- 3
+\end{Verbatim}
+```
+
+## latex插入附录
+
+- `\appendix`:说明之后的内容为附录。之后可以继续使用`\section{}`命令，只是此时显示为A、B等。
+- `\appendixpage`将添加一个专门的附录页.
+- `\addappheadtotoc`将附录添 加到目录当中，需要加载`\usepackage{appendix}`。不过，一旦附录开始，将不能转回正文。另一种方式可以使用 `/begin{appendices}和`/end{appendices}`在正文中添加附录，参看http://www.tex.ac.uk/cgi-bin/texfaq2html?label=appendix
+
+关于所有的latex相关的命令，有一本手册（书）http://tobi.oetiker.ch/lshort/lshort.pdf ，
+好像有中文的翻译版本,点击http://net.ytu.edu.cn/share/%D7%CA%C1%CF/lshort-cn.pdf。
+
+## latex参考文献的编码思路
+### 参考文献较少的情况
+就是定义一个参考文献环境, 然后用命令`\bibitem{Ale2019}`写即可，`99`是告诉文献有多少个，好排版，如下。这个`Ale2019`是为了方便正文引用。
+```
+\begin{thebibliography}{99}
+\bibitem{Ale2019}	Alessandri, P. and H. Mumtaz, 2019. Financial regimes and uncertainty shocks. Journal of Monetary Economics, 101: 31-46.
+\end{thebibliography}
+```
+关于正文引用格式的修改，参考胡伟（2011，p378）.
+
+### 参考文献较多的情况
+分两步：
+1. 在记事本中把参考文献的信息记录下来，然后保存为.bib文件，放到源文件同目录下。可以使用JabRef软件帮忙管理。
+2. 在正文中需要插入参考文献的地方写两个命令即可。如下，
+```
+\bibliographystyle{文献格式名}
+\bibliography{第一步建立的那个文件的名字，不需要bib后缀}
+```
+进一步说明：
+- 这种方法就是必须要在正文中有`\cite{}`，后面才有参考文献。如果正文没有引用，又想在参考文献中出现，可以使用`\nocite{}`
+- 这种方法就可以指定期刊的参考文献风格，即修改`文献格式名`即可。如最普通的就是`plain`风格。
+
+### 如何将文献引用作为上标出现？
+四个办法：
+
+1. 将文献引用作为上标出现可以使用overcite 宏包
+`\usepackage{overcite}`
+2. 使用natbib 宏包的super 参数
+`\usepackage[super]{natbib}`
+3. 但是，这两种方法产生的上标引用都没有括号。要增加括号，可以修改这两个宏包中的相应定义。更简单的一个方法是使用如下命令，
+```tex
+\makeatletter
+\def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
+\makeatother
+```
+而不需使用任何宏包。
+
+4. `\usepackage[biblabel]{cite}`使用该命令即可
+
+## 一些文体的模版
+### 社科申报课题部分模版
+申报书有两个特征：
+
+1. 页面要有边框，这可以通过使用`framed`包中的`framed`环境实现
+2. 一般前面有个表格。如何让表格中的横线顶到边框，通过使用零宽度的盒子实现。
+
+
+```tex
+\documentclass[hyperref]{article}% 使得标签不乱码
+\usepackage[UTF8]{ctex}%中文宏包
+\usepackage{amsmath,bm,amsfonts,amssymb}%数学宏包，amsfonts,amssymb是插入空心字母的包，使用命令\mathbb{}
+%\numberwithin{equation}{section}%公式按节进行编号
+\usepackage[dvipsnames]{xcolor}
+\usepackage[a4paper,left=2.14cm,right=2.14cm,bottom=2cm,top=2cm]{geometry}%页面设置宏包
+\pagestyle{headings}
+
+
+\usepackage{caption}
+\captionsetup{figurename=图,tablename=表}%修改图标签名字
+%opening
+\title{草稿纸}
+\author{陈普}
+\date{\today}
+\usepackage{graphicx,picinpar,multicol,bm,float,framed}
+\begin{document}
+	\maketitle
+% 这里是关键，通过用一个0宽度的盒子装填了表格中横线无法顶格的问题。
+	\begin{framed}
+		\begin{table}[H]
+\begin{tabular}{ccp{39.8em}}\hline
+\makebox[0pt][r]{\rule[11pt]{0.5cm}{0.05em}}1&1&1
+\end{tabular}
+		\end{table}
+		
+\section{验证一下汉密尔顿定理}	
+\[max\; \sum_{t=0}^\infty \beta^tu(c_t)\]
+\[k_{t+1}=(1-\delta)k_t+i_t\]
+这里控制变量是$ c_t $，状态变量是$ k_t $。汉密尔顿函数可以写成，
+\[H = \beta^tu(c_t) + \pi_{t+1}(f(k_t)-c_t-\delta k_t)  \]
+注意到$ i_t= y_t-c_t $，因此，$ k_{t+1}-k_t=f(k_t)-c_t-\delta k_t $。然后根据汉密尔顿定理，有，
+\begin{align*}
+\pi_{t+1}-\pi_t=[-f'(k_t)+\delta]\pi_{t+1}&\Longrightarrow \pi_t=[f'(k_t)+(1-\delta)]\pi_{t+1}\\
+\beta^tu'(c_t)-\pi_{t+1}=0&\Longrightarrow \beta^tu'(c_t)=\pi_{t+1}\\
+\end{align*}
+
+将$ \beta^tu'(c_t)=\pi_{t+1} $的脚标做一个$ t $和$ t+1 $的替换，就有，
+\[ f'(k_t) +(1-\delta) = \frac{u'(c_{t-1})}{\beta u'(c_{t})}\]
+这就是著名的欧拉方程。
+	\end{framed}
+\end{document}
+```
+### 华东交大期末考试试卷新版模板
+```tex
+\documentclass[UTF8]{ctexart}
+%\usepackage[UTF8]{ctex}%中文宏包
+\usepackage{amsmath,bm,amsfonts,amssymb,fancyhdr}%数学宏包，amsfonts,amssymb是插入空心字母的包，使用命令\mathbb{}
+\numberwithin{equation}{section}%公式按节进行编号
+\usepackage[dvipsnames]{xcolor}
+\usepackage[a4paper,left=2.14cm,right=2.14cm,bottom=2cm,top=2cm]{geometry}%页面设置宏包
+
+% 定义页眉页脚
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{第\thepage 页，共2页，反面有试题} %% 注意修改
+\renewcommand{\footrulewidth}{0.6pt} %添加页脚横线
+
+%设置section的格式
+\CTEXsetup[name={,、},number={\chinese{section}},format={\raggedright\heiti\zihao{4}},aftername={\hspace{0em}}]{section}
+%opening
+\usepackage{graphicx,picinpar,multicol,bm,float}
+
+\begin{document}
+%	\maketitle
+\centering\zihao{2} 华东交通大学2017—2018学年第一学期考试卷
+
+\raggedleft\zihao{4}\fangsong（　）卷
+
+\raggedright 课程名称：\underline{\hspace{10em}} 考试时间：\underline{\hspace{4em}}分钟
+
+适用对象：\underline{\hspace{10em}} 考试方式：闭卷（ ）、开卷（ ）范围：  
+
+\section{简答题(每题10分，共40分)}
+\songti \zihao{-4}
+\begin{enumerate}
+	\item 	 要保证 的无偏性需要哪几个假设？为得到最优线性无偏估计量，还需要哪个假定？
+	\item 下面哪些因素会导致OLS估计量出现偏误？
+	\begin{enumerate}
+		\item 异方差性\item 遗漏一个重要变量\item 模型中包含的两个自变量，它们之间的样本相关系数达到0.95
+	\end{enumerate}
+	\item 简述OLS的估计原理。
+	\item 简述F统计量检验多重约束的步骤和思路。	
+\end{enumerate}
+\section{计算题（20分）}
+
+\end{document}
+```

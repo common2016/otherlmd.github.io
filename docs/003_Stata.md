@@ -5,13 +5,7 @@
 2. 回归完成，使用`predict`可以得到拟合值，残差等序列。如`predict yres, resid`则得到名为`yres`的残差。
 3. `matrix list A`: 显示矩阵
 4. `outfile v1 v2 v3 using mydata.csv, comma` 输出逗号分割的csv文件。
-5. 输出回归结果到csv文件
-```stata
-reg y x
-est store m1
-esttab m1 m2 m3 using rlt.csv, replace //输出回归结果
-esttab e(b) using rlt.csv, replace  //输出回归系数
-```
+5. 
 6. 季节调整，外部命令`sax12`
 7. 从变量名`income`生成一个新的变量名如`income_y`，则可以如下操作：
 ```stata
@@ -36,7 +30,9 @@ svmat double b, n(beta)
 ```stata
 rolling _b _se, window(200) saving(betas, replace) keep(date):regress ibmadj spxadj
 ```
-7. 描述性统计和回归结果导出
+### 描述性统计和回归结果导出
+
+- 一个例子：
 ```stata
 ssc install sum2docx
 sum2docx pay stock fund finance income age edu sex hukou marriage bond ///
@@ -53,12 +49,20 @@ probit InsDum pay income age edu sex hukou marriage
 est store p3
 reg2docx p1 p2 p3 using pm.docx, append title("表2: Probit回归结果") scalars(r2_p N)
 ```
-- `diff`可以做DID，PSM-DID，分位DID
+- 另一个例子：输出回归结果到csv文件
+```stata
+reg y x
+est store m1
+esttab m1 m2 m3 using rlt.csv, replace //输出回归结果
+esttab e(b) using rlt.csv, replace  //输出回归系数
+```
 
 ## 一些外部命令
+- `diff`可以做DID，PSM-DID，分位DID
 - `xtnptimevar`：非参时变面板固定效应系数估计。方法是Li, Chen and Gao (2011)。
 - `xtfixedcoeftvcu`：Hsiao(2014)的书上变系数中的固定系数估计命令。
 - `xtsemipar`: Baltagi and Li (2002)的半参部分线性固定效应面板估计。代码缺陷在于非参数只能是一个变量。
+- `xthreg`，Hansen(1999)静态面板阈值回归。
 
 ## stata对某个变量随机抽样
 **问题** 回归以后，如何对残差进行自助抽样？stata里面对某个变量随机抽样会比较麻烦一些。它有一个函数`sample`, 但是它是对整个数据集抽样。要对某个变量抽样，需要曲线救国。

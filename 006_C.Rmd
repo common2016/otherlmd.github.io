@@ -1,0 +1,13 @@
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+# C语言 {#C}
+## 一句话Tips
+
+- C的注释与Stata的注释几乎一致, 如`/* 这是注释 */`，单行注释`//`。
+- 一个C文件由若干个函数构成，包括主函数`main()`。在函数之外定义的变量成为全局变量，该变量可以在所有其他函数中被调用。
+- GSL是一个开源的C语言矩阵运算库。
+- 我感觉指针的好处在于可以在函数内部更改变量的值。不像其他语言，最终可以通过`return`把值返回出来，在C语言中，可以利用指针直接改，不需要`return`。
+- 
