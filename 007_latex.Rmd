@@ -6,7 +6,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 - 如何在beamer中设置颜色？使用普通的color包或者xcolor包都会报错，它有自己的一套办法。
 ```tex
 % 首先设置好颜色，并命名为myblue
-\setbeamercolor{myblue}{fg=blue!80!black}
+\setbeamercolor{myblue}{fg=blue!80!black} % 这是以感叹作为分隔符的三色设置
 % 然后在需要的地方使用
 \textbf{\usebeamercolor[fg]{myblue}背景}
 ```

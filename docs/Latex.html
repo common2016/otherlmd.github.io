@@ -226,7 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>如何在beamer中设置颜色？使用普通的color包或者xcolor包都会报错，它有自己的一套办法。</li>
 </ul>
 <div class="sourceCode" id="cb6"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb6-1"><a href="Latex.html#cb6-1"></a><span class="co">% 首先设置好颜色，并命名为myblue</span></span>
-<span id="cb6-2"><a href="Latex.html#cb6-2"></a><span class="fu">\setbeamercolor</span>{myblue}{fg=blue!80!black}</span>
+<span id="cb6-2"><a href="Latex.html#cb6-2"></a><span class="fu">\setbeamercolor</span>{myblue}{fg=blue!80!black} <span class="co">% 这是以感叹作为分隔符的三色设置</span></span>
 <span id="cb6-3"><a href="Latex.html#cb6-3"></a><span class="co">% 然后在需要的地方使用</span></span>
 <span id="cb6-4"><a href="Latex.html#cb6-4"></a><span class="fu">\textbf</span>{<span class="fu">\usebeamercolor</span>[fg]{myblue}背景}</span></code></pre></div>
 <ul>
