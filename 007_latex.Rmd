@@ -3,6 +3,11 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 # Latex {#Latex}
 ## 一句话Tips
+- 可定义如下环境给某段文字加上上下边框双横线，比如我在审稿意见中经常使用。
+```tex
+\newenvironment{myequestion}{\noindent\makebox[0pt][l]{\rule[-1.5mm]{45em}{0.5pt}}\rule[-0.7mm]{45em}{0.5pt}\par}{\par \noindent\makebox[0pt][l]{\rule[3mm]{45em}{0.5pt}}\rule[3.8mm]{45em}{0.5pt}\par}
+```
+- 给中文加下划线、波浪线等，用`xeCJKfntef`包，这样使用`\CJKunderline`或者`\CJKunderwave`等命令加了下划线等就能自动换行。
 - 如何在beamer中设置颜色？使用普通的color包或者xcolor包都会报错，它有自己的一套办法。
 ```tex
 % 首先设置好颜色，并命名为myblue
@@ -45,6 +50,7 @@ This is a landscape page.
 
  `\includegraphics[scale=0.8]{\string"E:/17_HuaDong/reserch/GVAR/RltPaper/DesStat\string".png}`
 - 使用`\verb||`时，如果是在其他命令中作为参数使用，是会报错的。例如`\footnote{\verb|abc|}`是不行的。应该加载`fancyvrb`包，然后先保存`\SaveVerb{myverb}|abc|`，再使用`\footnote{\UseVerb{myverb}}`即可。
+
 - `\renewcommand\refname{Reference}`把“参考文献”四个字修改为“Reference”
 - `\rule[水平高度]{长度}{粗细}`，文档中插入一条横线。如`\rule[0mm]{55em}{0.5mm}`
 - 使用`framed`包，用`\begin{framed}\end{framed}`环境可以给整段文字加边框。
@@ -98,6 +104,7 @@ format + = {\songti\zihao{5}}]{subsubsection} % 第三层标题变成 1，2，..
 上述方法选其一即可实现左对齐，但这个情况有需要注意的地方：
 
 我们使用了fleqn, 当且仅当使用这一参数的时候，行间公式默认有一个缩进mathindent，其值系统定义为27.37506pt minus 27.37506pt 若是我们不想要这个缩进，可以用`\setlength{\mathindent}{0pt}`将其缩进设置为0pt。
+
 - 如果我们仅仅希望部分公式左对齐，则可以采用下述方法
 ```tex
 \begin{flalign}
