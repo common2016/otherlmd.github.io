@@ -3,6 +3,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 # Latex {#Latex}
 ## 一句话Tips
+- `pifont`包的`\ding{172}`提供了带圈的1的数字。
 - 可定义如下环境给某段文字加上上下边框双横线，比如我在审稿意见中经常使用。
 ```tex
 \newenvironment{myequestion}{\noindent\makebox[0pt][l]{\rule[-1.5mm]{45em}{0.5pt}}\rule[-0.7mm]{45em}{0.5pt}\par}{\par \noindent\makebox[0pt][l]{\rule[3mm]{45em}{0.5pt}}\rule[3.8mm]{45em}{0.5pt}\par}
