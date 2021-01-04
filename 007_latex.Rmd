@@ -3,6 +3,14 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 # Latex {#Latex}
 ## 一句话Tips
+- 小写罗马字母，
+```latex
+% 小写罗马字母\rmnum{2}
+\newcommand{\rmnum}[1]{\romannumeral #1}
+% 大写罗马字母\Rmnum{2}
+\newcommand{\Rmnum}[1]{\uppercase\expandafter{\romannumeral #1}}
+```
+- 让表格从4开始编号`\setcounter{table}{3}`
 - `pifont`包的`\ding{172}`提供了带圈的1的数字。
 - 可定义如下环境给某段文字加上上下边框双横线，比如我在审稿意见中经常使用。
 ```tex
