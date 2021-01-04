@@ -9,6 +9,7 @@
 \newcommand{\Rmnum}[1]{\uppercase\expandafter{\romannumeral #1}}
 ```
 - 让表格从4开始编号`\setcounter{table}{3}`
+- `\cline{2-4}`紧跟在`\\`后，表示表格中从第2列至第4列划一条横线
 - `pifont`包的`\ding{172}`提供了带圈的1的数字。
 - 可定义如下环境给某段文字加上上下边框双横线，比如我在审稿意见中经常使用。
 ```tex
@@ -172,6 +173,16 @@ withsons & 同子女关系如何 & qf1\_a\_1 & qf1\_a\_1 &  & qf1\_a\_1\\
 - `\tablehead{}`:续页表格标题
 - `\tabletail{}`:分页时表格底部写啥，一根线就直接用`\hline`
 排版效果如下：见有道截图
+
+长表格的一个最大优点就是可以跨页排版，有时不用那么复杂，只需要使用`\endfirsthead`命令来结束表头，其他与普通表格一致即可达到想要的效果。如，
+```latex
+\begin{longtable}{c|c}
+	\caption{内生性分析}\\\hline\endfirsthead
+	A&B\\
+	C&D
+	\end{longtable}
+```
+
 
 ## 我的R代码排版模版
 ### `listings`包
