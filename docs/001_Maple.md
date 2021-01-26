@@ -2,6 +2,15 @@
 
 
 # Maple {#Maple}
+
+## 快捷键
+
+- `ctrl+del`删除全行
+- `ctrl+K,ctrl+J`在前或后插入一行
+
+## 几个基本的代数处理
+
+
 ## 一句话Tips
 - 多项式降幂排列`sort(x^3*y-y^3*x,[y,x])`
 - 带有附加关系的化简,`simplify(expr, {x*z=1})`

@@ -1,4 +1,6 @@
 Maple
+快捷键
+几个基本的代数处理
 一句话tips
 Julia
 Stata
