@@ -148,7 +148,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1" data-path="Maple.html"><a href="Maple.html#快捷键"><i class="fa fa-check"></i><b>1.1</b> 快捷键</a></li>
 <li class="chapter" data-level="1.2" data-path="Maple.html"><a href="Maple.html#几个基本的代数处理"><i class="fa fa-check"></i><b>1.2</b> 几个基本的代数处理</a></li>
-<li class="chapter" data-level="1.3" data-path="Maple.html"><a href="Maple.html#一句话tips"><i class="fa fa-check"></i><b>1.3</b> 一句话Tips</a></li>
+<li class="chapter" data-level="1.3" data-path="Maple.html"><a href="Maple.html#产生序列"><i class="fa fa-check"></i><b>1.3</b> 产生序列</a></li>
+<li class="chapter" data-level="1.4" data-path="Maple.html"><a href="Maple.html#函数定义"><i class="fa fa-check"></i><b>1.4</b> 函数定义</a></li>
+<li class="chapter" data-level="1.5" data-path="Maple.html"><a href="Maple.html#控制流"><i class="fa fa-check"></i><b>1.5</b> 控制流</a></li>
+<li class="chapter" data-level="1.6" data-path="Maple.html"><a href="Maple.html#画图"><i class="fa fa-check"></i><b>1.6</b> 画图</a></li>
+<li class="chapter" data-level="1.7" data-path="Maple.html"><a href="Maple.html#一句话tips"><i class="fa fa-check"></i><b>1.7</b> 一句话Tips</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="Julia.html"><a href="Julia.html"><i class="fa fa-check"></i><b>2</b> Julia</a></li>
 <li class="chapter" data-level="3" data-path="Stata.html"><a href="Stata.html"><i class="fa fa-check"></i><b>3</b> Stata</a>
@@ -243,16 +247,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><code>ctrl+del</code>删除全行</li>
 <li><code>ctrl+K,ctrl+J</code>在前或后插入一行</li>
+<li><code>?plot</code>看帮助</li>
+<li><code>with(plottools)</code>载入包</li>
 </ul>
 </div>
 <div id="几个基本的代数处理" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> 几个基本的代数处理</h2>
-</div>
-<div id="一句话tips" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> 一句话Tips</h2>
+<!-- 通常`simplify,combine,expand,convert`进行化简 -->
 <ul>
+<li>复合函数<span class="math inline">\(f(g(x))\)</span>可以写成，<code>(evalf@arccos)(2/3)</code>，这就对反余弦进行了数值评价</li>
+<li><code>factor,expand,simplify，collect</code>会进行因式分解，多项式展开，化简，合并同类项。带有附加关系的化简,<code>simplify(expr, {x*z=1})</code></li>
+</ul>
+</div>
+<div id="产生序列" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> 产生序列</h2>
+<p>中括号产生list，它是有序的。大括号产生集合，它是无序的。下面的代码可以产生一系列值。</p>
+<pre><code>L:= [a1,a2,a3]:
+map(f, L)
+# [f(a1),f(a2),f(a3)]</code></pre>
+<p>可以使用<code>L[1]</code>来选择集合中的元素。当然，使用<code>seq</code>函数也能产生一系列值。</p>
+<pre><code>[seq(f(n),n=n1..n2)]</code></pre>
+</div>
+<div id="函数定义" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> 函数定义</h2>
+<ul>
+<li>简单函数定义：<code>f:=x-&gt;(1+x)^(1/x)</code></li>
+<li>复杂函数定义：</li>
+</ul>
+<pre><code>f:=proc(x)
+(1+x)^(1/x)
+end proc:</code></pre>
+</div>
+<div id="控制流" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> 控制流</h2>
+<ul>
+<li>条件语句：</li>
+</ul>
+<pre><code>if ...then...
+elif...then...
+else ... 
+end if:</code></pre>
+</div>
+<div id="画图" class="section level2" number="1.6">
+<h2><span class="header-section-number">1.6</span> 画图</h2>
+<ul>
+<li>2D图：<code>plot(sin(x), x=-Pi..2*Pi);</code></li>
+<li>3D图：<code>plot3d(f(x,y),x=a..b,y=c..d)</code></li>
+<li>等高线图：<code>plots[contourplot](f(x,y),x=a..b,y=c..d)</code></li>
+<li>多图叠在一张图显示：<code>plots[display](p1,p2,p3)</code></li>
+</ul>
+</div>
+<div id="一句话tips" class="section level2" number="1.7">
+<h2><span class="header-section-number">1.7</span> 一句话Tips</h2>
+<ul>
+<li>语句可以清除原来的<code>f</code>的定义，</li>
 <li>多项式降幂排列<code>sort(x^3*y-y^3*x,[y,x])</code></li>
-<li>带有附加关系的化简,<code>simplify(expr, {x*z=1})</code></li>
 <li>乘号记得输入<code>*</code>，各种数学运算：</li>
 <li>求导：<code>diff(f,x)</code>; 求二阶导数，<code>diff(f,x$2)</code></li>
 <li><code>nops</code>返回比如向量的元素的数目：</li>
@@ -263,8 +312,7 @@ nops(u);</code></pre>
 <li>求具体的数值，用<code>evalf(Pi)</code></li>
 <li>矩阵相乘用<code>.</code></li>
 <li>它的<code>surfdata</code>以点的数值的形式绘制三维曲线，相对比较好看。</li>
-<li>表达式替换：<code>subs(,)</code></li>
-<li>合并同类项：<code>collect()</code></li>
+<li>用<code>y</code>替换表达式中的<code>x</code>：<code>subs(x=y, expression)</code></li>
 </ul>
 
 </div>
@@ -325,6 +373,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
