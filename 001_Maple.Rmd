@@ -40,6 +40,20 @@ f:=proc(x)
 end proc:
 ```
 
+### 参数的宣称
+
+- 如下写法可以按位置给参数赋值
+```
+f := proc(a::integer := 10, b::expects(integer) := 100.1) a + b end proc:
+```
+
+- 也可以按参数名称赋值，但写法略有不同
+```
+f := proc( { simple::integer := 2 } )
+    sprintf("simple=%d",simple)
+end proc:
+```
+
 ## 控制流
 
 - 条件语句：
@@ -56,6 +70,22 @@ end if:
 - 3D图：`plot3d(f(x,y),x=a..b,y=c..d)`
 - 等高线图：`plots[contourplot](f(x,y),x=a..b,y=c..d)`
 - 多图叠在一张图显示：`plots[display](p1,p2,p3)`
+
+## 矩阵
+
+- 通常要载入包`LinearAlgebra`和`linalg`。
+- 产生脚标为$a_{i,j}$的矩阵$A$。
+```
+A:=array([a[1,1],a[1,2]],[a[2,1], a[2,2]])
+A:=Matrix([a[1,1],a[1,2]],[a[2,1], a[2,2]])
+```
+
+- 矩阵计算
+```
+evalm(A^2)
+evalm(A&*B)
+``
+
 
 ## 一句话Tips
 
