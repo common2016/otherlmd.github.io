@@ -7,9 +7,10 @@
 - 在IDE中各个窗口之间的切换 
   - ctrl+Tab 实现IDE中的各个窗口轮流转换
   - ctrl+PageUp/PageDown在子窗口的各标签切换
-  - ctrl+0(或者1、2、3、4)实现转换到特定窗口 
+  - ctrl+0(或者1、2、3、4)实现转换到控制台(或其他特定窗口 )
   - ctrl+shift+0切换到editor窗口
 
+- ctrl + R/T：注释/取消注释
 - 杀死excel进程：system('tskill excel')
 - F9运行当前行
 - 当使用一个函数，输出结果有两个。但第一个结果不需要，只需要第二个时，第一个结果可用`~`代替。如`[~,area] = xlsread('malm.xlsx',1,'b2:aa31');`
