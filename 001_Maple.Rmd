@@ -78,13 +78,16 @@ end if:
 ```
 A:=array([a[1,1],a[1,2]],[a[2,1], a[2,2]])
 A:=Matrix([a[1,1],a[1,2]],[a[2,1], a[2,2]])
+A:=Matrix(2,2,symbol = a)
+A:=Vector(2, symbol = a)
 ```
 
 - 矩阵计算
 ```
+with(LinearAlgebra):
 evalm(A^2)
-evalm(A&*B)
-``
+A.B # 矩阵相乘
+```
 
 
 ## 一句话Tips

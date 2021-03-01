@@ -18,17 +18,18 @@ local yvar `xvar'_y
 
 ## 回归相关
 
-1. 获得残差。估计完以后，使用命令：`predict e, r //e是生成的残差变量名，r表明生成残差`。
-2. 将回归后的系数存入数据集中，然后即可导出。
+- `#`是所有分类交互，`##`是仅仅两个分类交互。
+- 获得残差。估计完以后，使用命令：`predict e, r //e是生成的残差变量名，r表明生成残差`。
+- 将回归后的系数存入数据集中，然后即可导出。
 ```
 mat b = e(b)'
 svmat double b, n(beta)
 ```
 
-3. 滞后、超前、差分变量。`L.x L2.x F.x F2.x D.x D2.x`
-4. 字符串转因子变量：`encode str_var, g(newvar)`
-5. 恩格尔格兰杰两步法：`egranger`是外部命令。
-6. 滚动估计：`_b,_se`意味着保存回归系数和标准误，200的窗口样本，原来数据集的变量合并到新的保存的数据集betas中去。
+- 滞后、超前、差分变量。`L.x L2.x F.x F2.x D.x D2.x`
+- 字符串转因子变量：`encode str_var, g(newvar)`
+- 恩格尔格兰杰两步法：`egranger`是外部命令。
+- 滚动估计：`_b,_se`意味着保存回归系数和标准误，200的窗口样本，原来数据集的变量合并到新的保存的数据集betas中去。
 ```stata
 rolling _b _se, window(200) saving(betas, replace) keep(date):regress ibmadj spxadj
 ```

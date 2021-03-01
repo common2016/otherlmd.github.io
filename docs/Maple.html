@@ -149,10 +149,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="Maple.html"><a href="Maple.html#快捷键"><i class="fa fa-check"></i><b>1.1</b> 快捷键</a></li>
 <li class="chapter" data-level="1.2" data-path="Maple.html"><a href="Maple.html#几个基本的代数处理"><i class="fa fa-check"></i><b>1.2</b> 几个基本的代数处理</a></li>
 <li class="chapter" data-level="1.3" data-path="Maple.html"><a href="Maple.html#产生序列"><i class="fa fa-check"></i><b>1.3</b> 产生序列</a></li>
-<li class="chapter" data-level="1.4" data-path="Maple.html"><a href="Maple.html#函数定义"><i class="fa fa-check"></i><b>1.4</b> 函数定义</a></li>
+<li class="chapter" data-level="1.4" data-path="Maple.html"><a href="Maple.html#函数定义"><i class="fa fa-check"></i><b>1.4</b> 函数定义</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="Maple.html"><a href="Maple.html#参数的宣称"><i class="fa fa-check"></i><b>1.4.1</b> 参数的宣称</a></li>
+</ul></li>
 <li class="chapter" data-level="1.5" data-path="Maple.html"><a href="Maple.html#控制流"><i class="fa fa-check"></i><b>1.5</b> 控制流</a></li>
 <li class="chapter" data-level="1.6" data-path="Maple.html"><a href="Maple.html#画图"><i class="fa fa-check"></i><b>1.6</b> 画图</a></li>
-<li class="chapter" data-level="1.7" data-path="Maple.html"><a href="Maple.html#一句话tips"><i class="fa fa-check"></i><b>1.7</b> 一句话Tips</a></li>
+<li class="chapter" data-level="1.7" data-path="Maple.html"><a href="Maple.html#矩阵"><i class="fa fa-check"></i><b>1.7</b> 矩阵</a></li>
+<li class="chapter" data-level="1.8" data-path="Maple.html"><a href="Maple.html#一句话tips"><i class="fa fa-check"></i><b>1.8</b> 一句话Tips</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="Julia.html"><a href="Julia.html"><i class="fa fa-check"></i><b>2</b> Julia</a></li>
 <li class="chapter" data-level="3" data-path="Stata.html"><a href="Stata.html"><i class="fa fa-check"></i><b>3</b> Stata</a>
@@ -265,7 +269,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>L:= [a1,a2,a3]:
 map(f, L)
 # [f(a1),f(a2),f(a3)]</code></pre>
-<p>可以使用<code>L[1]</code>来选择集合中的元素。当然，使用<code>seq</code>函数也能产生一系列值。</p>
+<p>可以使用<code>L[i..j]</code>来选择集合中的元素，也可以使用<code>op(i..j,L)</code>来选择多个元素。当然，使用<code>seq</code>函数也能产生一系列值。</p>
 <pre><code>[seq(f(n),n=n1..n2)]</code></pre>
 </div>
 <div id="函数定义" class="section level2" number="1.4">
@@ -277,6 +281,19 @@ map(f, L)
 <pre><code>f:=proc(x)
 (1+x)^(1/x)
 end proc:</code></pre>
+<div id="参数的宣称" class="section level3" number="1.4.1">
+<h3><span class="header-section-number">1.4.1</span> 参数的宣称</h3>
+<ul>
+<li>如下写法可以按位置给参数赋值</li>
+</ul>
+<pre><code>f := proc(a::integer := 10, b::expects(integer) := 100.1) a + b end proc:</code></pre>
+<ul>
+<li>也可以按参数名称赋值，但写法略有不同</li>
+</ul>
+<pre><code>f := proc( { simple::integer := 2 } )
+    sprintf(&quot;simple=%d&quot;,simple)
+end proc:</code></pre>
+</div>
 </div>
 <div id="控制流" class="section level2" number="1.5">
 <h2><span class="header-section-number">1.5</span> 控制流</h2>
@@ -297,8 +314,25 @@ end if:</code></pre>
 <li>多图叠在一张图显示：<code>plots[display](p1,p2,p3)</code></li>
 </ul>
 </div>
-<div id="一句话tips" class="section level2" number="1.7">
-<h2><span class="header-section-number">1.7</span> 一句话Tips</h2>
+<div id="矩阵" class="section level2" number="1.7">
+<h2><span class="header-section-number">1.7</span> 矩阵</h2>
+<ul>
+<li>通常要载入包<code>LinearAlgebra</code>和<code>linalg</code>。</li>
+<li>产生脚标为<span class="math inline">\(a_{i,j}\)</span>的矩阵<span class="math inline">\(A\)</span>。</li>
+</ul>
+<pre><code>A:=array([a[1,1],a[1,2]],[a[2,1], a[2,2]])
+A:=Matrix([a[1,1],a[1,2]],[a[2,1], a[2,2]])
+A:=Matrix(2,2,symbol = a)
+A:=Vector(2, symbol = a)</code></pre>
+<ul>
+<li>矩阵计算</li>
+</ul>
+<pre><code>with(LinearAlgebra):
+evalm(A^2)
+A.B # 矩阵相乘</code></pre>
+</div>
+<div id="一句话tips" class="section level2" number="1.8">
+<h2><span class="header-section-number">1.8</span> 一句话Tips</h2>
 <ul>
 <li>语句可以清除原来的<code>f</code>的定义，</li>
 <li>多项式降幂排列<code>sort(x^3*y-y^3*x,[y,x])</code></li>

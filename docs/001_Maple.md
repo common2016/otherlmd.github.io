@@ -24,7 +24,7 @@ L:= [a1,a2,a3]:
 map(f, L)
 # [f(a1),f(a2),f(a3)]
 ```
-可以使用`L[1]`来选择集合中的元素。当然，使用`seq`函数也能产生一系列值。
+可以使用`L[i..j]`来选择集合中的元素，也可以使用`op(i..j,L)`来选择多个元素。当然，使用`seq`函数也能产生一系列值。
 ```
 [seq(f(n),n=n1..n2)]
 ```
@@ -35,6 +35,20 @@ map(f, L)
 ```
 f:=proc(x)
 (1+x)^(1/x)
+end proc:
+```
+
+### 参数的宣称
+
+- 如下写法可以按位置给参数赋值
+```
+f := proc(a::integer := 10, b::expects(integer) := 100.1) a + b end proc:
+```
+
+- 也可以按参数名称赋值，但写法略有不同
+```
+f := proc( { simple::integer := 2 } )
+    sprintf("simple=%d",simple)
 end proc:
 ```
 
@@ -54,6 +68,25 @@ end if:
 - 3D图：`plot3d(f(x,y),x=a..b,y=c..d)`
 - 等高线图：`plots[contourplot](f(x,y),x=a..b,y=c..d)`
 - 多图叠在一张图显示：`plots[display](p1,p2,p3)`
+
+## 矩阵
+
+- 通常要载入包`LinearAlgebra`和`linalg`。
+- 产生脚标为$a_{i,j}$的矩阵$A$。
+```
+A:=array([a[1,1],a[1,2]],[a[2,1], a[2,2]])
+A:=Matrix([a[1,1],a[1,2]],[a[2,1], a[2,2]])
+A:=Matrix(2,2,symbol = a)
+A:=Vector(2, symbol = a)
+```
+
+- 矩阵计算
+```
+with(LinearAlgebra):
+evalm(A^2)
+A.B # 矩阵相乘
+```
+
 
 ## 一句话Tips
 
