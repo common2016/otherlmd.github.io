@@ -7,6 +7,8 @@ Maple
 控制流
 画图
 矩阵
+一句话tips
+Julia
 Stata
 数据处理
 回归相关
@@ -16,7 +18,7 @@ stata对某个变量随机抽样
 stata调用r
 miscellaneous
 Matlab
-一句话tips
+一句话tips-1
 窗口输出到文本
 gvar-toolbox使用报告
 数据输入
@@ -30,9 +32,9 @@ git操作流程
 打开vi后的操作
 给递交进行标记
 C
-一句话tips-1
-Latex
 一句话tips-2
+Latex
+一句话tips-3
 章节标题格式修改
 数学公式左对齐
 中文字体加粗
@@ -52,5 +54,3 @@ latex参考文献的编码思路
 Other
 eviews编程
 noteexpress样式设置
-Julia
-一句话tips-3

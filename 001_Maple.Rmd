@@ -11,6 +11,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 - `ctrl+K,ctrl+J`在前或后插入一行
 - `?plot`看帮助
 - `with(plottools)`载入包
+- `F5`文本和数学之间切换，`shift+F5`，可执行的公式和不可执行的公式之间切换。
 
 ## 几个基本的代数处理
 
