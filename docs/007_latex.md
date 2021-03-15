@@ -1,6 +1,7 @@
 
 # Latex {#Latex}
 ## 一句话Tips
+- beamer中也是可以插入代码的，可以使用`listings`包，不过在使用代码的那个`frame`必须要加一个选项`[fragile]`。
 - 小写罗马字母，
 ```latex
 % 小写罗马字母\rmnum{2}
