@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 其他小众语言 | 编程语言笔记</title>
-  <meta name="description" content="8 其他小众语言 | 编程语言笔记" />
+  <title>8 其他小众软件 | 编程语言笔记</title>
+  <meta name="description" content="8 其他小众软件 | 编程语言笔记" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 其他小众语言 | 编程语言笔记" />
+  <meta property="og:title" content="8 其他小众软件 | 编程语言笔记" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 其他小众语言 | 编程语言笔记" />
+  <meta name="twitter:title" content="8 其他小众软件 | 编程语言笔记" />
   
   
   
@@ -221,10 +221,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.10.2" data-path="Latex.html"><a href="Latex.html#华东交大期末考试试卷新版模板"><i class="fa fa-check"></i><b>7.10.2</b> 华东交大期末考试试卷新版模板</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Other.html"><a href="Other.html"><i class="fa fa-check"></i><b>8</b> 其他小众语言</a>
+<li class="chapter" data-level="8" data-path="Other.html"><a href="Other.html"><i class="fa fa-check"></i><b>8</b> 其他小众软件</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="Other.html"><a href="Other.html#eviews编程"><i class="fa fa-check"></i><b>8.1</b> Eviews编程</a></li>
 <li class="chapter" data-level="8.2" data-path="Other.html"><a href="Other.html#noteexpress样式设置"><i class="fa fa-check"></i><b>8.2</b> NoteExpress样式设置</a></li>
+<li class="chapter" data-level="8.3" data-path="Other.html"><a href="Other.html#filezilla"><i class="fa fa-check"></i><b>8.3</b> FileZilla</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -245,7 +246,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="Other" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> 其他小众语言</h1>
+<h1><span class="header-section-number">8</span> 其他小众软件</h1>
 <div id="eviews编程" class="section level2" number="8.1">
 <h2><span class="header-section-number">8.1</span> Eviews编程</h2>
 <ul>
@@ -262,6 +263,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>作者.标题[J].期刊,年份,卷|(期)|:*页码|.</code></pre>
 <ul>
 <li>一般情况上述格式中的标点符合与前面一个字段关联，如<code>年份</code>后面的逗号与<code>年份</code>同时出现，同时消失。如果想要标点符号和后面的字段关联，则要使用<code>|</code>符号。</li>
+</ul>
+</div>
+<div id="filezilla" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> FileZilla</h2>
+<p>这个文件传输文件不是一般地快。</p>
+<p>官网下载地址：<a href="https://www.filezilla.cn/" class="uri">https://www.filezilla.cn/</a></p>
+<p>几个问题的处理：</p>
+<ul>
+<li>很多时候直接就是连不上。做两个动作：
+<ul>
+<li>改客户端的文件传输为FTP，下面那个框框的选项是明文传输；</li>
+<li>服务端的电脑，更改防火墙设置，把21端口开放。<a href="https://blog.csdn.net/InnovationAD/article/details/84944238?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;dist_request_id=1db1882b-159d-4705-865f-78d855fe1f50&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control">具体见这里</a></li>
+</ul></li>
+<li>如果报错：425 Can’t open data connection。还是要更改服务端电脑的防火墙设置，<a href="https://blog.csdn.net/weixin_44284051/article/details/106277683">具体见这里</a></li>
 </ul>
 
 </div>
@@ -322,20 +337,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

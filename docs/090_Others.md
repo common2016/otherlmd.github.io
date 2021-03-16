@@ -1,5 +1,5 @@
 
-# 其他小众语言 {#Other}
+# 其他小众软件 {#Other}
 ## Eviews编程
 - 单引号`'`意味着评论。
 - 一行写不完，用下划线表示下一行接着来`_`，就像matlab里面的`...`。
@@ -12,3 +12,16 @@
 作者.标题[J].期刊,年份,卷|(期)|:*页码|.
 ```
 - 一般情况上述格式中的标点符合与前面一个字段关联，如`年份`后面的逗号与`年份`同时出现，同时消失。如果想要标点符号和后面的字段关联，则要使用`|`符号。
+
+## FileZilla
+这个文件传输文件不是一般地快。
+
+官网下载地址：https://www.filezilla.cn/
+
+几个问题的处理：
+
+- 很多时候直接就是连不上。做两个动作：
+  - 改客户端的文件传输为FTP，下面那个框框的选项是明文传输；
+  - 服务端的电脑，更改防火墙设置，把21端口开放。[具体见这里](https://blog.csdn.net/InnovationAD/article/details/84944238?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&dist_request_id=1db1882b-159d-4705-865f-78d855fe1f50&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control)
+
+- 如果报错：425 Can't open data connection。还是要更改服务端电脑的防火墙设置，[具体见这里](https://blog.csdn.net/weixin_44284051/article/details/106277683)
