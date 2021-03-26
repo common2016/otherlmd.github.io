@@ -1,6 +1,20 @@
 
 # Latex {#Latex}
 ## 一句话Tips
+- latex也可以写循环。加载`multido`包,如下语句表示从3开始，每次变量自增1，循环16次。这是把一个PDF文件拆分成单独的页面后加入latex的一个常见操作。
+```tex
+\multido{\n=3+1}{16}{\noindent\includegraphics[scale=0.9]{RD复印 \n.pdf}\\}
+```
+- 定制封面页时，要使第一行下沉几行，可以这样：
+```tex
+ \hspace{2em}
+ 
+ \vspace{4em}  
+   	\begin{center}  	
+\heiti\zihao{1} 江西省第十九次社会科学优秀成果奖附件材料		
+	\end{center}
+```
+- 调整表格的行高，可以在每行开始前设置`\rule{0pt}{50pt}`这个50pt就是行高。
 - 使用`listing`包输入代码时，很多时候我都是输入R语言，R语言里面会有一个美元符号，我们需要将这个符号“逃逸”，即在选项中设置`[mathescape=false]`。关于逃逸，更多细节可以见包的说明文档。
 - beamer中也是可以插入代码的，可以使用`listings`包，不过在使用代码的那个`frame`必须要加一个选项`[fragile]`。
 - 小写罗马字母，
@@ -223,7 +237,7 @@ Affairs$ynaffair <- factor(Affairs$ynaffair,levels = c(0,1),labels = c('No','Yes
 
 还有个我更喜欢的设置，
 ```tex
-\lstset{language = R, basicstyle = {\ttfamily\small},keywordstyle = \color{RoyalBlue},frame = lines, commentstyle=\color{gray}}
+\lstset{language = R, basicstyle = {\ttfamily\small},keywordstyle = \color{RoyalBlue},frame = lines, commentstyle=\color{gray},breaklines=true}
 ```
 ### `fancyvrb`包
 直接用`Verbatim`环境，从R语言里面直接copy. 可以参考胡伟76页对其参数的说明。
