@@ -240,6 +240,8 @@ Affairs$ynaffair <- factor(Affairs$ynaffair,levels = c(0,1),labels = c('No','Yes
 还有个我更喜欢的设置，
 ```tex
 \lstset{language = R, basicstyle = {\ttfamily\small},keywordstyle = \color{RoyalBlue},frame = lines, commentstyle=\color{gray},breaklines=true}
+% 或者阴影边框
+\lstset{language = R, basicstyle = {\ttfamily\small},keywordstyle = \color{RoyalBlue},frame = shadowbox, rulesepcolor=\color{gray},commentstyle=\color{gray},breaklines=true}
 ```
 ### `fancyvrb`包
 直接用`Verbatim`环境，从R语言里面直接copy. 可以参考胡伟76页对其参数的说明。

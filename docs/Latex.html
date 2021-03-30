@@ -470,7 +470,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb26-6"><a href="Latex.html#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">lstlisting</span>}        </span></code></pre></div>
 <p>分页时，若页眉页脚有中文，会报错，此时最好把代码再次嵌入figure的浮动体中。</p>
 <p>还有个我更喜欢的设置，</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb27-1"><a href="Latex.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\lstset</span>{language = R, basicstyle = {<span class="fu">\ttfamily\small</span>},keywordstyle = <span class="fu">\color</span>{RoyalBlue},frame = lines, commentstyle=<span class="fu">\color</span>{gray},breaklines=true}</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb27-1"><a href="Latex.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\lstset</span>{language = R, basicstyle = {<span class="fu">\ttfamily\small</span>},keywordstyle = <span class="fu">\color</span>{RoyalBlue},frame = lines, commentstyle=<span class="fu">\color</span>{gray},breaklines=true}</span>
+<span id="cb27-2"><a href="Latex.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">% 或者阴影边框</span></span>
+<span id="cb27-3"><a href="Latex.html#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\lstset</span>{language = R, basicstyle = {<span class="fu">\ttfamily\small</span>},keywordstyle = <span class="fu">\color</span>{RoyalBlue},frame = shadowbox, rulesepcolor=<span class="fu">\color</span>{gray},commentstyle=<span class="fu">\color</span>{gray},breaklines=true}</span></code></pre></div>
 </div>
 <div id="fancyvrb包" class="section level3" number="7.7.2">
 <h3><span class="header-section-number">7.7.2</span> <code>fancyvrb</code>包</h3>
