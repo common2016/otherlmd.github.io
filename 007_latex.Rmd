@@ -3,6 +3,12 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 # Latex {#Latex}
 ## 一句话Tips
+
+- 设置目录的深度，一般两个命令。仅用第一个命令会使得更深的目录缺乏编号。
+```tex
+\setcounter{tocdepth}{4} % 控制目录显示的深度
+\setcounter{secnumdepth}{3} % 控制目录显示的深度中，前面编号的显示深度。
+```
 - latex也可以写循环。加载`multido`包,如下语句表示从3开始，每次变量自增1，循环16次。这是把一个PDF文件拆分成单独的页面后加入latex的一个常见操作。
 ```tex
 \multido{\n=3+1}{16}{\noindent\includegraphics[scale=0.9]{RD复印 \n.pdf}\\}
