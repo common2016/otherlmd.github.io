@@ -2,6 +2,15 @@
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval = FALSE)
 ```
 # 其他小众软件 {#Other}
+
+## PDF文件压缩
+
+github上有个项目，windows下压缩PDF
+
+项目地址：https://github.com/pgodwin/PdfShrinker
+
+- 文件名不要有中文
+
 ## Eviews编程
 - 单引号`'`意味着评论。
 - 一行写不完，用下划线表示下一行接着来`_`，就像matlab里面的`...`。
