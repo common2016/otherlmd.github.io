@@ -2,6 +2,19 @@
 # Latex {#Latex}
 ## 一句话Tips
 
+- 表头添加一根斜线，使用`diagbox`包，例如，
+```tex
+\usepackage{diagbox}
+\begin{document}
+\begin{tabular}{|c|c|c|c|}
+	\hline
+	\diagbox{姓名}{成绩}{科目} & 语文 & 英语 & 数学\\ \hline
+	张三 & 87 & 66 & 98 \\ \hline
+	李四 & 78 & 78 & 76 \\ \hline
+	王五 & 90 & 93 & 81 \\ \hline
+\end{tabular}
+\end{document}
+```
 - 在beamer中加入Logo的话，在`\begin{documents}`之后使用如下命令`\logo{\includegraphics[height=1.5cm]{RM.jpg}}`。Logo的位置取决于模板。
 - 设置目录的深度，一般两个命令。仅用第一个命令会使得更深的目录缺乏编号。
 ```tex

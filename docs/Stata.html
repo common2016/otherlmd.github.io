@@ -223,9 +223,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8" data-path="Other.html"><a href="Other.html"><i class="fa fa-check"></i><b>8</b> 其他小众软件</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="Other.html"><a href="Other.html#eviews编程"><i class="fa fa-check"></i><b>8.1</b> Eviews编程</a></li>
-<li class="chapter" data-level="8.2" data-path="Other.html"><a href="Other.html#noteexpress样式设置"><i class="fa fa-check"></i><b>8.2</b> NoteExpress样式设置</a></li>
-<li class="chapter" data-level="8.3" data-path="Other.html"><a href="Other.html#filezilla"><i class="fa fa-check"></i><b>8.3</b> FileZilla</a></li>
+<li class="chapter" data-level="8.1" data-path="Other.html"><a href="Other.html#pdf文件压缩"><i class="fa fa-check"></i><b>8.1</b> PDF文件压缩</a></li>
+<li class="chapter" data-level="8.2" data-path="Other.html"><a href="Other.html#eviews编程"><i class="fa fa-check"></i><b>8.2</b> Eviews编程</a></li>
+<li class="chapter" data-level="8.3" data-path="Other.html"><a href="Other.html#noteexpress样式设置"><i class="fa fa-check"></i><b>8.3</b> NoteExpress样式设置</a></li>
+<li class="chapter" data-level="8.4" data-path="Other.html"><a href="Other.html#filezilla"><i class="fa fa-check"></i><b>8.4</b> FileZilla</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -254,7 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>回归完成，使用<code>predict</code>可以得到拟合值，残差等序列。如<code>predict yres, resid</code>则得到名为<code>yres</code>的残差。</li>
 <li><code>matrix list A</code>: 显示矩阵</li>
 <li><code>outfile v1 v2 v3 using mydata.csv, comma</code> 输出逗号分割的csv文件。</li>
-<li></li>
+<li>外部命令把矩阵保存为dta格式：<code>matsave A, replace p("matrices") saving</code>意味着把矩阵A保存在<code>dir/matrices/</code>下。</li>
 <li>季节调整，外部命令<code>sax12</code></li>
 <li>从变量名<code>income</code>生成一个新的变量名如<code>income_y</code>，则可以如下操作：</li>
 </ol>

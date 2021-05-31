@@ -7,7 +7,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,eval = FALSE
 2. 回归完成，使用`predict`可以得到拟合值，残差等序列。如`predict yres, resid`则得到名为`yres`的残差。
 3. `matrix list A`: 显示矩阵
 4. `outfile v1 v2 v3 using mydata.csv, comma` 输出逗号分割的csv文件。
-5. 
+5. 外部命令把矩阵保存为dta格式：`matsave A, replace p("matrices") saving`意味着把矩阵A保存在`dir/matrices/`下。
 6. 季节调整，外部命令`sax12`
 7. 从变量名`income`生成一个新的变量名如`income_y`，则可以如下操作：
 ```stata
