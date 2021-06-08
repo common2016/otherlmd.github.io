@@ -56,3 +56,5 @@ pdf文件压缩
 eviews编程
 noteexpress样式设置
 filezilla
+表格相关
+beamer相关

@@ -4,20 +4,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 # Latex {#Latex}
 ## 一句话Tips
 
-- 表头添加一根斜线，使用`diagbox`包，例如，
-```tex
-\usepackage{diagbox}
-\begin{document}
-\begin{tabular}{|c|c|c|c|}
-	\hline
-	\diagbox{姓名}{成绩}{科目} & 语文 & 英语 & 数学\\ \hline
-	张三 & 87 & 66 & 98 \\ \hline
-	李四 & 78 & 78 & 76 \\ \hline
-	王五 & 90 & 93 & 81 \\ \hline
-\end{tabular}
-\end{document}
-```
-- 在beamer中加入Logo的话，在`\begin{documents}`之后使用如下命令`\logo{\includegraphics[height=1.5cm]{RM.jpg}}`。Logo的位置取决于模板。
+
 - 设置目录的深度，一般两个命令。仅用第一个命令会使得更深的目录缺乏编号。
 ```tex
 \setcounter{tocdepth}{4} % 控制目录显示的深度
@@ -36,9 +23,9 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 \heiti\zihao{1} 江西省第十九次社会科学优秀成果奖附件材料		
 	\end{center}
 ```
-- 调整表格的行高，可以在每行开始前设置`\rule{0pt}{50pt}`这个50pt就是行高。
+
 - 使用`listing`包输入代码时，很多时候我都是输入R语言，R语言里面会有一个美元符号，我们需要将这个符号“逃逸”，即在选项中设置`[mathescape=false]`。关于逃逸，更多细节可以见包的说明文档。
-- beamer中也是可以插入代码的，可以使用`listings`包，不过在使用代码的那个`frame`必须要加一个选项`[fragile]`。
+
 - 小写罗马字母，
 ```latex
 % 小写罗马字母\rmnum{2}
@@ -46,32 +33,14 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 % 大写罗马字母\Rmnum{2}
 \newcommand{\Rmnum}[1]{\uppercase\expandafter{\romannumeral #1}}
 ```
-- 让表格从4开始编号`\setcounter{table}{3}`
-- `\cline{2-4}`紧跟在`\\`后，表示表格中从第2列至第4列划一条横线
+
 - `pifont`包的`\ding{172}`提供了带圈的1的数字。
 - 可定义如下环境给某段文字加上上下边框双横线，比如我在审稿意见中经常使用。
 ```tex
 \newenvironment{myequestion}{\noindent\makebox[0pt][l]{\rule[-1.5mm]{45em}{0.5pt}}\rule[-0.7mm]{45em}{0.5pt}\par}{\par \noindent\makebox[0pt][l]{\rule[3mm]{45em}{0.5pt}}\rule[3.8mm]{45em}{0.5pt}\par}
 ```
 - 给中文加下划线、波浪线等，用`xeCJKfntef`包，这样使用`\CJKunderline`或者`\CJKunderwave`等命令加了下划线等就能自动换行。
-- 如何在beamer中设置颜色？使用普通的color包或者xcolor包都会报错，它有自己的一套办法。
-```tex
-% 首先设置好颜色，并命名为myblue
-\setbeamercolor{myblue}{fg=blue!80!black} % 这是以感叹作为分隔符的三色设置
-% 然后在需要的地方使用
-\textbf{\usebeamercolor[fg]{myblue}背景}
-```
-- 表格横置：
-```tex
-\usepackage{lscape}
-\begin{document}
 
-\begin{landscape}
-This is a landscape page.
-\end{landscape}
-
-\end{document}
-```
 - 页面横置
 ```tex
 \usepackage{pdflscape}
@@ -83,11 +52,7 @@ This is a landscape page.
 - 在命令行输入`texdoc ctex`会打开`ctex`包的说明文件。
 - `input/output`就不会在斜杠符号处被断词。如果希望这类东西被中断，可以将斜杠符号改为`\slash`。
 - 下载TexLive作为Tex的内核，而不是ctex，因为前者不断在更新，更加优化。
-- 表格跨行使用`multirow`包。语法命令格式如下，
- ```latex
- \multirow{行数}{宽度}{内容}
- \multirow{行数}*{内容} 
- ```
+
 - 中文标签乱码：使用如下选项即可。
 ```tex
 \documentclass[hyperref, UTF8]{ctexart}
@@ -102,6 +67,85 @@ This is a landscape page.
 - 使用`framed`包，用`\begin{framed}\end{framed}`环境可以给整段文字加边框。
 - `\pagestyle{empty}`当前及后续页无页眉
 - `\renewcommand\refname{参考文献}`把"Reference"变成“参考文献”。
+
+## `beamer`相关
+
+- 在beamer中加入Logo的话，在`\begin{documents}`之后使用如下命令`\logo{\includegraphics[height=1.5cm]{RM.jpg}}`。Logo的位置取决于模板。
+- 如何在beamer中设置颜色？使用普通的color包或者xcolor包都会报错，它有自己的一套办法。
+```tex
+% 首先设置好颜色，并命名为myblue
+\setbeamercolor{myblue}{fg=blue!80!black} % 这是以感叹作为分隔符的三色设置
+% 然后在需要的地方使用
+\textbf{\usebeamercolor[fg]{myblue}背景}
+```
+- beamer中也是可以插入代码的，可以使用`listings`包，不过在使用代码的那个`frame`必须要加一个选项`[fragile]`。
+
+## 表格相关
+
+- 表头添加一根斜线，使用`diagbox`包，例如，
+```tex
+\usepackage{diagbox}
+\begin{document}
+\begin{tabular}{|c|c|c|c|}
+	\hline
+	\diagbox{姓名}{成绩}{科目} & 语文 & 英语 & 数学\\ \hline
+	张三 & 87 & 66 & 98 \\ \hline
+	李四 & 78 & 78 & 76 \\ \hline
+	王五 & 90 & 93 & 81 \\ \hline
+\end{tabular}
+\end{document}
+```
+- 调整表格的行高，使用`array`包的`\renewcommand{\arraystretch}{2}`更佳，默认是1，它表示行与行之间的距离系数是1。该命令放在`\begin{table}`之后即可。
+- 让表格从4开始编号`\setcounter{table}{3}`
+- `\cline{2-4}`紧跟在`\\`后，表示表格中从第2列至第4列划一条横线
+- 表格横置：
+```tex
+\usepackage{lscape}
+\begin{document}
+
+\begin{landscape}
+This is a landscape page.
+\end{landscape}
+
+\end{document}
+```
+- 表格跨行使用`multirow`包。语法命令格式如下，
+ ```latex
+ \multirow{行数}{宽度}{内容}
+ \multirow{行数}*{内容} 
+ ```
+
+### 长表格
+```tex
+\usepackage{supertabular}
+\begin{center}
+\small
+	\tablecaption{变量描述\label{var}}
+	\tablefirsthead{\hline\multicolumn{1}{c}{变量}&\multicolumn{1}{c}{含义}&\multicolumn{1}{c}{2018年变量编码}&\multicolumn{1}{c}{2016年变量编码}&\multicolumn{1}{c}{2014年变量编码}&\multicolumn{1}{c}{2010年变量编码}\\\hline}
+	\tablehead{\multicolumn{6}{r}{表 \ref{var} (续)}\\\hline
+	\multicolumn{1}{l}{变量}&\multicolumn{1}{l}{含义}&\multicolumn{1}{l}{2018年变量编码}&\multicolumn{1}{l}{2016年变量编码}&\multicolumn{1}{l}{2014年变量编码}&\multicolumn{1}{l}{2010年变量编码}\\\hline}
+\tabletail{\hline}
+	\begin{supertabular}{lllllp{10mm}}
+withsons & 同子女关系如何 & qf1\_a\_1 & qf1\_a\_1 &  & qf1\_a\_1\\
+		worktime & 每周工作时间（小时） & qg6   & qg6   & qg6 &qg504\\	
+		\end{supertabular}
+```
+注意三个参数：
+
+- `\tablecaption{}`:整个表格标题
+- `\tablefirsthead{}`:首页表格标题
+- `\tablehead{}`:续页表格标题
+- `\tabletail{}`:分页时表格底部写啥，一根线就直接用`\hline`
+排版效果如下：见有道截图
+
+长表格的一个最大优点就是可以跨页排版，有时不用那么复杂，只需要使用`\endfirsthead`命令来结束表头，其他与普通表格一致即可达到想要的效果。如，
+```latex
+\begin{longtable}{c|c}
+	\caption{内生性分析}\\\hline\endfirsthead
+	A&B\\
+	C&D
+	\end{longtable}
+```
 
 ## 章节标题格式修改
 - 如果想从某页开始章节重新编号，可以在该处输入命令，
@@ -189,37 +233,7 @@ format + = {\songti\zihao{5}}]{subsubsection} % 第三层标题变成 1，2，..
 \usepackage{fontspec}
 {\fontspec{times.ttf}I am TImes New Roman}
 ```
-## 长表格
-```tex
-\usepackage{supertabular}
-\begin{center}
-\small
-	\tablecaption{变量描述\label{var}}
-	\tablefirsthead{\hline\multicolumn{1}{c}{变量}&\multicolumn{1}{c}{含义}&\multicolumn{1}{c}{2018年变量编码}&\multicolumn{1}{c}{2016年变量编码}&\multicolumn{1}{c}{2014年变量编码}&\multicolumn{1}{c}{2010年变量编码}\\\hline}
-	\tablehead{\multicolumn{6}{r}{表 \ref{var} (续)}\\\hline
-	\multicolumn{1}{l}{变量}&\multicolumn{1}{l}{含义}&\multicolumn{1}{l}{2018年变量编码}&\multicolumn{1}{l}{2016年变量编码}&\multicolumn{1}{l}{2014年变量编码}&\multicolumn{1}{l}{2010年变量编码}\\\hline}
-\tabletail{\hline}
-	\begin{supertabular}{lllllp{10mm}}
-withsons & 同子女关系如何 & qf1\_a\_1 & qf1\_a\_1 &  & qf1\_a\_1\\
-		worktime & 每周工作时间（小时） & qg6   & qg6   & qg6 &qg504\\	
-		\end{supertabular}
-```
-注意三个参数：
 
-- `\tablecaption{}`:整个表格标题
-- `\tablefirsthead{}`:首页表格标题
-- `\tablehead{}`:续页表格标题
-- `\tabletail{}`:分页时表格底部写啥，一根线就直接用`\hline`
-排版效果如下：见有道截图
-
-长表格的一个最大优点就是可以跨页排版，有时不用那么复杂，只需要使用`\endfirsthead`命令来结束表头，其他与普通表格一致即可达到想要的效果。如，
-```latex
-\begin{longtable}{c|c}
-	\caption{内生性分析}\\\hline\endfirsthead
-	A&B\\
-	C&D
-	\end{longtable}
-```
 
 
 ## 我的R代码排版模版
@@ -369,50 +383,5 @@ a <- 3
 \[ f'(k_t) +(1-\delta) = \frac{u'(c_{t-1})}{\beta u'(c_{t})}\]
 这就是著名的欧拉方程。
 	\end{framed}
-\end{document}
-```
-### 华东交大期末考试试卷新版模板
-```tex
-\documentclass[UTF8]{ctexart}
-%\usepackage[UTF8]{ctex}%中文宏包
-\usepackage{amsmath,bm,amsfonts,amssymb,fancyhdr}%数学宏包，amsfonts,amssymb是插入空心字母的包，使用命令\mathbb{}
-\numberwithin{equation}{section}%公式按节进行编号
-\usepackage[dvipsnames]{xcolor}
-\usepackage[a4paper,left=2.14cm,right=2.14cm,bottom=2cm,top=2cm]{geometry}%页面设置宏包
-
-% 定义页眉页脚
-\pagestyle{fancy}
-\fancyhf{}
-\cfoot{第\thepage 页，共2页，反面有试题} %% 注意修改
-\renewcommand{\footrulewidth}{0.6pt} %添加页脚横线
-
-%设置section的格式
-\CTEXsetup[name={,、},number={\chinese{section}},format={\raggedright\heiti\zihao{4}},aftername={\hspace{0em}}]{section}
-%opening
-\usepackage{graphicx,picinpar,multicol,bm,float}
-
-\begin{document}
-%	\maketitle
-\centering\zihao{2} 华东交通大学2017—2018学年第一学期考试卷
-
-\raggedleft\zihao{4}\fangsong（　）卷
-
-\raggedright 课程名称：\underline{\hspace{10em}} 考试时间：\underline{\hspace{4em}}分钟
-
-适用对象：\underline{\hspace{10em}} 考试方式：闭卷（ ）、开卷（ ）范围：  
-
-\section{简答题(每题10分，共40分)}
-\songti \zihao{-4}
-\begin{enumerate}
-	\item 	 要保证 的无偏性需要哪几个假设？为得到最优线性无偏估计量，还需要哪个假定？
-	\item 下面哪些因素会导致OLS估计量出现偏误？
-	\begin{enumerate}
-		\item 异方差性\item 遗漏一个重要变量\item 模型中包含的两个自变量，它们之间的样本相关系数达到0.95
-	\end{enumerate}
-	\item 简述OLS的估计原理。
-	\item 简述F统计量检验多重约束的步骤和思路。	
-\end{enumerate}
-\section{计算题（20分）}
-
 \end{document}
 ```
