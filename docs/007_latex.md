@@ -77,6 +77,7 @@
 \textbf{\usebeamercolor[fg]{myblue}背景}
 ```
 - beamer中也是可以插入代码的，可以使用`listings`包，不过在使用代码的那个`frame`必须要加一个选项`[fragile]`。
+- bemaer中可以分栏，载入包`multicol`，使用`\begin{multicols}{2}巴拉巴拉\end{multicols}`就是2栏。
 
 ## 表格相关
 
