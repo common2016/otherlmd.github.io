@@ -16,6 +16,17 @@ github上有个项目，windows下压缩PDF
 - 一行写不完，用下划线表示下一行接着来`_`，就像matlab里面的`...`。
 - 
 
+## GAUSS
+
+- 可以使用学生证申请它的light版，(网址)[https://www.aptech.com/industry-solutions/gauss-in-education/students/]
+- F4类似于R里面的`ctrl+enter`，如果选中则运行选中行，没选中则运行当前行。
+- GAUSS在函数中，如果没有使用类似`local x y`方式定义的变量，都是全局变量，会在函数中修改函数外的值。
+
+### 系统函数
+
+- `cdir(0)`返回当前工作目录
+- `chdir E:\17_HuaDong\learn\HM2009\PythonCode\ch9_code_2nd_gauss;`修改当前工作目录
+
 
 ## NoteExpress样式设置
 - 对于空格的处理，以`*`号连接，如
