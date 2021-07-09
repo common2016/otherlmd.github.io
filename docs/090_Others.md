@@ -19,6 +19,7 @@ github上有个项目，windows下压缩PDF
 - 可以使用学生证申请它的light版，(网址)[https://www.aptech.com/industry-solutions/gauss-in-education/students/]
 - F4类似于R里面的`ctrl+enter`，如果选中则运行选中行，没选中则运行当前行。
 - GAUSS在函数中，如果没有使用类似`local x y`方式定义的变量，都是全局变量，会在函数中修改函数外的值。
+- `include myfile.src`将`myfile.src`文件中的内容插入到当前脚本中。但是该命令不能在控制台执行，而只能嵌入在脚本中。要在控制台中达到相同的效果应该使用`run myfile.src`。
 
 ### 系统函数
 
