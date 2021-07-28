@@ -4,7 +4,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 # Latex {#Latex}
 ## 一句话Tips
 
-
+- 用`tikz`包可以生成PDF图片，此时可以用Adobe PDF 将其转换成SVG格式的矢量图，再利用Visio将其转换成word可以用的wmf格式的矢量图。
 - 设置目录的深度，一般两个命令。仅用第一个命令会使得更深的目录缺乏编号。
 ```tex
 \setcounter{tocdepth}{4} % 控制目录显示的深度
