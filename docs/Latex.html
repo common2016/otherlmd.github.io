@@ -258,7 +258,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="一句话tips-3" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> 一句话Tips</h2>
 <ul>
-<li>用<code>tikz</code>包可以生成PDF图片，此时可以用Adobe PDF 将其转换成SVG格式的矢量图，再利用Visio将其转换成word可以用的wmf格式的矢量图。</li>
+<li>用<code>tikz</code>包可以生成PDF图片，此时可以在命令行用<code>pdftocairo -svg picture.pdf</code>将这个pdf文件转成SVG 格式的矢量图，只要安装了texlive就会有pdftocairo命令。再利用Visio将其转换成word可以用的wmf格式的矢量图。</li>
 <li>设置目录的深度，一般两个命令。仅用第一个命令会使得更深的目录缺乏编号。</li>
 </ul>
 <div class="sourceCode" id="cb5"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb5-1"><a href="Latex.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\setcounter</span>{tocdepth}{4} <span class="co">% 控制目录显示的深度</span></span>
