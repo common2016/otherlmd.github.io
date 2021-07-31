@@ -2,6 +2,7 @@
 # Latex {#Latex}
 ## 一句话Tips
 
+- `xpinyin`包可以生成拼音，比如`\xpinyin*{好}`可以在其上方产生拼音，也可以自己设拼音，还可以设环境。可以参见其说明文档，是中文的。
 - 用`tikz`包可以生成PDF图片，此时可以在命令行用`pdftocairo -svg picture.pdf`将这个pdf文件转成SVG 格式的矢量图，只要安装了texlive就会有pdftocairo命令。再利用Visio将其转换成word可以用的wmf格式的矢量图。
 - 设置目录的深度，一般两个命令。仅用第一个命令会使得更深的目录缺乏编号。
 ```tex
