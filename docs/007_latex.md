@@ -13,6 +13,7 @@
 ```tex
 \multido{\n=3+1}{16}{\noindent\includegraphics[scale=0.9]{RD复印 \n.pdf}\\}
 ```
+- 使用`pdfpages`包可以插入pdf文件，命令比如：`\includepdf[pages={1,2}]{1.pdf} `
 - 定制封面页时，要使第一行下沉几行，可以这样：
 ```tex
  \hspace{2em}
