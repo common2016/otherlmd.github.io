@@ -2,6 +2,8 @@
 # Latex {#Latex}
 ## 一句话Tips
 
+- 在命令行输入`texcount your_tex_file.tex`可以计数文件中的字符。
+- 让表格从4开始编号`\setcounter{table}{3}`，让页码重新编号`\setcounter{page}{3}`，以此类推。
 - `xpinyin`包可以生成拼音，比如`\xpinyin*{好}`可以在其上方产生拼音，也可以自己设拼音，还可以设环境。可以参见其说明文档，是中文的。
 - 用`tikz`包可以生成PDF图片，此时可以在命令行用`pdftocairo -svg picture.pdf`将这个pdf文件转成SVG 格式的矢量图，只要安装了texlive就会有pdftocairo命令。再利用Visio将其转换成word可以用的wmf格式的矢量图。
 - 设置目录的深度，一般两个命令。仅用第一个命令会使得更深的目录缺乏编号。
@@ -97,7 +99,6 @@
 \end{document}
 ```
 - 调整表格的行高，使用`array`包的`\renewcommand{\arraystretch}{2}`更佳，默认是1，它表示行与行之间的距离系数是1。该命令放在`\begin{table}`之后即可。
-- 让表格从4开始编号`\setcounter{table}{3}`
 - `\cline{2-4}`紧跟在`\\`后，表示表格中从第2列至第4列划一条横线
 - 表格横置：
 ```tex

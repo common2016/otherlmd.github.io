@@ -290,6 +290,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="noteexpress样式设置" class="section level2" number="8.4">
 <h2><span class="header-section-number">8.4</span> NoteExpress样式设置</h2>
 <ul>
+<li>参考文献中文在前，英文在后，首先把文献的字段“语言”凡是英文的改为“English”，然后排序的时候先按语言排即可。</li>
 <li>对于空格的处理，以<code>*</code>号连接，如</li>
 </ul>
 <pre><code>作者.标题[J].期刊,年份,卷|(期)|:*页码|.</code></pre>
@@ -369,6 +370,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
