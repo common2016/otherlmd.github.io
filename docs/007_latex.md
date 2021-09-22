@@ -85,6 +85,7 @@
 
 ## 表格相关
 
+- 给表格添加颜色，载入`colorbl`包，`\cellcolor[gray]{.7}`设置单元格颜色，`\rowcolor[gray]{0.7}`设置行颜色，列颜色设置可以参见胡伟(2013, p231)。
 - 表头添加一根斜线，使用`diagbox`包，例如，
 ```tex
 \usepackage{diagbox}
