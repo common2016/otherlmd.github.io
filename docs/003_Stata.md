@@ -117,13 +117,15 @@ END_OF_R
  rsource using nitz2.R, rpath(D:\Program Files\R-3.5.0\bin\R.exe) roptions(--vanilla)
  ```
 ## Miscellaneous
+
+- `adopath`可以查看ado文件存放的路径，如果你安装了外部包，想查看它的源代码，可以用这个命令看看路径在哪里。比如我的默认就在`"C:\Users\Administrator\ado\plus/"`。
 - `wbopendata`包的使用
 ```stata
 ssc install wbopendata //下载世界银行数据
 db wbopendata //一个GUI下载界面
 ```
 - `icio`投入产出分析，koopman et al. (2014)的方法
-- stata15有一个阈值非线性估计命令threshold非常好用：通过AIC，SC和HQIC来选择阈值的个数，最小的就是最合适的。
+- stata15有一个阈值非线性估计命令`threshold`非常好用：通过AIC，SC和HQIC来选择阈值的个数，最小的就是最合适的。
 - `egi`：计算EG指数。
 - stata中文乱码问题
 

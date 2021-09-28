@@ -379,13 +379,14 @@ svmat double b, n(beta)</code></pre>
 <div id="miscellaneous" class="section level2" number="3.6">
 <h2><span class="header-section-number">3.6</span> Miscellaneous</h2>
 <ul>
+<li><code>adopath</code>可以查看ado文件存放的路径，如果你安装了外部包，想查看它的源代码，可以用这个命令看看路径在哪里。比如我的默认就在<code>"C:\Users\Administrator\ado\plus/"</code>。</li>
 <li><code>wbopendata</code>包的使用</li>
 </ul>
 <div class="sourceCode" id="cb23"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb23-1"><a href="Stata.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ssc</span> install wbopendata <span class="co">//下载世界银行数据</span></span>
 <span id="cb23-2"><a href="Stata.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">db</span> wbopendata <span class="co">//一个GUI下载界面</span></span></code></pre></div>
 <ul>
 <li><code>icio</code>投入产出分析，koopman et al. (2014)的方法</li>
-<li>stata15有一个阈值非线性估计命令threshold非常好用：通过AIC，SC和HQIC来选择阈值的个数，最小的就是最合适的。</li>
+<li>stata15有一个阈值非线性估计命令<code>threshold</code>非常好用：通过AIC，SC和HQIC来选择阈值的个数，最小的就是最合适的。</li>
 <li><code>egi</code>：计算EG指数。</li>
 <li>stata中文乱码问题</li>
 </ul>
