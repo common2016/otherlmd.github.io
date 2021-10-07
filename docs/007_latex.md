@@ -2,6 +2,17 @@
 # Latex {#Latex}
 ## 一句话Tips
 
+- 页面横置：
+```tex
+\usepackage{pdflscape}
+\begin{document}
+
+\begin{landscape}
+This is a landscape page.
+\end{landscape}
+
+\end{document}
+```
 - 在命令行输入`texcount your_tex_file.tex`可以计数文件中的字符。
 - 让表格从4开始编号`\setcounter{table}{3}`，让页码重新编号`\setcounter{page}{3}`，以此类推。
 - `xpinyin`包可以生成拼音，比如`\xpinyin*{好}`可以在其上方产生拼音，也可以自己设拼音，还可以设环境。可以参见其说明文档，是中文的。
@@ -101,17 +112,7 @@
 ```
 - 调整表格的行高，使用`array`包的`\renewcommand{\arraystretch}{2}`更佳，默认是1，它表示行与行之间的距离系数是1。该命令放在`\begin{table}`之后即可。
 - `\cline{2-4}`紧跟在`\\`后，表示表格中从第2列至第4列划一条横线
-- 表格横置：
-```tex
-\usepackage{lscape}
-\begin{document}
 
-\begin{landscape}
-This is a landscape page.
-\end{landscape}
-
-\end{document}
-```
 - 表格跨行使用`multirow`包。语法命令格式如下，
  ```latex
  \multirow{行数}{宽度}{内容}
