@@ -275,9 +275,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">8.3</span> GAUSS</h2>
 <ul>
 <li>可以使用学生证申请它的light版，(网址)[<a href="https://www.aptech.com/industry-solutions/gauss-in-education/students/" class="uri">https://www.aptech.com/industry-solutions/gauss-in-education/students/</a>]</li>
-<li>F4类似于R里面的<code>ctrl+enter</code>，如果选中则运行选中行，没选中则运行当前行。</li>
+<li>F4类似于R里面的<code>ctrl+enter</code>，如果选中则运行选中行，没选中则运行当前行。运行整个代码使用Ctrl+R。</li>
 <li>GAUSS在函数中，如果没有使用类似<code>local x y</code>方式定义的变量，都是全局变量，会在函数中修改函数外的值。</li>
-<li><code>include myfile.src</code>将<code>myfile.src</code>文件中的内容插入到当前脚本中。但是该命令不能在控制台执行，而只能嵌入在脚本中。要在控制台中达到相同的效果应该使用<code>run myfile.src</code>。</li>
+<li><code>#include myfile.src</code>将<code>myfile.src</code>文件中的内容插入到当前脚本中，类似于R语言中的<code>source()</code>。但是该命令不能在控制台执行，而只能嵌入在脚本中。要在控制台中达到相同的效果应该使用<code>run myfile.src</code>。</li>
+<li>GAUSS也有自己的库，它调用库的命令与R类似，如<code>library pgraph;</code></li>
 </ul>
 <div id="系统函数" class="section level3" number="8.3.1">
 <h3><span class="header-section-number">8.3.1</span> 系统函数</h3>
@@ -370,20 +371,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
