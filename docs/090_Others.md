@@ -21,6 +21,7 @@ github上有个项目，windows下压缩PDF
 - GAUSS在函数中，如果没有使用类似`local x y`方式定义的变量，都是全局变量，会在函数中修改函数外的值。
 - `#include myfile.src`将`myfile.src`文件中的内容插入到当前脚本中，类似于R语言中的`source()`。但是该命令不能在控制台执行，而只能嵌入在脚本中。要在控制台中达到相同的效果应该使用`run myfile.src`。
 - GAUSS也有自己的库，它调用库的命令与R类似，如`library pgraph; `
+- `a|b`垂直连接矩阵a和b, `a~b`水平连接矩阵a和b。
 
 ### 系统函数
 

@@ -279,6 +279,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>GAUSS在函数中，如果没有使用类似<code>local x y</code>方式定义的变量，都是全局变量，会在函数中修改函数外的值。</li>
 <li><code>#include myfile.src</code>将<code>myfile.src</code>文件中的内容插入到当前脚本中，类似于R语言中的<code>source()</code>。但是该命令不能在控制台执行，而只能嵌入在脚本中。要在控制台中达到相同的效果应该使用<code>run myfile.src</code>。</li>
 <li>GAUSS也有自己的库，它调用库的命令与R类似，如<code>library pgraph;</code></li>
+<li><code>a|b</code>垂直连接矩阵a和b, <code>a~b</code>水平连接矩阵a和b。</li>
 </ul>
 <div id="系统函数" class="section level3" number="8.3.1">
 <h3><span class="header-section-number">8.3.1</span> 系统函数</h3>
