@@ -2,6 +2,11 @@
 # Latex {#Latex}
 ## 一句话Tips
 
+- 使用`include`后不分页，可以
+```tex
+\usepackage{newclude}
+\include*{filepath/filename}
+```
 - 页面横置：
 ```tex
 \usepackage{pdflscape}
