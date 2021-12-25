@@ -149,6 +149,7 @@ withsons & 同子女关系如何 & qf1\_a\_1 & qf1\_a\_1 &  & qf1\_a\_1\\
 
 长表格的一个最大优点就是可以跨页排版，有时不用那么复杂，只需要使用`\endfirsthead`命令来结束表头，其他与普通表格一致即可达到想要的效果。如，
 ```latex
+\usepackage{longtable}
 \begin{longtable}{c|c}
 	\caption{内生性分析}\\\hline\endfirsthead
 	A&B\\
