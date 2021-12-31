@@ -1,0 +1,26 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,eval = FALSE)
+```
+# 博客 {#Blog}
+
+利用github搭建个人网站可遵循如下思路：利用jekyll工具来生成静态网页。
+
+1. 安装Ruby, bundler, jekyll三个工具，这是在本地改博客时需要的工具。
+  - 去Ruby官网下载最新的Ruby软件，并安装好
+  - 进入命令行，使用`gem install bundler`安装bundler
+  - 然后使用`gem install jekyll`安装jekyll
+  - 使用`jekyll --versiton`查看安装的是哪个版本，运行成功说明OK。出现问题，可以参看[此处](https://blog.csdn.net/yq_forever/article/details/103449709)的讲解。
+  - 对于我们下面推荐的这个博客模板可以使用`bundle exec jekyll liveserve`命令，然后在浏览器上使用`http://127.0.0.1:4000/`在本地查看自己的博客长啥样，并修改。
+  
+  
+2. 从头建站破费周章，作为科研人，我推荐一个模板，直接从github上fork到你自己的账户里面，然后做一些必要的修改即可。[推荐的模板地址](https://github.com/academicpages/academicpages.github.io)。
+
+  - 主要修改一下`_config.yml`。注意里面那个url的值是你的网站的网址，由github分配，比如我的就是`https://common2016.github.io/chenpu.github.io`
+  - `_Pages`里面存储了每个链接下第一个页面，比如`about.md`就是首页的内容。
+  
+3. 一些可能的问题。
+ - `No GitHub API authentication could be found`, 参见[这里](https://mycyberuniverse.com/fixing-jekyll-github-metadata-warning.html)
+ 
+ 
+4. 一些常见的困惑。
+  - 比如你在`_publications`里面增加了一个文件`factor`，但是在本地浏览器却看不到，你要注意：浏览器地址是github的地址还是本地地址。这个地址往往是`publication/factor`而不是`_publications/factor`，你可以结合fork的那个网站来检查。

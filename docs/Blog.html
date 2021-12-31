@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1 Maple | 编程语言笔记</title>
-  <meta name="description" content="1 Maple | 编程语言笔记" />
+  <title>8 博客 | 编程语言笔记</title>
+  <meta name="description" content="8 博客 | 编程语言笔记" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1 Maple | 编程语言笔记" />
+  <meta property="og:title" content="8 博客 | 编程语言笔记" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 Maple | 编程语言笔记" />
+  <meta name="twitter:title" content="8 博客 | 编程语言笔记" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="Julia.html"/>
+<link rel="prev" href="Latex.html"/>
+<link rel="next" href="Other.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -254,121 +254,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="Maple" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Maple</h1>
-<div id="快捷键" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> 快捷键</h2>
+<div id="Blog" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> 博客</h1>
+<p>利用github搭建个人网站可遵循如下思路：利用jekyll工具来生成静态网页。</p>
+<ol style="list-style-type: decimal">
+<li>安装Ruby, bundler, jekyll三个工具，这是在本地改博客时需要的工具。</li>
+</ol>
 <ul>
-<li><code>ctrl+del</code>删除全行</li>
-<li><code>ctrl+K,ctrl+J</code>在前或后插入一行</li>
-<li><code>?plot</code>看帮助</li>
-<li><code>with(plottools)</code>载入包</li>
-<li><code>F5</code>文本和数学之间切换，<code>shift+F5</code>，可执行的公式和不可执行的公式之间切换。</li>
+<li>去Ruby官网下载最新的Ruby软件，并安装好</li>
+<li>进入命令行，使用<code>gem install bundler</code>安装bundler</li>
+<li>然后使用<code>gem install jekyll</code>安装jekyll</li>
+<li>使用<code>jekyll --versiton</code>查看安装的是哪个版本，运行成功说明OK。出现问题，可以参看<a href="https://blog.csdn.net/yq_forever/article/details/103449709">此处</a>的讲解。</li>
+<li>对于我们下面推荐的这个博客模板可以使用<code>bundle exec jekyll liveserve</code>命令，然后在浏览器上使用<code>http://127.0.0.1:4000/</code>在本地查看自己的博客长啥样，并修改。</li>
 </ul>
-</div>
-<div id="几个基本的代数处理" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> 几个基本的代数处理</h2>
-<!-- 通常`simplify,combine,expand,convert`进行化简 -->
+<ol start="2" style="list-style-type: decimal">
+<li>从头建站破费周章，作为科研人，我推荐一个模板，直接从github上fork到你自己的账户里面，然后做一些必要的修改即可。<a href="https://github.com/academicpages/academicpages.github.io">推荐的模板地址</a>。</li>
+</ol>
 <ul>
-<li>复合函数<span class="math inline">\(f(g(x))\)</span>可以写成，<code>(evalf@arccos)(2/3)</code>，这就对反余弦进行了数值评价</li>
-<li><code>factor,expand,simplify，collect</code>会进行因式分解，多项式展开，化简，合并同类项。带有附加关系的化简,<code>simplify(expr, {x*z=1})</code></li>
+<li>主要修改一下<code>_config.yml</code>。注意里面那个url的值是你的网站的网址，由github分配，比如我的就是<code>https://common2016.github.io/chenpu.github.io</code></li>
+<li><code>_Pages</code>里面存储了每个链接下第一个页面，比如<code>about.md</code>就是首页的内容。</li>
 </ul>
-</div>
-<div id="产生序列" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> 产生序列</h2>
-<p>中括号产生list，它是有序的。大括号产生集合，它是无序的。下面的代码可以产生一系列值。</p>
-<pre><code>L:= [a1,a2,a3]:
-map(f, L)
-# [f(a1),f(a2),f(a3)]</code></pre>
-<p>可以使用<code>L[i..j]</code>来选择集合中的元素，也可以使用<code>op(i..j,L)</code>来选择多个元素。当然，使用<code>seq</code>函数也能产生一系列值。</p>
-<pre><code>[seq(f(n),n=n1..n2)]</code></pre>
-</div>
-<div id="函数定义" class="section level2" number="1.4">
-<h2><span class="header-section-number">1.4</span> 函数定义</h2>
+<ol start="3" style="list-style-type: decimal">
+<li>一些可能的问题。</li>
+</ol>
 <ul>
-<li>简单函数定义：<code>f:=x-&gt;(1+x)^(1/x)</code></li>
-<li>复杂函数定义：</li>
+<li><code>No GitHub API authentication could be found</code>, 参见<a href="https://mycyberuniverse.com/fixing-jekyll-github-metadata-warning.html">这里</a></li>
 </ul>
-<pre><code>f:=proc(x)
-(1+x)^(1/x)
-end proc:</code></pre>
-<div id="参数的宣称" class="section level3" number="1.4.1">
-<h3><span class="header-section-number">1.4.1</span> 参数的宣称</h3>
+<ol start="4" style="list-style-type: decimal">
+<li>一些常见的困惑。</li>
+</ol>
 <ul>
-<li>如下写法可以按位置给参数赋值</li>
-</ul>
-<pre><code>f := proc(a::integer := 10, b::expects(integer) := 100.1) a + b end proc:</code></pre>
-<ul>
-<li>也可以按参数名称赋值，但写法略有不同</li>
-</ul>
-<pre><code>f := proc( { simple::integer := 2 } )
-    sprintf(&quot;simple=%d&quot;,simple)
-end proc:</code></pre>
-</div>
-</div>
-<div id="控制流" class="section level2" number="1.5">
-<h2><span class="header-section-number">1.5</span> 控制流</h2>
-<ul>
-<li>条件语句：</li>
-</ul>
-<pre><code>if ...then...
-elif...then...
-else ... 
-end if:</code></pre>
-</div>
-<div id="画图" class="section level2" number="1.6">
-<h2><span class="header-section-number">1.6</span> 画图</h2>
-<ul>
-<li>2D图：<code>plot(sin(x), x=-Pi..2*Pi);</code></li>
-<li>3D图：<code>plot3d(f(x,y),x=a..b,y=c..d)</code></li>
-<li>等高线图：<code>plots[contourplot](f(x,y),x=a..b,y=c..d)</code></li>
-<li>多图叠在一张图显示：<code>plots[display](p1,p2,p3)</code></li>
-</ul>
-</div>
-<div id="矩阵" class="section level2" number="1.7">
-<h2><span class="header-section-number">1.7</span> 矩阵</h2>
-<ul>
-<li>通常要载入包<code>LinearAlgebra</code>和<code>linalg</code>。</li>
-<li>产生脚标为<span class="math inline">\(a_{i,j}\)</span>的矩阵<span class="math inline">\(A\)</span>。</li>
-</ul>
-<pre><code>A:=array([a[1,1],a[1,2]],[a[2,1], a[2,2]])
-A:=Matrix([a[1,1],a[1,2]],[a[2,1], a[2,2]])
-A:=Matrix(2,2,symbol = a)
-A:=Vector(2, symbol = a)</code></pre>
-<ul>
-<li>矩阵计算</li>
-</ul>
-<pre><code>with(LinearAlgebra):
-evalm(A^2)
-A.B # 矩阵相乘</code></pre>
-</div>
-<div id="一句话tips" class="section level2" number="1.8">
-<h2><span class="header-section-number">1.8</span> 一句话Tips</h2>
-<ul>
-<li>语句可以清除原来的<code>f</code>的定义，</li>
-<li>多项式降幂排列<code>sort(x^3*y-y^3*x,[y,x])</code></li>
-<li>乘号记得输入<code>*</code>，各种数学运算：</li>
-<li>求导：<code>diff(f,x)</code>; 求二阶导数，<code>diff(f,x$2)</code></li>
-<li><code>nops</code>返回比如向量的元素的数目：</li>
-</ul>
-<pre><code>u:=[1,4,9]:
-nops(u);</code></pre>
-<ul>
-<li>求具体的数值，用<code>evalf(Pi)</code></li>
-<li>矩阵相乘用<code>.</code></li>
-<li>它的<code>surfdata</code>以点的数值的形式绘制三维曲线，相对比较好看。</li>
-<li>用<code>y</code>替换表达式中的<code>x</code>：<code>subs(x=y, expression)</code></li>
+<li>比如你在<code>_publications</code>里面增加了一个文件<code>factor</code>，但是在本地浏览器却看不到，你要注意：浏览器地址是github的地址还是本地地址。这个地址往往是<code>publication/factor</code>而不是<code>_publications/factor</code>，你可以结合fork的那个网站来检查。</li>
 </ul>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="Julia.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="Latex.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Other.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
