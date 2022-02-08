@@ -239,6 +239,7 @@ format + = {\songti\zihao{5}}]{subsubsection} % 第三层标题变成 1，2，..
 \usepackage{xeCJK}
 \setCJKmainfont[Vertical=RotatedGlyphs,CJKShape=Traditional]{Adobe Fangsong Std}
 ```
+对于字体更加详细的细节可以见https://zhuanlan.zhihu.com/p/260989874。
 
 - 如果不安装，那么也可以如下调用
 ```tex
