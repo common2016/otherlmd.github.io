@@ -229,7 +229,20 @@ format + = {\songti\zihao{5}}]{subsubsection} % 第三层标题变成 1，2，..
 \DeclareFixedFont{命令}{编码}{字族}{序列}{形状}{尺寸}
 ```
 来设置某一种字体。这些字体的例子可以参见胡伟的105页。
-- 如果你在网上下载了某个字体，那么可以如下调用
+
+### 如何使用一个新的字体？
+
+如果你在网上下载了某个字体：
+
+- 这个字体文件一般是`ttf`等后缀名，你要右键点击“为所有用户安装”，然后
+可以通过在命令行输入`fc-list -f "%{family}\n" :lang=zh >d:zhfont.txt`来查看在latex中调用时的名称，每个逗号隔开的都是可以调用的名称。比如，
+如下代码设置了主要字体使用繁体字。
+```tex
+\usepackage{xeCJK}
+\setCJKmainfont[Vertical=RotatedGlyphs,CJKShape=Traditional]{Adobe Fangsong Std}
+```
+
+- 如果不安装，那么也可以如下调用
 ```tex
 % 导言区
 \usepackage{xeCJK}
