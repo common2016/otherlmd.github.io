@@ -485,7 +485,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>这个字体文件一般是<code>ttf</code>等后缀名，你要右键点击“为所有用户安装”，然后
 可以通过在命令行输入<code>fc-list -f "%{family}\n" :lang=zh &gt;d:zhfont.txt</code>来查看在latex中调用时的名称，每个逗号隔开的都是可以调用的名称。比如，
-如下代码设置了主要字体使用繁体字。</li>
+如下代码设置了主要字体使用繁体字,并且字符旋转90度，实现繁体竖排。</li>
 </ul>
 <div class="sourceCode" id="cb26"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb26-1"><a href="Latex.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">xeCJK</span>}</span>
 <span id="cb26-2"><a href="Latex.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\setCJKmainfont</span>[Vertical=RotatedGlyphs,CJKShape=Traditional]{Adobe Fangsong Std}</span></code></pre></div>
