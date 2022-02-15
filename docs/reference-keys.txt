@@ -42,6 +42,7 @@ beamer相关
 数学公式左对齐
 中文字体加粗
 使用某种常用字体
+如何使用一个新的字体
 我的r代码排版模版
 listings包
 fancyvrb包
@@ -53,6 +54,8 @@ latex参考文献的编码思路
 一些文体的模版
 社科申报课题部分模版
 Blog
+OS
+macos
 Other
 pdf文件压缩
 eviews编程
@@ -60,4 +63,3 @@ gauss
 系统函数
 noteexpress样式设置
 filezilla
-如何使用一个新的字体

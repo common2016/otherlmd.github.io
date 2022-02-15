@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 Maple | 编程语言笔记</title>
   <meta name="description" content="1 Maple | 编程语言笔记" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 Maple | 编程语言笔记" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="Julia.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,9 +50,8 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX","output/SVG"],
@@ -131,6 +131,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 </head>
 
 <body>
@@ -206,7 +207,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4" data-path="Latex.html"><a href="Latex.html#章节标题格式修改"><i class="fa fa-check"></i><b>7.4</b> 章节标题格式修改</a></li>
 <li class="chapter" data-level="7.5" data-path="Latex.html"><a href="Latex.html#数学公式左对齐"><i class="fa fa-check"></i><b>7.5</b> 数学公式左对齐</a></li>
 <li class="chapter" data-level="7.6" data-path="Latex.html"><a href="Latex.html#中文字体加粗"><i class="fa fa-check"></i><b>7.6</b> 中文字体加粗</a></li>
-<li class="chapter" data-level="7.7" data-path="Latex.html"><a href="Latex.html#使用某种常用字体"><i class="fa fa-check"></i><b>7.7</b> 使用某种常用字体</a></li>
+<li class="chapter" data-level="7.7" data-path="Latex.html"><a href="Latex.html#使用某种常用字体"><i class="fa fa-check"></i><b>7.7</b> 使用某种常用字体</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="Latex.html"><a href="Latex.html#如何使用一个新的字体"><i class="fa fa-check"></i><b>7.7.1</b> 如何使用一个新的字体？</a></li>
+</ul></li>
 <li class="chapter" data-level="7.8" data-path="Latex.html"><a href="Latex.html#我的r代码排版模版"><i class="fa fa-check"></i><b>7.8</b> 我的R代码排版模版</a>
 <ul>
 <li class="chapter" data-level="7.8.1" data-path="Latex.html"><a href="Latex.html#listings包"><i class="fa fa-check"></i><b>7.8.1</b> <code>listings</code>包</a></li>
@@ -225,16 +229,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Blog.html"><a href="Blog.html"><i class="fa fa-check"></i><b>8</b> 博客</a></li>
-<li class="chapter" data-level="9" data-path="Other.html"><a href="Other.html"><i class="fa fa-check"></i><b>9</b> 其他小众软件</a>
+<li class="chapter" data-level="9" data-path="OS.html"><a href="OS.html"><i class="fa fa-check"></i><b>9</b> 操作系统</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="Other.html"><a href="Other.html#pdf文件压缩"><i class="fa fa-check"></i><b>9.1</b> PDF文件压缩</a></li>
-<li class="chapter" data-level="9.2" data-path="Other.html"><a href="Other.html#eviews编程"><i class="fa fa-check"></i><b>9.2</b> Eviews编程</a></li>
-<li class="chapter" data-level="9.3" data-path="Other.html"><a href="Other.html#gauss"><i class="fa fa-check"></i><b>9.3</b> GAUSS</a>
-<ul>
-<li class="chapter" data-level="9.3.1" data-path="Other.html"><a href="Other.html#系统函数"><i class="fa fa-check"></i><b>9.3.1</b> 系统函数</a></li>
+<li class="chapter" data-level="9.1" data-path="OS.html"><a href="OS.html#macos"><i class="fa fa-check"></i><b>9.1</b> macOS</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="Other.html"><a href="Other.html#noteexpress样式设置"><i class="fa fa-check"></i><b>9.4</b> NoteExpress样式设置</a></li>
-<li class="chapter" data-level="9.5" data-path="Other.html"><a href="Other.html#filezilla"><i class="fa fa-check"></i><b>9.5</b> FileZilla</a></li>
+<li class="chapter" data-level="10" data-path="Other.html"><a href="Other.html"><i class="fa fa-check"></i><b>10</b> 其他小众软件</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="Other.html"><a href="Other.html#pdf文件压缩"><i class="fa fa-check"></i><b>10.1</b> PDF文件压缩</a></li>
+<li class="chapter" data-level="10.2" data-path="Other.html"><a href="Other.html#eviews编程"><i class="fa fa-check"></i><b>10.2</b> Eviews编程</a></li>
+<li class="chapter" data-level="10.3" data-path="Other.html"><a href="Other.html#gauss"><i class="fa fa-check"></i><b>10.3</b> GAUSS</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="Other.html"><a href="Other.html#系统函数"><i class="fa fa-check"></i><b>10.3.1</b> 系统函数</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="Other.html"><a href="Other.html#noteexpress样式设置"><i class="fa fa-check"></i><b>10.4</b> NoteExpress样式设置</a></li>
+<li class="chapter" data-level="10.5" data-path="Other.html"><a href="Other.html#filezilla"><i class="fa fa-check"></i><b>10.5</b> FileZilla</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -372,7 +380,6 @@ nops(u);</code></pre>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -391,6 +398,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -411,6 +419,10 @@ gitbook.start({
 "text": null
 },
 "download": ["CBook.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
