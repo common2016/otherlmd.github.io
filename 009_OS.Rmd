@@ -6,3 +6,15 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval = FALS
 ## macOS
 
 - 进入外置磁盘目录，要先进入根目录，然后输入`cd volumes`就可以看到外置磁盘的名字了。
+- 苹果系统查命令的详细说明可以使用比如`man diskutil`就可以查看命令`diskutil`的详细语法，阅读完后，输入`q`以退出。
+
+
+## 挂载外置磁盘
+
+1. 首先利用`diskutil list`查看你的外置磁盘的设备名称，在IDENTIFIER列中，一般是`/dev/disk4s2`之类的。
+2. 然后利用`diskutil info disk4s2`查询磁盘的UUID
+3. 然后设置开机挂载。命令行`sudo vim /etc/fstab`打开文本文件，输入如下:
+```
+UUID=06A19C31-BED5-36E9-BEC9-616E398C77FD /Users/yangnay/elements exfat rw,auto
+```
+注意，`exfat`是你的硬盘的文件格式。

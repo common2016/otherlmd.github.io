@@ -232,6 +232,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9" data-path="OS.html"><a href="OS.html"><i class="fa fa-check"></i><b>9</b> 操作系统</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="OS.html"><a href="OS.html#macos"><i class="fa fa-check"></i><b>9.1</b> macOS</a></li>
+<li class="chapter" data-level="9.2" data-path="OS.html"><a href="OS.html#挂载外置磁盘"><i class="fa fa-check"></i><b>9.2</b> 挂载外置磁盘</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="Other.html"><a href="Other.html"><i class="fa fa-check"></i><b>10</b> 其他小众软件</a>
 <ul>
@@ -268,7 +269,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">9.1</span> macOS</h2>
 <ul>
 <li>进入外置磁盘目录，要先进入根目录，然后输入<code>cd volumes</code>就可以看到外置磁盘的名字了。</li>
+<li>苹果系统查命令的详细说明可以使用比如<code>man diskutil</code>就可以查看命令<code>diskutil</code>的详细语法，阅读完后，输入<code>q</code>以退出。</li>
 </ul>
+</div>
+<div id="挂载外置磁盘" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> 挂载外置磁盘</h2>
+<ol style="list-style-type: decimal">
+<li>首先利用<code>diskutil list</code>查看你的外置磁盘的设备名称，在IDENTIFIER列中，一般是<code>/dev/disk4s2</code>之类的。</li>
+<li>然后利用<code>diskutil info disk4s2</code>查询磁盘的UUID</li>
+<li>然后设置开机挂载。命令行<code>sudo vim /etc/fstab</code>打开文本文件，输入如下:</li>
+</ol>
+<pre><code>UUID=06A19C31-BED5-36E9-BEC9-616E398C77FD /Users/yangnay/elements exfat rw,auto</code></pre>
+<p>注意，<code>exfat</code>是你的硬盘的文件格式。</p>
 
 </div>
 </div>
@@ -332,20 +344,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
