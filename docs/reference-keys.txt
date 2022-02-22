@@ -35,6 +35,7 @@ C
 一句话tips-2
 Latex
 一句话tips-3
+masos相关
 beamer相关
 表格相关
 长表格
@@ -56,6 +57,7 @@ latex参考文献的编码思路
 Blog
 OS
 macos
+挂载外置磁盘
 Other
 pdf文件压缩
 eviews编程
@@ -63,5 +65,3 @@ gauss
 系统函数
 noteexpress样式设置
 filezilla
-挂载外置磁盘
-masos相关

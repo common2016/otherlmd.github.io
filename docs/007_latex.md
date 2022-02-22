@@ -88,7 +88,20 @@ This is a landscape page.
 
 ## masOS相关
 
-- 行首和行尾快捷键`command + 左/右方向键`
+- 在macOS上安装dynare，国内会因为连不上github而无法安装。如何在国内顺利连上github，参考https://juejin.cn/post/7039913254897860616
+- macOS上有一个优秀的包管理器Homebrew,进它的主页https://brew.sh/，一行代码让你装上该软件。注意，该软件同样要求你能够顺利连上github。很多情况下速度很慢，导致安装不上。可以如下步骤更换代码存储的源：
+  - `curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh >> brew_install`把安装过程的命令文件下载到你当前目录下。
+  - 打开文件`brew_install`更改默认的源：
+```
+将默认的源
+HOMEBREW_BREW_DEFAULT_GIT_REMOTE = "https://github.com/Homebrew/brew"    
+HOMEBREW_CORE_DEFAULT_GIT_REMOTE = “https://github.com/Homebrew/homebrew-core“
+修改为  
+HOMEBREW_BREW_DEFAULT_GIT_REMOTE = "https://mirrors.ustc.edu.cn/brew.git"
+HOMEBREW_CORE_DEFAULT_GIT_REMOTE = "https://mirrors.ustc.edu.cn/homebrew-core.git
+```
+- 终端运行命令`/bin/bash brew_install`即可。最后依据终端的提示，添加brew的路径。
+如果出现`fatal: Could not resolve HEAD to a revision`报错。按如下步骤解决：https://www.jianshu.com/p/54beebb59570。
 
 ## `beamer`相关
 
