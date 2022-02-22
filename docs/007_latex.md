@@ -86,6 +86,10 @@ This is a landscape page.
 - `\pagestyle{empty}`当前及后续页无页眉
 - `\renewcommand\refname{参考文献}`把"Reference"变成“参考文献”。
 
+## masOS相关
+
+- 行首和行尾快捷键`command + 左/右方向键`
+
 ## `beamer`相关
 
 - 在beamer中加入Logo的话，在`\begin{documents}`之后使用如下命令`\logo{\includegraphics[height=1.5cm]{RM.jpg}}`。Logo的位置取决于模板。

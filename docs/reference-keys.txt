@@ -64,3 +64,4 @@ gauss
 noteexpress样式设置
 filezilla
 挂载外置磁盘
+masos相关
