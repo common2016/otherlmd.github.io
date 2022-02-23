@@ -2,6 +2,19 @@
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 # Julia {#Julia}
+
+- Julia的一个IDE就是Atom中的Juno，它已经非常好用了。记录几个点：
+  - 快捷键配置，是在一个文件中修改的，见https://blog.csdn.net/uniqsa/article/details/91315714。这个给一个我常用的运行和保存配置书写,注意缩进：
+  
+```
+'.platform-darwin atom-text-editor[data-grammar="source julia"]':
+  'ctrl-enter': 'julia-client:run-block'
+  'shift-ctrl-enter': 'julia-client:run-all'
+
+'body':
+  'ctrl-s': 'core:save'
+```
+  
 - 安装包
 ```julia
 import Pkg;
@@ -9,6 +22,7 @@ Pkg.add("DataFrames")
 # Pkg.rm()是删除包
 using DataFrames # 导入包
 ```
+
 - 函数名字中带‘！’号，该函数不仅返回值，还会更改参数的值。
 - 变量赋值
 ```julia
