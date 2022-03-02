@@ -21,6 +21,10 @@ Pkg.add("DataFrames")
 using DataFrames # 导入包
 ```
 
+- `1:5`返回的是一个迭代器，可以用`collect(1:5)`变成一个数组
+- `using RCall, Statistics`可以同时导入多个包
+- `mean(skipmissing([1, missing, 3]))`求均值忽略缺失值
+- 查看模块中所有方法或变量`names(模块)`。通常是去github上看它的案例用法。
 - 函数名字中带‘！’号，该函数不仅返回值，还会更改参数的值。
 - 变量赋值
 ```julia

@@ -58,6 +58,7 @@ Blog
 OS
 macos
 挂载外置磁盘
+Mathematica
 Other
 pdf文件压缩
 eviews编程

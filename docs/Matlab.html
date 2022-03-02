@@ -235,16 +235,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1" data-path="OS.html"><a href="OS.html#macos"><i class="fa fa-check"></i><b>9.1</b> macOS</a></li>
 <li class="chapter" data-level="9.2" data-path="OS.html"><a href="OS.html#挂载外置磁盘"><i class="fa fa-check"></i><b>9.2</b> 挂载外置磁盘</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="Other.html"><a href="Other.html"><i class="fa fa-check"></i><b>10</b> 其他小众软件</a>
+<li class="chapter" data-level="10" data-path="Mathematica.html"><a href="Mathematica.html"><i class="fa fa-check"></i><b>10</b> Mathematica</a></li>
+<li class="chapter" data-level="11" data-path="Other.html"><a href="Other.html"><i class="fa fa-check"></i><b>11</b> 其他小众软件</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="Other.html"><a href="Other.html#pdf文件压缩"><i class="fa fa-check"></i><b>10.1</b> PDF文件压缩</a></li>
-<li class="chapter" data-level="10.2" data-path="Other.html"><a href="Other.html#eviews编程"><i class="fa fa-check"></i><b>10.2</b> Eviews编程</a></li>
-<li class="chapter" data-level="10.3" data-path="Other.html"><a href="Other.html#gauss"><i class="fa fa-check"></i><b>10.3</b> GAUSS</a>
+<li class="chapter" data-level="11.1" data-path="Other.html"><a href="Other.html#pdf文件压缩"><i class="fa fa-check"></i><b>11.1</b> PDF文件压缩</a></li>
+<li class="chapter" data-level="11.2" data-path="Other.html"><a href="Other.html#eviews编程"><i class="fa fa-check"></i><b>11.2</b> Eviews编程</a></li>
+<li class="chapter" data-level="11.3" data-path="Other.html"><a href="Other.html#gauss"><i class="fa fa-check"></i><b>11.3</b> GAUSS</a>
 <ul>
-<li class="chapter" data-level="10.3.1" data-path="Other.html"><a href="Other.html#系统函数"><i class="fa fa-check"></i><b>10.3.1</b> 系统函数</a></li>
+<li class="chapter" data-level="11.3.1" data-path="Other.html"><a href="Other.html#系统函数"><i class="fa fa-check"></i><b>11.3.1</b> 系统函数</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="Other.html"><a href="Other.html#noteexpress样式设置"><i class="fa fa-check"></i><b>10.4</b> NoteExpress样式设置</a></li>
-<li class="chapter" data-level="10.5" data-path="Other.html"><a href="Other.html#filezilla"><i class="fa fa-check"></i><b>10.5</b> FileZilla</a></li>
+<li class="chapter" data-level="11.4" data-path="Other.html"><a href="Other.html#noteexpress样式设置"><i class="fa fa-check"></i><b>11.4</b> NoteExpress样式设置</a></li>
+<li class="chapter" data-level="11.5" data-path="Other.html"><a href="Other.html#filezilla"><i class="fa fa-check"></i><b>11.5</b> FileZilla</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -286,20 +287,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>当使用一个函数，输出结果有两个。但第一个结果不需要，只需要第二个时，第一个结果可用<code>~</code>代替。如<code>[~,area] = xlsread('malm.xlsx',1,'b2:aa31');</code></li>
 <li>当使用一个函数，输入需要跳跃时，可用<code>[]</code>代替。如</li>
 </ul>
-<div class="sourceCode" id="cb24"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb24-1"><a href="Matlab.html#cb24-1" aria-hidden="true" tabindex="-1"></a>[<span class="va">x</span><span class="op">,</span> <span class="va">fval</span>] <span class="op">=</span> <span class="va">fmincon</span>(<span class="op">@</span><span class="va">loglik</span><span class="op">,</span> <span class="va">para0</span><span class="op">,</span>[]<span class="op">,</span>[]<span class="op">,</span>[]<span class="op">,</span>[]<span class="op">,...</span></span>
-<span id="cb24-2"><a href="Matlab.html#cb24-2" aria-hidden="true" tabindex="-1"></a>  [<span class="fl">0.0001</span><span class="op">,</span><span class="fl">0.0001</span><span class="op">,</span><span class="fl">0.0001</span><span class="op">,</span> <span class="op">-</span><span class="fl">1</span><span class="op">,</span> <span class="fl">0.00001</span><span class="op">*</span><span class="va">ones</span>(<span class="fl">1</span><span class="op">,</span><span class="va">ncol</span>)]<span class="op">,</span>[<span class="va">ones</span>(<span class="fl">1</span><span class="op">,</span><span class="va">length</span>(<span class="va">para0</span>))]<span class="op">,...</span></span>
-<span id="cb24-3"><a href="Matlab.html#cb24-3" aria-hidden="true" tabindex="-1"></a>  []<span class="op">,</span>[]<span class="op">,</span><span class="va">Y</span><span class="op">,</span> <span class="va">tau</span><span class="op">,</span> <span class="va">nrow</span><span class="op">,</span> <span class="va">ncol</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb25-1"><a href="Matlab.html#cb25-1" aria-hidden="true" tabindex="-1"></a>[<span class="va">x</span><span class="op">,</span> <span class="va">fval</span>] <span class="op">=</span> <span class="va">fmincon</span>(<span class="op">@</span><span class="va">loglik</span><span class="op">,</span> <span class="va">para0</span><span class="op">,</span>[]<span class="op">,</span>[]<span class="op">,</span>[]<span class="op">,</span>[]<span class="op">,...</span></span>
+<span id="cb25-2"><a href="Matlab.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  [<span class="fl">0.0001</span><span class="op">,</span><span class="fl">0.0001</span><span class="op">,</span><span class="fl">0.0001</span><span class="op">,</span> <span class="op">-</span><span class="fl">1</span><span class="op">,</span> <span class="fl">0.00001</span><span class="op">*</span><span class="va">ones</span>(<span class="fl">1</span><span class="op">,</span><span class="va">ncol</span>)]<span class="op">,</span>[<span class="va">ones</span>(<span class="fl">1</span><span class="op">,</span><span class="va">length</span>(<span class="va">para0</span>))]<span class="op">,...</span></span>
+<span id="cb25-3"><a href="Matlab.html#cb25-3" aria-hidden="true" tabindex="-1"></a>  []<span class="op">,</span>[]<span class="op">,</span><span class="va">Y</span><span class="op">,</span> <span class="va">tau</span><span class="op">,</span> <span class="va">nrow</span><span class="op">,</span> <span class="va">ncol</span>)<span class="op">;</span></span></code></pre></div>
 </div>
 <div id="窗口输出到文本" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> 窗口输出到文本</h2>
 <p>1.把窗口输出写入指定的文件，之后会一直记录窗口输出信息，直到你关闭；</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb25-1"><a href="Matlab.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span>(<span class="ss">&#39;testlog.txt&#39;</span>)<span class="op">;</span></span>
-<span id="cb25-2"><a href="Matlab.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">on</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb26-1"><a href="Matlab.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span>(<span class="ss">&#39;testlog.txt&#39;</span>)<span class="op">;</span></span>
+<span id="cb26-2"><a href="Matlab.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">on</span><span class="op">;</span></span></code></pre></div>
 <p>2.关闭日志记录</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb26-1"><a href="Matlab.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">off</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb27-1"><a href="Matlab.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">off</span><span class="op">;</span></span></code></pre></div>
 <p>3.删除日志</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb27-1"><a href="Matlab.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">off</span><span class="op">;</span><span class="co">%先关闭</span></span>
-<span id="cb27-2"><a href="Matlab.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="va">delete</span>(<span class="ss">&#39;testlog.txt&#39;</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb28-1"><a href="Matlab.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">off</span><span class="op">;</span><span class="co">%先关闭</span></span>
+<span id="cb28-2"><a href="Matlab.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="va">delete</span>(<span class="ss">&#39;testlog.txt&#39;</span>)<span class="op">;</span></span></code></pre></div>
 </div>
 <div id="gvar-toolbox使用报告" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> GVAR Toolbox使用报告</h2>

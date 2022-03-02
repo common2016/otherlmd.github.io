@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 C语言 | 编程语言笔记</title>
-  <meta name="description" content="6 C语言 | 编程语言笔记" />
+  <title>10 Mathematica | 编程语言笔记</title>
+  <meta name="description" content="10 Mathematica | 编程语言笔记" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 C语言 | 编程语言笔记" />
+  <meta property="og:title" content="10 Mathematica | 编程语言笔记" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 C语言 | 编程语言笔记" />
+  <meta name="twitter:title" content="10 Mathematica | 编程语言笔记" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="git操作流程.html"/>
-<link rel="next" href="Latex.html"/>
+<link rel="prev" href="OS.html"/>
+<link rel="next" href="Other.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -66,70 +66,6 @@ MathJax.Hub.Config({
 </script>
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 
 </head>
@@ -265,27 +201,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="C" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> C语言</h1>
-<div id="一句话tips-2" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> 一句话Tips</h2>
+<div id="Mathematica" class="section level1" number="10">
+<h1><span class="header-section-number">10</span> Mathematica</h1>
 <ul>
-<li>C的注释与Stata的注释几乎一致, 如<code>/* 这是注释 */</code>，单行注释<code>//</code>。</li>
-<li>一个C文件由若干个函数构成，包括主函数<code>main()</code>。在函数之外定义的变量成为全局变量，该变量可以在所有其他函数中被调用。</li>
-<li>GSL是一个开源的C语言矩阵运算库。</li>
-<li>我感觉指针的好处在于可以在函数内部更改变量的值。不像其他语言，最终可以通过<code>return</code>把值返回出来，在C语言中，可以利用指针直接改，不需要<code>return</code>。</li>
-<li></li>
+<li>基本的特征有三个：
+<ul>
+<li>任何函数是用<code>[</code>而不是<code>(</code>来定义；</li>
+<li>它的内建函数都是大写字母开头；</li>
+<li>列表用花括号。</li>
+</ul></li>
+<li>函数定义<code>f[x_]:=x^2</code>，注意左边要有个下划线。</li>
+<li>清除全部变量<code>ClearAll["</code>*“]`</li>
+<li>写希腊字母<code>Esc+a+Esc</code>就是alpha，依次类推。</li>
+<li><code>ctrl+/</code>写分式</li>
+<li><code>shift+enter</code>运行单元格。注意，小键盘上的enter等价于<code>shift+enter</code>，然后大键盘上的enter就是换行。</li>
+<li>在单元格输入时，通过在一条语句输完后加分号，可以在同一个单元格继续输入其他语句</li>
+<li>删除单元格：选中单元右边的 “]”(变成蓝色),按delete键</li>
 </ul>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="git操作流程.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="Latex.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="OS.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Other.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -339,20 +280,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
