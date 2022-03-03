@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,eval = FALSE
   - 去Ruby官网下载最新的Ruby软件，并安装好
   - 进入命令行，使用`gem install bundler`安装bundler
   - 然后使用`gem install jekyll`安装jekyll
-  - 使用`jekyll --versiton`查看安装的是哪个版本，运行成功说明OK。出现问题，可以参看[此处](https://blog.csdn.net/yq_forever/article/details/103449709)的讲解。
+  - 使用`jekyll --version`查看安装的是哪个版本，运行成功说明OK。出现问题，可以参看[此处](https://blog.csdn.net/yq_forever/article/details/103449709)的讲解。
   - 对于我们下面推荐的这个博客模板可以进入项目的目录后，使用`bundle exec jekyll liveserve`命令，然后在浏览器上使用`http://127.0.0.1:4000/`在本地查看自己的博客长啥样，并修改。
   
   

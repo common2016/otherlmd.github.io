@@ -59,6 +59,7 @@ OS
 macos
 挂载外置磁盘
 Mathematica
+快捷键-1
 Other
 pdf文件压缩
 eviews编程
@@ -66,4 +67,3 @@ gauss
 系统函数
 noteexpress样式设置
 filezilla
-快捷键-1

@@ -214,12 +214,17 @@ MathJax.Hub.Config({
 <li>列表用花括号。</li>
 </ul></li>
 <li>函数定义<code>f[x_]:=x^2</code>，注意左边要有个下划线。</li>
-<li>清除全部变量<code>ClearAll["`*"]</code></li>
-<li>写希腊字母<code>Esc+a+Esc</code>就是alpha，依次类推。</li>
+<li>清除全部变量<code>ClearAll["`*"]</code>，<code>x=.</code>清除x的赋值</li>
+<li>写希腊字母<code>Esc+a+Esc</code>就是alpha，依次类推。其他，如<code>Esc+tr+Esc</code>就是转置的输入。</li>
 <li><code>ctrl+/</code>写分式</li>
 <li><code>shift+enter</code>运行单元格。注意，小键盘上的enter等价于<code>shift+enter</code>，然后大键盘上的enter就是换行。</li>
-<li>在单元格输入时，通过在一条语句输完后加分号，可以在同一个单元格继续输入其他语句</li>
+<li>在一条语句输完后加分号，可以抑制输出</li>
 <li>删除单元格：选中单元右边的 “]”(变成蓝色),按delete键</li>
+<li><code>{a,b,c,d}[[2]]</code>提取列表的第二个元素，<code>{a,b,c,d}[[2;;4]]</code>提取列表的第二至第四个元素</li>
+<li><code>f[x_,y_]:=x-y/;x&gt;y</code>在<span class="math inline">\(x&gt;y\)</span>时定义的函数</li>
+<li>纯函数即匿名函数，该函数以<code>#</code>为参数占位，以<code>&amp;</code>符号结尾,如<code>f=(3+#)&amp;</code>,<code>(#1^2+#^2)&amp;[x,y]</code>,后者的输出是<span class="math inline">\(x^2+y^2\)</span></li>
+<li><code>x/.Solve[x^2-2x+1,x]</code>提取方程的解为列表</li>
+<li><code>{a,f}.{c,d}</code>是矩阵乘法</li>
 </ul>
 <div id="快捷键-1" class="section level2" number="10.1">
 <h2><span class="header-section-number">10.1</span> 快捷键</h2>
@@ -291,6 +296,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
