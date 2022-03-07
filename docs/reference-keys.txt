@@ -67,3 +67,4 @@ gauss
 系统函数
 noteexpress样式设置
 filezilla
+一句话tips-4

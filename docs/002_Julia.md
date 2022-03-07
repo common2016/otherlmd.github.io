@@ -21,11 +21,22 @@ Pkg.add("DataFrames")
 using DataFrames # 导入包
 ```
 
+- `Pipe`包提供了强大的管道操作`|>`，与R语言中的`.`不同，它使用`_`作为占位符。
+```julia
+@pipe data |> addX(_[1],_[2]) |> println
+```
 - `1:5`返回的是一个迭代器，可以用`collect(1:5)`变成一个数组
 - `using RCall, Statistics`可以同时导入多个包
 - `mean(skipmissing([1, missing, 3]))`求均值忽略缺失值
 - 查看模块中所有方法或变量`names(模块)`。通常是去github上看它的案例用法。
+- 返回当前工作空间的变量，可以用`names(Main)`或者`varinfo()`
 - 函数名字中带‘！’号，该函数不仅返回值，还会更改参数的值。
+- 在Julia表达式中，如果要标志某个字符是变量，也就是它要被它的内涵所替代，前面要加美元符号。比如定义一个宏：
+```julia
+macro sayhello(name)
+  :(println("Hello,",$name)) # 注意括号的使用
+end
+```
 - 变量赋值
 ```julia
 a,b,c = 1,'a',3 
