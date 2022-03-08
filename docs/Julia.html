@@ -159,7 +159,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="Maple.html"><a href="Maple.html#矩阵"><i class="fa fa-check"></i><b>1.7</b> 矩阵</a></li>
 <li class="chapter" data-level="1.8" data-path="Maple.html"><a href="Maple.html#一句话tips"><i class="fa fa-check"></i><b>1.8</b> 一句话Tips</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="Julia.html"><a href="Julia.html"><i class="fa fa-check"></i><b>2</b> Julia</a></li>
+<li class="chapter" data-level="2" data-path="Julia.html"><a href="Julia.html"><i class="fa fa-check"></i><b>2</b> Julia</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Julia.html"><a href="Julia.html#julia类型的一些体会"><i class="fa fa-check"></i><b>2.1</b> Julia类型的一些体会</a></li>
+<li class="chapter" data-level="2.2" data-path="Julia.html"><a href="Julia.html#julia数值求根"><i class="fa fa-check"></i><b>2.2</b> Julia数值求根</a></li>
+<li class="chapter" data-level="2.3" data-path="Julia.html"><a href="Julia.html#其他tips"><i class="fa fa-check"></i><b>2.3</b> 其他tips</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="Stata.html"><a href="Stata.html"><i class="fa fa-check"></i><b>3</b> Stata</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="Stata.html"><a href="Stata.html#数据处理"><i class="fa fa-check"></i><b>3.1</b> 数据处理</a></li>
@@ -270,6 +275,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="Julia" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Julia</h1>
+<div id="julia类型的一些体会" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Julia类型的一些体会</h2>
+<p>Julia一些包会自己构造一些类型，我们很多时候需要访问这个类型的成员，但成员的名字往往并不事先知道。一般情况下，可以通过下面三种办法获知成员的名字：</p>
+<ul>
+<li><code>dump(类型)</code></li>
+<li><code>fieldnames(类型)</code></li>
+<li>在帮助系统查看这个类型的帮助</li>
+</ul>
+</div>
+<div id="julia数值求根" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Julia数值求根</h2>
+<p>对于单方程求根，可以使用两个包如下。这两个包可以找到既定区间下所有的根。代码案例如下，</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb1-1"><a href="Julia.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> IntervalArithmetic<span class="op">,</span> IntervalRootFinding</span>
+<span id="cb1-2"><a href="Julia.html#cb1-2" aria-hidden="true" tabindex="-1"></a>f(x) <span class="op">=</span> sin(x) <span class="op">-</span> <span class="fl">0.1</span><span class="op">*</span>x<span class="op">^</span><span class="fl">2</span> <span class="op">+</span> <span class="fl">1</span></span>
+<span id="cb1-3"><a href="Julia.html#cb1-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> roots(f<span class="op">,</span> <span class="op">-</span><span class="fl">10</span>.<span class="fl">.10</span>) <span class="co"># 第二个参数就是在`IntervalArithmetic`包中区间这个类型的表达方式</span></span>
+<span id="cb1-4"><a href="Julia.html#cb1-4" aria-hidden="true" tabindex="-1"></a>a[<span class="fl">1</span>].interval.lo <span class="co"># 返回第一个根的下界</span></span></code></pre></div>
+<p>这里有几个注意的地方:第一，<code>roots</code>返回的是<code>Root</code>对象，可以通过前面说的方法，查看它的成员字段，知道它有两个字段一个是<code>interval</code>，一个是<code>status</code>。我们需要前者，然后<code>interval</code>本身又是一个类型，于是按照前面的方法继续查看它的字段，一个是<code>lo</code>，一个<code>hi</code>。</p>
+</div>
+<div id="其他tips" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> 其他tips</h2>
 <ul>
 <li>Julia的一个IDE就是Atom中的Juno，它已经非常好用了。记录几个点：
 <ul>
@@ -285,14 +310,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>安装包</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb2-1"><a href="Julia.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> Pkg<span class="op">;</span></span>
-<span id="cb2-2"><a href="Julia.html#cb2-2" aria-hidden="true" tabindex="-1"></a>Pkg.add(<span class="st">&quot;DataFrames&quot;</span>)</span>
-<span id="cb2-3"><a href="Julia.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Pkg.rm()是删除包</span></span>
-<span id="cb2-4"><a href="Julia.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> DataFrames <span class="co"># 导入包</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb3-1"><a href="Julia.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> Pkg<span class="op">;</span></span>
+<span id="cb3-2"><a href="Julia.html#cb3-2" aria-hidden="true" tabindex="-1"></a>Pkg.add(<span class="st">&quot;DataFrames&quot;</span>)</span>
+<span id="cb3-3"><a href="Julia.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Pkg.rm()是删除包</span></span>
+<span id="cb3-4"><a href="Julia.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> DataFrames <span class="co"># 导入包</span></span></code></pre></div>
 <ul>
 <li><code>Pipe</code>包提供了强大的管道操作<code>|&gt;</code>，与R语言中的<code>.</code>不同，它使用<code>_</code>作为占位符。</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb3-1"><a href="Julia.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@pipe</span> data <span class="op">|&gt;</span> addX(_[<span class="fl">1</span>]<span class="op">,</span>_[<span class="fl">2</span>]) <span class="op">|&gt;</span> println</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb4-1"><a href="Julia.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@pipe</span> data <span class="op">|&gt;</span> addX(_[<span class="fl">1</span>]<span class="op">,</span>_[<span class="fl">2</span>]) <span class="op">|&gt;</span> println</span></code></pre></div>
 <ul>
 <li><code>1:5</code>返回的是一个迭代器，可以用<code>collect(1:5)</code>变成一个数组</li>
 <li><code>using RCall, Statistics</code>可以同时导入多个包</li>
@@ -302,29 +327,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>函数名字中带‘！’号，该函数不仅返回值，还会更改参数的值。</li>
 <li>在Julia表达式中，如果要标志某个字符是变量，也就是它要被它的内涵所替代，前面要加美元符号。比如定义一个宏：</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb4-1"><a href="Julia.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">macro</span> sayhello(name)</span>
-<span id="cb4-2"><a href="Julia.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">:</span>(println(<span class="st">&quot;Hello,&quot;</span><span class="op">,$</span>name)) <span class="co"># 注意括号的使用</span></span>
-<span id="cb4-3"><a href="Julia.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb5-1"><a href="Julia.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">macro</span> sayhello(name)</span>
+<span id="cb5-2"><a href="Julia.html#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">:</span>(println(<span class="st">&quot;Hello,&quot;</span><span class="op">,$</span>name)) <span class="co"># 注意括号的使用</span></span>
+<span id="cb5-3"><a href="Julia.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div>
 <ul>
 <li>变量赋值</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb5-1"><a href="Julia.html#cb5-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">,</span>b<span class="op">,</span>c <span class="op">=</span> <span class="fl">1</span><span class="op">,</span><span class="ch">&#39;a&#39;</span><span class="op">,</span><span class="fl">3</span> </span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb6-1"><a href="Julia.html#cb6-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">,</span>b<span class="op">,</span>c <span class="op">=</span> <span class="fl">1</span><span class="op">,</span><span class="ch">&#39;a&#39;</span><span class="op">,</span><span class="fl">3</span> </span></code></pre></div>
 <ul>
 <li>一些函数可以作用于矩阵，如果在其后加个点意味着它作用于矩阵的元素，如</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb6-1"><a href="Julia.html#cb6-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> randn(<span class="fl">6</span><span class="op">,</span><span class="fl">4</span>)</span>
-<span id="cb6-2"><a href="Julia.html#cb6-2" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> round.(x1)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb7-1"><a href="Julia.html#cb7-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> randn(<span class="fl">6</span><span class="op">,</span><span class="fl">4</span>)</span>
+<span id="cb7-2"><a href="Julia.html#cb7-2" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> round.(x1)</span></code></pre></div>
 <ul>
 <li>创建矩阵的方式，和matlab有许多共通之处。拼接也是类似的。</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb7-1"><a href="Julia.html#cb7-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span> <span class="fl">4</span><span class="op">;</span><span class="fl">5</span> <span class="fl">6</span> <span class="fl">7</span> <span class="fl">8</span> <span class="fl">9</span>]<span class="op">;</span></span>
-<span id="cb7-2"><a href="Julia.html#cb7-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> randn(<span class="fl">10</span><span class="op">,</span><span class="fl">8</span>) <span class="co"># 10行8列的正态分布矩阵</span></span>
-<span id="cb7-3"><a href="Julia.html#cb7-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> ones（<span class="fl">6</span>，<span class="fl">5</span>）</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb8-1"><a href="Julia.html#cb8-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span> <span class="fl">4</span><span class="op">;</span><span class="fl">5</span> <span class="fl">6</span> <span class="fl">7</span> <span class="fl">8</span> <span class="fl">9</span>]<span class="op">;</span></span>
+<span id="cb8-2"><a href="Julia.html#cb8-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> randn(<span class="fl">10</span><span class="op">,</span><span class="fl">8</span>) <span class="co"># 10行8列的正态分布矩阵</span></span>
+<span id="cb8-3"><a href="Julia.html#cb8-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> ones（<span class="fl">6</span>，<span class="fl">5</span>）</span></code></pre></div>
 <ul>
 <li><code>include</code>类似于R的<code>source</code>.</li>
 <li><code>DataFrames</code>包</li>
 </ul>
 
+</div>
 </div>
             </section>
 

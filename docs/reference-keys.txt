@@ -68,3 +68,6 @@ gauss
 noteexpress样式设置
 filezilla
 一句话tips-4
+julia类型的一些体会
+julia数值求根
+其他tips

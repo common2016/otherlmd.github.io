@@ -3,6 +3,27 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 # Julia {#Julia}
 
+## Julia类型的一些体会
+
+Julia一些包会自己构造一些类型，我们很多时候需要访问这个类型的成员，但成员的名字往往并不事先知道。一般情况下，可以通过下面三种办法获知成员的名字：
+
+- `dump(类型)`
+- `fieldnames(类型)`
+- 在帮助系统查看这个类型的帮助
+
+## Julia数值求根
+
+对于单方程求根，可以使用两个包如下。这两个包可以找到既定区间下所有的根。代码案例如下，
+```julia
+using IntervalArithmetic, IntervalRootFinding
+f(x) = sin(x) - 0.1*x^2 + 1
+a = roots(f, -10..10) # 第二个参数就是在`IntervalArithmetic`包中区间这个类型的表达方式
+a[1].interval.lo # 返回第一个根的下界
+```
+
+这里有几个注意的地方:第一，`roots`返回的是`Root`对象，可以通过前面说的方法，查看它的成员字段，知道它有两个字段一个是`interval`，一个是`status`。我们需要前者，然后`interval`本身又是一个类型，于是按照前面的方法继续查看它的字段，一个是`lo`，一个`hi`。
+
+## 其他tips
 - Julia的一个IDE就是Atom中的Juno，它已经非常好用了。记录几个点：
   - 快捷键配置，是在一个文件中修改的，见https://blog.csdn.net/uniqsa/article/details/91315714。这个给一个我常用的运行和保存配置书写,注意缩进：
   
