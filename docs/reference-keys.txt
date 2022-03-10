@@ -71,3 +71,7 @@ filezilla
 julia类型的一些体会
 julia数值求根
 其他tips
+julia的一些体会
+关于函数的参数
+julia的一些常用包
+优化包
