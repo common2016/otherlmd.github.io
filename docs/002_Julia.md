@@ -52,6 +52,7 @@ a[1].interval.lo # 返回第一个根的下界
 
 ## 其他tips
 
+- 查看模块内都有些什么东西，用`names(MyModule)`，查看一个类里面都有什么东西，用`fieldnames(MyClass)`。
 - 类似于R中`.rdata`的格式的数据保存，`JLD2`包的`jldsave("mydata.jld2")`使用。然后用`load("mydata.jld2")`来加载。
 - 在Julia中变量按引用传递，举个例子如下。
 ```julia
@@ -70,7 +71,16 @@ a[1] = 10 # 此时b的值也会变成10，如果你想让两个变量不一样�
 'body':
   'ctrl-s': 'core:save'
 ```
-  
+
+- VSCode这个IDE似乎更好用。记录几个快捷键备忘：
+  - `ctrl+enter`执行本行命令但光标不往下走
+  - `ctrl+shift`执行本行命令但光标往下走
+  - `cmd+M`激活终端，这个是我自己设的。
+  - `cmd+1/2/3`在不同组的pane间切换。
+  - `ctrl+1/2/3`激活第1/2/3个编辑器。
+  - `esc`清除本行代码运行结果
+  - `cmd+shift+p`调出命令面板，可以直接输命令执行
+
 - 安装包
 ```julia
 import Pkg;
