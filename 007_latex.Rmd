@@ -85,11 +85,8 @@ This is a landscape page.
 - `\renewcommand\refname{Reference}`把“参考文献”四个字修改为“Reference”
 - `\rule[水平高度]{长度}{粗细}`，文档中插入一条横线。如`\rule[0mm]{55em}{0.5mm}`
 - 使用`framed`包，用`\begin{framed}\end{framed}`环境可以给整段文字加边框。
-- `\pagestyle{empty}`当前及后续页无页眉
+- `\pagestyle{empty}`当前及后续页无页眉,第一页因为包含标题等可能有特殊格式，要消掉它的页码的话则用`\thispagestyle{empty}`。
 - `\renewcommand\refname{参考文献}`把"Reference"变成“参考文献”。
-
-## masOS相关
-
 
 
 ## `beamer`相关
