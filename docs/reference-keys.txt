@@ -9,6 +9,14 @@ Maple
 矩阵
 一句话tips
 Julia
+julia的一些体会
+关于函数的参数
+julia的一些常用包
+优化包
+julia数值求根
+dataframes包
+julia的ide体验
+其他tips
 Stata
 数据处理
 回归相关
@@ -35,7 +43,6 @@ C
 一句话tips-2
 Latex
 一句话tips-3
-masos相关
 beamer相关
 表格相关
 长表格
@@ -56,7 +63,7 @@ latex参考文献的编码思路
 社科申报课题部分模版
 Blog
 OS
-macos
+一句话tips-4
 挂载外置磁盘
 Mathematica
 快捷键-1
@@ -67,13 +74,3 @@ gauss
 系统函数
 noteexpress样式设置
 filezilla
-一句话tips-4
-julia类型的一些体会
-julia数值求根
-其他tips
-julia的一些体会
-关于函数的参数
-julia的一些常用包
-优化包
-julia的ide体验
-dataframes包

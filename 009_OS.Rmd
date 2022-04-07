@@ -23,6 +23,7 @@ HOMEBREW_CORE_DEFAULT_GIT_REMOTE = "https://mirrors.ustc.edu.cn/homebrew-core.gi
 如果出现`fatal: Could not resolve HEAD to a revision`报错。按如下步骤解决：https://www.jianshu.com/p/54beebb59570。
 
 - 当有了brew命令之后，安装jdk是非常简单的一件事。可以在homebrew搜索jdk的安装命令，它是`brew install --cask oracle-jdk`。有了jdk，我们就能愉快地使用R语言的xlsx包了。
+- `chromedriver`可以放在`/usr/local/bin`目录下，在命令行使用`open /usr/local/bin`打开该目录。
 
 ## 挂载外置磁盘
 
