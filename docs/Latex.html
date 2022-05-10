@@ -252,16 +252,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="10.1" data-path="Mathematica.html"><a href="Mathematica.html#快捷键-1"><i class="fa fa-check"></i><b>10.1</b> 快捷键</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="Other.html"><a href="Other.html"><i class="fa fa-check"></i><b>11</b> 其他小众软件</a>
+<li class="chapter" data-level="11" data-path="Python.html"><a href="Python.html"><i class="fa fa-check"></i><b>11</b> python</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="Other.html"><a href="Other.html#pdf文件压缩"><i class="fa fa-check"></i><b>11.1</b> PDF文件压缩</a></li>
-<li class="chapter" data-level="11.2" data-path="Other.html"><a href="Other.html#eviews编程"><i class="fa fa-check"></i><b>11.2</b> Eviews编程</a></li>
-<li class="chapter" data-level="11.3" data-path="Other.html"><a href="Other.html#gauss"><i class="fa fa-check"></i><b>11.3</b> GAUSS</a>
-<ul>
-<li class="chapter" data-level="11.3.1" data-path="Other.html"><a href="Other.html#系统函数"><i class="fa fa-check"></i><b>11.3.1</b> 系统函数</a></li>
+<li class="chapter" data-level="11.1" data-path="Python.html"><a href="Python.html#vscode下配置python"><i class="fa fa-check"></i><b>11.1</b> VSCode下配置python</a></li>
 </ul></li>
-<li class="chapter" data-level="11.4" data-path="Other.html"><a href="Other.html#noteexpress样式设置"><i class="fa fa-check"></i><b>11.4</b> NoteExpress样式设置</a></li>
-<li class="chapter" data-level="11.5" data-path="Other.html"><a href="Other.html#filezilla"><i class="fa fa-check"></i><b>11.5</b> FileZilla</a></li>
+<li class="chapter" data-level="12" data-path="Other.html"><a href="Other.html"><i class="fa fa-check"></i><b>12</b> 其他小众软件</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="Other.html"><a href="Other.html#pdf文件压缩"><i class="fa fa-check"></i><b>12.1</b> PDF文件压缩</a></li>
+<li class="chapter" data-level="12.2" data-path="Other.html"><a href="Other.html#eviews编程"><i class="fa fa-check"></i><b>12.2</b> Eviews编程</a></li>
+<li class="chapter" data-level="12.3" data-path="Other.html"><a href="Other.html#gauss"><i class="fa fa-check"></i><b>12.3</b> GAUSS</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="Other.html"><a href="Other.html#系统函数"><i class="fa fa-check"></i><b>12.3.1</b> 系统函数</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="Other.html"><a href="Other.html#noteexpress样式设置"><i class="fa fa-check"></i><b>12.4</b> NoteExpress样式设置</a></li>
+<li class="chapter" data-level="12.5" data-path="Other.html"><a href="Other.html#filezilla"><i class="fa fa-check"></i><b>12.5</b> FileZilla</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -286,6 +290,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="一句话tips-3" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> 一句话Tips</h2>
 <ul>
+<li>设置目录的表现格式。<code>titletoc</code>包中<code>\titlecontents{subsubsection}[8.5em]{}{\contentslabel{1.5em}}{}{\titlerule*[5pt]{$\cdot$}\contentspage}</code>设置目录中<code>subsubsection</code>的表现格式，8.5em指的是subsubsection的标题内容离页面最左边距离8.5em，<code>\contentslabel{1.5em}</code>中的<code>1.5em</code>指的标题序号比如<code>1</code>和标题内容之间的空白是1.5em。</li>
+<li><code>book</code>类默认左边留白，可以<code>\documentclass[openany]{book}</code>左边不留白。</li>
 <li>使用<code>include</code>后不分页，可以</li>
 </ul>
 <div class="sourceCode" id="cb38"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb38-1"><a href="Latex.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">newclude</span>}</span>

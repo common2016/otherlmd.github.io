@@ -67,6 +67,8 @@ OS
 挂载外置磁盘
 Mathematica
 快捷键-1
+Python
+vscode下配置python
 Other
 pdf文件压缩
 eviews编程
