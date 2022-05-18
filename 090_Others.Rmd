@@ -30,6 +30,21 @@ github上有个项目，windows下压缩PDF
 - `cdir(0)`返回当前工作目录
 - `chdir E:\17_HuaDong\learn\HM2009\PythonCode\ch9_code_2nd_gauss;`修改当前工作目录
 
+## Zotero
+
+主要看看它的参考文献格式编辑，这个编辑是CSL语言，和html语言在格式上是互通的。这个语言不仅使用Zotero，也是适用EndNote的。先介绍三个工具，
+
+- 这是一个手把手的教程，入门非常合适 https://www.zotero.org/support/dev/citation_styles/style_editing_step-by-step 。
+- 这是它的可视化CSL编辑器，可以在里面所见即所得的编辑 https://editor.citationstyles.org/visualEditor/ 。
+- 这是关于它的很多细节设置，包括choose这类标签的使用等 https://docs.citationstyles.org/en/stable/specification.html。
+- 这上面有很多中文格式，直接下载稍作修改即可使用，包括《经济研究》、《管理世界》等。 https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl 。
+
+基本流程就是：
+ 
+- 先找一个和你想要的格式非常类似的已存格式，可在前面第二点的网址中找。
+- 找到后，要先改它的样式的Title和ID，否则当你保存了这个样式，去安装的时候，只会覆盖原来的样式，不会产生新的样式。
+
+
 
 ## NoteExpress样式设置
 
@@ -39,6 +54,8 @@ github上有个项目，windows下压缩PDF
 作者.标题[J].期刊,年份,卷|(期)|:*页码|.
 ```
 - 一般情况上述格式中的标点符合与前面一个字段关联，如`年份`后面的逗号与`年份`同时出现，同时消失。如果想要标点符号和后面的字段关联，则要使用`|`符号。
+- 虚拟机安装NoteExpress弹出一个包含乱码的报错窗口，解决办法见 https://www.zhihu.com/question/514427851/answer/2421268390 。
+- "无效的类字符串报错"解决办法见 https://jingyan.baidu.com/article/4b52d702755cd0fc5c774bc8.html 。
 
 ## FileZilla
 这个文件传输文件不是一般地快。

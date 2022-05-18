@@ -66,70 +66,6 @@ MathJax.Hub.Config({
 </script>
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 
 </head>
@@ -264,8 +200,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="12.3.1" data-path="Other.html"><a href="Other.html#系统函数"><i class="fa fa-check"></i><b>12.3.1</b> 系统函数</a></li>
 </ul></li>
-<li class="chapter" data-level="12.4" data-path="Other.html"><a href="Other.html#noteexpress样式设置"><i class="fa fa-check"></i><b>12.4</b> NoteExpress样式设置</a></li>
-<li class="chapter" data-level="12.5" data-path="Other.html"><a href="Other.html#filezilla"><i class="fa fa-check"></i><b>12.5</b> FileZilla</a></li>
+<li class="chapter" data-level="12.4" data-path="Other.html"><a href="Other.html#zotero"><i class="fa fa-check"></i><b>12.4</b> Zotero</a></li>
+<li class="chapter" data-level="12.5" data-path="Other.html"><a href="Other.html#noteexpress样式设置"><i class="fa fa-check"></i><b>12.5</b> NoteExpress样式设置</a></li>
+<li class="chapter" data-level="12.6" data-path="Other.html"><a href="Other.html#filezilla"><i class="fa fa-check"></i><b>12.6</b> FileZilla</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -321,8 +258,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 </div>
-<div id="noteexpress样式设置" class="section level2" number="12.4">
-<h2><span class="header-section-number">12.4</span> NoteExpress样式设置</h2>
+<div id="zotero" class="section level2" number="12.4">
+<h2><span class="header-section-number">12.4</span> Zotero</h2>
+<p>主要看看它的参考文献格式编辑，这个编辑是CSL语言，和html语言在格式上是互通的。这个语言不仅使用Zotero，也是适用EndNote的。先介绍三个工具，</p>
+<ul>
+<li>这是一个手把手的教程，入门非常合适 <a href="https://www.zotero.org/support/dev/citation_styles/style_editing_step-by-step" class="uri">https://www.zotero.org/support/dev/citation_styles/style_editing_step-by-step</a> 。</li>
+<li>这是它的可视化CSL编辑器，可以在里面所见即所得的编辑 <a href="https://editor.citationstyles.org/visualEditor/" class="uri">https://editor.citationstyles.org/visualEditor/</a> 。</li>
+<li>这是关于它的很多细节设置，包括choose这类标签的使用等 <a href="https://docs.citationstyles.org/en/stable/specification.html" class="uri">https://docs.citationstyles.org/en/stable/specification.html</a>。</li>
+<li>这上面有很多中文格式，直接下载稍作修改即可使用，包括《经济研究》、《管理世界》等。 <a href="https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl" class="uri">https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl</a> 。</li>
+</ul>
+<p>基本流程就是：</p>
+<ul>
+<li>先找一个和你想要的格式非常类似的已存格式，可在前面第二点的网址中找。</li>
+<li>找到后，要先改它的样式的Title和ID，否则当你保存了这个样式，去安装的时候，只会覆盖原来的样式，不会产生新的样式。</li>
+</ul>
+</div>
+<div id="noteexpress样式设置" class="section level2" number="12.5">
+<h2><span class="header-section-number">12.5</span> NoteExpress样式设置</h2>
 <ul>
 <li>参考文献中文在前，英文在后，首先把文献的字段“语言”凡是英文的改为”English”，然后排序的时候先按语言排即可。</li>
 <li>对于空格的处理，以<code>*</code>号连接，如</li>
@@ -330,10 +282,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>作者.标题[J].期刊,年份,卷|(期)|:*页码|.</code></pre>
 <ul>
 <li>一般情况上述格式中的标点符合与前面一个字段关联，如<code>年份</code>后面的逗号与<code>年份</code>同时出现，同时消失。如果想要标点符号和后面的字段关联，则要使用<code>|</code>符号。</li>
+<li>虚拟机安装NoteExpress弹出一个包含乱码的报错窗口，解决办法见 <a href="https://www.zhihu.com/question/514427851/answer/2421268390" class="uri">https://www.zhihu.com/question/514427851/answer/2421268390</a> 。</li>
+<li>“无效的类字符串报错”解决办法见 <a href="https://jingyan.baidu.com/article/4b52d702755cd0fc5c774bc8.html" class="uri">https://jingyan.baidu.com/article/4b52d702755cd0fc5c774bc8.html</a> 。</li>
 </ul>
 </div>
-<div id="filezilla" class="section level2" number="12.5">
-<h2><span class="header-section-number">12.5</span> FileZilla</h2>
+<div id="filezilla" class="section level2" number="12.6">
+<h2><span class="header-section-number">12.6</span> FileZilla</h2>
 <p>这个文件传输文件不是一般地快。</p>
 <p>官网下载地址：<a href="https://www.filezilla.cn/" class="uri">https://www.filezilla.cn/</a></p>
 <p>几个问题的处理：</p>
