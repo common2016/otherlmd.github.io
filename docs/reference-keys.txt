@@ -74,6 +74,10 @@ pdf文件压缩
 eviews编程
 gauss
 系统函数
+zotero
+word中插入公式
+自带的公式输入
+公式编号的其他方法
+利用texsword编辑器
 noteexpress样式设置
 filezilla
-zotero
