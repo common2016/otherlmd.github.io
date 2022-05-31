@@ -27,6 +27,7 @@ stata调用r
 miscellaneous
 Matlab
 一句话tips-1
+带名称和缺省值的参数设置
 窗口输出到文本
 gvar-toolbox使用报告
 数据输入

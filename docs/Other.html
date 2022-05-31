@@ -189,12 +189,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path="Matlab.html"><a href="Matlab.html"><i class="fa fa-check"></i><b>4</b> Matlab</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="Matlab.html"><a href="Matlab.html#一句话tips-1"><i class="fa fa-check"></i><b>4.1</b> 一句话Tips</a></li>
-<li class="chapter" data-level="4.2" data-path="Matlab.html"><a href="Matlab.html#窗口输出到文本"><i class="fa fa-check"></i><b>4.2</b> 窗口输出到文本</a></li>
-<li class="chapter" data-level="4.3" data-path="Matlab.html"><a href="Matlab.html#gvar-toolbox使用报告"><i class="fa fa-check"></i><b>4.3</b> GVAR Toolbox使用报告</a>
+<li class="chapter" data-level="4.2" data-path="Matlab.html"><a href="Matlab.html#带名称和缺省值的参数设置"><i class="fa fa-check"></i><b>4.2</b> 带名称和缺省值的参数设置</a></li>
+<li class="chapter" data-level="4.3" data-path="Matlab.html"><a href="Matlab.html#窗口输出到文本"><i class="fa fa-check"></i><b>4.3</b> 窗口输出到文本</a></li>
+<li class="chapter" data-level="4.4" data-path="Matlab.html"><a href="Matlab.html#gvar-toolbox使用报告"><i class="fa fa-check"></i><b>4.4</b> GVAR Toolbox使用报告</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="Matlab.html"><a href="Matlab.html#数据输入"><i class="fa fa-check"></i><b>4.3.1</b> 数据输入</a></li>
-<li class="chapter" data-level="4.3.2" data-path="Matlab.html"><a href="Matlab.html#模型设定"><i class="fa fa-check"></i><b>4.3.2</b> 模型设定</a></li>
-<li class="chapter" data-level="4.3.3" data-path="Matlab.html"><a href="Matlab.html#一些坑"><i class="fa fa-check"></i><b>4.3.3</b> 一些坑</a></li>
+<li class="chapter" data-level="4.4.1" data-path="Matlab.html"><a href="Matlab.html#数据输入"><i class="fa fa-check"></i><b>4.4.1</b> 数据输入</a></li>
+<li class="chapter" data-level="4.4.2" data-path="Matlab.html"><a href="Matlab.html#模型设定"><i class="fa fa-check"></i><b>4.4.2</b> 模型设定</a></li>
+<li class="chapter" data-level="4.4.3" data-path="Matlab.html"><a href="Matlab.html#一些坑"><i class="fa fa-check"></i><b>4.4.3</b> 一些坑</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="git操作流程.html"><a href="git操作流程.html"><i class="fa fa-check"></i><b>5</b> git操作流程</a>
@@ -316,9 +317,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>可以使用学生证申请它的light版，(网址)[<a href="https://www.aptech.com/industry-solutions/gauss-in-education/students/" class="uri">https://www.aptech.com/industry-solutions/gauss-in-education/students/</a>]</li>
 <li>F4类似于R里面的<code>ctrl+enter</code>，如果选中则运行选中行，没选中则运行当前行。运行整个代码使用Ctrl+R。</li>
 <li>GAUSS在函数中，如果没有使用类似<code>local x y</code>方式定义的变量，都是全局变量，会在函数中修改函数外的值。</li>
-<li><code>#include myfile.src</code>将<code>myfile.src</code>文件中的内容插入到当前脚本中，类似于R语言中的<code>source()</code>。但是该命令不能在控制台执行，而只能嵌入在脚本中。要在控制台中达到相同的效果应该使用<code>run myfile.src</code>。</li>
+<li><code>#include myfile.src</code>将<code>myfile.src</code>文件中的内容插入到当前脚本中，类似于R语言中的<code>source()</code>。但是该命令不能在控制台执行，而只能嵌入在脚本中。要在控制台中达到相同的效果应该使用<code>run myfile.src</code>。通常可以把函数都放在<code>.src</code>文件中。</li>
 <li>GAUSS也有自己的库，它调用库的命令与R类似，如<code>library pgraph;</code></li>
 <li><code>a|b</code>垂直连接矩阵a和b, <code>a~b</code>水平连接矩阵a和b。</li>
+<li>右下角有个按钮可以悬浮整个窗口，还不错。</li>
 </ul>
 <div id="系统函数" class="section level3" number="12.3.1">
 <h3><span class="header-section-number">12.3.1</span> 系统函数</h3>

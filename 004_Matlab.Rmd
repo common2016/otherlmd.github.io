@@ -6,7 +6,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ## 一句话Tips
 - 在Editor中各个窗口之间的切换 
   - 快捷键ctrl+pageup和ctrl+pagedown之间可以实现在editor中所打开文件之间的切换
-- 在IDE中各个窗口之间的切换 
+- 在IDE中各个窗口之间的切换(该快捷方式不可更改，Mac中ctrl为cmd) 
   - ctrl+Tab 实现IDE中的各个窗口轮流转换
   - ctrl+PageUp/PageDown在子窗口的各标签切换
   - ctrl+0(或者1、2、3、4)实现转换到控制台(或其他特定窗口 )
@@ -22,6 +22,34 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
   [0.0001,0.0001,0.0001, -1, 0.00001*ones(1,ncol)],[ones(1,length(para0))],...
   [],[],Y, tau, nrow, ncol);
 ```
+
+## 带名称和缺省值的参数设置
+
+在Matlab2019以后，函数参数的设置有了更多功能，比如可以验证参数的类型（整数、双精度？）、维数，同时提供了带名称的参数设置。这需要在代码块中加入一个模块。比如`myFunction`函数第一个参数是`X`，这个就像通常的函数一样按位置确定，剩下的参数按名称来匹配参数，那么要把按名称匹配的参数都放在一个结构体中，而且这样的参数也可以赋予默认值，这就和R等函数非常类似了。具体如下，
+
+```matlab
+function myRectangle(X,Y,options)
+    arguments
+       X double
+       Y double
+       options.LineStyle (1,1) string = "-"  % 括号是维数约定，可以省略，string是类型约定，可以省略
+       options.LineWidth (1,1) {mustBeNumeric} = 1 % 花括号是验证函数，可以省略
+    end
+    % Function code
+    ...
+end
+```
+
+该函数可以如下调用：
+```matlab
+myRectangle(4,5)
+myRectangle(4,5,LineStyle=":",LineWidth=2)
+myRectangle(4,5,LineWidth=2,LineStyle=":")
+myRectangle(4,5,LineStyle=":")
+myRectangle(4,5,LineWidth=2)
+```
+
+
 ## 窗口输出到文本
 
   1.把窗口输出写入指定的文件，之后会一直记录窗口输出信息，直到你关闭；

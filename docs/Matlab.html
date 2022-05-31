@@ -189,12 +189,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path="Matlab.html"><a href="Matlab.html"><i class="fa fa-check"></i><b>4</b> Matlab</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="Matlab.html"><a href="Matlab.html#一句话tips-1"><i class="fa fa-check"></i><b>4.1</b> 一句话Tips</a></li>
-<li class="chapter" data-level="4.2" data-path="Matlab.html"><a href="Matlab.html#窗口输出到文本"><i class="fa fa-check"></i><b>4.2</b> 窗口输出到文本</a></li>
-<li class="chapter" data-level="4.3" data-path="Matlab.html"><a href="Matlab.html#gvar-toolbox使用报告"><i class="fa fa-check"></i><b>4.3</b> GVAR Toolbox使用报告</a>
+<li class="chapter" data-level="4.2" data-path="Matlab.html"><a href="Matlab.html#带名称和缺省值的参数设置"><i class="fa fa-check"></i><b>4.2</b> 带名称和缺省值的参数设置</a></li>
+<li class="chapter" data-level="4.3" data-path="Matlab.html"><a href="Matlab.html#窗口输出到文本"><i class="fa fa-check"></i><b>4.3</b> 窗口输出到文本</a></li>
+<li class="chapter" data-level="4.4" data-path="Matlab.html"><a href="Matlab.html#gvar-toolbox使用报告"><i class="fa fa-check"></i><b>4.4</b> GVAR Toolbox使用报告</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="Matlab.html"><a href="Matlab.html#数据输入"><i class="fa fa-check"></i><b>4.3.1</b> 数据输入</a></li>
-<li class="chapter" data-level="4.3.2" data-path="Matlab.html"><a href="Matlab.html#模型设定"><i class="fa fa-check"></i><b>4.3.2</b> 模型设定</a></li>
-<li class="chapter" data-level="4.3.3" data-path="Matlab.html"><a href="Matlab.html#一些坑"><i class="fa fa-check"></i><b>4.3.3</b> 一些坑</a></li>
+<li class="chapter" data-level="4.4.1" data-path="Matlab.html"><a href="Matlab.html#数据输入"><i class="fa fa-check"></i><b>4.4.1</b> 数据输入</a></li>
+<li class="chapter" data-level="4.4.2" data-path="Matlab.html"><a href="Matlab.html#模型设定"><i class="fa fa-check"></i><b>4.4.2</b> 模型设定</a></li>
+<li class="chapter" data-level="4.4.3" data-path="Matlab.html"><a href="Matlab.html#一些坑"><i class="fa fa-check"></i><b>4.4.3</b> 一些坑</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="git操作流程.html"><a href="git操作流程.html"><i class="fa fa-check"></i><b>5</b> git操作流程</a>
@@ -301,7 +302,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>快捷键ctrl+pageup和ctrl+pagedown之间可以实现在editor中所打开文件之间的切换</li>
 </ul></li>
-<li>在IDE中各个窗口之间的切换
+<li>在IDE中各个窗口之间的切换(该快捷方式不可更改，Mac中ctrl为cmd)
 <ul>
 <li>ctrl+Tab 实现IDE中的各个窗口轮流转换</li>
 <li>ctrl+PageUp/PageDown在子窗口的各标签切换</li>
@@ -318,21 +319,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb31-2"><a href="Matlab.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  [<span class="fl">0.0001</span><span class="op">,</span><span class="fl">0.0001</span><span class="op">,</span><span class="fl">0.0001</span><span class="op">,</span> <span class="op">-</span><span class="fl">1</span><span class="op">,</span> <span class="fl">0.00001</span><span class="op">*</span><span class="va">ones</span>(<span class="fl">1</span><span class="op">,</span><span class="va">ncol</span>)]<span class="op">,</span>[<span class="va">ones</span>(<span class="fl">1</span><span class="op">,</span><span class="va">length</span>(<span class="va">para0</span>))]<span class="op">,...</span></span>
 <span id="cb31-3"><a href="Matlab.html#cb31-3" aria-hidden="true" tabindex="-1"></a>  []<span class="op">,</span>[]<span class="op">,</span><span class="va">Y</span><span class="op">,</span> <span class="va">tau</span><span class="op">,</span> <span class="va">nrow</span><span class="op">,</span> <span class="va">ncol</span>)<span class="op">;</span></span></code></pre></div>
 </div>
-<div id="窗口输出到文本" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> 窗口输出到文本</h2>
-<p>1.把窗口输出写入指定的文件，之后会一直记录窗口输出信息，直到你关闭；</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb32-1"><a href="Matlab.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span>(<span class="ss">&#39;testlog.txt&#39;</span>)<span class="op">;</span></span>
-<span id="cb32-2"><a href="Matlab.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">on</span><span class="op">;</span></span></code></pre></div>
-<p>2.关闭日志记录</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb33-1"><a href="Matlab.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">off</span><span class="op">;</span></span></code></pre></div>
-<p>3.删除日志</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb34-1"><a href="Matlab.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">off</span><span class="op">;</span><span class="co">%先关闭</span></span>
-<span id="cb34-2"><a href="Matlab.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="va">delete</span>(<span class="ss">&#39;testlog.txt&#39;</span>)<span class="op">;</span></span></code></pre></div>
+<div id="带名称和缺省值的参数设置" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> 带名称和缺省值的参数设置</h2>
+<p>在Matlab2019以后，函数参数的设置有了更多功能，比如可以验证参数的类型（整数、双精度？）、维数，同时提供了带名称的参数设置。这需要在代码块中加入一个模块。比如<code>myFunction</code>函数第一个参数是<code>X</code>，这个就像通常的函数一样按位置确定，剩下的参数按名称来匹配参数，那么要把按名称匹配的参数都放在一个结构体中，而且这样的参数也可以赋予默认值，这就和R等函数非常类似了。具体如下，</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb32-1"><a href="Matlab.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="va">myRectangle</span>(<span class="va">X</span><span class="op">,</span><span class="va">Y</span><span class="op">,</span><span class="va">options</span>)</span>
+<span id="cb32-2"><a href="Matlab.html#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">arguments</span></span>
+<span id="cb32-3"><a href="Matlab.html#cb32-3" aria-hidden="true" tabindex="-1"></a>       <span class="va">X</span> <span class="va">double</span></span>
+<span id="cb32-4"><a href="Matlab.html#cb32-4" aria-hidden="true" tabindex="-1"></a>       <span class="va">Y</span> <span class="va">double</span></span>
+<span id="cb32-5"><a href="Matlab.html#cb32-5" aria-hidden="true" tabindex="-1"></a>       <span class="va">options</span>.<span class="va">LineStyle</span> (<span class="fl">1</span><span class="op">,</span><span class="fl">1</span>) <span class="va">string</span> <span class="op">=</span> <span class="st">&quot;-&quot;</span>  <span class="co">% 括号是维数约定，可以省略，string是类型约定，可以省略</span></span>
+<span id="cb32-6"><a href="Matlab.html#cb32-6" aria-hidden="true" tabindex="-1"></a>       <span class="va">options</span>.<span class="va">LineWidth</span> (<span class="fl">1</span><span class="op">,</span><span class="fl">1</span>) {<span class="va">mustBeNumeric</span>} <span class="op">=</span> <span class="fl">1</span> <span class="co">% 花括号是验证函数，可以省略</span></span>
+<span id="cb32-7"><a href="Matlab.html#cb32-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
+<span id="cb32-8"><a href="Matlab.html#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">% Function code</span></span>
+<span id="cb32-9"><a href="Matlab.html#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span>
+<span id="cb32-10"><a href="Matlab.html#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div>
+<p>该函数可以如下调用：</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb33-1"><a href="Matlab.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span>)</span>
+<span id="cb33-2"><a href="Matlab.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineStyle</span><span class="op">=</span><span class="st">&quot;:&quot;</span><span class="op">,</span><span class="va">LineWidth</span><span class="op">=</span><span class="fl">2</span>)</span>
+<span id="cb33-3"><a href="Matlab.html#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineWidth</span><span class="op">=</span><span class="fl">2</span><span class="op">,</span><span class="va">LineStyle</span><span class="op">=</span><span class="st">&quot;:&quot;</span>)</span>
+<span id="cb33-4"><a href="Matlab.html#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineStyle</span><span class="op">=</span><span class="st">&quot;:&quot;</span>)</span>
+<span id="cb33-5"><a href="Matlab.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineWidth</span><span class="op">=</span><span class="fl">2</span>)</span></code></pre></div>
 </div>
-<div id="gvar-toolbox使用报告" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> GVAR Toolbox使用报告</h2>
-<div id="数据输入" class="section level3" number="4.3.1">
-<h3><span class="header-section-number">4.3.1</span> 数据输入</h3>
+<div id="窗口输出到文本" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> 窗口输出到文本</h2>
+<p>1.把窗口输出写入指定的文件，之后会一直记录窗口输出信息，直到你关闭；</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb34-1"><a href="Matlab.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span>(<span class="ss">&#39;testlog.txt&#39;</span>)<span class="op">;</span></span>
+<span id="cb34-2"><a href="Matlab.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">on</span><span class="op">;</span></span></code></pre></div>
+<p>2.关闭日志记录</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb35-1"><a href="Matlab.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">off</span><span class="op">;</span></span></code></pre></div>
+<p>3.删除日志</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb36-1"><a href="Matlab.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">off</span><span class="op">;</span><span class="co">%先关闭</span></span>
+<span id="cb36-2"><a href="Matlab.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="va">delete</span>(<span class="ss">&#39;testlog.txt&#39;</span>)<span class="op">;</span></span></code></pre></div>
+</div>
+<div id="gvar-toolbox使用报告" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> GVAR Toolbox使用报告</h2>
+<div id="数据输入" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> 数据输入</h3>
 <ul>
 <li>E-G列中，国家排序会影响后面的估计，结果的呈现都是以该顺序排列的。如果你要用程序内建的加权矩阵，那么G列的国家码需要填充。</li>
 <li>在各变量数据存放的sheet中，sheet名要按照short name来命名，虽然顺序不必一致，但推荐一致。</li>
@@ -340,15 +361,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>注意，缺失值一定要用123456789替代，不要留空。</li>
 </ul>
 </div>
-<div id="模型设定" class="section level3" number="4.3.2">
-<h3><span class="header-section-number">4.3.2</span> 模型设定</h3>
+<div id="模型设定" class="section level3" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> 模型设定</h3>
 <ul>
 <li>在模型设定中，要注意，空的意味着数据不可行，而不要设置成0.</li>
 <li>有个时候要注意协整rank不能过大，比如3个变量设成4个rank，会报错。</li>
 </ul>
 </div>
-<div id="一些坑" class="section level3" number="4.3.3">
-<h3><span class="header-section-number">4.3.3</span> 一些坑</h3>
+<div id="一些坑" class="section level3" number="4.4.3">
+<h3><span class="header-section-number">4.4.3</span> 一些坑</h3>
 <p>1.国内变量那些相应的权重矩阵要填满，否则会报错。如都填好<code>wmat1</code>。</p>
 <p>2.<code>GVAR Toolbox</code>主导单元是按全局变量设置的，因此，如果你要将美国作为主导单元，应该将美国的变量单独提出来作为全局变量。（对否？）</p>
 
