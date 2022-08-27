@@ -80,12 +80,13 @@ This is a landscape page.
 - 图片文件名包含下划线，可用`\string“ 17_Huadong\string”`表达。如
 
  `\includegraphics[scale=0.8]{\string"E:/17_HuaDong/reserch/GVAR/RltPaper/DesStat\string".png}`
+ 
 - 使用`\verb||`时，如果是在其他命令中作为参数使用，是会报错的。例如`\footnote{\verb|abc|}`是不行的。应该加载`fancyvrb`包，然后先保存`\SaveVerb{myverb}|abc|`，再使用`\footnote{\UseVerb{myverb}}`即可。
 
 - `\renewcommand\refname{Reference}`把“参考文献”四个字修改为“Reference”
 - `\rule[水平高度]{长度}{粗细}`，文档中插入一条横线。如`\rule[0mm]{55em}{0.5mm}`
 - 使用`framed`包，用`\begin{framed}\end{framed}`环境可以给整段文字加边框。
-- `\pagestyle{empty}`当前及后续页无页眉,第一页因为包含标题等可能有特殊格式，要消掉它的页码的话则用`\thispagestyle{empty}`。
+- `\pagestyle{empty}`当前及后续页无页眉,第一页因为包含标题等可能有特殊格式，要消掉它的页码的话则用`\thispagestyle{empty}`。但如果还是无法去除第一页的页码，一定是使用了`\maketitle`命令，该命令内部调用了`\thispagestyle{\plain}`，为了解决这个问题，只要在该命令行里面调用`\thispagestyle{\empty}`，空行也不要留下。
 - `\renewcommand\refname{参考文献}`把"Reference"变成“参考文献”。
 
 
