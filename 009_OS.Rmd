@@ -8,6 +8,10 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval = FALS
 - 进入外置磁盘目录，要先进入根目录，然后输入`cd volumes`就可以看到外置磁盘的名字了。
 - 苹果系统查命令的详细说明可以使用比如`man diskutil`就可以查看命令`diskutil`的详细语法，阅读完后，输入`q`以退出。
 - 在macOS上安装dynare，国内会因为连不上github而无法安装。如何在国内顺利连上github，参考https://juejin.cn/post/7039913254897860616
+- `chromedriver`可以放在`/usr/local/bin`目录下，在命令行使用`open /usr/local/bin`打开该目录。
+
+### Homebrew
+
 - macOS上有一个优秀的包管理器Homebrew,进它的主页https://brew.sh/，一行代码让你装上该软件。注意，该软件同样要求你能够顺利连上github。很多情况下速度很慢，导致安装不上。可以如下步骤更换代码存储的源：
   - `curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh >> brew_install`把安装过程的命令文件下载到你当前目录下。
   - 打开文件`brew_install`更改默认的源：
@@ -23,7 +27,7 @@ HOMEBREW_CORE_DEFAULT_GIT_REMOTE = "https://mirrors.ustc.edu.cn/homebrew-core.gi
 如果出现`fatal: Could not resolve HEAD to a revision`报错。按如下步骤解决：https://www.jianshu.com/p/54beebb59570。
 
 - 当有了brew命令之后，安装jdk是非常简单的一件事。可以在homebrew搜索jdk的安装命令，它是`brew install --cask oracle-jdk`。有了jdk，我们就能愉快地使用R语言的xlsx包了。
-- `chromedriver`可以放在`/usr/local/bin`目录下，在命令行使用`open /usr/local/bin`打开该目录。
+
 
 ## 挂载外置磁盘
 
@@ -33,4 +37,4 @@ HOMEBREW_CORE_DEFAULT_GIT_REMOTE = "https://mirrors.ustc.edu.cn/homebrew-core.gi
 ```
 UUID=06A19C31-BED5-36E9-BEC9-616E398C77FD /Users/yangnay/elements exfat rw,auto
 ```
-注意，`exfat`是你的硬盘的文件格式。
+注意，`exfat`是你的硬盘的文件格式，`elements`需要提前建好文件夹。

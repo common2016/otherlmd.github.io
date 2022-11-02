@@ -82,3 +82,4 @@ word中插入公式
 利用texsword编辑器
 noteexpress样式设置
 filezilla
+homebrew
