@@ -10,7 +10,13 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval = FALS
 - 在macOS上安装dynare，国内会因为连不上github而无法安装。如何在国内顺利连上github，参考https://juejin.cn/post/7039913254897860616
 - `chromedriver`可以放在`/usr/local/bin`目录下，在命令行使用`open /usr/local/bin`打开该目录。
 
-### Homebrew
+## 安装和配置Latex
+
+1. 安装texlive，在macOS下就是Mactex。进入Texlive官网，下载安装包，双击安装即可。
+2. 安装TexStudio更加简单，下载后双击，把弹出的窗口中的程序复制到Applications里面即可。
+3. 配置TexStudio，一是Build里面，引擎要换成xepdf，这是专门为中文进行渲染的。二是各种命令要换过来，具体可以参见旧的界面，或者https://blog.csdn.net/qq_14925953/article/details/126590499。
+
+## Homebrew
 
 - macOS上有一个优秀的包管理器Homebrew,进它的主页https://brew.sh/，一行代码让你装上该软件。注意，该软件同样要求你能够顺利连上github。很多情况下速度很慢，导致安装不上。可以如下步骤更换代码存储的源：
   - `curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh >> brew_install`把安装过程的命令文件下载到你当前目录下。

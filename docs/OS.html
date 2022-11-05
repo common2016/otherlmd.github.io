@@ -182,11 +182,10 @@ MathJax.Hub.Config({
 <li><a href="Blog.html#Blog" id="toc-Blog"><span class="toc-section-number">8</span> 博客</a></li>
 <li><a href="OS.html#OS" id="toc-OS"><span class="toc-section-number">9</span> macOS操作系统</a>
 <ul>
-<li><a href="OS.html#一句话tips-4" id="toc-一句话tips-4"><span class="toc-section-number">9.1</span> 一句话Tips</a>
-<ul>
-<li><a href="OS.html#homebrew" id="toc-homebrew"><span class="toc-section-number">9.1.1</span> Homebrew</a></li>
-</ul></li>
-<li><a href="OS.html#挂载外置磁盘" id="toc-挂载外置磁盘"><span class="toc-section-number">9.2</span> 挂载外置磁盘</a></li>
+<li><a href="OS.html#一句话tips-4" id="toc-一句话tips-4"><span class="toc-section-number">9.1</span> 一句话Tips</a></li>
+<li><a href="OS.html#安装和配置latex" id="toc-安装和配置latex"><span class="toc-section-number">9.2</span> 安装和配置Latex</a></li>
+<li><a href="OS.html#homebrew" id="toc-homebrew"><span class="toc-section-number">9.3</span> Homebrew</a></li>
+<li><a href="OS.html#挂载外置磁盘" id="toc-挂载外置磁盘"><span class="toc-section-number">9.4</span> 挂载外置磁盘</a></li>
 </ul></li>
 <li><a href="Mathematica.html#Mathematica" id="toc-Mathematica"><span class="toc-section-number">10</span> Mathematica</a>
 <ul>
@@ -242,8 +241,17 @@ MathJax.Hub.Config({
 <li>在macOS上安装dynare，国内会因为连不上github而无法安装。如何在国内顺利连上github，参考https://juejin.cn/post/7039913254897860616</li>
 <li><code>chromedriver</code>可以放在<code>/usr/local/bin</code>目录下，在命令行使用<code>open /usr/local/bin</code>打开该目录。</li>
 </ul>
-<div id="homebrew" class="section level3" number="9.1.1">
-<h3><span class="header-section-number">9.1.1</span> Homebrew</h3>
+</div>
+<div id="安装和配置latex" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> 安装和配置Latex</h2>
+<ol style="list-style-type: decimal">
+<li>安装texlive，在macOS下就是Mactex。进入Texlive官网，下载安装包，双击安装即可。</li>
+<li>安装TexStudio更加简单，下载后双击，把弹出的窗口中的程序复制到Applications里面即可。</li>
+<li>配置TexStudio，一是Build里面，引擎要换成xepdf，这是专门为中文进行渲染的。二是各种命令要换过来，具体可以参见旧的界面，或者https://blog.csdn.net/qq_14925953/article/details/126590499。</li>
+</ol>
+</div>
+<div id="homebrew" class="section level2" number="9.3">
+<h2><span class="header-section-number">9.3</span> Homebrew</h2>
 <ul>
 <li><p>macOS上有一个优秀的包管理器Homebrew,进它的主页https://brew.sh/，一行代码让你装上该软件。注意，该软件同样要求你能够顺利连上github。很多情况下速度很慢，导致安装不上。可以如下步骤更换代码存储的源：</p>
 <ul>
@@ -261,9 +269,8 @@ HOMEBREW_CORE_DEFAULT_GIT_REMOTE = &quot;https://mirrors.ustc.edu.cn/homebrew-co
 <li><p>当有了brew命令之后，安装jdk是非常简单的一件事。可以在homebrew搜索jdk的安装命令，它是<code>brew install --cask oracle-jdk</code>。有了jdk，我们就能愉快地使用R语言的xlsx包了。</p></li>
 </ul>
 </div>
-</div>
-<div id="挂载外置磁盘" class="section level2" number="9.2">
-<h2><span class="header-section-number">9.2</span> 挂载外置磁盘</h2>
+<div id="挂载外置磁盘" class="section level2" number="9.4">
+<h2><span class="header-section-number">9.4</span> 挂载外置磁盘</h2>
 <ol style="list-style-type: decimal">
 <li>首先利用<code>diskutil list</code>查看你的外置磁盘的设备名称，在IDENTIFIER列中，一般是<code>/dev/disk4s2</code>之类的。</li>
 <li>然后利用<code>diskutil info disk4s2</code>查询磁盘的UUID</li>

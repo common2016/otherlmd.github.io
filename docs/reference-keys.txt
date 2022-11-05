@@ -83,3 +83,4 @@ word中插入公式
 noteexpress样式设置
 filezilla
 homebrew
+安装和配置latex
