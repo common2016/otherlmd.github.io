@@ -59,13 +59,21 @@ esttab e(b) using rlt.csv, replace  //输出回归系数
 ```
 
 ## 一些外部命令
+
 - `diff`可以做DID，PSM-DID，分位DID
 - `xtnptimevar`：非参时变面板固定效应系数估计。方法是Li, Chen and Gao (2011)。
 - `xtfixedcoeftvcu`：Hsiao(2014)的书上变系数中的固定系数估计命令。
 - `xtsemipar`: Baltagi and Li (2002)的半参部分线性固定效应面板估计。代码缺陷在于非参数只能是一个变量。
 - `xthreg`，Hansen(1999)静态面板阈值回归。
+- 连享会在微信上有很多有用的资源，其发布的命令`lianxh`可以搜索这些资源。
+```stata
+ssc install lianxh // 安装
+help lianxh
+lianxh DID+Stata // and 搜索DID和stata关键词
+```
 
 ## stata对某个变量随机抽样
+
 **问题** 回归以后，如何对残差进行自助抽样？stata里面对某个变量随机抽样会比较麻烦一些。它有一个函数`sample`, 但是它是对整个数据集抽样。要对某个变量抽样，需要曲线救国。
 
 解决的思路：
@@ -87,7 +95,9 @@ keep eps
 bsample 100
 merge 1:1 _n using GVAR
 ```
+
 ## Stata调用R
+
 - 安装rsource包
 ```stata
 ssc install rsource
