@@ -644,51 +644,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">7.11.1</span> 社科申报课题部分模版</h3>
 <p>申报书有两个特征：</p>
 <ol style="list-style-type: decimal">
-<li>页面要有边框，这可以通过使用<code>framed</code>包中的<code>framed</code>环境实现</li>
-<li>一般前面有个表格。如何让表格中的横线顶到边框，通过使用零宽度的盒子实现。</li>
+<li>页面要有边框，这可以通过使用<code>framed</code>包中的<code>framed</code>环境实现。但是这个环境没有参数可以设置，比如调整整个框的宽度。那么可以使用<code>\MakeFramed{&lt;setting&gt;}...\endMakeFramed</code>这个形式，它与<code>framed</code>环境本质上是一样的，但是此时可以调整参数了。譬如调整成原来款的1.5倍。</li>
 </ol>
-<div class="sourceCode" id="cb32"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb32-1"><a href="Latex.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[hyperref]{<span class="ex">article</span>}<span class="co">% 使得标签不乱码</span></span>
-<span id="cb32-2"><a href="Latex.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[UTF8]{<span class="ex">ctex</span>}<span class="co">%中文宏包</span></span>
-<span id="cb32-3"><a href="Latex.html#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath,bm,amsfonts,amssymb</span>}<span class="co">%数学宏包，amsfonts,amssymb是插入空心字母的包，使用命令\mathbb{}</span></span>
-<span id="cb32-4"><a href="Latex.html#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co">%\numberwithin{equation}{section}%公式按节进行编号</span></span>
-<span id="cb32-5"><a href="Latex.html#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[dvipsnames]{<span class="ex">xcolor</span>}</span>
-<span id="cb32-6"><a href="Latex.html#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[a4paper,left=2.14cm,right=2.14cm,bottom=2cm,top=2cm]{<span class="ex">geometry</span>}<span class="co">%页面设置宏包</span></span>
-<span id="cb32-7"><a href="Latex.html#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\pagestyle</span>{headings}</span>
-<span id="cb32-8"><a href="Latex.html#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-9"><a href="Latex.html#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-10"><a href="Latex.html#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">caption</span>}</span>
-<span id="cb32-11"><a href="Latex.html#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="fu">\captionsetup</span>{figurename=图,tablename=表}<span class="co">%修改图标签名字</span></span>
-<span id="cb32-12"><a href="Latex.html#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="co">%opening</span></span>
-<span id="cb32-13"><a href="Latex.html#cb32-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{草稿纸}</span>
-<span id="cb32-14"><a href="Latex.html#cb32-14" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{陈普}</span>
-<span id="cb32-15"><a href="Latex.html#cb32-15" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span>
-<span id="cb32-16"><a href="Latex.html#cb32-16" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">graphicx,picinpar,multicol,bm,float,framed</span>}</span>
-<span id="cb32-17"><a href="Latex.html#cb32-17" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb32-18"><a href="Latex.html#cb32-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\maketitle</span></span>
-<span id="cb32-19"><a href="Latex.html#cb32-19" aria-hidden="true" tabindex="-1"></a><span class="co">% 这里是关键，通过用一个0宽度的盒子装填了表格中横线无法顶格的问题。</span></span>
-<span id="cb32-20"><a href="Latex.html#cb32-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">framed</span>}</span>
-<span id="cb32-21"><a href="Latex.html#cb32-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">\begin</span>{<span class="ex">table</span>}[H]</span>
-<span id="cb32-22"><a href="Latex.html#cb32-22" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{ccp{39.8em}}<span class="fu">\hline</span></span>
-<span id="cb32-23"><a href="Latex.html#cb32-23" aria-hidden="true" tabindex="-1"></a><span class="fu">\makebox</span>[0pt][r]{<span class="fu">\rule</span>[11pt]{0.5cm}{0.05em}}1<span class="op">&amp;</span>1<span class="op">&amp;</span>1</span>
-<span id="cb32-24"><a href="Latex.html#cb32-24" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span>
-<span id="cb32-25"><a href="Latex.html#cb32-25" aria-hidden="true" tabindex="-1"></a>        <span class="kw">\end</span>{<span class="ex">table</span>}</span>
-<span id="cb32-26"><a href="Latex.html#cb32-26" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb32-27"><a href="Latex.html#cb32-27" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{验证一下汉密尔顿定理}    </span>
-<span id="cb32-28"><a href="Latex.html#cb32-28" aria-hidden="true" tabindex="-1"></a><span class="ss">\[max</span><span class="sc">\;</span><span class="ss"> </span><span class="sc">\sum</span><span class="ss">_{t=0}^</span><span class="sc">\infty</span><span class="ss"> </span><span class="sc">\beta</span><span class="ss">^tu(c_t)\]</span></span>
-<span id="cb32-29"><a href="Latex.html#cb32-29" aria-hidden="true" tabindex="-1"></a><span class="ss">\[k_{t+1}=(1-</span><span class="sc">\delta</span><span class="ss">)k_t+i_t\]</span></span>
-<span id="cb32-30"><a href="Latex.html#cb32-30" aria-hidden="true" tabindex="-1"></a>这里控制变量是<span class="ss">$ c_t $</span>，状态变量是<span class="ss">$ k_t $</span>。汉密尔顿函数可以写成，</span>
-<span id="cb32-31"><a href="Latex.html#cb32-31" aria-hidden="true" tabindex="-1"></a><span class="ss">\[H = </span><span class="sc">\beta</span><span class="ss">^tu(c_t) + </span><span class="sc">\pi</span><span class="ss">_{t+1}(f(k_t)-c_t-</span><span class="sc">\delta</span><span class="ss"> k_t)  \]</span></span>
-<span id="cb32-32"><a href="Latex.html#cb32-32" aria-hidden="true" tabindex="-1"></a>注意到<span class="ss">$ i_t= y_t-c_t $</span>，因此，<span class="ss">$ k_{t+1}-k_t=f(k_t)-c_t-</span><span class="sc">\delta</span><span class="ss"> k_t $</span>。然后根据汉密尔顿定理，有，</span>
-<span id="cb32-33"><a href="Latex.html#cb32-33" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align*</span>}</span>
-<span id="cb32-34"><a href="Latex.html#cb32-34" aria-hidden="true" tabindex="-1"></a><span class="sc">\pi</span><span class="ss">_{t+1}-</span><span class="sc">\pi</span><span class="ss">_t=[-f&#39;(k_t)+</span><span class="sc">\delta</span><span class="ss">]</span><span class="sc">\pi</span><span class="ss">_{t+1}&amp;</span><span class="sc">\Longrightarrow</span><span class="ss"> </span><span class="sc">\pi</span><span class="ss">_t=[f&#39;(k_t)+(1-</span><span class="sc">\delta</span><span class="ss">)]</span><span class="sc">\pi</span><span class="ss">_{t+1}</span><span class="sc">\\</span></span>
-<span id="cb32-35"><a href="Latex.html#cb32-35" aria-hidden="true" tabindex="-1"></a><span class="sc">\beta</span><span class="ss">^tu&#39;(c_t)-</span><span class="sc">\pi</span><span class="ss">_{t+1}=0&amp;</span><span class="sc">\Longrightarrow</span><span class="ss"> </span><span class="sc">\beta</span><span class="ss">^tu&#39;(c_t)=</span><span class="sc">\pi</span><span class="ss">_{t+1}</span><span class="sc">\\</span></span>
-<span id="cb32-36"><a href="Latex.html#cb32-36" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align*</span>}</span>
-<span id="cb32-37"><a href="Latex.html#cb32-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-38"><a href="Latex.html#cb32-38" aria-hidden="true" tabindex="-1"></a>将<span class="ss">$ </span><span class="sc">\beta</span><span class="ss">^tu&#39;(c_t)=</span><span class="sc">\pi</span><span class="ss">_{t+1} $</span>的脚标做一个<span class="ss">$ t $</span>和<span class="ss">$ t+1 $</span>的替换，就有，</span>
-<span id="cb32-39"><a href="Latex.html#cb32-39" aria-hidden="true" tabindex="-1"></a><span class="ss">\[ f&#39;(k_t) +(1-</span><span class="sc">\delta</span><span class="ss">) = </span><span class="sc">\frac</span><span class="ss">{u&#39;(c_{t-1})}{</span><span class="sc">\beta</span><span class="ss"> u&#39;(c_{t})}\]</span></span>
-<span id="cb32-40"><a href="Latex.html#cb32-40" aria-hidden="true" tabindex="-1"></a>这就是著名的欧拉方程。</span>
-<span id="cb32-41"><a href="Latex.html#cb32-41" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">framed</span>}</span>
-<span id="cb32-42"><a href="Latex.html#cb32-42" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb32-1"><a href="Latex.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\MakeFramed</span>{<span class="fu">\hsize</span>=1.5<span class="fu">\hsize</span>}</span>
+<span id="cb32-2"><a href="Latex.html#cb32-2" aria-hidden="true" tabindex="-1"></a>这是你的文本</span>
+<span id="cb32-3"><a href="Latex.html#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\endMakeFramed</span></span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>一般前面有个表格。如何让表格中的横线顶到边框，通过使用零宽度的盒子实现。命令为<code>\makebox[0pt][r]{\rule[11pt]{0.5cm}{0.05em}}</code>，如果你发现横线不能顶到左边，你还可以再画一根零宽度盒子，但是修改一下<code>r</code>参数为<code>l</code>,即<code>\makebox[0pt][l]{\rule[11pt]{0.5cm}{0.05em}}</code>。</li>
+</ol>
+<div class="sourceCode" id="cb33"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb33-1"><a href="Latex.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[hyperref]{<span class="ex">article</span>}<span class="co">% 使得标签不乱码</span></span>
+<span id="cb33-2"><a href="Latex.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[UTF8]{<span class="ex">ctex</span>}<span class="co">%中文宏包</span></span>
+<span id="cb33-3"><a href="Latex.html#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath,bm,amsfonts,amssymb</span>}<span class="co">%数学宏包，amsfonts,amssymb是插入空心字母的包，使用命令\mathbb{}</span></span>
+<span id="cb33-4"><a href="Latex.html#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co">%\numberwithin{equation}{section}%公式按节进行编号</span></span>
+<span id="cb33-5"><a href="Latex.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[dvipsnames]{<span class="ex">xcolor</span>}</span>
+<span id="cb33-6"><a href="Latex.html#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[a4paper,left=2.14cm,right=2.14cm,bottom=2cm,top=2cm]{<span class="ex">geometry</span>}<span class="co">%页面设置宏包</span></span>
+<span id="cb33-7"><a href="Latex.html#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\pagestyle</span>{headings}</span>
+<span id="cb33-8"><a href="Latex.html#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-9"><a href="Latex.html#cb33-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-10"><a href="Latex.html#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">caption</span>}</span>
+<span id="cb33-11"><a href="Latex.html#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="fu">\captionsetup</span>{figurename=图,tablename=表}<span class="co">%修改图标签名字</span></span>
+<span id="cb33-12"><a href="Latex.html#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="co">%opening</span></span>
+<span id="cb33-13"><a href="Latex.html#cb33-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{草稿纸}</span>
+<span id="cb33-14"><a href="Latex.html#cb33-14" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{陈普}</span>
+<span id="cb33-15"><a href="Latex.html#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span>
+<span id="cb33-16"><a href="Latex.html#cb33-16" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">graphicx,picinpar,multicol,bm,float,framed</span>}</span>
+<span id="cb33-17"><a href="Latex.html#cb33-17" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb33-18"><a href="Latex.html#cb33-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\maketitle</span></span>
+<span id="cb33-19"><a href="Latex.html#cb33-19" aria-hidden="true" tabindex="-1"></a><span class="co">% 这里是关键，通过用一个0宽度的盒子装填了表格中横线无法顶格的问题。</span></span>
+<span id="cb33-20"><a href="Latex.html#cb33-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">framed</span>}</span>
+<span id="cb33-21"><a href="Latex.html#cb33-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">\begin</span>{<span class="ex">table</span>}[H]</span>
+<span id="cb33-22"><a href="Latex.html#cb33-22" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{ccp{39.8em}}<span class="fu">\hline</span></span>
+<span id="cb33-23"><a href="Latex.html#cb33-23" aria-hidden="true" tabindex="-1"></a><span class="fu">\makebox</span>[0pt][r]{<span class="fu">\rule</span>[11pt]{0.5cm}{0.05em}}1<span class="op">&amp;</span>1<span class="op">&amp;</span>1</span>
+<span id="cb33-24"><a href="Latex.html#cb33-24" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span>
+<span id="cb33-25"><a href="Latex.html#cb33-25" aria-hidden="true" tabindex="-1"></a>        <span class="kw">\end</span>{<span class="ex">table</span>}</span>
+<span id="cb33-26"><a href="Latex.html#cb33-26" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb33-27"><a href="Latex.html#cb33-27" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{验证一下汉密尔顿定理}    </span>
+<span id="cb33-28"><a href="Latex.html#cb33-28" aria-hidden="true" tabindex="-1"></a><span class="ss">\[max</span><span class="sc">\;</span><span class="ss"> </span><span class="sc">\sum</span><span class="ss">_{t=0}^</span><span class="sc">\infty</span><span class="ss"> </span><span class="sc">\beta</span><span class="ss">^tu(c_t)\]</span></span>
+<span id="cb33-29"><a href="Latex.html#cb33-29" aria-hidden="true" tabindex="-1"></a><span class="ss">\[k_{t+1}=(1-</span><span class="sc">\delta</span><span class="ss">)k_t+i_t\]</span></span>
+<span id="cb33-30"><a href="Latex.html#cb33-30" aria-hidden="true" tabindex="-1"></a>这里控制变量是<span class="ss">$ c_t $</span>，状态变量是<span class="ss">$ k_t $</span>。汉密尔顿函数可以写成，</span>
+<span id="cb33-31"><a href="Latex.html#cb33-31" aria-hidden="true" tabindex="-1"></a><span class="ss">\[H = </span><span class="sc">\beta</span><span class="ss">^tu(c_t) + </span><span class="sc">\pi</span><span class="ss">_{t+1}(f(k_t)-c_t-</span><span class="sc">\delta</span><span class="ss"> k_t)  \]</span></span>
+<span id="cb33-32"><a href="Latex.html#cb33-32" aria-hidden="true" tabindex="-1"></a>注意到<span class="ss">$ i_t= y_t-c_t $</span>，因此，<span class="ss">$ k_{t+1}-k_t=f(k_t)-c_t-</span><span class="sc">\delta</span><span class="ss"> k_t $</span>。然后根据汉密尔顿定理，有，</span>
+<span id="cb33-33"><a href="Latex.html#cb33-33" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align*</span>}</span>
+<span id="cb33-34"><a href="Latex.html#cb33-34" aria-hidden="true" tabindex="-1"></a><span class="sc">\pi</span><span class="ss">_{t+1}-</span><span class="sc">\pi</span><span class="ss">_t=[-f&#39;(k_t)+</span><span class="sc">\delta</span><span class="ss">]</span><span class="sc">\pi</span><span class="ss">_{t+1}&amp;</span><span class="sc">\Longrightarrow</span><span class="ss"> </span><span class="sc">\pi</span><span class="ss">_t=[f&#39;(k_t)+(1-</span><span class="sc">\delta</span><span class="ss">)]</span><span class="sc">\pi</span><span class="ss">_{t+1}</span><span class="sc">\\</span></span>
+<span id="cb33-35"><a href="Latex.html#cb33-35" aria-hidden="true" tabindex="-1"></a><span class="sc">\beta</span><span class="ss">^tu&#39;(c_t)-</span><span class="sc">\pi</span><span class="ss">_{t+1}=0&amp;</span><span class="sc">\Longrightarrow</span><span class="ss"> </span><span class="sc">\beta</span><span class="ss">^tu&#39;(c_t)=</span><span class="sc">\pi</span><span class="ss">_{t+1}</span><span class="sc">\\</span></span>
+<span id="cb33-36"><a href="Latex.html#cb33-36" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align*</span>}</span>
+<span id="cb33-37"><a href="Latex.html#cb33-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-38"><a href="Latex.html#cb33-38" aria-hidden="true" tabindex="-1"></a>将<span class="ss">$ </span><span class="sc">\beta</span><span class="ss">^tu&#39;(c_t)=</span><span class="sc">\pi</span><span class="ss">_{t+1} $</span>的脚标做一个<span class="ss">$ t $</span>和<span class="ss">$ t+1 $</span>的替换，就有，</span>
+<span id="cb33-39"><a href="Latex.html#cb33-39" aria-hidden="true" tabindex="-1"></a><span class="ss">\[ f&#39;(k_t) +(1-</span><span class="sc">\delta</span><span class="ss">) = </span><span class="sc">\frac</span><span class="ss">{u&#39;(c_{t-1})}{</span><span class="sc">\beta</span><span class="ss"> u&#39;(c_{t})}\]</span></span>
+<span id="cb33-40"><a href="Latex.html#cb33-40" aria-hidden="true" tabindex="-1"></a>这就是著名的欧拉方程。</span>
+<span id="cb33-41"><a href="Latex.html#cb33-41" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">framed</span>}</span>
+<span id="cb33-42"><a href="Latex.html#cb33-42" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
 
 </div>
 </div>
