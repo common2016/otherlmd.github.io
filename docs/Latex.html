@@ -104,7 +104,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -117,7 +117,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -220,7 +220,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="Latex.html#长表格" id="toc-长表格"><span class="toc-section-number">7.3.1</span> 长表格</a></li>
 </ul></li>
 <li><a href="Latex.html#章节标题格式修改" id="toc-章节标题格式修改"><span class="toc-section-number">7.4</span> 章节标题格式修改</a></li>
-<li><a href="Latex.html#数学公式左对齐" id="toc-数学公式左对齐"><span class="toc-section-number">7.5</span> 数学公式左对齐</a></li>
+<li><a href="Latex.html#数学公式相关" id="toc-数学公式相关"><span class="toc-section-number">7.5</span> 数学公式相关</a>
+<ul>
+<li><a href="Latex.html#数学公式左对齐" id="toc-数学公式左对齐"><span class="toc-section-number">7.5.1</span> 数学公式左对齐</a></li>
+</ul></li>
 <li><a href="Latex.html#中文字体加粗" id="toc-中文字体加粗"><span class="toc-section-number">7.6</span> 中文字体加粗</a></li>
 <li><a href="Latex.html#使用某种常用字体" id="toc-使用某种常用字体"><span class="toc-section-number">7.7</span> 使用某种常用字体</a>
 <ul>
@@ -490,11 +493,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb18-12"><a href="Latex.html#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="fu">\titleformat</span>{<span class="kw">\chapter</span>}[block]{<span class="fu">\center\Large\bf</span>}{<span class="fu">\chaptername</span>}{20pt}{}</span>
 <span id="cb18-13"><a href="Latex.html#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\titleformat</span>{<span class="kw">\section</span>}[block]{<span class="fu">\large\bf</span>}{<span class="fu">\thesection</span>}{10pt}{}</span></code></pre></div>
 </div>
-<div id="数学公式左对齐" class="section level2" number="7.5">
-<h2><span class="header-section-number">7.5</span> 数学公式左对齐</h2>
+<div id="数学公式相关" class="section level2" number="7.5">
+<h2><span class="header-section-number">7.5</span> 数学公式相关</h2>
+<p>如果公式很长，恰好处在跨页处，默认会把公式全部移到新一页，上一页留下空白。如果不想这样，而是跨页排版公式，则可在导言处使用<code>\allowdisplaybreaks[4]</code>，这个<code>4</code>代表的数字意义在于数值越大，执行跨页的强度越大。</p>
+<div id="数学公式左对齐" class="section level3" number="7.5.1">
+<h3><span class="header-section-number">7.5.1</span> 数学公式左对齐</h3>
 <p>如果我们想要全文行间公式(display) 均左对齐，我们有三个方法如下：</p>
-<p>• 使用<code>\documentclass[fleqn]{article}</code>对整篇文章有效。</p>
-<p>• 加载宏包amsmath时，设置fleqn参数<code>\usepackage[fleqn]{amsmath}</code>。</p>
+<ul>
+<li><p>使用<code>\documentclass[fleqn]{article}</code>对整篇文章有效。</p></li>
+<li><p>加载宏包amsmath时，设置fleqn参数<code>\usepackage[fleqn]{amsmath}</code>。</p></li>
+</ul>
 <p>上述方法选其一即可实现左对齐，但这个情况有需要注意的地方：</p>
 <p>我们使用了fleqn, 当且仅当使用这一参数的时候，行间公式默认有一个缩进mathindent，其值系统定义为27.37506pt minus 27.37506pt 若是我们不想要这个缩进，可以用<code>\setlength{\mathindent}{0pt}</code>将其缩进设置为0pt。</p>
 <ul>
@@ -505,6 +513,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb19-3"><a href="Latex.html#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ss">&amp;</span><span class="sc">\text</span>{your equation}<span class="ss">&amp;</span></span>
 <span id="cb19-4"><a href="Latex.html#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-5"><a href="Latex.html#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">flalign</span>}</span></code></pre></div>
+</div>
 </div>
 <div id="中文字体加粗" class="section level2" number="7.6">
 <h2><span class="header-section-number">7.6</span> 中文字体加粗</h2>

@@ -199,12 +199,17 @@ format + = {\songti\zihao{5}}]{subsubsection} % 第三层标题变成 1，2，..
 \titleformat{\section}[block]{\large\bf}{\thesection}{10pt}{}
 ```
 
-## 数学公式左对齐
+## 数学公式相关
+
+如果公式很长，恰好处在跨页处，默认会把公式全部移到新一页，上一页留下空白。如果不想这样，而是跨页排版公式，则可在导言处使用`\allowdisplaybreaks[4]`，这个`4`代表的数字意义在于数值越大，执行跨页的强度越大。
+
+### 数学公式左对齐
+
 如果我们想要全文行间公式(display) 均左对齐，我们有三个方法如下：
 
-• 使用`\documentclass[fleqn]{article}`对整篇文章有效。
+- 使用`\documentclass[fleqn]{article}`对整篇文章有效。
 
-• 加载宏包amsmath时，设置fleqn参数`\usepackage[fleqn]{amsmath}`。
+- 加载宏包amsmath时，设置fleqn参数`\usepackage[fleqn]{amsmath}`。
 
 上述方法选其一即可实现左对齐，但这个情况有需要注意的地方：
 
