@@ -468,7 +468,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb16-2"><a href="Latex.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">% \titleformat{command}[shape]{format}{label}{sep}{before}[after]</span></span>
 <span id="cb16-3"><a href="Latex.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\titleformat</span>{<span class="kw">\chapter</span>}{<span class="fu">\centering\Huge\bfseries</span>}{第<span class="fu">\,\thechapter\,</span>章}{1em}{}</span></code></pre></div>
 <ul>
-<li>“Chapter 1”变成”一”</li>
+<li>“Chapter 1”变成”一”。但调用<code>ctexcap</code>包，则不能调用<code>titlesec</code>和<code>ctex</code>包和这些包的命令，这些包的调用都会隐含在<code>ctexcap</code>包中。</li>
 </ul>
 <div class="sourceCode" id="cb17"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb17-1"><a href="Latex.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">ctexcap</span>}</span>
 <span id="cb17-2"><a href="Latex.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\CTEXsetup</span>[number={<span class="fu">\chinese</span>{section}}, format + = {<span class="fu">\fangsong\zihao</span>{4}}]{section}</span>

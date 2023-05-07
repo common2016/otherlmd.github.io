@@ -173,7 +173,7 @@ withsons & 同子女关系如何 & qf1\_a\_1 & qf1\_a\_1 &  & qf1\_a\_1\\
 % \titleformat{command}[shape]{format}{label}{sep}{before}[after]
 \titleformat{\chapter}{\centering\Huge\bfseries}{第\,\thechapter\,章}{1em}{}
 ```
-- "Chapter 1"变成"一"
+- "Chapter 1"变成"一"。但调用`ctexcap`包，则不能调用`titlesec`和`ctex`包和这些包的命令，这些包的调用都会隐含在`ctexcap`包中。
 ```tex
 \usepackage{ctexcap}
 \CTEXsetup[number={\chinese{section}}, format + = {\fangsong\zihao{4}}]{section}
