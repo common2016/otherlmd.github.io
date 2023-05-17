@@ -22,6 +22,19 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
   [0.0001,0.0001,0.0001, -1, 0.00001*ones(1,ncol)],[ones(1,length(para0))],...
   [],[],Y, tau, nrow, ncol);
 ```
+- 使用`fsolve`解非线性方程的参数传递示例：
+```matlab
+% 定义函数
+function F = myfun(x,c)
+   F = [ 2*x(1) - x(2) - exp(c*x(1))
+         -x(1) + 2*x(2) - exp(c*x(2))];
+end
+
+% 实现
+c = -1; % define parameter first
+x = fsolve(@(x) myfun(x,c),[-5;-5])
+
+```
 
 ## 带名称和缺省值的参数设置
 

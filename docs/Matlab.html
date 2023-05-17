@@ -104,7 +104,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -117,7 +117,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -220,7 +220,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="Latex.html#长表格" id="toc-长表格"><span class="toc-section-number">7.3.1</span> 长表格</a></li>
 </ul></li>
 <li><a href="Latex.html#章节标题格式修改" id="toc-章节标题格式修改"><span class="toc-section-number">7.4</span> 章节标题格式修改</a></li>
-<li><a href="Latex.html#数学公式左对齐" id="toc-数学公式左对齐"><span class="toc-section-number">7.5</span> 数学公式左对齐</a></li>
+<li><a href="Latex.html#数学公式相关" id="toc-数学公式相关"><span class="toc-section-number">7.5</span> 数学公式相关</a>
+<ul>
+<li><a href="Latex.html#数学公式左对齐" id="toc-数学公式左对齐"><span class="toc-section-number">7.5.1</span> 数学公式左对齐</a></li>
+</ul></li>
 <li><a href="Latex.html#中文字体加粗" id="toc-中文字体加粗"><span class="toc-section-number">7.6</span> 中文字体加粗</a></li>
 <li><a href="Latex.html#使用某种常用字体" id="toc-使用某种常用字体"><span class="toc-section-number">7.7</span> 使用某种常用字体</a>
 <ul>
@@ -247,7 +250,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="OS.html#OS" id="toc-OS"><span class="toc-section-number">9</span> macOS操作系统</a>
 <ul>
 <li><a href="OS.html#一句话tips-4" id="toc-一句话tips-4"><span class="toc-section-number">9.1</span> 一句话Tips</a></li>
-<li><a href="OS.html#挂载外置磁盘" id="toc-挂载外置磁盘"><span class="toc-section-number">9.2</span> 挂载外置磁盘</a></li>
+<li><a href="OS.html#安装和配置latex" id="toc-安装和配置latex"><span class="toc-section-number">9.2</span> 安装和配置Latex</a></li>
+<li><a href="OS.html#homebrew" id="toc-homebrew"><span class="toc-section-number">9.3</span> Homebrew</a></li>
+<li><a href="OS.html#挂载外置磁盘" id="toc-挂载外置磁盘"><span class="toc-section-number">9.4</span> 挂载外置磁盘</a></li>
 </ul></li>
 <li><a href="Mathematica.html#Mathematica" id="toc-Mathematica"><span class="toc-section-number">10</span> Mathematica</a>
 <ul>
@@ -315,40 +320,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>当使用一个函数，输出结果有两个。但第一个结果不需要，只需要第二个时，第一个结果可用<code>~</code>代替。如<code>[~,area] = xlsread('malm.xlsx',1,'b2:aa31');</code></li>
 <li>当使用一个函数，输入需要跳跃时，可用<code>[]</code>代替。如</li>
 </ul>
-<div class="sourceCode" id="cb31"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb31-1"><a href="Matlab.html#cb31-1" aria-hidden="true" tabindex="-1"></a>[<span class="va">x</span><span class="op">,</span> <span class="va">fval</span>] <span class="op">=</span> <span class="va">fmincon</span>(<span class="op">@</span><span class="va">loglik</span><span class="op">,</span> <span class="va">para0</span><span class="op">,</span>[]<span class="op">,</span>[]<span class="op">,</span>[]<span class="op">,</span>[]<span class="op">,...</span></span>
-<span id="cb31-2"><a href="Matlab.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  [<span class="fl">0.0001</span><span class="op">,</span><span class="fl">0.0001</span><span class="op">,</span><span class="fl">0.0001</span><span class="op">,</span> <span class="op">-</span><span class="fl">1</span><span class="op">,</span> <span class="fl">0.00001</span><span class="op">*</span><span class="va">ones</span>(<span class="fl">1</span><span class="op">,</span><span class="va">ncol</span>)]<span class="op">,</span>[<span class="va">ones</span>(<span class="fl">1</span><span class="op">,</span><span class="va">length</span>(<span class="va">para0</span>))]<span class="op">,...</span></span>
-<span id="cb31-3"><a href="Matlab.html#cb31-3" aria-hidden="true" tabindex="-1"></a>  []<span class="op">,</span>[]<span class="op">,</span><span class="va">Y</span><span class="op">,</span> <span class="va">tau</span><span class="op">,</span> <span class="va">nrow</span><span class="op">,</span> <span class="va">ncol</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb1-1"><a href="Matlab.html#cb1-1" aria-hidden="true" tabindex="-1"></a>[<span class="va">x</span><span class="op">,</span> <span class="va">fval</span>] <span class="op">=</span> <span class="va">fmincon</span>(<span class="op">@</span><span class="va">loglik</span><span class="op">,</span> <span class="va">para0</span><span class="op">,</span>[]<span class="op">,</span>[]<span class="op">,</span>[]<span class="op">,</span>[]<span class="op">,...</span></span>
+<span id="cb1-2"><a href="Matlab.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  [<span class="fl">0.0001</span><span class="op">,</span><span class="fl">0.0001</span><span class="op">,</span><span class="fl">0.0001</span><span class="op">,</span> <span class="op">-</span><span class="fl">1</span><span class="op">,</span> <span class="fl">0.00001</span><span class="op">*</span><span class="va">ones</span>(<span class="fl">1</span><span class="op">,</span><span class="va">ncol</span>)]<span class="op">,</span>[<span class="va">ones</span>(<span class="fl">1</span><span class="op">,</span><span class="va">length</span>(<span class="va">para0</span>))]<span class="op">,...</span></span>
+<span id="cb1-3"><a href="Matlab.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  []<span class="op">,</span>[]<span class="op">,</span><span class="va">Y</span><span class="op">,</span> <span class="va">tau</span><span class="op">,</span> <span class="va">nrow</span><span class="op">,</span> <span class="va">ncol</span>)<span class="op">;</span></span></code></pre></div>
+<ul>
+<li>使用<code>fsolve</code>解非线性方程的参数传递示例：</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb2-1"><a href="Matlab.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 定义函数</span></span>
+<span id="cb2-2"><a href="Matlab.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="va">F</span> <span class="op">=</span> <span class="va">myfun</span>(<span class="va">x</span><span class="op">,</span><span class="va">c</span>)</span>
+<span id="cb2-3"><a href="Matlab.html#cb2-3" aria-hidden="true" tabindex="-1"></a>   <span class="va">F</span> <span class="op">=</span> [ <span class="fl">2</span><span class="op">*</span><span class="va">x</span>(<span class="fl">1</span>) <span class="op">-</span> <span class="va">x</span>(<span class="fl">2</span>) <span class="op">-</span> <span class="va">exp</span>(<span class="va">c</span><span class="op">*</span><span class="va">x</span>(<span class="fl">1</span>))</span>
+<span id="cb2-4"><a href="Matlab.html#cb2-4" aria-hidden="true" tabindex="-1"></a>         <span class="op">-</span><span class="va">x</span>(<span class="fl">1</span>) <span class="op">+</span> <span class="fl">2</span><span class="op">*</span><span class="va">x</span>(<span class="fl">2</span>) <span class="op">-</span> <span class="va">exp</span>(<span class="va">c</span><span class="op">*</span><span class="va">x</span>(<span class="fl">2</span>))]<span class="op">;</span></span>
+<span id="cb2-5"><a href="Matlab.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb2-6"><a href="Matlab.html#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="Matlab.html#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">% 实现</span></span>
+<span id="cb2-8"><a href="Matlab.html#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="va">c</span> <span class="op">=</span> <span class="op">-</span><span class="fl">1</span><span class="op">;</span> <span class="co">% define parameter first</span></span>
+<span id="cb2-9"><a href="Matlab.html#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> <span class="va">fsolve</span>(<span class="op">@</span>(<span class="va">x</span>) <span class="va">myfun</span>(<span class="va">x</span><span class="op">,</span><span class="va">c</span>)<span class="op">,</span>[<span class="op">-</span><span class="fl">5</span><span class="op">;-</span><span class="fl">5</span>])</span></code></pre></div>
 </div>
 <div id="带名称和缺省值的参数设置" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> 带名称和缺省值的参数设置</h2>
 <p>在Matlab2019以后，函数参数的设置有了更多功能，比如可以验证参数的类型（整数、双精度？）、维数，同时提供了带名称的参数设置。这需要在代码块中加入一个模块。比如<code>myFunction</code>函数第一个参数是<code>X</code>，这个就像通常的函数一样按位置确定，剩下的参数按名称来匹配参数，那么要把按名称匹配的参数都放在一个结构体中，而且这样的参数也可以赋予默认值，这就和R等函数非常类似了。具体如下，</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb32-1"><a href="Matlab.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="va">myRectangle</span>(<span class="va">X</span><span class="op">,</span><span class="va">Y</span><span class="op">,</span><span class="va">options</span>)</span>
-<span id="cb32-2"><a href="Matlab.html#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">arguments</span></span>
-<span id="cb32-3"><a href="Matlab.html#cb32-3" aria-hidden="true" tabindex="-1"></a>       <span class="va">X</span> <span class="va">double</span></span>
-<span id="cb32-4"><a href="Matlab.html#cb32-4" aria-hidden="true" tabindex="-1"></a>       <span class="va">Y</span> <span class="va">double</span></span>
-<span id="cb32-5"><a href="Matlab.html#cb32-5" aria-hidden="true" tabindex="-1"></a>       <span class="va">options</span>.<span class="va">LineStyle</span> (<span class="fl">1</span><span class="op">,</span><span class="fl">1</span>) <span class="va">string</span> <span class="op">=</span> <span class="st">&quot;-&quot;</span>  <span class="co">% 括号是维数约定，可以省略，string是类型约定，可以省略</span></span>
-<span id="cb32-6"><a href="Matlab.html#cb32-6" aria-hidden="true" tabindex="-1"></a>       <span class="va">options</span>.<span class="va">LineWidth</span> (<span class="fl">1</span><span class="op">,</span><span class="fl">1</span>) {<span class="va">mustBeNumeric</span>} <span class="op">=</span> <span class="fl">1</span> <span class="co">% 花括号是验证函数，可以省略</span></span>
-<span id="cb32-7"><a href="Matlab.html#cb32-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
-<span id="cb32-8"><a href="Matlab.html#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">% Function code</span></span>
-<span id="cb32-9"><a href="Matlab.html#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span>
-<span id="cb32-10"><a href="Matlab.html#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb3-1"><a href="Matlab.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="va">myRectangle</span>(<span class="va">X</span><span class="op">,</span><span class="va">Y</span><span class="op">,</span><span class="va">options</span>)</span>
+<span id="cb3-2"><a href="Matlab.html#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">arguments</span></span>
+<span id="cb3-3"><a href="Matlab.html#cb3-3" aria-hidden="true" tabindex="-1"></a>       <span class="va">X</span> <span class="va">double</span></span>
+<span id="cb3-4"><a href="Matlab.html#cb3-4" aria-hidden="true" tabindex="-1"></a>       <span class="va">Y</span> <span class="va">double</span></span>
+<span id="cb3-5"><a href="Matlab.html#cb3-5" aria-hidden="true" tabindex="-1"></a>       <span class="va">options</span>.<span class="va">LineStyle</span> (<span class="fl">1</span><span class="op">,</span><span class="fl">1</span>) <span class="va">string</span> <span class="op">=</span> <span class="st">&quot;-&quot;</span>  <span class="co">% 括号是维数约定，可以省略，string是类型约定，可以省略</span></span>
+<span id="cb3-6"><a href="Matlab.html#cb3-6" aria-hidden="true" tabindex="-1"></a>       <span class="va">options</span>.<span class="va">LineWidth</span> (<span class="fl">1</span><span class="op">,</span><span class="fl">1</span>) {<span class="va">mustBeNumeric</span>} <span class="op">=</span> <span class="fl">1</span> <span class="co">% 花括号是验证函数，可以省略</span></span>
+<span id="cb3-7"><a href="Matlab.html#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
+<span id="cb3-8"><a href="Matlab.html#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">% Function code</span></span>
+<span id="cb3-9"><a href="Matlab.html#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span>
+<span id="cb3-10"><a href="Matlab.html#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div>
 <p>该函数可以如下调用：</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb33-1"><a href="Matlab.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span>)</span>
-<span id="cb33-2"><a href="Matlab.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineStyle</span><span class="op">=</span><span class="st">&quot;:&quot;</span><span class="op">,</span><span class="va">LineWidth</span><span class="op">=</span><span class="fl">2</span>)</span>
-<span id="cb33-3"><a href="Matlab.html#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineWidth</span><span class="op">=</span><span class="fl">2</span><span class="op">,</span><span class="va">LineStyle</span><span class="op">=</span><span class="st">&quot;:&quot;</span>)</span>
-<span id="cb33-4"><a href="Matlab.html#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineStyle</span><span class="op">=</span><span class="st">&quot;:&quot;</span>)</span>
-<span id="cb33-5"><a href="Matlab.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineWidth</span><span class="op">=</span><span class="fl">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb4-1"><a href="Matlab.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span>)</span>
+<span id="cb4-2"><a href="Matlab.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineStyle</span><span class="op">=</span><span class="st">&quot;:&quot;</span><span class="op">,</span><span class="va">LineWidth</span><span class="op">=</span><span class="fl">2</span>)</span>
+<span id="cb4-3"><a href="Matlab.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineWidth</span><span class="op">=</span><span class="fl">2</span><span class="op">,</span><span class="va">LineStyle</span><span class="op">=</span><span class="st">&quot;:&quot;</span>)</span>
+<span id="cb4-4"><a href="Matlab.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineStyle</span><span class="op">=</span><span class="st">&quot;:&quot;</span>)</span>
+<span id="cb4-5"><a href="Matlab.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineWidth</span><span class="op">=</span><span class="fl">2</span>)</span></code></pre></div>
 </div>
 <div id="窗口输出到文本" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> 窗口输出到文本</h2>
 <p>1.把窗口输出写入指定的文件，之后会一直记录窗口输出信息，直到你关闭；</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb34-1"><a href="Matlab.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span>(<span class="ss">&#39;testlog.txt&#39;</span>)<span class="op">;</span></span>
-<span id="cb34-2"><a href="Matlab.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">on</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb5-1"><a href="Matlab.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span>(<span class="ss">&#39;testlog.txt&#39;</span>)<span class="op">;</span></span>
+<span id="cb5-2"><a href="Matlab.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">on</span><span class="op">;</span></span></code></pre></div>
 <p>2.关闭日志记录</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb35-1"><a href="Matlab.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">off</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb6-1"><a href="Matlab.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">off</span><span class="op">;</span></span></code></pre></div>
 <p>3.删除日志</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb36-1"><a href="Matlab.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">off</span><span class="op">;</span><span class="co">%先关闭</span></span>
-<span id="cb36-2"><a href="Matlab.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="va">delete</span>(<span class="ss">&#39;testlog.txt&#39;</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb7-1"><a href="Matlab.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">off</span><span class="op">;</span><span class="co">%先关闭</span></span>
+<span id="cb7-2"><a href="Matlab.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">delete</span>(<span class="ss">&#39;testlog.txt&#39;</span>)<span class="op">;</span></span></code></pre></div>
 </div>
 <div id="gvar-toolbox使用报告" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> GVAR Toolbox使用报告</h2>
