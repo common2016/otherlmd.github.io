@@ -92,6 +92,15 @@ This is a landscape page.
 - `\pagestyle{empty}`当前及后续页无页眉,第一页因为包含标题等可能有特殊格式，要消掉它的页码的话则用`\thispagestyle{empty}`。但如果还是无法去除第一页的页码，一定是使用了`\maketitle`命令，该命令内部调用了`\thispagestyle{\plain}`，为了解决这个问题，只要在该命令行里面调用`\thispagestyle{\empty}`，空行也不要留下。
 - `\renewcommand\refname{参考文献}`把"Reference"变成“参考文献”。
 
+## 手动安装新的宏包
+
+可在网站（https://www.ctan.org/pkg）找到需要的宏包，或者自己写的宏包，该宏包是一个文件夹，该文件夹下要包含有一个`.sty`文件。然后把这个文件夹整个复制到路径`usr/local/texlive/2021/texmf-dist/tex/latex/`下面（这是Mac系统的路径），可以看到这里面包含了所有的安装宏包。最后在命令行运行：
+
+```
+sudo mktexlsr
+sudo texhash
+```
+此时就可以像往常一样调用tex的宏包了。
 
 ## `beamer`相关
 
