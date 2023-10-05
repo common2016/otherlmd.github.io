@@ -5,6 +5,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval = FALS
 
 ## 一句话Tips
 
+- `cmd+shift+.`显示隐藏文件。
 - 进入外置磁盘目录，要先进入根目录，然后输入`cd volumes`就可以看到外置磁盘的名字了。
 - 苹果系统查命令的详细说明可以使用比如`man diskutil`就可以查看命令`diskutil`的详细语法，阅读完后，输入`q`以退出。
 - 在macOS上安装dynare，国内会因为连不上github而无法安装。如何在国内顺利连上github，参考https://juejin.cn/post/7039913254897860616

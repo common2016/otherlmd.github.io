@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 macOS操作系统 | 009_OS.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 macOS操作系统 | 009_OS.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 macOS操作系统 | 009_OS.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/SVG"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+   src="../../../MathJax/MathJax.js">
+</script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="#OS" id="toc-OS"><span class="toc-section-number">1</span> macOS操作系统</a>
+<ul>
+<li><a href="#一句话tips" id="toc-一句话tips"><span class="toc-section-number">1.1</span> 一句话Tips</a></li>
+<li><a href="#安装和配置latex" id="toc-安装和配置latex"><span class="toc-section-number">1.2</span> 安装和配置Latex</a></li>
+<li><a href="#homebrew" id="toc-homebrew"><span class="toc-section-number">1.3</span> Homebrew</a></li>
+<li><a href="#挂载外置磁盘" id="toc-挂载外置磁盘"><span class="toc-section-number">1.4</span> 挂载外置磁盘</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="OS" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> macOS操作系统</h1>
+<div id="一句话tips" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> 一句话Tips</h2>
+<ul>
+<li><code>cmd+shift+.</code>显示隐藏文件。</li>
+<li>进入外置磁盘目录，要先进入根目录，然后输入<code>cd volumes</code>就可以看到外置磁盘的名字了。</li>
+<li>苹果系统查命令的详细说明可以使用比如<code>man diskutil</code>就可以查看命令<code>diskutil</code>的详细语法，阅读完后，输入<code>q</code>以退出。</li>
+<li>在macOS上安装dynare，国内会因为连不上github而无法安装。如何在国内顺利连上github，参考https://juejin.cn/post/7039913254897860616</li>
+<li><code>chromedriver</code>可以放在<code>/usr/local/bin</code>目录下，在命令行使用<code>open /usr/local/bin</code>打开该目录。</li>
+</ul>
+</div>
+<div id="安装和配置latex" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> 安装和配置Latex</h2>
+<ol style="list-style-type: decimal">
+<li>安装texlive，在macOS下就是Mactex。进入Texlive官网，下载安装包，双击安装即可。</li>
+<li>安装TexStudio更加简单，下载后双击，把弹出的窗口中的程序复制到Applications里面即可。</li>
+<li>配置TexStudio，一是Build里面，引擎要换成xepdf，这是专门为中文进行渲染的。二是各种命令要换过来，具体可以参见旧的界面，或者https://blog.csdn.net/qq_14925953/article/details/126590499。</li>
+</ol>
+</div>
+<div id="homebrew" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Homebrew</h2>
+<ul>
+<li><p>macOS上有一个优秀的包管理器Homebrew,进它的主页https://brew.sh/，一行代码让你装上该软件。注意，该软件同样要求你能够顺利连上github。很多情况下速度很慢，导致安装不上。可以如下步骤更换代码存储的源：</p>
+<ul>
+<li><code>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh &gt;&gt; brew_install</code>把安装过程的命令文件下载到你当前目录下。</li>
+<li>打开文件<code>brew_install</code>更改默认的源：</li>
+</ul>
+<pre><code>将默认的源
+HOMEBREW_BREW_DEFAULT_GIT_REMOTE = &quot;https://github.com/Homebrew/brew&quot;    
+HOMEBREW_CORE_DEFAULT_GIT_REMOTE = “https://github.com/Homebrew/homebrew-core“
+修改为  
+HOMEBREW_BREW_DEFAULT_GIT_REMOTE = &quot;https://mirrors.ustc.edu.cn/brew.git&quot;
+HOMEBREW_CORE_DEFAULT_GIT_REMOTE = &quot;https://mirrors.ustc.edu.cn/homebrew-core.git</code></pre></li>
+<li><p>终端运行命令<code>/bin/bash brew_install</code>即可。最后依据终端的提示，添加brew的路径。
+如果出现<code>fatal: Could not resolve HEAD to a revision</code>报错。按如下步骤解决：<a href="https://www.jianshu.com/p/54beebb59570" class="uri">https://www.jianshu.com/p/54beebb59570</a>。</p></li>
+<li><p>当有了brew命令之后，安装jdk是非常简单的一件事。可以在homebrew搜索jdk的安装命令，它是<code>brew install --cask oracle-jdk</code>。有了jdk，我们就能愉快地使用R语言的xlsx包了。</p></li>
+</ul>
+</div>
+<div id="挂载外置磁盘" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> 挂载外置磁盘</h2>
+<ol style="list-style-type: decimal">
+<li>首先利用<code>diskutil list</code>查看你的外置磁盘的设备名称，在IDENTIFIER列中，一般是<code>/dev/disk4s2</code>之类的。</li>
+<li>然后利用<code>diskutil info disk4s2</code>查询磁盘的UUID</li>
+<li>然后设置开机挂载。命令行<code>sudo vim /etc/fstab</code>打开文本文件，输入如下:</li>
+</ol>
+<pre><code>UUID=06A19C31-BED5-36E9-BEC9-616E398C77FD /Users/yangnay/elements exfat rw,auto</code></pre>
+<p>注意，<code>exfat</code>是你的硬盘的文件格式，<code>elements</code>需要提前建好文件夹。</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": false,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
