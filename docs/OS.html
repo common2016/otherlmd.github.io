@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>9 macOS操作系统 | 编程语言笔记</title>
-  <meta name="description" content="9 macOS操作系统 | 编程语言笔记" />
+  <title>1 macOS操作系统 | 009_OS.knit</title>
+  <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="9 macOS操作系统 | 编程语言笔记" />
+  <meta property="og:title" content="1 macOS操作系统 | 009_OS.knit" />
   <meta property="og:type" content="book" />
   
   
@@ -16,12 +16,11 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="9 macOS操作系统 | 编程语言笔记" />
+  <meta name="twitter:title" content="1 macOS操作系统 | 009_OS.knit" />
   
   
   
 
-<meta name="author" content="云腾足下" />
 
 
 
@@ -30,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="Blog.html"/>
-<link rel="next" href="Mathematica.html"/>
+
+
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -80,140 +79,13 @@ MathJax.Hub.Config({
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="index.html#序" id="toc-序">序</a></li>
-<li><a href="Maple.html#Maple" id="toc-Maple"><span class="toc-section-number">1</span> Maple</a>
+<li><a href="#OS" id="toc-OS"><span class="toc-section-number">1</span> macOS操作系统</a>
 <ul>
-<li><a href="Maple.html#快捷键" id="toc-快捷键"><span class="toc-section-number">1.1</span> 快捷键</a></li>
-<li><a href="Maple.html#几个基本的代数处理" id="toc-几个基本的代数处理"><span class="toc-section-number">1.2</span> 几个基本的代数处理</a></li>
-<li><a href="Maple.html#产生序列" id="toc-产生序列"><span class="toc-section-number">1.3</span> 产生序列</a></li>
-<li><a href="Maple.html#函数定义" id="toc-函数定义"><span class="toc-section-number">1.4</span> 函数定义</a>
-<ul>
-<li><a href="Maple.html#参数的宣称" id="toc-参数的宣称"><span class="toc-section-number">1.4.1</span> 参数的宣称</a></li>
+<li><a href="#一句话tips" id="toc-一句话tips"><span class="toc-section-number">1.1</span> 一句话Tips</a></li>
+<li><a href="#安装和配置latex" id="toc-安装和配置latex"><span class="toc-section-number">1.2</span> 安装和配置Latex</a></li>
+<li><a href="#homebrew" id="toc-homebrew"><span class="toc-section-number">1.3</span> Homebrew</a></li>
+<li><a href="#挂载外置磁盘" id="toc-挂载外置磁盘"><span class="toc-section-number">1.4</span> 挂载外置磁盘</a></li>
 </ul></li>
-<li><a href="Maple.html#控制流" id="toc-控制流"><span class="toc-section-number">1.5</span> 控制流</a></li>
-<li><a href="Maple.html#画图" id="toc-画图"><span class="toc-section-number">1.6</span> 画图</a></li>
-<li><a href="Maple.html#矩阵" id="toc-矩阵"><span class="toc-section-number">1.7</span> 矩阵</a></li>
-<li><a href="Maple.html#一句话tips" id="toc-一句话tips"><span class="toc-section-number">1.8</span> 一句话Tips</a></li>
-</ul></li>
-<li><a href="Julia.html#Julia" id="toc-Julia"><span class="toc-section-number">2</span> Julia</a>
-<ul>
-<li><a href="Julia.html#julia的一些体会" id="toc-julia的一些体会"><span class="toc-section-number">2.1</span> Julia的一些体会</a>
-<ul>
-<li><a href="Julia.html#关于函数的参数" id="toc-关于函数的参数"><span class="toc-section-number">2.1.1</span> 关于函数的参数</a></li>
-</ul></li>
-<li><a href="Julia.html#julia的一些常用包" id="toc-julia的一些常用包"><span class="toc-section-number">2.2</span> Julia的一些常用包</a>
-<ul>
-<li><a href="Julia.html#优化包" id="toc-优化包"><span class="toc-section-number">2.2.1</span> 优化包</a></li>
-<li><a href="Julia.html#julia数值求根" id="toc-julia数值求根"><span class="toc-section-number">2.2.2</span> Julia数值求根</a></li>
-<li><a href="Julia.html#dataframes包" id="toc-dataframes包"><span class="toc-section-number">2.2.3</span> <code>DataFrames</code>包</a></li>
-</ul></li>
-<li><a href="Julia.html#julia的ide体验" id="toc-julia的ide体验"><span class="toc-section-number">2.3</span> Julia的IDE体验</a></li>
-<li><a href="Julia.html#其他tips" id="toc-其他tips"><span class="toc-section-number">2.4</span> 其他tips</a></li>
-</ul></li>
-<li><a href="Stata.html#Stata" id="toc-Stata"><span class="toc-section-number">3</span> Stata</a>
-<ul>
-<li><a href="Stata.html#数据处理" id="toc-数据处理"><span class="toc-section-number">3.1</span> 数据处理</a></li>
-<li><a href="Stata.html#回归相关" id="toc-回归相关"><span class="toc-section-number">3.2</span> 回归相关</a>
-<ul>
-<li><a href="Stata.html#描述性统计和回归结果导出" id="toc-描述性统计和回归结果导出"><span class="toc-section-number">3.2.1</span> 描述性统计和回归结果导出</a></li>
-</ul></li>
-<li><a href="Stata.html#一些外部命令" id="toc-一些外部命令"><span class="toc-section-number">3.3</span> 一些外部命令</a></li>
-<li><a href="Stata.html#stata对某个变量随机抽样" id="toc-stata对某个变量随机抽样"><span class="toc-section-number">3.4</span> stata对某个变量随机抽样</a></li>
-<li><a href="Stata.html#stata调用r" id="toc-stata调用r"><span class="toc-section-number">3.5</span> Stata调用R</a></li>
-<li><a href="Stata.html#miscellaneous" id="toc-miscellaneous"><span class="toc-section-number">3.6</span> Miscellaneous</a></li>
-</ul></li>
-<li><a href="Matlab.html#Matlab" id="toc-Matlab"><span class="toc-section-number">4</span> Matlab</a>
-<ul>
-<li><a href="Matlab.html#一句话tips-1" id="toc-一句话tips-1"><span class="toc-section-number">4.1</span> 一句话Tips</a></li>
-<li><a href="Matlab.html#带名称和缺省值的参数设置" id="toc-带名称和缺省值的参数设置"><span class="toc-section-number">4.2</span> 带名称和缺省值的参数设置</a></li>
-<li><a href="Matlab.html#窗口输出到文本" id="toc-窗口输出到文本"><span class="toc-section-number">4.3</span> 窗口输出到文本</a></li>
-<li><a href="Matlab.html#gvar-toolbox使用报告" id="toc-gvar-toolbox使用报告"><span class="toc-section-number">4.4</span> GVAR Toolbox使用报告</a>
-<ul>
-<li><a href="Matlab.html#数据输入" id="toc-数据输入"><span class="toc-section-number">4.4.1</span> 数据输入</a></li>
-<li><a href="Matlab.html#模型设定" id="toc-模型设定"><span class="toc-section-number">4.4.2</span> 模型设定</a></li>
-<li><a href="Matlab.html#一些坑" id="toc-一些坑"><span class="toc-section-number">4.4.3</span> 一些坑</a></li>
-</ul></li>
-</ul></li>
-<li><a href="git操作流程.html#git操作流程" id="toc-git操作流程"><span class="toc-section-number">5</span> git操作流程</a>
-<ul>
-<li><a href="git操作流程.html#基本语法" id="toc-基本语法"><span class="toc-section-number">5.1</span> 基本语法</a></li>
-<li><a href="git操作流程.html#生成公钥" id="toc-生成公钥"><span class="toc-section-number">5.2</span> 生成公钥</a></li>
-<li><a href="git操作流程.html#本地库操作" id="toc-本地库操作"><span class="toc-section-number">5.3</span> 本地库操作</a></li>
-<li><a href="git操作流程.html#关联远程库码云" id="toc-关联远程库码云"><span class="toc-section-number">5.4</span> 关联远程库（码云）</a></li>
-<li><a href="git操作流程.html#打开vi后的操作" id="toc-打开vi后的操作"><span class="toc-section-number">5.5</span> 打开VI后的操作</a></li>
-<li><a href="git操作流程.html#给递交进行标记" id="toc-给递交进行标记"><span class="toc-section-number">5.6</span> 给递交进行标记</a></li>
-</ul></li>
-<li><a href="C.html#C" id="toc-C"><span class="toc-section-number">6</span> C语言</a>
-<ul>
-<li><a href="C.html#一句话tips-2" id="toc-一句话tips-2"><span class="toc-section-number">6.1</span> 一句话Tips</a></li>
-</ul></li>
-<li><a href="Latex.html#Latex" id="toc-Latex"><span class="toc-section-number">7</span> Latex</a>
-<ul>
-<li><a href="Latex.html#一句话tips-3" id="toc-一句话tips-3"><span class="toc-section-number">7.1</span> 一句话Tips</a></li>
-<li><a href="Latex.html#beamer相关" id="toc-beamer相关"><span class="toc-section-number">7.2</span> <code>beamer</code>相关</a></li>
-<li><a href="Latex.html#表格相关" id="toc-表格相关"><span class="toc-section-number">7.3</span> 表格相关</a>
-<ul>
-<li><a href="Latex.html#长表格" id="toc-长表格"><span class="toc-section-number">7.3.1</span> 长表格</a></li>
-</ul></li>
-<li><a href="Latex.html#章节标题格式修改" id="toc-章节标题格式修改"><span class="toc-section-number">7.4</span> 章节标题格式修改</a></li>
-<li><a href="Latex.html#数学公式左对齐" id="toc-数学公式左对齐"><span class="toc-section-number">7.5</span> 数学公式左对齐</a></li>
-<li><a href="Latex.html#中文字体加粗" id="toc-中文字体加粗"><span class="toc-section-number">7.6</span> 中文字体加粗</a></li>
-<li><a href="Latex.html#使用某种常用字体" id="toc-使用某种常用字体"><span class="toc-section-number">7.7</span> 使用某种常用字体</a>
-<ul>
-<li><a href="Latex.html#如何使用一个新的字体" id="toc-如何使用一个新的字体"><span class="toc-section-number">7.7.1</span> 如何使用一个新的字体？</a></li>
-</ul></li>
-<li><a href="Latex.html#我的r代码排版模版" id="toc-我的r代码排版模版"><span class="toc-section-number">7.8</span> 我的R代码排版模版</a>
-<ul>
-<li><a href="Latex.html#listings包" id="toc-listings包"><span class="toc-section-number">7.8.1</span> <code>listings</code>包</a></li>
-<li><a href="Latex.html#fancyvrb包" id="toc-fancyvrb包"><span class="toc-section-number">7.8.2</span> <code>fancyvrb</code>包</a></li>
-</ul></li>
-<li><a href="Latex.html#latex插入附录" id="toc-latex插入附录"><span class="toc-section-number">7.9</span> latex插入附录</a></li>
-<li><a href="Latex.html#latex参考文献的编码思路" id="toc-latex参考文献的编码思路"><span class="toc-section-number">7.10</span> latex参考文献的编码思路</a>
-<ul>
-<li><a href="Latex.html#参考文献较少的情况" id="toc-参考文献较少的情况"><span class="toc-section-number">7.10.1</span> 参考文献较少的情况</a></li>
-<li><a href="Latex.html#参考文献较多的情况" id="toc-参考文献较多的情况"><span class="toc-section-number">7.10.2</span> 参考文献较多的情况</a></li>
-<li><a href="Latex.html#如何将文献引用作为上标出现" id="toc-如何将文献引用作为上标出现"><span class="toc-section-number">7.10.3</span> 如何将文献引用作为上标出现？</a></li>
-</ul></li>
-<li><a href="Latex.html#一些文体的模版" id="toc-一些文体的模版"><span class="toc-section-number">7.11</span> 一些文体的模版</a>
-<ul>
-<li><a href="Latex.html#社科申报课题部分模版" id="toc-社科申报课题部分模版"><span class="toc-section-number">7.11.1</span> 社科申报课题部分模版</a></li>
-</ul></li>
-</ul></li>
-<li><a href="Blog.html#Blog" id="toc-Blog"><span class="toc-section-number">8</span> 博客</a></li>
-<li><a href="OS.html#OS" id="toc-OS"><span class="toc-section-number">9</span> macOS操作系统</a>
-<ul>
-<li><a href="OS.html#一句话tips-4" id="toc-一句话tips-4"><span class="toc-section-number">9.1</span> 一句话Tips</a></li>
-<li><a href="OS.html#安装和配置latex" id="toc-安装和配置latex"><span class="toc-section-number">9.2</span> 安装和配置Latex</a></li>
-<li><a href="OS.html#homebrew" id="toc-homebrew"><span class="toc-section-number">9.3</span> Homebrew</a></li>
-<li><a href="OS.html#挂载外置磁盘" id="toc-挂载外置磁盘"><span class="toc-section-number">9.4</span> 挂载外置磁盘</a></li>
-</ul></li>
-<li><a href="Mathematica.html#Mathematica" id="toc-Mathematica"><span class="toc-section-number">10</span> Mathematica</a>
-<ul>
-<li><a href="Mathematica.html#快捷键-1" id="toc-快捷键-1"><span class="toc-section-number">10.1</span> 快捷键</a></li>
-</ul></li>
-<li><a href="Python.html#Python" id="toc-Python"><span class="toc-section-number">11</span> python</a>
-<ul>
-<li><a href="Python.html#vscode下配置python" id="toc-vscode下配置python"><span class="toc-section-number">11.1</span> VSCode下配置python</a></li>
-</ul></li>
-<li><a href="Other.html#Other" id="toc-Other"><span class="toc-section-number">12</span> 其他小众软件</a>
-<ul>
-<li><a href="Other.html#pdf文件压缩" id="toc-pdf文件压缩"><span class="toc-section-number">12.1</span> PDF文件压缩</a></li>
-<li><a href="Other.html#eviews编程" id="toc-eviews编程"><span class="toc-section-number">12.2</span> Eviews编程</a></li>
-<li><a href="Other.html#gauss" id="toc-gauss"><span class="toc-section-number">12.3</span> GAUSS</a>
-<ul>
-<li><a href="Other.html#系统函数" id="toc-系统函数"><span class="toc-section-number">12.3.1</span> 系统函数</a></li>
-</ul></li>
-<li><a href="Other.html#zotero" id="toc-zotero"><span class="toc-section-number">12.4</span> Zotero</a></li>
-<li><a href="Other.html#word中插入公式" id="toc-word中插入公式"><span class="toc-section-number">12.5</span> Word中插入公式</a>
-<ul>
-<li><a href="Other.html#自带的公式输入" id="toc-自带的公式输入"><span class="toc-section-number">12.5.1</span> 自带的公式输入</a></li>
-<li><a href="Other.html#公式编号的其他方法" id="toc-公式编号的其他方法"><span class="toc-section-number">12.5.2</span> 公式编号的其他方法</a></li>
-<li><a href="Other.html#利用texsword编辑器" id="toc-利用texsword编辑器"><span class="toc-section-number">12.5.3</span> 利用TexsWord编辑器</a></li>
-</ul></li>
-<li><a href="Other.html#noteexpress样式设置" id="toc-noteexpress样式设置"><span class="toc-section-number">12.6</span> NoteExpress样式设置</a></li>
-<li><a href="Other.html#filezilla" id="toc-filezilla"><span class="toc-section-number">12.7</span> FileZilla</a></li>
-</ul></li>
-<li><a href="references.html#references" id="toc-references">References</a></li>
 </ul>
 
       </nav>
@@ -223,7 +95,7 @@ MathJax.Hub.Config({
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">编程语言笔记</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
           </h1>
         </div>
 
@@ -231,27 +103,30 @@ MathJax.Hub.Config({
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="OS" class="section level1" number="9">
-<h1><span class="header-section-number">9</span> macOS操作系统</h1>
-<div id="一句话tips-4" class="section level2" number="9.1">
-<h2><span class="header-section-number">9.1</span> 一句话Tips</h2>
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="OS" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> macOS操作系统</h1>
+<div id="一句话tips" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> 一句话Tips</h2>
 <ul>
+<li><code>cmd+shift+.</code>显示隐藏文件。</li>
 <li>进入外置磁盘目录，要先进入根目录，然后输入<code>cd volumes</code>就可以看到外置磁盘的名字了。</li>
 <li>苹果系统查命令的详细说明可以使用比如<code>man diskutil</code>就可以查看命令<code>diskutil</code>的详细语法，阅读完后，输入<code>q</code>以退出。</li>
 <li>在macOS上安装dynare，国内会因为连不上github而无法安装。如何在国内顺利连上github，参考https://juejin.cn/post/7039913254897860616</li>
 <li><code>chromedriver</code>可以放在<code>/usr/local/bin</code>目录下，在命令行使用<code>open /usr/local/bin</code>打开该目录。</li>
 </ul>
 </div>
-<div id="安装和配置latex" class="section level2" number="9.2">
-<h2><span class="header-section-number">9.2</span> 安装和配置Latex</h2>
+<div id="安装和配置latex" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> 安装和配置Latex</h2>
 <ol style="list-style-type: decimal">
 <li>安装texlive，在macOS下就是Mactex。进入Texlive官网，下载安装包，双击安装即可。</li>
 <li>安装TexStudio更加简单，下载后双击，把弹出的窗口中的程序复制到Applications里面即可。</li>
 <li>配置TexStudio，一是Build里面，引擎要换成xepdf，这是专门为中文进行渲染的。二是各种命令要换过来，具体可以参见旧的界面，或者https://blog.csdn.net/qq_14925953/article/details/126590499。</li>
 </ol>
 </div>
-<div id="homebrew" class="section level2" number="9.3">
-<h2><span class="header-section-number">9.3</span> Homebrew</h2>
+<div id="homebrew" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Homebrew</h2>
 <ul>
 <li><p>macOS上有一个优秀的包管理器Homebrew,进它的主页https://brew.sh/，一行代码让你装上该软件。注意，该软件同样要求你能够顺利连上github。很多情况下速度很慢，导致安装不上。可以如下步骤更换代码存储的源：</p>
 <ul>
@@ -269,8 +144,8 @@ HOMEBREW_CORE_DEFAULT_GIT_REMOTE = &quot;https://mirrors.ustc.edu.cn/homebrew-co
 <li><p>当有了brew命令之后，安装jdk是非常简单的一件事。可以在homebrew搜索jdk的安装命令，它是<code>brew install --cask oracle-jdk</code>。有了jdk，我们就能愉快地使用R语言的xlsx包了。</p></li>
 </ul>
 </div>
-<div id="挂载外置磁盘" class="section level2" number="9.4">
-<h2><span class="header-section-number">9.4</span> 挂载外置磁盘</h2>
+<div id="挂载外置磁盘" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> 挂载外置磁盘</h2>
 <ol style="list-style-type: decimal">
 <li>首先利用<code>diskutil list</code>查看你的外置磁盘的设备名称，在IDENTIFIER列中，一般是<code>/dev/disk4s2</code>之类的。</li>
 <li>然后利用<code>diskutil info disk4s2</code>查询磁盘的UUID</li>
@@ -278,7 +153,6 @@ HOMEBREW_CORE_DEFAULT_GIT_REMOTE = &quot;https://mirrors.ustc.edu.cn/homebrew-co
 </ol>
 <pre><code>UUID=06A19C31-BED5-36E9-BEC9-616E398C77FD /Users/yangnay/elements exfat rw,auto</code></pre>
 <p>注意，<code>exfat</code>是你的硬盘的文件格式，<code>elements</code>需要提前建好文件夹。</p>
-
 </div>
 </div>
             </section>
@@ -286,8 +160,8 @@ HOMEBREW_CORE_DEFAULT_GIT_REMOTE = &quot;https://mirrors.ustc.edu.cn/homebrew-co
           </div>
         </div>
       </div>
-<a href="Blog.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="Mathematica.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -329,11 +203,8 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["CBook.pdf"],
-"search": {
-"engine": "fuse",
-"options": null
-},
+"download": null,
+"search": false,
 "toc": {
 "collapse": "subsection"
 }
@@ -341,20 +212,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
