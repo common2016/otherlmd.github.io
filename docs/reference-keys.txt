@@ -87,3 +87,4 @@ homebrew
 数学公式相关
 手动安装新的宏包
 记录几个快捷键
+使用pdfpages包插入pdf页面

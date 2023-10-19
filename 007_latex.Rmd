@@ -36,7 +36,7 @@ This is a landscape page.
 ```tex
 \multido{\n=3+1}{16}{\noindent\includegraphics[scale=0.9]{RD复印 \n.pdf}\\}
 ```
-- 使用`pdfpages`包可以插入pdf文件，命令比如：`\includepdf[pages={1,2}]{1.pdf} `
+
 - 定制封面页时，要使第一行下沉几行，可以这样：
 ```tex
  \hspace{2em}
@@ -91,6 +91,11 @@ This is a landscape page.
 - 使用`framed`包，用`\begin{framed}\end{framed}`环境可以给整段文字加边框。
 - `\pagestyle{empty}`当前及后续页无页眉,第一页因为包含标题等可能有特殊格式，要消掉它的页码的话则用`\thispagestyle{empty}`。但如果还是无法去除第一页的页码，一定是使用了`\maketitle`命令，该命令内部调用了`\thispagestyle{\plain}`，为了解决这个问题，只要在该命令行里面调用`\thispagestyle{\empty}`，空行也不要留下。
 - `\renewcommand\refname{参考文献}`把"Reference"变成“参考文献”。
+
+## 使用`pdfpages`包插入PDF页面
+
+- 命令比如：`\includepdf[pages={1,2}]{1.pdf} `就是插入这个PDF文件的第1和第二页
+- 有时页面插入后可能会往右偏了点，可以使用命令`\includepdf[offset=-3em  0]{tb1.pdf}`把页面往左移，那个“0”表示在垂直方向不需要移。
 
 ## 记录几个快捷键
 
