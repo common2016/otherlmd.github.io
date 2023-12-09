@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Matlab | 编程语言笔记</title>
   <meta name="description" content="4 Matlab | 编程语言笔记" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Matlab | 编程语言笔记" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="Stata.html"/>
 <link rel="next" href="git操作流程.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,8 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX","output/SVG"],
@@ -131,6 +130,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 </head>
 
@@ -144,143 +147,146 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="index.html#序" id="toc-序">序</a></li>
-<li><a href="Maple.html#Maple" id="toc-Maple"><span class="toc-section-number">1</span> Maple</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>序</a></li>
+<li class="chapter" data-level="1" data-path="Maple.html"><a href="Maple.html"><i class="fa fa-check"></i><b>1</b> Maple</a>
 <ul>
-<li><a href="Maple.html#快捷键" id="toc-快捷键"><span class="toc-section-number">1.1</span> 快捷键</a></li>
-<li><a href="Maple.html#几个基本的代数处理" id="toc-几个基本的代数处理"><span class="toc-section-number">1.2</span> 几个基本的代数处理</a></li>
-<li><a href="Maple.html#产生序列" id="toc-产生序列"><span class="toc-section-number">1.3</span> 产生序列</a></li>
-<li><a href="Maple.html#函数定义" id="toc-函数定义"><span class="toc-section-number">1.4</span> 函数定义</a>
+<li class="chapter" data-level="1.1" data-path="Maple.html"><a href="Maple.html#快捷键"><i class="fa fa-check"></i><b>1.1</b> 快捷键</a></li>
+<li class="chapter" data-level="1.2" data-path="Maple.html"><a href="Maple.html#几个基本的代数处理"><i class="fa fa-check"></i><b>1.2</b> 几个基本的代数处理</a></li>
+<li class="chapter" data-level="1.3" data-path="Maple.html"><a href="Maple.html#产生序列"><i class="fa fa-check"></i><b>1.3</b> 产生序列</a></li>
+<li class="chapter" data-level="1.4" data-path="Maple.html"><a href="Maple.html#函数定义"><i class="fa fa-check"></i><b>1.4</b> 函数定义</a>
 <ul>
-<li><a href="Maple.html#参数的宣称" id="toc-参数的宣称"><span class="toc-section-number">1.4.1</span> 参数的宣称</a></li>
+<li class="chapter" data-level="1.4.1" data-path="Maple.html"><a href="Maple.html#参数的宣称"><i class="fa fa-check"></i><b>1.4.1</b> 参数的宣称</a></li>
 </ul></li>
-<li><a href="Maple.html#控制流" id="toc-控制流"><span class="toc-section-number">1.5</span> 控制流</a></li>
-<li><a href="Maple.html#画图" id="toc-画图"><span class="toc-section-number">1.6</span> 画图</a></li>
-<li><a href="Maple.html#矩阵" id="toc-矩阵"><span class="toc-section-number">1.7</span> 矩阵</a></li>
-<li><a href="Maple.html#一句话tips" id="toc-一句话tips"><span class="toc-section-number">1.8</span> 一句话Tips</a></li>
+<li class="chapter" data-level="1.5" data-path="Maple.html"><a href="Maple.html#控制流"><i class="fa fa-check"></i><b>1.5</b> 控制流</a></li>
+<li class="chapter" data-level="1.6" data-path="Maple.html"><a href="Maple.html#画图"><i class="fa fa-check"></i><b>1.6</b> 画图</a></li>
+<li class="chapter" data-level="1.7" data-path="Maple.html"><a href="Maple.html#矩阵"><i class="fa fa-check"></i><b>1.7</b> 矩阵</a></li>
+<li class="chapter" data-level="1.8" data-path="Maple.html"><a href="Maple.html#一句话tips"><i class="fa fa-check"></i><b>1.8</b> 一句话Tips</a></li>
 </ul></li>
-<li><a href="Julia.html#Julia" id="toc-Julia"><span class="toc-section-number">2</span> Julia</a>
+<li class="chapter" data-level="2" data-path="Julia.html"><a href="Julia.html"><i class="fa fa-check"></i><b>2</b> Julia</a>
 <ul>
-<li><a href="Julia.html#julia的一些体会" id="toc-julia的一些体会"><span class="toc-section-number">2.1</span> Julia的一些体会</a>
+<li class="chapter" data-level="2.1" data-path="Julia.html"><a href="Julia.html#julia的一些体会"><i class="fa fa-check"></i><b>2.1</b> Julia的一些体会</a>
 <ul>
-<li><a href="Julia.html#关于函数的参数" id="toc-关于函数的参数"><span class="toc-section-number">2.1.1</span> 关于函数的参数</a></li>
+<li class="chapter" data-level="2.1.1" data-path="Julia.html"><a href="Julia.html#关于函数的参数"><i class="fa fa-check"></i><b>2.1.1</b> 关于函数的参数</a></li>
 </ul></li>
-<li><a href="Julia.html#julia的一些常用包" id="toc-julia的一些常用包"><span class="toc-section-number">2.2</span> Julia的一些常用包</a>
+<li class="chapter" data-level="2.2" data-path="Julia.html"><a href="Julia.html#julia的一些常用包"><i class="fa fa-check"></i><b>2.2</b> Julia的一些常用包</a>
 <ul>
-<li><a href="Julia.html#优化包" id="toc-优化包"><span class="toc-section-number">2.2.1</span> 优化包</a></li>
-<li><a href="Julia.html#julia数值求根" id="toc-julia数值求根"><span class="toc-section-number">2.2.2</span> Julia数值求根</a></li>
-<li><a href="Julia.html#dataframes包" id="toc-dataframes包"><span class="toc-section-number">2.2.3</span> <code>DataFrames</code>包</a></li>
+<li class="chapter" data-level="2.2.1" data-path="Julia.html"><a href="Julia.html#优化包"><i class="fa fa-check"></i><b>2.2.1</b> 优化包</a></li>
+<li class="chapter" data-level="2.2.2" data-path="Julia.html"><a href="Julia.html#julia数值求根"><i class="fa fa-check"></i><b>2.2.2</b> Julia数值求根</a></li>
+<li class="chapter" data-level="2.2.3" data-path="Julia.html"><a href="Julia.html#dataframes包"><i class="fa fa-check"></i><b>2.2.3</b> <code>DataFrames</code>包</a></li>
 </ul></li>
-<li><a href="Julia.html#julia的ide体验" id="toc-julia的ide体验"><span class="toc-section-number">2.3</span> Julia的IDE体验</a></li>
-<li><a href="Julia.html#其他tips" id="toc-其他tips"><span class="toc-section-number">2.4</span> 其他tips</a></li>
+<li class="chapter" data-level="2.3" data-path="Julia.html"><a href="Julia.html#julia的ide体验"><i class="fa fa-check"></i><b>2.3</b> Julia的IDE体验</a></li>
+<li class="chapter" data-level="2.4" data-path="Julia.html"><a href="Julia.html#其他tips"><i class="fa fa-check"></i><b>2.4</b> 其他tips</a></li>
 </ul></li>
-<li><a href="Stata.html#Stata" id="toc-Stata"><span class="toc-section-number">3</span> Stata</a>
+<li class="chapter" data-level="3" data-path="Stata.html"><a href="Stata.html"><i class="fa fa-check"></i><b>3</b> Stata</a>
 <ul>
-<li><a href="Stata.html#数据处理" id="toc-数据处理"><span class="toc-section-number">3.1</span> 数据处理</a></li>
-<li><a href="Stata.html#回归相关" id="toc-回归相关"><span class="toc-section-number">3.2</span> 回归相关</a>
+<li class="chapter" data-level="3.1" data-path="Stata.html"><a href="Stata.html#数据处理"><i class="fa fa-check"></i><b>3.1</b> 数据处理</a></li>
+<li class="chapter" data-level="3.2" data-path="Stata.html"><a href="Stata.html#回归相关"><i class="fa fa-check"></i><b>3.2</b> 回归相关</a>
 <ul>
-<li><a href="Stata.html#描述性统计和回归结果导出" id="toc-描述性统计和回归结果导出"><span class="toc-section-number">3.2.1</span> 描述性统计和回归结果导出</a></li>
+<li class="chapter" data-level="3.2.1" data-path="Stata.html"><a href="Stata.html#描述性统计和回归结果导出"><i class="fa fa-check"></i><b>3.2.1</b> 描述性统计和回归结果导出</a></li>
 </ul></li>
-<li><a href="Stata.html#一些外部命令" id="toc-一些外部命令"><span class="toc-section-number">3.3</span> 一些外部命令</a></li>
-<li><a href="Stata.html#stata对某个变量随机抽样" id="toc-stata对某个变量随机抽样"><span class="toc-section-number">3.4</span> stata对某个变量随机抽样</a></li>
-<li><a href="Stata.html#stata调用r" id="toc-stata调用r"><span class="toc-section-number">3.5</span> Stata调用R</a></li>
-<li><a href="Stata.html#miscellaneous" id="toc-miscellaneous"><span class="toc-section-number">3.6</span> Miscellaneous</a></li>
+<li class="chapter" data-level="3.3" data-path="Stata.html"><a href="Stata.html#一些外部命令"><i class="fa fa-check"></i><b>3.3</b> 一些外部命令</a></li>
+<li class="chapter" data-level="3.4" data-path="Stata.html"><a href="Stata.html#stata对某个变量随机抽样"><i class="fa fa-check"></i><b>3.4</b> stata对某个变量随机抽样</a></li>
+<li class="chapter" data-level="3.5" data-path="Stata.html"><a href="Stata.html#stata调用r"><i class="fa fa-check"></i><b>3.5</b> Stata调用R</a></li>
+<li class="chapter" data-level="3.6" data-path="Stata.html"><a href="Stata.html#miscellaneous"><i class="fa fa-check"></i><b>3.6</b> Miscellaneous</a></li>
 </ul></li>
-<li><a href="Matlab.html#Matlab" id="toc-Matlab"><span class="toc-section-number">4</span> Matlab</a>
+<li class="chapter" data-level="4" data-path="Matlab.html"><a href="Matlab.html"><i class="fa fa-check"></i><b>4</b> Matlab</a>
 <ul>
-<li><a href="Matlab.html#一句话tips-1" id="toc-一句话tips-1"><span class="toc-section-number">4.1</span> 一句话Tips</a></li>
-<li><a href="Matlab.html#带名称和缺省值的参数设置" id="toc-带名称和缺省值的参数设置"><span class="toc-section-number">4.2</span> 带名称和缺省值的参数设置</a></li>
-<li><a href="Matlab.html#窗口输出到文本" id="toc-窗口输出到文本"><span class="toc-section-number">4.3</span> 窗口输出到文本</a></li>
-<li><a href="Matlab.html#gvar-toolbox使用报告" id="toc-gvar-toolbox使用报告"><span class="toc-section-number">4.4</span> GVAR Toolbox使用报告</a>
+<li class="chapter" data-level="4.1" data-path="Matlab.html"><a href="Matlab.html#一句话tips-1"><i class="fa fa-check"></i><b>4.1</b> 一句话Tips</a></li>
+<li class="chapter" data-level="4.2" data-path="Matlab.html"><a href="Matlab.html#带名称和缺省值的参数设置"><i class="fa fa-check"></i><b>4.2</b> 带名称和缺省值的参数设置</a></li>
+<li class="chapter" data-level="4.3" data-path="Matlab.html"><a href="Matlab.html#窗口输出到文本"><i class="fa fa-check"></i><b>4.3</b> 窗口输出到文本</a></li>
+<li class="chapter" data-level="4.4" data-path="Matlab.html"><a href="Matlab.html#gvar-toolbox使用报告"><i class="fa fa-check"></i><b>4.4</b> GVAR Toolbox使用报告</a>
 <ul>
-<li><a href="Matlab.html#数据输入" id="toc-数据输入"><span class="toc-section-number">4.4.1</span> 数据输入</a></li>
-<li><a href="Matlab.html#模型设定" id="toc-模型设定"><span class="toc-section-number">4.4.2</span> 模型设定</a></li>
-<li><a href="Matlab.html#一些坑" id="toc-一些坑"><span class="toc-section-number">4.4.3</span> 一些坑</a></li>
-</ul></li>
-</ul></li>
-<li><a href="git操作流程.html#git操作流程" id="toc-git操作流程"><span class="toc-section-number">5</span> git操作流程</a>
-<ul>
-<li><a href="git操作流程.html#基本语法" id="toc-基本语法"><span class="toc-section-number">5.1</span> 基本语法</a></li>
-<li><a href="git操作流程.html#生成公钥" id="toc-生成公钥"><span class="toc-section-number">5.2</span> 生成公钥</a></li>
-<li><a href="git操作流程.html#本地库操作" id="toc-本地库操作"><span class="toc-section-number">5.3</span> 本地库操作</a></li>
-<li><a href="git操作流程.html#关联远程库码云" id="toc-关联远程库码云"><span class="toc-section-number">5.4</span> 关联远程库（码云）</a></li>
-<li><a href="git操作流程.html#打开vi后的操作" id="toc-打开vi后的操作"><span class="toc-section-number">5.5</span> 打开VI后的操作</a></li>
-<li><a href="git操作流程.html#给递交进行标记" id="toc-给递交进行标记"><span class="toc-section-number">5.6</span> 给递交进行标记</a></li>
-</ul></li>
-<li><a href="C.html#C" id="toc-C"><span class="toc-section-number">6</span> C语言</a>
-<ul>
-<li><a href="C.html#一句话tips-2" id="toc-一句话tips-2"><span class="toc-section-number">6.1</span> 一句话Tips</a></li>
-</ul></li>
-<li><a href="Latex.html#Latex" id="toc-Latex"><span class="toc-section-number">7</span> Latex</a>
-<ul>
-<li><a href="Latex.html#一句话tips-3" id="toc-一句话tips-3"><span class="toc-section-number">7.1</span> 一句话Tips</a></li>
-<li><a href="Latex.html#beamer相关" id="toc-beamer相关"><span class="toc-section-number">7.2</span> <code>beamer</code>相关</a></li>
-<li><a href="Latex.html#表格相关" id="toc-表格相关"><span class="toc-section-number">7.3</span> 表格相关</a>
-<ul>
-<li><a href="Latex.html#长表格" id="toc-长表格"><span class="toc-section-number">7.3.1</span> 长表格</a></li>
-</ul></li>
-<li><a href="Latex.html#章节标题格式修改" id="toc-章节标题格式修改"><span class="toc-section-number">7.4</span> 章节标题格式修改</a></li>
-<li><a href="Latex.html#数学公式相关" id="toc-数学公式相关"><span class="toc-section-number">7.5</span> 数学公式相关</a>
-<ul>
-<li><a href="Latex.html#数学公式左对齐" id="toc-数学公式左对齐"><span class="toc-section-number">7.5.1</span> 数学公式左对齐</a></li>
-</ul></li>
-<li><a href="Latex.html#中文字体加粗" id="toc-中文字体加粗"><span class="toc-section-number">7.6</span> 中文字体加粗</a></li>
-<li><a href="Latex.html#使用某种常用字体" id="toc-使用某种常用字体"><span class="toc-section-number">7.7</span> 使用某种常用字体</a>
-<ul>
-<li><a href="Latex.html#如何使用一个新的字体" id="toc-如何使用一个新的字体"><span class="toc-section-number">7.7.1</span> 如何使用一个新的字体？</a></li>
-</ul></li>
-<li><a href="Latex.html#我的r代码排版模版" id="toc-我的r代码排版模版"><span class="toc-section-number">7.8</span> 我的R代码排版模版</a>
-<ul>
-<li><a href="Latex.html#listings包" id="toc-listings包"><span class="toc-section-number">7.8.1</span> <code>listings</code>包</a></li>
-<li><a href="Latex.html#fancyvrb包" id="toc-fancyvrb包"><span class="toc-section-number">7.8.2</span> <code>fancyvrb</code>包</a></li>
-</ul></li>
-<li><a href="Latex.html#latex插入附录" id="toc-latex插入附录"><span class="toc-section-number">7.9</span> latex插入附录</a></li>
-<li><a href="Latex.html#latex参考文献的编码思路" id="toc-latex参考文献的编码思路"><span class="toc-section-number">7.10</span> latex参考文献的编码思路</a>
-<ul>
-<li><a href="Latex.html#参考文献较少的情况" id="toc-参考文献较少的情况"><span class="toc-section-number">7.10.1</span> 参考文献较少的情况</a></li>
-<li><a href="Latex.html#参考文献较多的情况" id="toc-参考文献较多的情况"><span class="toc-section-number">7.10.2</span> 参考文献较多的情况</a></li>
-<li><a href="Latex.html#如何将文献引用作为上标出现" id="toc-如何将文献引用作为上标出现"><span class="toc-section-number">7.10.3</span> 如何将文献引用作为上标出现？</a></li>
-</ul></li>
-<li><a href="Latex.html#一些文体的模版" id="toc-一些文体的模版"><span class="toc-section-number">7.11</span> 一些文体的模版</a>
-<ul>
-<li><a href="Latex.html#社科申报课题部分模版" id="toc-社科申报课题部分模版"><span class="toc-section-number">7.11.1</span> 社科申报课题部分模版</a></li>
+<li class="chapter" data-level="4.4.1" data-path="Matlab.html"><a href="Matlab.html#数据输入"><i class="fa fa-check"></i><b>4.4.1</b> 数据输入</a></li>
+<li class="chapter" data-level="4.4.2" data-path="Matlab.html"><a href="Matlab.html#模型设定"><i class="fa fa-check"></i><b>4.4.2</b> 模型设定</a></li>
+<li class="chapter" data-level="4.4.3" data-path="Matlab.html"><a href="Matlab.html#一些坑"><i class="fa fa-check"></i><b>4.4.3</b> 一些坑</a></li>
 </ul></li>
 </ul></li>
-<li><a href="Blog.html#Blog" id="toc-Blog"><span class="toc-section-number">8</span> 博客</a></li>
-<li><a href="OS.html#OS" id="toc-OS"><span class="toc-section-number">9</span> macOS操作系统</a>
+<li class="chapter" data-level="5" data-path="git操作流程.html"><a href="git操作流程.html"><i class="fa fa-check"></i><b>5</b> git操作流程</a>
 <ul>
-<li><a href="OS.html#一句话tips-4" id="toc-一句话tips-4"><span class="toc-section-number">9.1</span> 一句话Tips</a></li>
-<li><a href="OS.html#安装和配置latex" id="toc-安装和配置latex"><span class="toc-section-number">9.2</span> 安装和配置Latex</a></li>
-<li><a href="OS.html#homebrew" id="toc-homebrew"><span class="toc-section-number">9.3</span> Homebrew</a></li>
-<li><a href="OS.html#挂载外置磁盘" id="toc-挂载外置磁盘"><span class="toc-section-number">9.4</span> 挂载外置磁盘</a></li>
+<li class="chapter" data-level="5.1" data-path="git操作流程.html"><a href="git操作流程.html#基本语法"><i class="fa fa-check"></i><b>5.1</b> 基本语法</a></li>
+<li class="chapter" data-level="5.2" data-path="git操作流程.html"><a href="git操作流程.html#生成公钥"><i class="fa fa-check"></i><b>5.2</b> 生成公钥</a></li>
+<li class="chapter" data-level="5.3" data-path="git操作流程.html"><a href="git操作流程.html#本地库操作"><i class="fa fa-check"></i><b>5.3</b> 本地库操作</a></li>
+<li class="chapter" data-level="5.4" data-path="git操作流程.html"><a href="git操作流程.html#关联远程库码云"><i class="fa fa-check"></i><b>5.4</b> 关联远程库（码云）</a></li>
+<li class="chapter" data-level="5.5" data-path="git操作流程.html"><a href="git操作流程.html#打开vi后的操作"><i class="fa fa-check"></i><b>5.5</b> 打开VI后的操作</a></li>
+<li class="chapter" data-level="5.6" data-path="git操作流程.html"><a href="git操作流程.html#给递交进行标记"><i class="fa fa-check"></i><b>5.6</b> 给递交进行标记</a></li>
 </ul></li>
-<li><a href="Mathematica.html#Mathematica" id="toc-Mathematica"><span class="toc-section-number">10</span> Mathematica</a>
+<li class="chapter" data-level="6" data-path="C.html"><a href="C.html"><i class="fa fa-check"></i><b>6</b> C语言</a>
 <ul>
-<li><a href="Mathematica.html#快捷键-1" id="toc-快捷键-1"><span class="toc-section-number">10.1</span> 快捷键</a></li>
+<li class="chapter" data-level="6.1" data-path="C.html"><a href="C.html#一句话tips-2"><i class="fa fa-check"></i><b>6.1</b> 一句话Tips</a></li>
 </ul></li>
-<li><a href="Python.html#Python" id="toc-Python"><span class="toc-section-number">11</span> python</a>
+<li class="chapter" data-level="7" data-path="Latex.html"><a href="Latex.html"><i class="fa fa-check"></i><b>7</b> Latex</a>
 <ul>
-<li><a href="Python.html#vscode下配置python" id="toc-vscode下配置python"><span class="toc-section-number">11.1</span> VSCode下配置python</a></li>
-</ul></li>
-<li><a href="Other.html#Other" id="toc-Other"><span class="toc-section-number">12</span> 其他小众软件</a>
+<li class="chapter" data-level="7.1" data-path="Latex.html"><a href="Latex.html#一句话tips-3"><i class="fa fa-check"></i><b>7.1</b> 一句话Tips</a></li>
+<li class="chapter" data-level="7.2" data-path="Latex.html"><a href="Latex.html#使用pdfpages包插入pdf页面"><i class="fa fa-check"></i><b>7.2</b> 使用<code>pdfpages</code>包插入PDF页面</a></li>
+<li class="chapter" data-level="7.3" data-path="Latex.html"><a href="Latex.html#记录几个快捷键"><i class="fa fa-check"></i><b>7.3</b> 记录几个快捷键</a></li>
+<li class="chapter" data-level="7.4" data-path="Latex.html"><a href="Latex.html#手动安装新的宏包"><i class="fa fa-check"></i><b>7.4</b> 手动安装新的宏包</a></li>
+<li class="chapter" data-level="7.5" data-path="Latex.html"><a href="Latex.html#beamer相关"><i class="fa fa-check"></i><b>7.5</b> <code>beamer</code>相关</a></li>
+<li class="chapter" data-level="7.6" data-path="Latex.html"><a href="Latex.html#表格相关"><i class="fa fa-check"></i><b>7.6</b> 表格相关</a>
 <ul>
-<li><a href="Other.html#pdf文件压缩" id="toc-pdf文件压缩"><span class="toc-section-number">12.1</span> PDF文件压缩</a></li>
-<li><a href="Other.html#eviews编程" id="toc-eviews编程"><span class="toc-section-number">12.2</span> Eviews编程</a></li>
-<li><a href="Other.html#gauss" id="toc-gauss"><span class="toc-section-number">12.3</span> GAUSS</a>
+<li class="chapter" data-level="7.6.1" data-path="Latex.html"><a href="Latex.html#长表格"><i class="fa fa-check"></i><b>7.6.1</b> 长表格</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="Latex.html"><a href="Latex.html#章节标题格式修改"><i class="fa fa-check"></i><b>7.7</b> 章节标题格式修改</a></li>
+<li class="chapter" data-level="7.8" data-path="Latex.html"><a href="Latex.html#数学公式相关"><i class="fa fa-check"></i><b>7.8</b> 数学公式相关</a>
 <ul>
-<li><a href="Other.html#系统函数" id="toc-系统函数"><span class="toc-section-number">12.3.1</span> 系统函数</a></li>
+<li class="chapter" data-level="7.8.1" data-path="Latex.html"><a href="Latex.html#数学公式左对齐"><i class="fa fa-check"></i><b>7.8.1</b> 数学公式左对齐</a></li>
 </ul></li>
-<li><a href="Other.html#zotero" id="toc-zotero"><span class="toc-section-number">12.4</span> Zotero</a></li>
-<li><a href="Other.html#word中插入公式" id="toc-word中插入公式"><span class="toc-section-number">12.5</span> Word中插入公式</a>
+<li class="chapter" data-level="7.9" data-path="Latex.html"><a href="Latex.html#中文字体加粗"><i class="fa fa-check"></i><b>7.9</b> 中文字体加粗</a></li>
+<li class="chapter" data-level="7.10" data-path="Latex.html"><a href="Latex.html#使用某种常用字体"><i class="fa fa-check"></i><b>7.10</b> 使用某种常用字体</a>
 <ul>
-<li><a href="Other.html#自带的公式输入" id="toc-自带的公式输入"><span class="toc-section-number">12.5.1</span> 自带的公式输入</a></li>
-<li><a href="Other.html#公式编号的其他方法" id="toc-公式编号的其他方法"><span class="toc-section-number">12.5.2</span> 公式编号的其他方法</a></li>
-<li><a href="Other.html#利用texsword编辑器" id="toc-利用texsword编辑器"><span class="toc-section-number">12.5.3</span> 利用TexsWord编辑器</a></li>
+<li class="chapter" data-level="7.10.1" data-path="Latex.html"><a href="Latex.html#如何使用一个新的字体"><i class="fa fa-check"></i><b>7.10.1</b> 如何使用一个新的字体？</a></li>
 </ul></li>
-<li><a href="Other.html#noteexpress样式设置" id="toc-noteexpress样式设置"><span class="toc-section-number">12.6</span> NoteExpress样式设置</a></li>
-<li><a href="Other.html#filezilla" id="toc-filezilla"><span class="toc-section-number">12.7</span> FileZilla</a></li>
+<li class="chapter" data-level="7.11" data-path="Latex.html"><a href="Latex.html#我的r代码排版模版"><i class="fa fa-check"></i><b>7.11</b> 我的R代码排版模版</a>
+<ul>
+<li class="chapter" data-level="7.11.1" data-path="Latex.html"><a href="Latex.html#listings包"><i class="fa fa-check"></i><b>7.11.1</b> <code>listings</code>包</a></li>
+<li class="chapter" data-level="7.11.2" data-path="Latex.html"><a href="Latex.html#fancyvrb包"><i class="fa fa-check"></i><b>7.11.2</b> <code>fancyvrb</code>包</a></li>
 </ul></li>
-<li><a href="references.html#references" id="toc-references">References</a></li>
+<li class="chapter" data-level="7.12" data-path="Latex.html"><a href="Latex.html#latex插入附录"><i class="fa fa-check"></i><b>7.12</b> latex插入附录</a></li>
+<li class="chapter" data-level="7.13" data-path="Latex.html"><a href="Latex.html#latex参考文献的编码思路"><i class="fa fa-check"></i><b>7.13</b> latex参考文献的编码思路</a>
+<ul>
+<li class="chapter" data-level="7.13.1" data-path="Latex.html"><a href="Latex.html#参考文献较少的情况"><i class="fa fa-check"></i><b>7.13.1</b> 参考文献较少的情况</a></li>
+<li class="chapter" data-level="7.13.2" data-path="Latex.html"><a href="Latex.html#参考文献较多的情况"><i class="fa fa-check"></i><b>7.13.2</b> 参考文献较多的情况</a></li>
+<li class="chapter" data-level="7.13.3" data-path="Latex.html"><a href="Latex.html#如何将文献引用作为上标出现"><i class="fa fa-check"></i><b>7.13.3</b> 如何将文献引用作为上标出现？</a></li>
+</ul></li>
+<li class="chapter" data-level="7.14" data-path="Latex.html"><a href="Latex.html#一些文体的模版"><i class="fa fa-check"></i><b>7.14</b> 一些文体的模版</a>
+<ul>
+<li class="chapter" data-level="7.14.1" data-path="Latex.html"><a href="Latex.html#社科申报课题部分模版"><i class="fa fa-check"></i><b>7.14.1</b> 社科申报课题部分模版</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Blog.html"><a href="Blog.html"><i class="fa fa-check"></i><b>8</b> 博客</a></li>
+<li class="chapter" data-level="9" data-path="OS.html"><a href="OS.html"><i class="fa fa-check"></i><b>9</b> macOS操作系统</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="OS.html"><a href="OS.html#一句话tips-4"><i class="fa fa-check"></i><b>9.1</b> 一句话Tips</a></li>
+<li class="chapter" data-level="9.2" data-path="OS.html"><a href="OS.html#安装和配置latex"><i class="fa fa-check"></i><b>9.2</b> 安装和配置Latex</a></li>
+<li class="chapter" data-level="9.3" data-path="OS.html"><a href="OS.html#homebrew"><i class="fa fa-check"></i><b>9.3</b> Homebrew</a></li>
+<li class="chapter" data-level="9.4" data-path="OS.html"><a href="OS.html#挂载外置磁盘"><i class="fa fa-check"></i><b>9.4</b> 挂载外置磁盘</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="Mathematica.html"><a href="Mathematica.html"><i class="fa fa-check"></i><b>10</b> Mathematica</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="Mathematica.html"><a href="Mathematica.html#快捷键-1"><i class="fa fa-check"></i><b>10.1</b> 快捷键</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="Python.html"><a href="Python.html"><i class="fa fa-check"></i><b>11</b> python</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="Python.html"><a href="Python.html#vscode下配置python"><i class="fa fa-check"></i><b>11.1</b> VSCode下配置python</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="Other.html"><a href="Other.html"><i class="fa fa-check"></i><b>12</b> 其他小众软件</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="Other.html"><a href="Other.html#pdf文件压缩"><i class="fa fa-check"></i><b>12.1</b> PDF文件压缩</a></li>
+<li class="chapter" data-level="12.2" data-path="Other.html"><a href="Other.html#eviews编程"><i class="fa fa-check"></i><b>12.2</b> Eviews编程</a></li>
+<li class="chapter" data-level="12.3" data-path="Other.html"><a href="Other.html#gauss"><i class="fa fa-check"></i><b>12.3</b> GAUSS</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="Other.html"><a href="Other.html#系统函数"><i class="fa fa-check"></i><b>12.3.1</b> 系统函数</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="Other.html"><a href="Other.html#zotero"><i class="fa fa-check"></i><b>12.4</b> Zotero</a></li>
+<li class="chapter" data-level="12.5" data-path="Other.html"><a href="Other.html#word中插入公式"><i class="fa fa-check"></i><b>12.5</b> Word中插入公式</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="Other.html"><a href="Other.html#自带的公式输入"><i class="fa fa-check"></i><b>12.5.1</b> 自带的公式输入</a></li>
+<li class="chapter" data-level="12.5.2" data-path="Other.html"><a href="Other.html#公式编号的其他方法"><i class="fa fa-check"></i><b>12.5.2</b> 公式编号的其他方法</a></li>
+<li class="chapter" data-level="12.5.3" data-path="Other.html"><a href="Other.html#利用texsword编辑器"><i class="fa fa-check"></i><b>12.5.3</b> 利用TexsWord编辑器</a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="Other.html"><a href="Other.html#noteexpress样式设置"><i class="fa fa-check"></i><b>12.6</b> NoteExpress样式设置</a></li>
+<li class="chapter" data-level="12.7" data-path="Other.html"><a href="Other.html#filezilla"><i class="fa fa-check"></i><b>12.7</b> FileZilla</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
       </nav>
@@ -298,10 +304,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="Matlab" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Matlab</h1>
-<div id="一句话tips-1" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> 一句话Tips</h2>
+<div id="Matlab" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Matlab<a href="Matlab.html#Matlab" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="一句话tips-1" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> 一句话Tips<a href="Matlab.html#一句话tips-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>在Editor中各个窗口之间的切换
 <ul>
@@ -320,57 +326,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>当使用一个函数，输出结果有两个。但第一个结果不需要，只需要第二个时，第一个结果可用<code>~</code>代替。如<code>[~,area] = xlsread('malm.xlsx',1,'b2:aa31');</code></li>
 <li>当使用一个函数，输入需要跳跃时，可用<code>[]</code>代替。如</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb1-1"><a href="Matlab.html#cb1-1" aria-hidden="true" tabindex="-1"></a>[<span class="va">x</span><span class="op">,</span> <span class="va">fval</span>] <span class="op">=</span> <span class="va">fmincon</span>(<span class="op">@</span><span class="va">loglik</span><span class="op">,</span> <span class="va">para0</span><span class="op">,</span>[]<span class="op">,</span>[]<span class="op">,</span>[]<span class="op">,</span>[]<span class="op">,...</span></span>
-<span id="cb1-2"><a href="Matlab.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  [<span class="fl">0.0001</span><span class="op">,</span><span class="fl">0.0001</span><span class="op">,</span><span class="fl">0.0001</span><span class="op">,</span> <span class="op">-</span><span class="fl">1</span><span class="op">,</span> <span class="fl">0.00001</span><span class="op">*</span><span class="va">ones</span>(<span class="fl">1</span><span class="op">,</span><span class="va">ncol</span>)]<span class="op">,</span>[<span class="va">ones</span>(<span class="fl">1</span><span class="op">,</span><span class="va">length</span>(<span class="va">para0</span>))]<span class="op">,...</span></span>
-<span id="cb1-3"><a href="Matlab.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  []<span class="op">,</span>[]<span class="op">,</span><span class="va">Y</span><span class="op">,</span> <span class="va">tau</span><span class="op">,</span> <span class="va">nrow</span><span class="op">,</span> <span class="va">ncol</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb32-1"><a href="Matlab.html#cb32-1" tabindex="-1"></a>[<span class="va">x</span><span class="op">,</span> <span class="va">fval</span>] <span class="op">=</span> <span class="va">fmincon</span>(<span class="op">@</span><span class="va">loglik</span><span class="op">,</span> <span class="va">para0</span><span class="op">,</span>[]<span class="op">,</span>[]<span class="op">,</span>[]<span class="op">,</span>[]<span class="op">,...</span></span>
+<span id="cb32-2"><a href="Matlab.html#cb32-2" tabindex="-1"></a>  [<span class="fl">0.0001</span><span class="op">,</span><span class="fl">0.0001</span><span class="op">,</span><span class="fl">0.0001</span><span class="op">,</span> <span class="op">-</span><span class="fl">1</span><span class="op">,</span> <span class="fl">0.00001</span><span class="op">*</span><span class="va">ones</span>(<span class="fl">1</span><span class="op">,</span><span class="va">ncol</span>)]<span class="op">,</span>[<span class="va">ones</span>(<span class="fl">1</span><span class="op">,</span><span class="va">length</span>(<span class="va">para0</span>))]<span class="op">,...</span></span>
+<span id="cb32-3"><a href="Matlab.html#cb32-3" tabindex="-1"></a>  []<span class="op">,</span>[]<span class="op">,</span><span class="va">Y</span><span class="op">,</span> <span class="va">tau</span><span class="op">,</span> <span class="va">nrow</span><span class="op">,</span> <span class="va">ncol</span>)<span class="op">;</span></span></code></pre></div>
 <ul>
 <li>使用<code>fsolve</code>解非线性方程的参数传递示例：</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb2-1"><a href="Matlab.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 定义函数</span></span>
-<span id="cb2-2"><a href="Matlab.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="va">F</span> <span class="op">=</span> <span class="va">myfun</span>(<span class="va">x</span><span class="op">,</span><span class="va">c</span>)</span>
-<span id="cb2-3"><a href="Matlab.html#cb2-3" aria-hidden="true" tabindex="-1"></a>   <span class="va">F</span> <span class="op">=</span> [ <span class="fl">2</span><span class="op">*</span><span class="va">x</span>(<span class="fl">1</span>) <span class="op">-</span> <span class="va">x</span>(<span class="fl">2</span>) <span class="op">-</span> <span class="va">exp</span>(<span class="va">c</span><span class="op">*</span><span class="va">x</span>(<span class="fl">1</span>))</span>
-<span id="cb2-4"><a href="Matlab.html#cb2-4" aria-hidden="true" tabindex="-1"></a>         <span class="op">-</span><span class="va">x</span>(<span class="fl">1</span>) <span class="op">+</span> <span class="fl">2</span><span class="op">*</span><span class="va">x</span>(<span class="fl">2</span>) <span class="op">-</span> <span class="va">exp</span>(<span class="va">c</span><span class="op">*</span><span class="va">x</span>(<span class="fl">2</span>))]<span class="op">;</span></span>
-<span id="cb2-5"><a href="Matlab.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb2-6"><a href="Matlab.html#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="Matlab.html#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">% 实现</span></span>
-<span id="cb2-8"><a href="Matlab.html#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="va">c</span> <span class="op">=</span> <span class="op">-</span><span class="fl">1</span><span class="op">;</span> <span class="co">% define parameter first</span></span>
-<span id="cb2-9"><a href="Matlab.html#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> <span class="va">fsolve</span>(<span class="op">@</span>(<span class="va">x</span>) <span class="va">myfun</span>(<span class="va">x</span><span class="op">,</span><span class="va">c</span>)<span class="op">,</span>[<span class="op">-</span><span class="fl">5</span><span class="op">;-</span><span class="fl">5</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb33-1"><a href="Matlab.html#cb33-1" tabindex="-1"></a><span class="co">% 定义函数</span></span>
+<span id="cb33-2"><a href="Matlab.html#cb33-2" tabindex="-1"></a><span class="kw">function</span> <span class="va">F</span> <span class="op">=</span> <span class="va">myfun</span>(<span class="va">x</span><span class="op">,</span><span class="va">c</span>)</span>
+<span id="cb33-3"><a href="Matlab.html#cb33-3" tabindex="-1"></a>   <span class="va">F</span> <span class="op">=</span> [ <span class="fl">2</span><span class="op">*</span><span class="va">x</span>(<span class="fl">1</span>) <span class="op">-</span> <span class="va">x</span>(<span class="fl">2</span>) <span class="op">-</span> <span class="va">exp</span>(<span class="va">c</span><span class="op">*</span><span class="va">x</span>(<span class="fl">1</span>))</span>
+<span id="cb33-4"><a href="Matlab.html#cb33-4" tabindex="-1"></a>         <span class="op">-</span><span class="va">x</span>(<span class="fl">1</span>) <span class="op">+</span> <span class="fl">2</span><span class="op">*</span><span class="va">x</span>(<span class="fl">2</span>) <span class="op">-</span> <span class="va">exp</span>(<span class="va">c</span><span class="op">*</span><span class="va">x</span>(<span class="fl">2</span>))]<span class="op">;</span></span>
+<span id="cb33-5"><a href="Matlab.html#cb33-5" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb33-6"><a href="Matlab.html#cb33-6" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="Matlab.html#cb33-7" tabindex="-1"></a><span class="co">% 实现</span></span>
+<span id="cb33-8"><a href="Matlab.html#cb33-8" tabindex="-1"></a><span class="va">c</span> <span class="op">=</span> <span class="op">-</span><span class="fl">1</span><span class="op">;</span> <span class="co">% define parameter first</span></span>
+<span id="cb33-9"><a href="Matlab.html#cb33-9" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> <span class="va">fsolve</span>(<span class="op">@</span>(<span class="va">x</span>) <span class="va">myfun</span>(<span class="va">x</span><span class="op">,</span><span class="va">c</span>)<span class="op">,</span>[<span class="op">-</span><span class="fl">5</span><span class="op">;-</span><span class="fl">5</span>])</span></code></pre></div>
 </div>
-<div id="带名称和缺省值的参数设置" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> 带名称和缺省值的参数设置</h2>
+<div id="带名称和缺省值的参数设置" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> 带名称和缺省值的参数设置<a href="Matlab.html#带名称和缺省值的参数设置" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>在Matlab2019以后，函数参数的设置有了更多功能，比如可以验证参数的类型（整数、双精度？）、维数，同时提供了带名称的参数设置。这需要在代码块中加入一个模块。比如<code>myFunction</code>函数第一个参数是<code>X</code>，这个就像通常的函数一样按位置确定，剩下的参数按名称来匹配参数，那么要把按名称匹配的参数都放在一个结构体中，而且这样的参数也可以赋予默认值，这就和R等函数非常类似了。具体如下，</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb3-1"><a href="Matlab.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="va">myRectangle</span>(<span class="va">X</span><span class="op">,</span><span class="va">Y</span><span class="op">,</span><span class="va">options</span>)</span>
-<span id="cb3-2"><a href="Matlab.html#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">arguments</span></span>
-<span id="cb3-3"><a href="Matlab.html#cb3-3" aria-hidden="true" tabindex="-1"></a>       <span class="va">X</span> <span class="va">double</span></span>
-<span id="cb3-4"><a href="Matlab.html#cb3-4" aria-hidden="true" tabindex="-1"></a>       <span class="va">Y</span> <span class="va">double</span></span>
-<span id="cb3-5"><a href="Matlab.html#cb3-5" aria-hidden="true" tabindex="-1"></a>       <span class="va">options</span>.<span class="va">LineStyle</span> (<span class="fl">1</span><span class="op">,</span><span class="fl">1</span>) <span class="va">string</span> <span class="op">=</span> <span class="st">&quot;-&quot;</span>  <span class="co">% 括号是维数约定，可以省略，string是类型约定，可以省略</span></span>
-<span id="cb3-6"><a href="Matlab.html#cb3-6" aria-hidden="true" tabindex="-1"></a>       <span class="va">options</span>.<span class="va">LineWidth</span> (<span class="fl">1</span><span class="op">,</span><span class="fl">1</span>) {<span class="va">mustBeNumeric</span>} <span class="op">=</span> <span class="fl">1</span> <span class="co">% 花括号是验证函数，可以省略</span></span>
-<span id="cb3-7"><a href="Matlab.html#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
-<span id="cb3-8"><a href="Matlab.html#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">% Function code</span></span>
-<span id="cb3-9"><a href="Matlab.html#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span>
-<span id="cb3-10"><a href="Matlab.html#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb34-1"><a href="Matlab.html#cb34-1" tabindex="-1"></a><span class="kw">function</span> <span class="va">myRectangle</span>(<span class="va">X</span><span class="op">,</span><span class="va">Y</span><span class="op">,</span><span class="va">options</span>)</span>
+<span id="cb34-2"><a href="Matlab.html#cb34-2" tabindex="-1"></a>    <span class="va">arguments</span></span>
+<span id="cb34-3"><a href="Matlab.html#cb34-3" tabindex="-1"></a>       <span class="va">X</span> <span class="va">double</span></span>
+<span id="cb34-4"><a href="Matlab.html#cb34-4" tabindex="-1"></a>       <span class="va">Y</span> <span class="va">double</span></span>
+<span id="cb34-5"><a href="Matlab.html#cb34-5" tabindex="-1"></a>       <span class="va">options</span>.<span class="va">LineStyle</span> (<span class="fl">1</span><span class="op">,</span><span class="fl">1</span>) <span class="va">string</span> <span class="op">=</span> <span class="st">&quot;-&quot;</span>  <span class="co">% 括号是维数约定，可以省略，string是类型约定，可以省略</span></span>
+<span id="cb34-6"><a href="Matlab.html#cb34-6" tabindex="-1"></a>       <span class="va">options</span>.<span class="va">LineWidth</span> (<span class="fl">1</span><span class="op">,</span><span class="fl">1</span>) {<span class="va">mustBeNumeric</span>} <span class="op">=</span> <span class="fl">1</span> <span class="co">% 花括号是验证函数，可以省略</span></span>
+<span id="cb34-7"><a href="Matlab.html#cb34-7" tabindex="-1"></a>    <span class="kw">end</span></span>
+<span id="cb34-8"><a href="Matlab.html#cb34-8" tabindex="-1"></a>    <span class="co">% Function code</span></span>
+<span id="cb34-9"><a href="Matlab.html#cb34-9" tabindex="-1"></a>    <span class="op">...</span></span>
+<span id="cb34-10"><a href="Matlab.html#cb34-10" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div>
 <p>该函数可以如下调用：</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb4-1"><a href="Matlab.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span>)</span>
-<span id="cb4-2"><a href="Matlab.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineStyle</span><span class="op">=</span><span class="st">&quot;:&quot;</span><span class="op">,</span><span class="va">LineWidth</span><span class="op">=</span><span class="fl">2</span>)</span>
-<span id="cb4-3"><a href="Matlab.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineWidth</span><span class="op">=</span><span class="fl">2</span><span class="op">,</span><span class="va">LineStyle</span><span class="op">=</span><span class="st">&quot;:&quot;</span>)</span>
-<span id="cb4-4"><a href="Matlab.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineStyle</span><span class="op">=</span><span class="st">&quot;:&quot;</span>)</span>
-<span id="cb4-5"><a href="Matlab.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineWidth</span><span class="op">=</span><span class="fl">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb35-1"><a href="Matlab.html#cb35-1" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span>)</span>
+<span id="cb35-2"><a href="Matlab.html#cb35-2" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineStyle</span><span class="op">=</span><span class="st">&quot;:&quot;</span><span class="op">,</span><span class="va">LineWidth</span><span class="op">=</span><span class="fl">2</span>)</span>
+<span id="cb35-3"><a href="Matlab.html#cb35-3" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineWidth</span><span class="op">=</span><span class="fl">2</span><span class="op">,</span><span class="va">LineStyle</span><span class="op">=</span><span class="st">&quot;:&quot;</span>)</span>
+<span id="cb35-4"><a href="Matlab.html#cb35-4" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineStyle</span><span class="op">=</span><span class="st">&quot;:&quot;</span>)</span>
+<span id="cb35-5"><a href="Matlab.html#cb35-5" tabindex="-1"></a><span class="va">myRectangle</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="va">LineWidth</span><span class="op">=</span><span class="fl">2</span>)</span></code></pre></div>
 </div>
-<div id="窗口输出到文本" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> 窗口输出到文本</h2>
+<div id="窗口输出到文本" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> 窗口输出到文本<a href="Matlab.html#窗口输出到文本" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>1.把窗口输出写入指定的文件，之后会一直记录窗口输出信息，直到你关闭；</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb5-1"><a href="Matlab.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span>(<span class="ss">&#39;testlog.txt&#39;</span>)<span class="op">;</span></span>
-<span id="cb5-2"><a href="Matlab.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">on</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb36-1"><a href="Matlab.html#cb36-1" tabindex="-1"></a><span class="va">diary</span>(<span class="ss">&#39;testlog.txt&#39;</span>)<span class="op">;</span></span>
+<span id="cb36-2"><a href="Matlab.html#cb36-2" tabindex="-1"></a><span class="va">diary</span> <span class="va">on</span><span class="op">;</span></span></code></pre></div>
 <p>2.关闭日志记录</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb6-1"><a href="Matlab.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">off</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb37-1"><a href="Matlab.html#cb37-1" tabindex="-1"></a><span class="va">diary</span> <span class="va">off</span><span class="op">;</span></span></code></pre></div>
 <p>3.删除日志</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb7-1"><a href="Matlab.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">diary</span> <span class="va">off</span><span class="op">;</span><span class="co">%先关闭</span></span>
-<span id="cb7-2"><a href="Matlab.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">delete</span>(<span class="ss">&#39;testlog.txt&#39;</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb38-1"><a href="Matlab.html#cb38-1" tabindex="-1"></a><span class="va">diary</span> <span class="va">off</span><span class="op">;</span><span class="co">%先关闭</span></span>
+<span id="cb38-2"><a href="Matlab.html#cb38-2" tabindex="-1"></a><span class="va">delete</span>(<span class="ss">&#39;testlog.txt&#39;</span>)<span class="op">;</span></span></code></pre></div>
 </div>
-<div id="gvar-toolbox使用报告" class="section level2" number="4.4">
-<h2><span class="header-section-number">4.4</span> GVAR Toolbox使用报告</h2>
-<div id="数据输入" class="section level3" number="4.4.1">
-<h3><span class="header-section-number">4.4.1</span> 数据输入</h3>
+<div id="gvar-toolbox使用报告" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> GVAR Toolbox使用报告<a href="Matlab.html#gvar-toolbox使用报告" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="数据输入" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> 数据输入<a href="Matlab.html#数据输入" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>E-G列中，国家排序会影响后面的估计，结果的呈现都是以该顺序排列的。如果你要用程序内建的加权矩阵，那么G列的国家码需要填充。</li>
 <li>在各变量数据存放的sheet中，sheet名要按照short name来命名，虽然顺序不必一致，但推荐一致。</li>
@@ -378,15 +384,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>注意，缺失值一定要用123456789替代，不要留空。</li>
 </ul>
 </div>
-<div id="模型设定" class="section level3" number="4.4.2">
-<h3><span class="header-section-number">4.4.2</span> 模型设定</h3>
+<div id="模型设定" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> 模型设定<a href="Matlab.html#模型设定" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>在模型设定中，要注意，空的意味着数据不可行，而不要设置成0.</li>
 <li>有个时候要注意协整rank不能过大，比如3个变量设成4个rank，会报错。</li>
 </ul>
 </div>
-<div id="一些坑" class="section level3" number="4.4.3">
-<h3><span class="header-section-number">4.4.3</span> 一些坑</h3>
+<div id="一些坑" class="section level3 hasAnchor" number="4.4.3">
+<h3><span class="header-section-number">4.4.3</span> 一些坑<a href="Matlab.html#一些坑" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>1.国内变量那些相应的权重矩阵要填满，否则会报错。如都填好<code>wmat1</code>。</p>
 <p>2.<code>GVAR Toolbox</code>主导单元是按全局变量设置的，因此，如果你要将美国作为主导单元，应该将美国的变量单独提出来作为全局变量。（对否？）</p>
 
@@ -459,7 +465,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

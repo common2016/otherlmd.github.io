@@ -44,10 +44,14 @@ C
 一句话tips-2
 Latex
 一句话tips-3
+使用pdfpages包插入pdf页面
+记录几个快捷键
+手动安装新的宏包
 beamer相关
 表格相关
 长表格
 章节标题格式修改
+数学公式相关
 数学公式左对齐
 中文字体加粗
 使用某种常用字体
@@ -65,6 +69,8 @@ latex参考文献的编码思路
 Blog
 OS
 一句话tips-4
+安装和配置latex
+homebrew
 挂载外置磁盘
 Mathematica
 快捷键-1
@@ -82,9 +88,3 @@ word中插入公式
 利用texsword编辑器
 noteexpress样式设置
 filezilla
-homebrew
-安装和配置latex
-数学公式相关
-手动安装新的宏包
-记录几个快捷键
-使用pdfpages包插入pdf页面
