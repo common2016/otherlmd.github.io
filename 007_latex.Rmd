@@ -129,6 +129,7 @@ sudo texhash
 
 ## 表格相关
 
+- 表格换行，可以添加`makecell`包后，使用`\makecell[居中情况]{第1行内容 \\ 第2行内容 \\ 第3行内容 ...}`形式即可。
 - 给表格添加颜色，载入`colorbl`包，`\cellcolor[gray]{.7}`设置单元格颜色，`\rowcolor[gray]{0.7}`设置行颜色，列颜色设置可以参见胡伟(2013, p231)。
 - 表头添加一根斜线，使用`diagbox`包，例如，
 ```tex
@@ -150,6 +151,8 @@ sudo texhash
  ```latex
  \multirow{行数}{宽度}{内容}
  \multirow{行数}*{内容} 
+ % 跨行跨列的话，要嵌套在\multicolumn中
+ \multicolumn{列数}{位置}{\multirow{行数}{宽度}{内容}}
  ```
 
 ### 长表格
