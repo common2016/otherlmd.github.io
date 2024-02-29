@@ -2,6 +2,20 @@
 # Latex {#Latex}
 ## 一句话Tips
 
+- 使用TikZ画图，可以如下定义缩放参数
+```tex
+\tikzset{global scale/.style={
+    scale=#1,
+    every node/.append style={scale=#1}
+  }
+}
+```
+然后如下使用即可，
+```tex
+\begin{tikzpicture}[global scale = 2]%扩大两倍
+...
+\end{tikzpicture}
+```
 - 包`fontawesome5`提供了大量的有趣的小图标。如`\faComments`是微信图标，`\faMobile`是手机图标，`\faGlobe`是网络图标等。它也支持改变图标颜色。
 - 设置目录的表现格式。`titletoc`包中`\titlecontents{subsubsection}[8.5em]{}{\contentslabel{1.5em}}{}{\titlerule*[5pt]{$\cdot$}\contentspage}`设置目录中`subsubsection`的表现格式，8.5em指的是subsubsection的标题内容离页面最左边距离8.5em，`\contentslabel{1.5em}`中的`1.5em`指的标题序号比如`1`和标题内容之间的空白是1.5em。
 - `book`类默认左边留白，可以`\documentclass[openany]{book}`左边不留白。

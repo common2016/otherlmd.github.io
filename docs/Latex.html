@@ -309,24 +309,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="一句话tips-3" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> 一句话Tips<a href="Latex.html#一句话tips-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
+<li>使用TikZ画图，可以如下定义缩放参数</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb1-1"><a href="Latex.html#cb1-1" tabindex="-1"></a><span class="fu">\tikzset</span>{global scale/.style={</span>
+<span id="cb1-2"><a href="Latex.html#cb1-2" tabindex="-1"></a>    scale=#1,</span>
+<span id="cb1-3"><a href="Latex.html#cb1-3" tabindex="-1"></a>    every node/.append style={scale=#1}</span>
+<span id="cb1-4"><a href="Latex.html#cb1-4" tabindex="-1"></a>  }</span>
+<span id="cb1-5"><a href="Latex.html#cb1-5" tabindex="-1"></a>}</span></code></pre></div>
+<p>然后如下使用即可，</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb2-1"><a href="Latex.html#cb2-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[global scale = 2]<span class="co">%扩大两倍</span></span>
+<span id="cb2-2"><a href="Latex.html#cb2-2" tabindex="-1"></a>...</span>
+<span id="cb2-3"><a href="Latex.html#cb2-3" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code></pre></div>
+<ul>
 <li>包<code>fontawesome5</code>提供了大量的有趣的小图标。如<code>\faComments</code>是微信图标，<code>\faMobile</code>是手机图标，<code>\faGlobe</code>是网络图标等。它也支持改变图标颜色。</li>
 <li>设置目录的表现格式。<code>titletoc</code>包中<code>\titlecontents{subsubsection}[8.5em]{}{\contentslabel{1.5em}}{}{\titlerule*[5pt]{$\cdot$}\contentspage}</code>设置目录中<code>subsubsection</code>的表现格式，8.5em指的是subsubsection的标题内容离页面最左边距离8.5em，<code>\contentslabel{1.5em}</code>中的<code>1.5em</code>指的标题序号比如<code>1</code>和标题内容之间的空白是1.5em。</li>
 <li><code>book</code>类默认左边留白，可以<code>\documentclass[openany]{book}</code>左边不留白。</li>
 <li>使用<code>include</code>后不分页，可以</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb1-1"><a href="Latex.html#cb1-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">newclude</span>}</span>
-<span id="cb1-2"><a href="Latex.html#cb1-2" tabindex="-1"></a><span class="fu">\include*</span>{filepath/filename}</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb3-1"><a href="Latex.html#cb3-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">newclude</span>}</span>
+<span id="cb3-2"><a href="Latex.html#cb3-2" tabindex="-1"></a><span class="fu">\include*</span>{filepath/filename}</span></code></pre></div>
 <ul>
 <li>页面横置：</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb2-1"><a href="Latex.html#cb2-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">pdflscape</span>}</span>
-<span id="cb2-2"><a href="Latex.html#cb2-2" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb2-3"><a href="Latex.html#cb2-3" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="Latex.html#cb2-4" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">landscape</span>}</span>
-<span id="cb2-5"><a href="Latex.html#cb2-5" tabindex="-1"></a>This is a landscape page.</span>
-<span id="cb2-6"><a href="Latex.html#cb2-6" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">landscape</span>}</span>
-<span id="cb2-7"><a href="Latex.html#cb2-7" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="Latex.html#cb2-8" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb4-1"><a href="Latex.html#cb4-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">pdflscape</span>}</span>
+<span id="cb4-2"><a href="Latex.html#cb4-2" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb4-3"><a href="Latex.html#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="Latex.html#cb4-4" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">landscape</span>}</span>
+<span id="cb4-5"><a href="Latex.html#cb4-5" tabindex="-1"></a>This is a landscape page.</span>
+<span id="cb4-6"><a href="Latex.html#cb4-6" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">landscape</span>}</span>
+<span id="cb4-7"><a href="Latex.html#cb4-7" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="Latex.html#cb4-8" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
 <ul>
 <li>在命令行输入<code>texcount your_tex_file.tex</code>可以计数文件中的字符。</li>
 <li>让表格从4开始编号<code>\setcounter{table}{3}</code>，让页码重新编号<code>\setcounter{page}{3}</code>，以此类推。</li>
@@ -334,50 +346,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>用<code>tikz</code>包可以生成PDF图片，此时可以在命令行用<code>pdftocairo -svg picture.pdf</code>将这个pdf文件转成SVG 格式的矢量图，只要安装了texlive就会有pdftocairo命令。再利用Visio将其转换成word可以用的wmf格式的矢量图。</li>
 <li>设置目录的深度，一般两个命令。仅用第一个命令会使得更深的目录缺乏编号。</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb3-1"><a href="Latex.html#cb3-1" tabindex="-1"></a><span class="fu">\setcounter</span>{tocdepth}{4} <span class="co">% 控制目录显示的深度</span></span>
-<span id="cb3-2"><a href="Latex.html#cb3-2" tabindex="-1"></a><span class="fu">\setcounter</span>{secnumdepth}{3} <span class="co">% 控制目录显示的深度中，前面编号的显示深度。</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb5-1"><a href="Latex.html#cb5-1" tabindex="-1"></a><span class="fu">\setcounter</span>{tocdepth}{4} <span class="co">% 控制目录显示的深度</span></span>
+<span id="cb5-2"><a href="Latex.html#cb5-2" tabindex="-1"></a><span class="fu">\setcounter</span>{secnumdepth}{3} <span class="co">% 控制目录显示的深度中，前面编号的显示深度。</span></span></code></pre></div>
 <ul>
 <li>latex也可以写循环。加载<code>multido</code>包,如下语句表示从3开始，每次变量自增1，循环16次。这是把一个PDF文件拆分成单独的页面后加入latex的一个常见操作。</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb4-1"><a href="Latex.html#cb4-1" tabindex="-1"></a><span class="fu">\multido</span>{<span class="fu">\n</span>=3+1}{16}{<span class="fu">\noindent\includegraphics</span>[scale=0.9]{RD复印 <span class="fu">\n</span>.pdf}<span class="fu">\\</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb6-1"><a href="Latex.html#cb6-1" tabindex="-1"></a><span class="fu">\multido</span>{<span class="fu">\n</span>=3+1}{16}{<span class="fu">\noindent\includegraphics</span>[scale=0.9]{RD复印 <span class="fu">\n</span>.pdf}<span class="fu">\\</span>}</span></code></pre></div>
 <ul>
 <li>定制封面页时，要使第一行下沉几行，可以这样：</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb5-1"><a href="Latex.html#cb5-1" tabindex="-1"></a> <span class="fu">\hspace</span>{2em}</span>
-<span id="cb5-2"><a href="Latex.html#cb5-2" tabindex="-1"></a> </span>
-<span id="cb5-3"><a href="Latex.html#cb5-3" tabindex="-1"></a> <span class="fu">\vspace</span>{4em}  </span>
-<span id="cb5-4"><a href="Latex.html#cb5-4" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">center</span>}      </span>
-<span id="cb5-5"><a href="Latex.html#cb5-5" tabindex="-1"></a><span class="fu">\heiti\zihao</span>{1} 江西省第十九次社会科学优秀成果奖附件材料        </span>
-<span id="cb5-6"><a href="Latex.html#cb5-6" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">center</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb7-1"><a href="Latex.html#cb7-1" tabindex="-1"></a> <span class="fu">\hspace</span>{2em}</span>
+<span id="cb7-2"><a href="Latex.html#cb7-2" tabindex="-1"></a> </span>
+<span id="cb7-3"><a href="Latex.html#cb7-3" tabindex="-1"></a> <span class="fu">\vspace</span>{4em}  </span>
+<span id="cb7-4"><a href="Latex.html#cb7-4" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">center</span>}      </span>
+<span id="cb7-5"><a href="Latex.html#cb7-5" tabindex="-1"></a><span class="fu">\heiti\zihao</span>{1} 江西省第十九次社会科学优秀成果奖附件材料        </span>
+<span id="cb7-6"><a href="Latex.html#cb7-6" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">center</span>}</span></code></pre></div>
 <ul>
 <li><p>使用<code>listing</code>包输入代码时，很多时候我都是输入R语言，R语言里面会有一个美元符号，我们需要将这个符号“逃逸”，即在选项中设置<code>[mathescape=false]</code>。关于逃逸，更多细节可以见包的说明文档。</p></li>
 <li><p>小写罗马字母，</p></li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb6-1"><a href="Latex.html#cb6-1" tabindex="-1"></a><span class="co">% 小写罗马字母\rmnum{2}</span></span>
-<span id="cb6-2"><a href="Latex.html#cb6-2" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\rmnum</span>}[1]{<span class="fu">\romannumeral</span> #1}</span>
-<span id="cb6-3"><a href="Latex.html#cb6-3" tabindex="-1"></a><span class="co">% 大写罗马字母\Rmnum{2}</span></span>
-<span id="cb6-4"><a href="Latex.html#cb6-4" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\Rmnum</span>}[1]{<span class="fu">\uppercase\expandafter</span>{<span class="fu">\romannumeral</span> #1}}</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb8-1"><a href="Latex.html#cb8-1" tabindex="-1"></a><span class="co">% 小写罗马字母\rmnum{2}</span></span>
+<span id="cb8-2"><a href="Latex.html#cb8-2" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\rmnum</span>}[1]{<span class="fu">\romannumeral</span> #1}</span>
+<span id="cb8-3"><a href="Latex.html#cb8-3" tabindex="-1"></a><span class="co">% 大写罗马字母\Rmnum{2}</span></span>
+<span id="cb8-4"><a href="Latex.html#cb8-4" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\Rmnum</span>}[1]{<span class="fu">\uppercase\expandafter</span>{<span class="fu">\romannumeral</span> #1}}</span></code></pre></div>
 <ul>
 <li><code>pifont</code>包的<code>\ding{172}</code>提供了带圈的1的数字。</li>
 <li>可定义如下环境给某段文字加上上下边框双横线，比如我在审稿意见中经常使用。</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb7-1"><a href="Latex.html#cb7-1" tabindex="-1"></a><span class="fu">\newenvironment</span>{myequestion}{<span class="fu">\noindent\makebox</span>[0pt][l]{<span class="fu">\rule</span>[-1.5mm]{45em}{0.5pt}}<span class="fu">\rule</span>[-0.7mm]{45em}{0.5pt}<span class="fu">\par</span>}{<span class="fu">\par</span> <span class="fu">\noindent\makebox</span>[0pt][l]{<span class="fu">\rule</span>[3mm]{45em}{0.5pt}}<span class="fu">\rule</span>[3.8mm]{45em}{0.5pt}<span class="fu">\par</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb9-1"><a href="Latex.html#cb9-1" tabindex="-1"></a><span class="fu">\newenvironment</span>{myequestion}{<span class="fu">\noindent\makebox</span>[0pt][l]{<span class="fu">\rule</span>[-1.5mm]{45em}{0.5pt}}<span class="fu">\rule</span>[-0.7mm]{45em}{0.5pt}<span class="fu">\par</span>}{<span class="fu">\par</span> <span class="fu">\noindent\makebox</span>[0pt][l]{<span class="fu">\rule</span>[3mm]{45em}{0.5pt}}<span class="fu">\rule</span>[3.8mm]{45em}{0.5pt}<span class="fu">\par</span>}</span></code></pre></div>
 <ul>
 <li><p>给中文加下划线、波浪线等，用<code>xeCJKfntef</code>包，这样使用<code>\CJKunderline</code>或者<code>\CJKunderwave</code>等命令加了下划线等就能自动换行。</p></li>
 <li><p>页面横置</p></li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb8-1"><a href="Latex.html#cb8-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">pdflscape</span>}</span>
-<span id="cb8-2"><a href="Latex.html#cb8-2" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="Latex.html#cb8-3" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">landscape</span>}</span>
-<span id="cb8-4"><a href="Latex.html#cb8-4" tabindex="-1"></a>...</span>
-<span id="cb8-5"><a href="Latex.html#cb8-5" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">landscape</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb10-1"><a href="Latex.html#cb10-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">pdflscape</span>}</span>
+<span id="cb10-2"><a href="Latex.html#cb10-2" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="Latex.html#cb10-3" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">landscape</span>}</span>
+<span id="cb10-4"><a href="Latex.html#cb10-4" tabindex="-1"></a>...</span>
+<span id="cb10-5"><a href="Latex.html#cb10-5" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">landscape</span>}</span></code></pre></div>
 <ul>
 <li><p>在命令行输入<code>texdoc ctex</code>会打开<code>ctex</code>包的说明文件。</p></li>
 <li><p><code>input/output</code>就不会在斜杠符号处被断词。如果希望这类东西被中断，可以将斜杠符号改为<code>\slash</code>。</p></li>
 <li><p>下载TexLive作为Tex的内核，而不是ctex，因为前者不断在更新，更加优化。</p></li>
 <li><p>中文标签乱码：使用如下选项即可。</p></li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb9-1"><a href="Latex.html#cb9-1" tabindex="-1"></a><span class="bu">\documentclass</span>[hyperref, UTF8]{<span class="ex">ctexart</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb11-1"><a href="Latex.html#cb11-1" tabindex="-1"></a><span class="bu">\documentclass</span>[hyperref, UTF8]{<span class="ex">ctexart</span>}</span></code></pre></div>
 <ul>
 <li>图片文件名包含下划线，可用<code>\string“ 17_Huadong\string”</code>表达。如</li>
 </ul>
@@ -420,10 +432,10 @@ sudo texhash</code></pre>
 <li>在beamer中加入Logo的话，在<code>\begin{documents}</code>之后使用如下命令<code>\logo{\includegraphics[height=1.5cm]{RM.jpg}}</code>。Logo的位置取决于模板。</li>
 <li>如何在beamer中设置颜色？使用普通的color包或者xcolor包都会报错，它有自己的一套办法。</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb11-1"><a href="Latex.html#cb11-1" tabindex="-1"></a><span class="co">% 首先设置好颜色，并命名为myblue</span></span>
-<span id="cb11-2"><a href="Latex.html#cb11-2" tabindex="-1"></a><span class="fu">\setbeamercolor</span>{myblue}{fg=blue!80!black} <span class="co">% 这是以感叹作为分隔符的三色设置</span></span>
-<span id="cb11-3"><a href="Latex.html#cb11-3" tabindex="-1"></a><span class="co">% 然后在需要的地方使用</span></span>
-<span id="cb11-4"><a href="Latex.html#cb11-4" tabindex="-1"></a><span class="fu">\textbf</span>{<span class="fu">\usebeamercolor</span>[fg]{myblue}背景}</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb13-1"><a href="Latex.html#cb13-1" tabindex="-1"></a><span class="co">% 首先设置好颜色，并命名为myblue</span></span>
+<span id="cb13-2"><a href="Latex.html#cb13-2" tabindex="-1"></a><span class="fu">\setbeamercolor</span>{myblue}{fg=blue!80!black} <span class="co">% 这是以感叹作为分隔符的三色设置</span></span>
+<span id="cb13-3"><a href="Latex.html#cb13-3" tabindex="-1"></a><span class="co">% 然后在需要的地方使用</span></span>
+<span id="cb13-4"><a href="Latex.html#cb13-4" tabindex="-1"></a><span class="fu">\textbf</span>{<span class="fu">\usebeamercolor</span>[fg]{myblue}背景}</span></code></pre></div>
 <ul>
 <li>beamer中也是可以插入代码的，可以使用<code>listings</code>包，不过在使用代码的那个<code>frame</code>必须要加一个选项<code>[fragile]</code>。</li>
 <li>bemaer中可以分栏，载入包<code>multicol</code>，使用<code>\begin{multicols}{2}巴拉巴拉\end{multicols}</code>就是2栏。</li>
@@ -436,39 +448,39 @@ sudo texhash</code></pre>
 <li>给表格添加颜色，载入<code>colorbl</code>包，<code>\cellcolor[gray]{.7}</code>设置单元格颜色，<code>\rowcolor[gray]{0.7}</code>设置行颜色，列颜色设置可以参见胡伟(2013, p231)。</li>
 <li>表头添加一根斜线，使用<code>diagbox</code>包，例如，</li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb12-1"><a href="Latex.html#cb12-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">diagbox</span>}</span>
-<span id="cb12-2"><a href="Latex.html#cb12-2" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb12-3"><a href="Latex.html#cb12-3" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{|c|c|c|c|}</span>
-<span id="cb12-4"><a href="Latex.html#cb12-4" tabindex="-1"></a>    <span class="fu">\hline</span></span>
-<span id="cb12-5"><a href="Latex.html#cb12-5" tabindex="-1"></a>    <span class="fu">\diagbox</span>{姓名}{成绩}{科目} <span class="op">&amp;</span> 语文 <span class="op">&amp;</span> 英语 <span class="op">&amp;</span> 数学<span class="fu">\\</span> <span class="fu">\hline</span></span>
-<span id="cb12-6"><a href="Latex.html#cb12-6" tabindex="-1"></a>    张三 <span class="op">&amp;</span> 87 <span class="op">&amp;</span> 66 <span class="op">&amp;</span> 98 <span class="fu">\\</span> <span class="fu">\hline</span></span>
-<span id="cb12-7"><a href="Latex.html#cb12-7" tabindex="-1"></a>    李四 <span class="op">&amp;</span> 78 <span class="op">&amp;</span> 78 <span class="op">&amp;</span> 76 <span class="fu">\\</span> <span class="fu">\hline</span></span>
-<span id="cb12-8"><a href="Latex.html#cb12-8" tabindex="-1"></a>    王五 <span class="op">&amp;</span> 90 <span class="op">&amp;</span> 93 <span class="op">&amp;</span> 81 <span class="fu">\\</span> <span class="fu">\hline</span></span>
-<span id="cb12-9"><a href="Latex.html#cb12-9" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span>
-<span id="cb12-10"><a href="Latex.html#cb12-10" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb14-1"><a href="Latex.html#cb14-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">diagbox</span>}</span>
+<span id="cb14-2"><a href="Latex.html#cb14-2" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb14-3"><a href="Latex.html#cb14-3" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{|c|c|c|c|}</span>
+<span id="cb14-4"><a href="Latex.html#cb14-4" tabindex="-1"></a>    <span class="fu">\hline</span></span>
+<span id="cb14-5"><a href="Latex.html#cb14-5" tabindex="-1"></a>    <span class="fu">\diagbox</span>{姓名}{成绩}{科目} <span class="op">&amp;</span> 语文 <span class="op">&amp;</span> 英语 <span class="op">&amp;</span> 数学<span class="fu">\\</span> <span class="fu">\hline</span></span>
+<span id="cb14-6"><a href="Latex.html#cb14-6" tabindex="-1"></a>    张三 <span class="op">&amp;</span> 87 <span class="op">&amp;</span> 66 <span class="op">&amp;</span> 98 <span class="fu">\\</span> <span class="fu">\hline</span></span>
+<span id="cb14-7"><a href="Latex.html#cb14-7" tabindex="-1"></a>    李四 <span class="op">&amp;</span> 78 <span class="op">&amp;</span> 78 <span class="op">&amp;</span> 76 <span class="fu">\\</span> <span class="fu">\hline</span></span>
+<span id="cb14-8"><a href="Latex.html#cb14-8" tabindex="-1"></a>    王五 <span class="op">&amp;</span> 90 <span class="op">&amp;</span> 93 <span class="op">&amp;</span> 81 <span class="fu">\\</span> <span class="fu">\hline</span></span>
+<span id="cb14-9"><a href="Latex.html#cb14-9" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span>
+<span id="cb14-10"><a href="Latex.html#cb14-10" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
 <ul>
 <li><p>调整表格的行高，使用<code>array</code>包的<code>\renewcommand{\arraystretch}{2}</code>更佳，默认是1，它表示行与行之间的距离系数是1。该命令放在<code>\begin{table}</code>之后即可。</p></li>
 <li><p><code>\cline{2-4}</code>紧跟在<code>\\</code>后，表示表格中从第2列至第4列划一条横线</p></li>
 <li><p>表格跨行使用<code>multirow</code>包。语法命令格式如下，</p></li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb13-1"><a href="Latex.html#cb13-1" tabindex="-1"></a><span class="fu">\multirow</span>{行数}{宽度}{内容}</span>
-<span id="cb13-2"><a href="Latex.html#cb13-2" tabindex="-1"></a><span class="fu">\multirow</span>{行数}*{内容} </span>
-<span id="cb13-3"><a href="Latex.html#cb13-3" tabindex="-1"></a><span class="co">% 跨行跨列的话，要嵌套在\multicolumn中</span></span>
-<span id="cb13-4"><a href="Latex.html#cb13-4" tabindex="-1"></a><span class="fu">\multicolumn</span>{列数}{位置}{<span class="fu">\multirow</span>{行数}{宽度}{内容}}</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb15-1"><a href="Latex.html#cb15-1" tabindex="-1"></a><span class="fu">\multirow</span>{行数}{宽度}{内容}</span>
+<span id="cb15-2"><a href="Latex.html#cb15-2" tabindex="-1"></a><span class="fu">\multirow</span>{行数}*{内容} </span>
+<span id="cb15-3"><a href="Latex.html#cb15-3" tabindex="-1"></a><span class="co">% 跨行跨列的话，要嵌套在\multicolumn中</span></span>
+<span id="cb15-4"><a href="Latex.html#cb15-4" tabindex="-1"></a><span class="fu">\multicolumn</span>{列数}{位置}{<span class="fu">\multirow</span>{行数}{宽度}{内容}}</span></code></pre></div>
 <div id="长表格" class="section level3 hasAnchor" number="7.6.1">
 <h3><span class="header-section-number">7.6.1</span> 长表格<a href="Latex.html#长表格" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb14"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb14-1"><a href="Latex.html#cb14-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">supertabular</span>}</span>
-<span id="cb14-2"><a href="Latex.html#cb14-2" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">center</span>}</span>
-<span id="cb14-3"><a href="Latex.html#cb14-3" tabindex="-1"></a><span class="fu">\small</span></span>
-<span id="cb14-4"><a href="Latex.html#cb14-4" tabindex="-1"></a>    <span class="fu">\tablecaption</span>{变量描述<span class="fu">\label</span>{var}}</span>
-<span id="cb14-5"><a href="Latex.html#cb14-5" tabindex="-1"></a>    <span class="fu">\tablefirsthead</span>{<span class="fu">\hline\multicolumn</span>{1}{c}{变量}&amp;<span class="fu">\multicolumn</span>{1}{c}{含义}&amp;<span class="fu">\multicolumn</span>{1}{c}{2018年变量编码}&amp;<span class="fu">\multicolumn</span>{1}{c}{2016年变量编码}&amp;<span class="fu">\multicolumn</span>{1}{c}{2014年变量编码}&amp;<span class="fu">\multicolumn</span>{1}{c}{2010年变量编码}<span class="fu">\\\hline</span>}</span>
-<span id="cb14-6"><a href="Latex.html#cb14-6" tabindex="-1"></a>    <span class="fu">\tablehead</span>{<span class="fu">\multicolumn</span>{6}{r}{表 <span class="kw">\ref</span>{<span class="ex">var</span>} (续)}<span class="fu">\\\hline</span></span>
-<span id="cb14-7"><a href="Latex.html#cb14-7" tabindex="-1"></a>    <span class="fu">\multicolumn</span>{1}{l}{变量}&amp;<span class="fu">\multicolumn</span>{1}{l}{含义}&amp;<span class="fu">\multicolumn</span>{1}{l}{2018年变量编码}&amp;<span class="fu">\multicolumn</span>{1}{l}{2016年变量编码}&amp;<span class="fu">\multicolumn</span>{1}{l}{2014年变量编码}&amp;<span class="fu">\multicolumn</span>{1}{l}{2010年变量编码}<span class="fu">\\\hline</span>}</span>
-<span id="cb14-8"><a href="Latex.html#cb14-8" tabindex="-1"></a><span class="fu">\tabletail</span>{<span class="fu">\hline</span>}</span>
-<span id="cb14-9"><a href="Latex.html#cb14-9" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">supertabular</span>}{lllllp{10mm}}</span>
-<span id="cb14-10"><a href="Latex.html#cb14-10" tabindex="-1"></a>withsons <span class="op">&amp;</span> 同子女关系如何 <span class="op">&amp;</span> qf1<span class="fu">\_</span>a<span class="fu">\_</span>1 <span class="op">&amp;</span> qf1<span class="fu">\_</span>a<span class="fu">\_</span>1 <span class="op">&amp;</span>  <span class="op">&amp;</span> qf1<span class="fu">\_</span>a<span class="fu">\_</span>1<span class="fu">\\</span></span>
-<span id="cb14-11"><a href="Latex.html#cb14-11" tabindex="-1"></a>        worktime <span class="op">&amp;</span> 每周工作时间（小时） <span class="op">&amp;</span> qg6   <span class="op">&amp;</span> qg6   <span class="op">&amp;</span> qg6 <span class="op">&amp;</span>qg504<span class="fu">\\</span>    </span>
-<span id="cb14-12"><a href="Latex.html#cb14-12" tabindex="-1"></a>        <span class="kw">\end</span>{<span class="ex">supertabular</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb16-1"><a href="Latex.html#cb16-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">supertabular</span>}</span>
+<span id="cb16-2"><a href="Latex.html#cb16-2" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">center</span>}</span>
+<span id="cb16-3"><a href="Latex.html#cb16-3" tabindex="-1"></a><span class="fu">\small</span></span>
+<span id="cb16-4"><a href="Latex.html#cb16-4" tabindex="-1"></a>    <span class="fu">\tablecaption</span>{变量描述<span class="fu">\label</span>{var}}</span>
+<span id="cb16-5"><a href="Latex.html#cb16-5" tabindex="-1"></a>    <span class="fu">\tablefirsthead</span>{<span class="fu">\hline\multicolumn</span>{1}{c}{变量}&amp;<span class="fu">\multicolumn</span>{1}{c}{含义}&amp;<span class="fu">\multicolumn</span>{1}{c}{2018年变量编码}&amp;<span class="fu">\multicolumn</span>{1}{c}{2016年变量编码}&amp;<span class="fu">\multicolumn</span>{1}{c}{2014年变量编码}&amp;<span class="fu">\multicolumn</span>{1}{c}{2010年变量编码}<span class="fu">\\\hline</span>}</span>
+<span id="cb16-6"><a href="Latex.html#cb16-6" tabindex="-1"></a>    <span class="fu">\tablehead</span>{<span class="fu">\multicolumn</span>{6}{r}{表 <span class="kw">\ref</span>{<span class="ex">var</span>} (续)}<span class="fu">\\\hline</span></span>
+<span id="cb16-7"><a href="Latex.html#cb16-7" tabindex="-1"></a>    <span class="fu">\multicolumn</span>{1}{l}{变量}&amp;<span class="fu">\multicolumn</span>{1}{l}{含义}&amp;<span class="fu">\multicolumn</span>{1}{l}{2018年变量编码}&amp;<span class="fu">\multicolumn</span>{1}{l}{2016年变量编码}&amp;<span class="fu">\multicolumn</span>{1}{l}{2014年变量编码}&amp;<span class="fu">\multicolumn</span>{1}{l}{2010年变量编码}<span class="fu">\\\hline</span>}</span>
+<span id="cb16-8"><a href="Latex.html#cb16-8" tabindex="-1"></a><span class="fu">\tabletail</span>{<span class="fu">\hline</span>}</span>
+<span id="cb16-9"><a href="Latex.html#cb16-9" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">supertabular</span>}{lllllp{10mm}}</span>
+<span id="cb16-10"><a href="Latex.html#cb16-10" tabindex="-1"></a>withsons <span class="op">&amp;</span> 同子女关系如何 <span class="op">&amp;</span> qf1<span class="fu">\_</span>a<span class="fu">\_</span>1 <span class="op">&amp;</span> qf1<span class="fu">\_</span>a<span class="fu">\_</span>1 <span class="op">&amp;</span>  <span class="op">&amp;</span> qf1<span class="fu">\_</span>a<span class="fu">\_</span>1<span class="fu">\\</span></span>
+<span id="cb16-11"><a href="Latex.html#cb16-11" tabindex="-1"></a>        worktime <span class="op">&amp;</span> 每周工作时间（小时） <span class="op">&amp;</span> qg6   <span class="op">&amp;</span> qg6   <span class="op">&amp;</span> qg6 <span class="op">&amp;</span>qg504<span class="fu">\\</span>    </span>
+<span id="cb16-12"><a href="Latex.html#cb16-12" tabindex="-1"></a>        <span class="kw">\end</span>{<span class="ex">supertabular</span>}</span></code></pre></div>
 <p>注意三个参数：</p>
 <ul>
 <li><code>\tablecaption{}</code>:整个表格标题</li>
@@ -478,12 +490,12 @@ sudo texhash</code></pre>
 排版效果如下：见有道截图</li>
 </ul>
 <p>长表格的一个最大优点就是可以跨页排版，有时不用那么复杂，只需要使用<code>\endfirsthead</code>命令来结束表头，其他与普通表格一致即可达到想要的效果。如，</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb15-1"><a href="Latex.html#cb15-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">longtable</span>}</span>
-<span id="cb15-2"><a href="Latex.html#cb15-2" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">longtable</span>}{c|c}</span>
-<span id="cb15-3"><a href="Latex.html#cb15-3" tabindex="-1"></a>    <span class="fu">\caption</span>{内生性分析}<span class="fu">\\\hline\endfirsthead</span></span>
-<span id="cb15-4"><a href="Latex.html#cb15-4" tabindex="-1"></a>    A<span class="op">&amp;</span>B<span class="fu">\\</span></span>
-<span id="cb15-5"><a href="Latex.html#cb15-5" tabindex="-1"></a>    C<span class="op">&amp;</span>D</span>
-<span id="cb15-6"><a href="Latex.html#cb15-6" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">longtable</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb17-1"><a href="Latex.html#cb17-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">longtable</span>}</span>
+<span id="cb17-2"><a href="Latex.html#cb17-2" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">longtable</span>}{c|c}</span>
+<span id="cb17-3"><a href="Latex.html#cb17-3" tabindex="-1"></a>    <span class="fu">\caption</span>{内生性分析}<span class="fu">\\\hline\endfirsthead</span></span>
+<span id="cb17-4"><a href="Latex.html#cb17-4" tabindex="-1"></a>    A<span class="op">&amp;</span>B<span class="fu">\\</span></span>
+<span id="cb17-5"><a href="Latex.html#cb17-5" tabindex="-1"></a>    C<span class="op">&amp;</span>D</span>
+<span id="cb17-6"><a href="Latex.html#cb17-6" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">longtable</span>}</span></code></pre></div>
 </div>
 </div>
 <div id="章节标题格式修改" class="section level2 hasAnchor" number="7.7">
@@ -491,38 +503,38 @@ sudo texhash</code></pre>
 <ul>
 <li>如果想从某页开始章节重新编号，可以在该处输入命令，</li>
 </ul>
-<div class="sourceCode" id="cb16"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb16-1"><a href="Latex.html#cb16-1" tabindex="-1"></a><span class="fu">\setcounter</span>{section}{0} <span class="co">% 下一节编号为1</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb18-1"><a href="Latex.html#cb18-1" tabindex="-1"></a><span class="fu">\setcounter</span>{section}{0} <span class="co">% 下一节编号为1</span></span></code></pre></div>
 <ul>
 <li>修改章节的标题，把”Chapter 1”变成”第1章”。</li>
 </ul>
-<div class="sourceCode" id="cb17"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb17-1"><a href="Latex.html#cb17-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">titlesec</span>}</span>
-<span id="cb17-2"><a href="Latex.html#cb17-2" tabindex="-1"></a><span class="co">% \titleformat{command}[shape]{format}{label}{sep}{before}[after]</span></span>
-<span id="cb17-3"><a href="Latex.html#cb17-3" tabindex="-1"></a><span class="fu">\titleformat</span>{<span class="kw">\chapter</span>}{<span class="fu">\centering\Huge\bfseries</span>}{第<span class="fu">\,\thechapter\,</span>章}{1em}{}</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb19-1"><a href="Latex.html#cb19-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">titlesec</span>}</span>
+<span id="cb19-2"><a href="Latex.html#cb19-2" tabindex="-1"></a><span class="co">% \titleformat{command}[shape]{format}{label}{sep}{before}[after]</span></span>
+<span id="cb19-3"><a href="Latex.html#cb19-3" tabindex="-1"></a><span class="fu">\titleformat</span>{<span class="kw">\chapter</span>}{<span class="fu">\centering\Huge\bfseries</span>}{第<span class="fu">\,\thechapter\,</span>章}{1em}{}</span></code></pre></div>
 <ul>
 <li>“Chapter 1”变成”一”。但调用<code>ctexcap</code>包，则不能调用<code>titlesec</code>和<code>ctex</code>包和这些包的命令，这些包的调用都会隐含在<code>ctexcap</code>包中。</li>
 </ul>
-<div class="sourceCode" id="cb18"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb18-1"><a href="Latex.html#cb18-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">ctexcap</span>}</span>
-<span id="cb18-2"><a href="Latex.html#cb18-2" tabindex="-1"></a><span class="fu">\CTEXsetup</span>[number={<span class="fu">\chinese</span>{section}}, format + = {<span class="fu">\fangsong\zihao</span>{4}}]{section}</span>
-<span id="cb18-3"><a href="Latex.html#cb18-3" tabindex="-1"></a><span class="fu">\CTEXsetup</span>[name ={（,）},aftername = {<span class="fu">\hspace</span>{0em}},number={<span class="fu">\chinese</span>{subsection}}, </span>
-<span id="cb18-4"><a href="Latex.html#cb18-4" tabindex="-1"></a>format + = {<span class="fu">\heiti\zihao</span>{-4}}]{subsection} <span class="co">% 小节标题变成(一)</span></span>
-<span id="cb18-5"><a href="Latex.html#cb18-5" tabindex="-1"></a><span class="fu">\CTEXsetup</span>[number={<span class="fu">\the\value</span>{subsubsection}}, </span>
-<span id="cb18-6"><a href="Latex.html#cb18-6" tabindex="-1"></a>format + = {<span class="fu">\songti\zihao</span>{5}}]{subsubsection} <span class="co">% 第三层标题变成 1，2，...</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb20-1"><a href="Latex.html#cb20-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">ctexcap</span>}</span>
+<span id="cb20-2"><a href="Latex.html#cb20-2" tabindex="-1"></a><span class="fu">\CTEXsetup</span>[number={<span class="fu">\chinese</span>{section}}, format + = {<span class="fu">\fangsong\zihao</span>{4}}]{section}</span>
+<span id="cb20-3"><a href="Latex.html#cb20-3" tabindex="-1"></a><span class="fu">\CTEXsetup</span>[name ={（,）},aftername = {<span class="fu">\hspace</span>{0em}},number={<span class="fu">\chinese</span>{subsection}}, </span>
+<span id="cb20-4"><a href="Latex.html#cb20-4" tabindex="-1"></a>format + = {<span class="fu">\heiti\zihao</span>{-4}}]{subsection} <span class="co">% 小节标题变成(一)</span></span>
+<span id="cb20-5"><a href="Latex.html#cb20-5" tabindex="-1"></a><span class="fu">\CTEXsetup</span>[number={<span class="fu">\the\value</span>{subsubsection}}, </span>
+<span id="cb20-6"><a href="Latex.html#cb20-6" tabindex="-1"></a>format + = {<span class="fu">\songti\zihao</span>{5}}]{subsubsection} <span class="co">% 第三层标题变成 1，2，...</span></span></code></pre></div>
 <ul>
 <li>一个整体地中文修改参考如下</li>
 </ul>
-<div class="sourceCode" id="cb19"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb19-1"><a href="Latex.html#cb19-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">titlesec</span>}</span>
-<span id="cb19-2"><a href="Latex.html#cb19-2" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\sectionname</span>}{节}</span>
-<span id="cb19-3"><a href="Latex.html#cb19-3" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\figurename</span>}{图}</span>
-<span id="cb19-4"><a href="Latex.html#cb19-4" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\tablename</span>}{表}</span>
-<span id="cb19-5"><a href="Latex.html#cb19-5" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\bibname</span>}{参考文献}</span>
-<span id="cb19-6"><a href="Latex.html#cb19-6" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\contentsname</span>}{目~录}</span>
-<span id="cb19-7"><a href="Latex.html#cb19-7" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\listfigurename</span>}{图~目~录}</span>
-<span id="cb19-8"><a href="Latex.html#cb19-8" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\listtablename</span>}{表~目~录}</span>
-<span id="cb19-9"><a href="Latex.html#cb19-9" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\indexname</span>}{索~引}</span>
-<span id="cb19-10"><a href="Latex.html#cb19-10" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\abstractname</span>}{<span class="fu">\Large</span>{摘~要}}</span>
-<span id="cb19-11"><a href="Latex.html#cb19-11" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\keywords</span>}[1]{<span class="fu">\\</span> <span class="fu">\\</span> <span class="fu">\textbf</span>{关~键~词}：#1}</span>
-<span id="cb19-12"><a href="Latex.html#cb19-12" tabindex="-1"></a><span class="fu">\titleformat</span>{<span class="kw">\chapter</span>}[block]{<span class="fu">\center\Large\bf</span>}{<span class="fu">\chaptername</span>}{20pt}{}</span>
-<span id="cb19-13"><a href="Latex.html#cb19-13" tabindex="-1"></a><span class="fu">\titleformat</span>{<span class="kw">\section</span>}[block]{<span class="fu">\large\bf</span>}{<span class="fu">\thesection</span>}{10pt}{}</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb21-1"><a href="Latex.html#cb21-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">titlesec</span>}</span>
+<span id="cb21-2"><a href="Latex.html#cb21-2" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\sectionname</span>}{节}</span>
+<span id="cb21-3"><a href="Latex.html#cb21-3" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\figurename</span>}{图}</span>
+<span id="cb21-4"><a href="Latex.html#cb21-4" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\tablename</span>}{表}</span>
+<span id="cb21-5"><a href="Latex.html#cb21-5" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\bibname</span>}{参考文献}</span>
+<span id="cb21-6"><a href="Latex.html#cb21-6" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\contentsname</span>}{目~录}</span>
+<span id="cb21-7"><a href="Latex.html#cb21-7" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\listfigurename</span>}{图~目~录}</span>
+<span id="cb21-8"><a href="Latex.html#cb21-8" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\listtablename</span>}{表~目~录}</span>
+<span id="cb21-9"><a href="Latex.html#cb21-9" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\indexname</span>}{索~引}</span>
+<span id="cb21-10"><a href="Latex.html#cb21-10" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\abstractname</span>}{<span class="fu">\Large</span>{摘~要}}</span>
+<span id="cb21-11"><a href="Latex.html#cb21-11" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\keywords</span>}[1]{<span class="fu">\\</span> <span class="fu">\\</span> <span class="fu">\textbf</span>{关~键~词}：#1}</span>
+<span id="cb21-12"><a href="Latex.html#cb21-12" tabindex="-1"></a><span class="fu">\titleformat</span>{<span class="kw">\chapter</span>}[block]{<span class="fu">\center\Large\bf</span>}{<span class="fu">\chaptername</span>}{20pt}{}</span>
+<span id="cb21-13"><a href="Latex.html#cb21-13" tabindex="-1"></a><span class="fu">\titleformat</span>{<span class="kw">\section</span>}[block]{<span class="fu">\large\bf</span>}{<span class="fu">\thesection</span>}{10pt}{}</span></code></pre></div>
 </div>
 <div id="数学公式相关" class="section level2 hasAnchor" number="7.8">
 <h2><span class="header-section-number">7.8</span> 数学公式相关<a href="Latex.html#数学公式相关" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -539,25 +551,25 @@ sudo texhash</code></pre>
 <ul>
 <li>如果我们仅仅希望部分公式左对齐，则可以采用下述方法</li>
 </ul>
-<div class="sourceCode" id="cb20"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb20-1"><a href="Latex.html#cb20-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">flalign</span>}</span>
-<span id="cb20-2"><a href="Latex.html#cb20-2" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="Latex.html#cb20-3" tabindex="-1"></a><span class="ss">&amp;</span><span class="sc">\text</span>{your equation}<span class="ss">&amp;</span></span>
-<span id="cb20-4"><a href="Latex.html#cb20-4" tabindex="-1"></a></span>
-<span id="cb20-5"><a href="Latex.html#cb20-5" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">flalign</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb22-1"><a href="Latex.html#cb22-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">flalign</span>}</span>
+<span id="cb22-2"><a href="Latex.html#cb22-2" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="Latex.html#cb22-3" tabindex="-1"></a><span class="ss">&amp;</span><span class="sc">\text</span>{your equation}<span class="ss">&amp;</span></span>
+<span id="cb22-4"><a href="Latex.html#cb22-4" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="Latex.html#cb22-5" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">flalign</span>}</span></code></pre></div>
 </div>
 </div>
 <div id="中文字体加粗" class="section level2 hasAnchor" number="7.9">
 <h2><span class="header-section-number">7.9</span> 中文字体加粗<a href="Latex.html#中文字体加粗" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb21"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb21-1"><a href="Latex.html#cb21-1" tabindex="-1"></a><span class="co">% 见胡伟133页</span></span>
-<span id="cb21-2"><a href="Latex.html#cb21-2" tabindex="-1"></a><span class="fu">\setCJKfamilyfont</span>{myfs}[AutoFakeBold=2]{华文仿宋} <span class="co">% 指定仿宋一个新名字myfs，它是可以加粗的</span></span>
-<span id="cb21-3"><a href="Latex.html#cb21-3" tabindex="-1"></a><span class="fu">\renewcommand*</span>{<span class="ex">\fangsong</span>}{<span class="fu">\CJKfamily</span>{myfs}} <span class="co">% 然后更新原有仿宋</span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb23-1"><a href="Latex.html#cb23-1" tabindex="-1"></a><span class="co">% 见胡伟133页</span></span>
+<span id="cb23-2"><a href="Latex.html#cb23-2" tabindex="-1"></a><span class="fu">\setCJKfamilyfont</span>{myfs}[AutoFakeBold=2]{华文仿宋} <span class="co">% 指定仿宋一个新名字myfs，它是可以加粗的</span></span>
+<span id="cb23-3"><a href="Latex.html#cb23-3" tabindex="-1"></a><span class="fu">\renewcommand*</span>{<span class="ex">\fangsong</span>}{<span class="fu">\CJKfamily</span>{myfs}} <span class="co">% 然后更新原有仿宋</span></span></code></pre></div>
 </div>
 <div id="使用某种常用字体" class="section level2 hasAnchor" number="7.10">
 <h2><span class="header-section-number">7.10</span> 使用某种常用字体<a href="Latex.html#使用某种常用字体" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>设置一个字体一般通过五个属性，即编码、字族、序列、形状和尺寸。然后通过</li>
 </ul>
-<div class="sourceCode" id="cb22"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb22-1"><a href="Latex.html#cb22-1" tabindex="-1"></a><span class="fu">\DeclareFixedFont</span>{命令}{编码}{字族}{序列}{形状}{尺寸}</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb24-1"><a href="Latex.html#cb24-1" tabindex="-1"></a><span class="fu">\DeclareFixedFont</span>{命令}{编码}{字族}{序列}{形状}{尺寸}</span></code></pre></div>
 <p>来设置某一种字体。这些字体的例子可以参见胡伟的105页。</p>
 <div id="如何使用一个新的字体" class="section level3 hasAnchor" number="7.10.1">
 <h3><span class="header-section-number">7.10.1</span> 如何使用一个新的字体？<a href="Latex.html#如何使用一个新的字体" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -567,22 +579,22 @@ sudo texhash</code></pre>
 可以通过在命令行输入<code>fc-list -f "%{family}\n" :lang=zh &gt;d:zhfont.txt</code>来查看在latex中调用时的名称，每个逗号隔开的都是可以调用的名称。比如，
 如下代码设置了主要字体使用繁体字,并且字符旋转90度，实现繁体竖排。</li>
 </ul>
-<div class="sourceCode" id="cb23"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb23-1"><a href="Latex.html#cb23-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">xeCJK</span>}</span>
-<span id="cb23-2"><a href="Latex.html#cb23-2" tabindex="-1"></a><span class="fu">\setCJKmainfont</span>[Vertical=RotatedGlyphs,CJKShape=Traditional]{Adobe Fangsong Std}</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb25-1"><a href="Latex.html#cb25-1" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">xeCJK</span>}</span>
+<span id="cb25-2"><a href="Latex.html#cb25-2" tabindex="-1"></a><span class="fu">\setCJKmainfont</span>[Vertical=RotatedGlyphs,CJKShape=Traditional]{Adobe Fangsong Std}</span></code></pre></div>
 <p>对于字体更加详细的细节可以见https://zhuanlan.zhihu.com/p/260989874。</p>
 <ul>
 <li>如果不安装，那么也可以如下调用</li>
 </ul>
-<div class="sourceCode" id="cb24"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb24-1"><a href="Latex.html#cb24-1" tabindex="-1"></a><span class="co">% 导言区</span></span>
-<span id="cb24-2"><a href="Latex.html#cb24-2" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">xeCJK</span>}</span>
-<span id="cb24-3"><a href="Latex.html#cb24-3" tabindex="-1"></a><span class="fu">\setCJKfamilyfont</span>[Path = D:/]{mzd}{maozedong.ttf} <span class="co">% 字体文件是maozedong.ttf，给这个字体文件随便取个名，比如mzd</span></span>
-<span id="cb24-4"><a href="Latex.html#cb24-4" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\mzd </span>} {<span class="fu">\CJKfamily</span>{mzd} } <span class="co">% 给这个字体名设置一个命令</span></span>
-<span id="cb24-5"><a href="Latex.html#cb24-5" tabindex="-1"></a><span class="co">% 正文</span></span>
-<span id="cb24-6"><a href="Latex.html#cb24-6" tabindex="-1"></a>{<span class="fu">\mzd</span> 我是骄阳} <span class="co">% 正文中就可以调用这个命令了。</span></span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb26-1"><a href="Latex.html#cb26-1" tabindex="-1"></a><span class="co">% 导言区</span></span>
+<span id="cb26-2"><a href="Latex.html#cb26-2" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">xeCJK</span>}</span>
+<span id="cb26-3"><a href="Latex.html#cb26-3" tabindex="-1"></a><span class="fu">\setCJKfamilyfont</span>[Path = D:/]{mzd}{maozedong.ttf} <span class="co">% 字体文件是maozedong.ttf，给这个字体文件随便取个名，比如mzd</span></span>
+<span id="cb26-4"><a href="Latex.html#cb26-4" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\mzd </span>} {<span class="fu">\CJKfamily</span>{mzd} } <span class="co">% 给这个字体名设置一个命令</span></span>
+<span id="cb26-5"><a href="Latex.html#cb26-5" tabindex="-1"></a><span class="co">% 正文</span></span>
+<span id="cb26-6"><a href="Latex.html#cb26-6" tabindex="-1"></a>{<span class="fu">\mzd</span> 我是骄阳} <span class="co">% 正文中就可以调用这个命令了。</span></span></code></pre></div>
 <p>一个另外的例子：使用Times New Roman字体</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb25-1"><a href="Latex.html#cb25-1" tabindex="-1"></a><span class="co">% 胡伟129页</span></span>
-<span id="cb25-2"><a href="Latex.html#cb25-2" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">fontspec</span>}</span>
-<span id="cb25-3"><a href="Latex.html#cb25-3" tabindex="-1"></a>{<span class="fu">\fontspec</span>{<span class="ex">times.ttf</span>}<span class="ex">I am TImes New Roman</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb27-1"><a href="Latex.html#cb27-1" tabindex="-1"></a><span class="co">% 胡伟129页</span></span>
+<span id="cb27-2"><a href="Latex.html#cb27-2" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">fontspec</span>}</span>
+<span id="cb27-3"><a href="Latex.html#cb27-3" tabindex="-1"></a>{<span class="fu">\fontspec</span>{<span class="ex">times.ttf</span>}<span class="ex">I am TImes New Roman</span>}</span></code></pre></div>
 </div>
 </div>
 <div id="我的r代码排版模版" class="section level2 hasAnchor" number="7.11">
@@ -590,42 +602,42 @@ sudo texhash</code></pre>
 <div id="listings包" class="section level3 hasAnchor" number="7.11.1">
 <h3><span class="header-section-number">7.11.1</span> <code>listings</code>包<a href="Latex.html#listings包" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>导言区输入：</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb26-1"><a href="Latex.html#cb26-1" tabindex="-1"></a><span class="fu">\lstset</span>{numbers=left, <span class="co">%设置行号位置</span></span>
-<span id="cb26-2"><a href="Latex.html#cb26-2" tabindex="-1"></a>    basicstyle=<span class="fu">\ttfamily\small</span>,</span>
-<span id="cb26-3"><a href="Latex.html#cb26-3" tabindex="-1"></a>    numberstyle=<span class="fu">\tiny</span>, <span class="co">%设置行号大小</span></span>
-<span id="cb26-4"><a href="Latex.html#cb26-4" tabindex="-1"></a>    keywordstyle=<span class="fu">\color</span>{blue!70}, <span class="co">%关键字颜色</span></span>
-<span id="cb26-5"><a href="Latex.html#cb26-5" tabindex="-1"></a>    commentstyle=<span class="fu">\color</span>{red!50!green!50!blue!50}, <span class="co">%评论颜色</span></span>
-<span id="cb26-6"><a href="Latex.html#cb26-6" tabindex="-1"></a>    frame= shadowbox, <span class="co">%single, %设置边框格式</span></span>
-<span id="cb26-7"><a href="Latex.html#cb26-7" tabindex="-1"></a>    rulesepcolor = <span class="fu">\color</span>{RoyalBlue},</span>
-<span id="cb26-8"><a href="Latex.html#cb26-8" tabindex="-1"></a><span class="co">%    backgroundcolor = \color{RoyalBlue},</span></span>
-<span id="cb26-9"><a href="Latex.html#cb26-9" tabindex="-1"></a>    escapeinside=``, <span class="co">%逃逸字符(1左面的键)，用于显示中文</span></span>
-<span id="cb26-10"><a href="Latex.html#cb26-10" tabindex="-1"></a>    breaklines, <span class="co">%自动折行</span></span>
-<span id="cb26-11"><a href="Latex.html#cb26-11" tabindex="-1"></a>    extendedchars=false, <span class="co">%解决代码跨页时，章节标题，页眉等汉字不显示的问题</span></span>
-<span id="cb26-12"><a href="Latex.html#cb26-12" tabindex="-1"></a>    xleftmargin=2em,xrightmargin=2em, aboveskip=1em, <span class="co">%设置边距</span></span>
-<span id="cb26-13"><a href="Latex.html#cb26-13" tabindex="-1"></a><span class="co">%   tabsize=4, %设置tab空格数</span></span>
-<span id="cb26-14"><a href="Latex.html#cb26-14" tabindex="-1"></a>    showspaces=false, <span class="co">%不显示空格</span></span>
-<span id="cb26-15"><a href="Latex.html#cb26-15" tabindex="-1"></a>    showtabs=flase, <span class="co">%不显示tab</span></span>
-<span id="cb26-16"><a href="Latex.html#cb26-16" tabindex="-1"></a>    showstringspaces=false  <span class="co">%不显示字符串中的空格</span></span>
-<span id="cb26-17"><a href="Latex.html#cb26-17" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb28-1"><a href="Latex.html#cb28-1" tabindex="-1"></a><span class="fu">\lstset</span>{numbers=left, <span class="co">%设置行号位置</span></span>
+<span id="cb28-2"><a href="Latex.html#cb28-2" tabindex="-1"></a>    basicstyle=<span class="fu">\ttfamily\small</span>,</span>
+<span id="cb28-3"><a href="Latex.html#cb28-3" tabindex="-1"></a>    numberstyle=<span class="fu">\tiny</span>, <span class="co">%设置行号大小</span></span>
+<span id="cb28-4"><a href="Latex.html#cb28-4" tabindex="-1"></a>    keywordstyle=<span class="fu">\color</span>{blue!70}, <span class="co">%关键字颜色</span></span>
+<span id="cb28-5"><a href="Latex.html#cb28-5" tabindex="-1"></a>    commentstyle=<span class="fu">\color</span>{red!50!green!50!blue!50}, <span class="co">%评论颜色</span></span>
+<span id="cb28-6"><a href="Latex.html#cb28-6" tabindex="-1"></a>    frame= shadowbox, <span class="co">%single, %设置边框格式</span></span>
+<span id="cb28-7"><a href="Latex.html#cb28-7" tabindex="-1"></a>    rulesepcolor = <span class="fu">\color</span>{RoyalBlue},</span>
+<span id="cb28-8"><a href="Latex.html#cb28-8" tabindex="-1"></a><span class="co">%    backgroundcolor = \color{RoyalBlue},</span></span>
+<span id="cb28-9"><a href="Latex.html#cb28-9" tabindex="-1"></a>    escapeinside=``, <span class="co">%逃逸字符(1左面的键)，用于显示中文</span></span>
+<span id="cb28-10"><a href="Latex.html#cb28-10" tabindex="-1"></a>    breaklines, <span class="co">%自动折行</span></span>
+<span id="cb28-11"><a href="Latex.html#cb28-11" tabindex="-1"></a>    extendedchars=false, <span class="co">%解决代码跨页时，章节标题，页眉等汉字不显示的问题</span></span>
+<span id="cb28-12"><a href="Latex.html#cb28-12" tabindex="-1"></a>    xleftmargin=2em,xrightmargin=2em, aboveskip=1em, <span class="co">%设置边距</span></span>
+<span id="cb28-13"><a href="Latex.html#cb28-13" tabindex="-1"></a><span class="co">%   tabsize=4, %设置tab空格数</span></span>
+<span id="cb28-14"><a href="Latex.html#cb28-14" tabindex="-1"></a>    showspaces=false, <span class="co">%不显示空格</span></span>
+<span id="cb28-15"><a href="Latex.html#cb28-15" tabindex="-1"></a>    showtabs=flase, <span class="co">%不显示tab</span></span>
+<span id="cb28-16"><a href="Latex.html#cb28-16" tabindex="-1"></a>    showstringspaces=false  <span class="co">%不显示字符串中的空格</span></span>
+<span id="cb28-17"><a href="Latex.html#cb28-17" tabindex="-1"></a>}</span></code></pre></div>
 <p>正文插入：</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb27-1"><a href="Latex.html#cb27-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">lstlisting</span>}[language=R]</span>
-<span id="cb27-2"><a href="Latex.html#cb27-2" tabindex="-1"></a><span class="vs">data(&quot;Affairs&quot;,package = &#39;AER&#39;) # `婚外情数据&#39;</span></span>
-<span id="cb27-3"><a href="Latex.html#cb27-3" tabindex="-1"></a><span class="vs">Affairs$ynaffair[Affairs$affairs &gt;0] &lt;- 1</span></span>
-<span id="cb27-4"><a href="Latex.html#cb27-4" tabindex="-1"></a><span class="vs">Affairs$ynaffair[Affairs$affairs == 0] &lt;- 0</span></span>
-<span id="cb27-5"><a href="Latex.html#cb27-5" tabindex="-1"></a><span class="vs">Affairs$ynaffair &lt;- factor(Affairs$ynaffair,levels = c(0,1),labels = c(&#39;No&#39;,&#39;Yes&#39;))</span></span>
-<span id="cb27-6"><a href="Latex.html#cb27-6" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">lstlisting</span>}        </span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb29-1"><a href="Latex.html#cb29-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">lstlisting</span>}[language=R]</span>
+<span id="cb29-2"><a href="Latex.html#cb29-2" tabindex="-1"></a><span class="vs">data(&quot;Affairs&quot;,package = &#39;AER&#39;) # `婚外情数据&#39;</span></span>
+<span id="cb29-3"><a href="Latex.html#cb29-3" tabindex="-1"></a><span class="vs">Affairs$ynaffair[Affairs$affairs &gt;0] &lt;- 1</span></span>
+<span id="cb29-4"><a href="Latex.html#cb29-4" tabindex="-1"></a><span class="vs">Affairs$ynaffair[Affairs$affairs == 0] &lt;- 0</span></span>
+<span id="cb29-5"><a href="Latex.html#cb29-5" tabindex="-1"></a><span class="vs">Affairs$ynaffair &lt;- factor(Affairs$ynaffair,levels = c(0,1),labels = c(&#39;No&#39;,&#39;Yes&#39;))</span></span>
+<span id="cb29-6"><a href="Latex.html#cb29-6" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">lstlisting</span>}        </span></code></pre></div>
 <p>分页时，若页眉页脚有中文，会报错，此时最好把代码再次嵌入figure的浮动体中。</p>
 <p>还有个我更喜欢的设置，</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb28-1"><a href="Latex.html#cb28-1" tabindex="-1"></a><span class="fu">\lstset</span>{language = R, basicstyle = {<span class="fu">\ttfamily\small</span>},keywordstyle = <span class="fu">\color</span>{RoyalBlue},frame = lines, commentstyle=<span class="fu">\color</span>{gray},breaklines=true}</span>
-<span id="cb28-2"><a href="Latex.html#cb28-2" tabindex="-1"></a><span class="co">% 或者阴影边框</span></span>
-<span id="cb28-3"><a href="Latex.html#cb28-3" tabindex="-1"></a><span class="fu">\lstset</span>{language = R, basicstyle = {<span class="fu">\ttfamily\small</span>},keywordstyle = <span class="fu">\color</span>{RoyalBlue},frame = shadowbox, rulesepcolor=<span class="fu">\color</span>{gray},commentstyle=<span class="fu">\color</span>{gray},breaklines=true}</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb30-1"><a href="Latex.html#cb30-1" tabindex="-1"></a><span class="fu">\lstset</span>{language = R, basicstyle = {<span class="fu">\ttfamily\small</span>},keywordstyle = <span class="fu">\color</span>{RoyalBlue},frame = lines, commentstyle=<span class="fu">\color</span>{gray},breaklines=true}</span>
+<span id="cb30-2"><a href="Latex.html#cb30-2" tabindex="-1"></a><span class="co">% 或者阴影边框</span></span>
+<span id="cb30-3"><a href="Latex.html#cb30-3" tabindex="-1"></a><span class="fu">\lstset</span>{language = R, basicstyle = {<span class="fu">\ttfamily\small</span>},keywordstyle = <span class="fu">\color</span>{RoyalBlue},frame = shadowbox, rulesepcolor=<span class="fu">\color</span>{gray},commentstyle=<span class="fu">\color</span>{gray},breaklines=true}</span></code></pre></div>
 </div>
 <div id="fancyvrb包" class="section level3 hasAnchor" number="7.11.2">
 <h3><span class="header-section-number">7.11.2</span> <code>fancyvrb</code>包<a href="Latex.html#fancyvrb包" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>直接用<code>Verbatim</code>环境，从R语言里面直接copy. 可以参考胡伟76页对其参数的说明。</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb29-1"><a href="Latex.html#cb29-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">Verbatim</span>}</span>
-<span id="cb29-2"><a href="Latex.html#cb29-2" tabindex="-1"></a><span class="vs">a &lt;- 3</span></span>
-<span id="cb29-3"><a href="Latex.html#cb29-3" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">Verbatim</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb31-1"><a href="Latex.html#cb31-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">Verbatim</span>}</span>
+<span id="cb31-2"><a href="Latex.html#cb31-2" tabindex="-1"></a><span class="vs">a &lt;- 3</span></span>
+<span id="cb31-3"><a href="Latex.html#cb31-3" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">Verbatim</span>}</span></code></pre></div>
 </div>
 </div>
 <div id="latex插入附录" class="section level2 hasAnchor" number="7.12">
@@ -669,9 +681,9 @@ sudo texhash</code></pre>
 <code>\usepackage[super]{natbib}</code></li>
 <li>但是，这两种方法产生的上标引用都没有括号。要增加括号，可以修改这两个宏包中的相应定义。更简单的一个方法是使用如下命令，</li>
 </ol>
-<div class="sourceCode" id="cb32"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb32-1"><a href="Latex.html#cb32-1" tabindex="-1"></a><span class="fu">\makeatletter</span></span>
-<span id="cb32-2"><a href="Latex.html#cb32-2" tabindex="-1"></a><span class="fu">\def\@cite</span>#1#2{<span class="fu">\textsuperscript</span>{[{#1<span class="fu">\if@tempswa</span> , #2<span class="fu">\fi</span>}]}}</span>
-<span id="cb32-3"><a href="Latex.html#cb32-3" tabindex="-1"></a><span class="fu">\makeatother</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb34-1"><a href="Latex.html#cb34-1" tabindex="-1"></a><span class="fu">\makeatletter</span></span>
+<span id="cb34-2"><a href="Latex.html#cb34-2" tabindex="-1"></a><span class="fu">\def\@cite</span>#1#2{<span class="fu">\textsuperscript</span>{[{#1<span class="fu">\if@tempswa</span> , #2<span class="fu">\fi</span>}]}}</span>
+<span id="cb34-3"><a href="Latex.html#cb34-3" tabindex="-1"></a><span class="fu">\makeatother</span></span></code></pre></div>
 <p>而不需使用任何宏包。</p>
 <ol start="4" style="list-style-type: decimal">
 <li><code>\usepackage[biblabel]{cite}</code>使用该命令即可</li>
@@ -686,54 +698,54 @@ sudo texhash</code></pre>
 <ol style="list-style-type: decimal">
 <li>页面要有边框，这可以通过使用<code>framed</code>包中的<code>framed</code>环境实现。但是这个环境没有参数可以设置，比如调整整个框的宽度。那么可以使用<code>\MakeFramed{&lt;setting&gt;}...\endMakeFramed</code>这个形式，它与<code>framed</code>环境本质上是一样的，但是此时可以调整参数了。譬如调整成原来款的1.5倍。</li>
 </ol>
-<div class="sourceCode" id="cb33"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb33-1"><a href="Latex.html#cb33-1" tabindex="-1"></a><span class="fu">\MakeFramed</span>{<span class="fu">\hsize</span>=1.5<span class="fu">\hsize</span>}</span>
-<span id="cb33-2"><a href="Latex.html#cb33-2" tabindex="-1"></a>这是你的文本</span>
-<span id="cb33-3"><a href="Latex.html#cb33-3" tabindex="-1"></a><span class="fu">\endMakeFramed</span></span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb35-1"><a href="Latex.html#cb35-1" tabindex="-1"></a><span class="fu">\MakeFramed</span>{<span class="fu">\hsize</span>=1.5<span class="fu">\hsize</span>}</span>
+<span id="cb35-2"><a href="Latex.html#cb35-2" tabindex="-1"></a>这是你的文本</span>
+<span id="cb35-3"><a href="Latex.html#cb35-3" tabindex="-1"></a><span class="fu">\endMakeFramed</span></span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>一般前面有个表格。如何让表格中的横线顶到边框，通过使用零宽度的盒子实现。命令为<code>\makebox[0pt][r]{\rule[11pt]{0.5cm}{0.05em}}</code>，如果你发现横线不能顶到左边，你还可以再画一根零宽度盒子，但是修改一下<code>r</code>参数为<code>l</code>,即<code>\makebox[0pt][l]{\rule[11pt]{0.5cm}{0.05em}}</code>。</li>
 </ol>
-<div class="sourceCode" id="cb34"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb34-1"><a href="Latex.html#cb34-1" tabindex="-1"></a><span class="bu">\documentclass</span>[hyperref]{<span class="ex">article</span>}<span class="co">% 使得标签不乱码</span></span>
-<span id="cb34-2"><a href="Latex.html#cb34-2" tabindex="-1"></a><span class="bu">\usepackage</span>[UTF8]{<span class="ex">ctex</span>}<span class="co">%中文宏包</span></span>
-<span id="cb34-3"><a href="Latex.html#cb34-3" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath,bm,amsfonts,amssymb</span>}<span class="co">%数学宏包，amsfonts,amssymb是插入空心字母的包，使用命令\mathbb{}</span></span>
-<span id="cb34-4"><a href="Latex.html#cb34-4" tabindex="-1"></a><span class="co">%\numberwithin{equation}{section}%公式按节进行编号</span></span>
-<span id="cb34-5"><a href="Latex.html#cb34-5" tabindex="-1"></a><span class="bu">\usepackage</span>[dvipsnames]{<span class="ex">xcolor</span>}</span>
-<span id="cb34-6"><a href="Latex.html#cb34-6" tabindex="-1"></a><span class="bu">\usepackage</span>[a4paper,left=2.14cm,right=2.14cm,bottom=2cm,top=2cm]{<span class="ex">geometry</span>}<span class="co">%页面设置宏包</span></span>
-<span id="cb34-7"><a href="Latex.html#cb34-7" tabindex="-1"></a><span class="fu">\pagestyle</span>{headings}</span>
-<span id="cb34-8"><a href="Latex.html#cb34-8" tabindex="-1"></a></span>
-<span id="cb34-9"><a href="Latex.html#cb34-9" tabindex="-1"></a></span>
-<span id="cb34-10"><a href="Latex.html#cb34-10" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">caption</span>}</span>
-<span id="cb34-11"><a href="Latex.html#cb34-11" tabindex="-1"></a><span class="fu">\captionsetup</span>{figurename=图,tablename=表}<span class="co">%修改图标签名字</span></span>
-<span id="cb34-12"><a href="Latex.html#cb34-12" tabindex="-1"></a><span class="co">%opening</span></span>
-<span id="cb34-13"><a href="Latex.html#cb34-13" tabindex="-1"></a><span class="fu">\title</span>{草稿纸}</span>
-<span id="cb34-14"><a href="Latex.html#cb34-14" tabindex="-1"></a><span class="fu">\author</span>{陈普}</span>
-<span id="cb34-15"><a href="Latex.html#cb34-15" tabindex="-1"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span>
-<span id="cb34-16"><a href="Latex.html#cb34-16" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">graphicx,picinpar,multicol,bm,float,framed</span>}</span>
-<span id="cb34-17"><a href="Latex.html#cb34-17" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb34-18"><a href="Latex.html#cb34-18" tabindex="-1"></a>    <span class="fu">\maketitle</span></span>
-<span id="cb34-19"><a href="Latex.html#cb34-19" tabindex="-1"></a><span class="co">% 这里是关键，通过用一个0宽度的盒子装填了表格中横线无法顶格的问题。</span></span>
-<span id="cb34-20"><a href="Latex.html#cb34-20" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">framed</span>}</span>
-<span id="cb34-21"><a href="Latex.html#cb34-21" tabindex="-1"></a>        <span class="kw">\begin</span>{<span class="ex">table</span>}[H]</span>
-<span id="cb34-22"><a href="Latex.html#cb34-22" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{ccp{39.8em}}<span class="fu">\hline</span></span>
-<span id="cb34-23"><a href="Latex.html#cb34-23" tabindex="-1"></a><span class="fu">\makebox</span>[0pt][r]{<span class="fu">\rule</span>[11pt]{0.5cm}{0.05em}}1<span class="op">&amp;</span>1<span class="op">&amp;</span>1</span>
-<span id="cb34-24"><a href="Latex.html#cb34-24" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span>
-<span id="cb34-25"><a href="Latex.html#cb34-25" tabindex="-1"></a>        <span class="kw">\end</span>{<span class="ex">table</span>}</span>
-<span id="cb34-26"><a href="Latex.html#cb34-26" tabindex="-1"></a>        </span>
-<span id="cb34-27"><a href="Latex.html#cb34-27" tabindex="-1"></a><span class="kw">\section</span>{验证一下汉密尔顿定理}    </span>
-<span id="cb34-28"><a href="Latex.html#cb34-28" tabindex="-1"></a><span class="ss">\[max</span><span class="sc">\;</span><span class="ss"> </span><span class="sc">\sum</span><span class="ss">_{t=0}^</span><span class="sc">\infty</span><span class="ss"> </span><span class="sc">\beta</span><span class="ss">^tu(c_t)\]</span></span>
-<span id="cb34-29"><a href="Latex.html#cb34-29" tabindex="-1"></a><span class="ss">\[k_{t+1}=(1-</span><span class="sc">\delta</span><span class="ss">)k_t+i_t\]</span></span>
-<span id="cb34-30"><a href="Latex.html#cb34-30" tabindex="-1"></a>这里控制变量是<span class="ss">$ c_t $</span>，状态变量是<span class="ss">$ k_t $</span>。汉密尔顿函数可以写成，</span>
-<span id="cb34-31"><a href="Latex.html#cb34-31" tabindex="-1"></a><span class="ss">\[H = </span><span class="sc">\beta</span><span class="ss">^tu(c_t) + </span><span class="sc">\pi</span><span class="ss">_{t+1}(f(k_t)-c_t-</span><span class="sc">\delta</span><span class="ss"> k_t)  \]</span></span>
-<span id="cb34-32"><a href="Latex.html#cb34-32" tabindex="-1"></a>注意到<span class="ss">$ i_t= y_t-c_t $</span>，因此，<span class="ss">$ k_{t+1}-k_t=f(k_t)-c_t-</span><span class="sc">\delta</span><span class="ss"> k_t $</span>。然后根据汉密尔顿定理，有，</span>
-<span id="cb34-33"><a href="Latex.html#cb34-33" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align*</span>}</span>
-<span id="cb34-34"><a href="Latex.html#cb34-34" tabindex="-1"></a><span class="sc">\pi</span><span class="ss">_{t+1}-</span><span class="sc">\pi</span><span class="ss">_t=[-f&#39;(k_t)+</span><span class="sc">\delta</span><span class="ss">]</span><span class="sc">\pi</span><span class="ss">_{t+1}&amp;</span><span class="sc">\Longrightarrow</span><span class="ss"> </span><span class="sc">\pi</span><span class="ss">_t=[f&#39;(k_t)+(1-</span><span class="sc">\delta</span><span class="ss">)]</span><span class="sc">\pi</span><span class="ss">_{t+1}</span><span class="sc">\\</span></span>
-<span id="cb34-35"><a href="Latex.html#cb34-35" tabindex="-1"></a><span class="sc">\beta</span><span class="ss">^tu&#39;(c_t)-</span><span class="sc">\pi</span><span class="ss">_{t+1}=0&amp;</span><span class="sc">\Longrightarrow</span><span class="ss"> </span><span class="sc">\beta</span><span class="ss">^tu&#39;(c_t)=</span><span class="sc">\pi</span><span class="ss">_{t+1}</span><span class="sc">\\</span></span>
-<span id="cb34-36"><a href="Latex.html#cb34-36" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align*</span>}</span>
-<span id="cb34-37"><a href="Latex.html#cb34-37" tabindex="-1"></a></span>
-<span id="cb34-38"><a href="Latex.html#cb34-38" tabindex="-1"></a>将<span class="ss">$ </span><span class="sc">\beta</span><span class="ss">^tu&#39;(c_t)=</span><span class="sc">\pi</span><span class="ss">_{t+1} $</span>的脚标做一个<span class="ss">$ t $</span>和<span class="ss">$ t+1 $</span>的替换，就有，</span>
-<span id="cb34-39"><a href="Latex.html#cb34-39" tabindex="-1"></a><span class="ss">\[ f&#39;(k_t) +(1-</span><span class="sc">\delta</span><span class="ss">) = </span><span class="sc">\frac</span><span class="ss">{u&#39;(c_{t-1})}{</span><span class="sc">\beta</span><span class="ss"> u&#39;(c_{t})}\]</span></span>
-<span id="cb34-40"><a href="Latex.html#cb34-40" tabindex="-1"></a>这就是著名的欧拉方程。</span>
-<span id="cb34-41"><a href="Latex.html#cb34-41" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">framed</span>}</span>
-<span id="cb34-42"><a href="Latex.html#cb34-42" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb36-1"><a href="Latex.html#cb36-1" tabindex="-1"></a><span class="bu">\documentclass</span>[hyperref]{<span class="ex">article</span>}<span class="co">% 使得标签不乱码</span></span>
+<span id="cb36-2"><a href="Latex.html#cb36-2" tabindex="-1"></a><span class="bu">\usepackage</span>[UTF8]{<span class="ex">ctex</span>}<span class="co">%中文宏包</span></span>
+<span id="cb36-3"><a href="Latex.html#cb36-3" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath,bm,amsfonts,amssymb</span>}<span class="co">%数学宏包，amsfonts,amssymb是插入空心字母的包，使用命令\mathbb{}</span></span>
+<span id="cb36-4"><a href="Latex.html#cb36-4" tabindex="-1"></a><span class="co">%\numberwithin{equation}{section}%公式按节进行编号</span></span>
+<span id="cb36-5"><a href="Latex.html#cb36-5" tabindex="-1"></a><span class="bu">\usepackage</span>[dvipsnames]{<span class="ex">xcolor</span>}</span>
+<span id="cb36-6"><a href="Latex.html#cb36-6" tabindex="-1"></a><span class="bu">\usepackage</span>[a4paper,left=2.14cm,right=2.14cm,bottom=2cm,top=2cm]{<span class="ex">geometry</span>}<span class="co">%页面设置宏包</span></span>
+<span id="cb36-7"><a href="Latex.html#cb36-7" tabindex="-1"></a><span class="fu">\pagestyle</span>{headings}</span>
+<span id="cb36-8"><a href="Latex.html#cb36-8" tabindex="-1"></a></span>
+<span id="cb36-9"><a href="Latex.html#cb36-9" tabindex="-1"></a></span>
+<span id="cb36-10"><a href="Latex.html#cb36-10" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">caption</span>}</span>
+<span id="cb36-11"><a href="Latex.html#cb36-11" tabindex="-1"></a><span class="fu">\captionsetup</span>{figurename=图,tablename=表}<span class="co">%修改图标签名字</span></span>
+<span id="cb36-12"><a href="Latex.html#cb36-12" tabindex="-1"></a><span class="co">%opening</span></span>
+<span id="cb36-13"><a href="Latex.html#cb36-13" tabindex="-1"></a><span class="fu">\title</span>{草稿纸}</span>
+<span id="cb36-14"><a href="Latex.html#cb36-14" tabindex="-1"></a><span class="fu">\author</span>{陈普}</span>
+<span id="cb36-15"><a href="Latex.html#cb36-15" tabindex="-1"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span>
+<span id="cb36-16"><a href="Latex.html#cb36-16" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">graphicx,picinpar,multicol,bm,float,framed</span>}</span>
+<span id="cb36-17"><a href="Latex.html#cb36-17" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb36-18"><a href="Latex.html#cb36-18" tabindex="-1"></a>    <span class="fu">\maketitle</span></span>
+<span id="cb36-19"><a href="Latex.html#cb36-19" tabindex="-1"></a><span class="co">% 这里是关键，通过用一个0宽度的盒子装填了表格中横线无法顶格的问题。</span></span>
+<span id="cb36-20"><a href="Latex.html#cb36-20" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">framed</span>}</span>
+<span id="cb36-21"><a href="Latex.html#cb36-21" tabindex="-1"></a>        <span class="kw">\begin</span>{<span class="ex">table</span>}[H]</span>
+<span id="cb36-22"><a href="Latex.html#cb36-22" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{ccp{39.8em}}<span class="fu">\hline</span></span>
+<span id="cb36-23"><a href="Latex.html#cb36-23" tabindex="-1"></a><span class="fu">\makebox</span>[0pt][r]{<span class="fu">\rule</span>[11pt]{0.5cm}{0.05em}}1<span class="op">&amp;</span>1<span class="op">&amp;</span>1</span>
+<span id="cb36-24"><a href="Latex.html#cb36-24" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span>
+<span id="cb36-25"><a href="Latex.html#cb36-25" tabindex="-1"></a>        <span class="kw">\end</span>{<span class="ex">table</span>}</span>
+<span id="cb36-26"><a href="Latex.html#cb36-26" tabindex="-1"></a>        </span>
+<span id="cb36-27"><a href="Latex.html#cb36-27" tabindex="-1"></a><span class="kw">\section</span>{验证一下汉密尔顿定理}    </span>
+<span id="cb36-28"><a href="Latex.html#cb36-28" tabindex="-1"></a><span class="ss">\[max</span><span class="sc">\;</span><span class="ss"> </span><span class="sc">\sum</span><span class="ss">_{t=0}^</span><span class="sc">\infty</span><span class="ss"> </span><span class="sc">\beta</span><span class="ss">^tu(c_t)\]</span></span>
+<span id="cb36-29"><a href="Latex.html#cb36-29" tabindex="-1"></a><span class="ss">\[k_{t+1}=(1-</span><span class="sc">\delta</span><span class="ss">)k_t+i_t\]</span></span>
+<span id="cb36-30"><a href="Latex.html#cb36-30" tabindex="-1"></a>这里控制变量是<span class="ss">$ c_t $</span>，状态变量是<span class="ss">$ k_t $</span>。汉密尔顿函数可以写成，</span>
+<span id="cb36-31"><a href="Latex.html#cb36-31" tabindex="-1"></a><span class="ss">\[H = </span><span class="sc">\beta</span><span class="ss">^tu(c_t) + </span><span class="sc">\pi</span><span class="ss">_{t+1}(f(k_t)-c_t-</span><span class="sc">\delta</span><span class="ss"> k_t)  \]</span></span>
+<span id="cb36-32"><a href="Latex.html#cb36-32" tabindex="-1"></a>注意到<span class="ss">$ i_t= y_t-c_t $</span>，因此，<span class="ss">$ k_{t+1}-k_t=f(k_t)-c_t-</span><span class="sc">\delta</span><span class="ss"> k_t $</span>。然后根据汉密尔顿定理，有，</span>
+<span id="cb36-33"><a href="Latex.html#cb36-33" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align*</span>}</span>
+<span id="cb36-34"><a href="Latex.html#cb36-34" tabindex="-1"></a><span class="sc">\pi</span><span class="ss">_{t+1}-</span><span class="sc">\pi</span><span class="ss">_t=[-f&#39;(k_t)+</span><span class="sc">\delta</span><span class="ss">]</span><span class="sc">\pi</span><span class="ss">_{t+1}&amp;</span><span class="sc">\Longrightarrow</span><span class="ss"> </span><span class="sc">\pi</span><span class="ss">_t=[f&#39;(k_t)+(1-</span><span class="sc">\delta</span><span class="ss">)]</span><span class="sc">\pi</span><span class="ss">_{t+1}</span><span class="sc">\\</span></span>
+<span id="cb36-35"><a href="Latex.html#cb36-35" tabindex="-1"></a><span class="sc">\beta</span><span class="ss">^tu&#39;(c_t)-</span><span class="sc">\pi</span><span class="ss">_{t+1}=0&amp;</span><span class="sc">\Longrightarrow</span><span class="ss"> </span><span class="sc">\beta</span><span class="ss">^tu&#39;(c_t)=</span><span class="sc">\pi</span><span class="ss">_{t+1}</span><span class="sc">\\</span></span>
+<span id="cb36-36"><a href="Latex.html#cb36-36" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align*</span>}</span>
+<span id="cb36-37"><a href="Latex.html#cb36-37" tabindex="-1"></a></span>
+<span id="cb36-38"><a href="Latex.html#cb36-38" tabindex="-1"></a>将<span class="ss">$ </span><span class="sc">\beta</span><span class="ss">^tu&#39;(c_t)=</span><span class="sc">\pi</span><span class="ss">_{t+1} $</span>的脚标做一个<span class="ss">$ t $</span>和<span class="ss">$ t+1 $</span>的替换，就有，</span>
+<span id="cb36-39"><a href="Latex.html#cb36-39" tabindex="-1"></a><span class="ss">\[ f&#39;(k_t) +(1-</span><span class="sc">\delta</span><span class="ss">) = </span><span class="sc">\frac</span><span class="ss">{u&#39;(c_{t-1})}{</span><span class="sc">\beta</span><span class="ss"> u&#39;(c_{t})}\]</span></span>
+<span id="cb36-40"><a href="Latex.html#cb36-40" tabindex="-1"></a>这就是著名的欧拉方程。</span>
+<span id="cb36-41"><a href="Latex.html#cb36-41" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">framed</span>}</span>
+<span id="cb36-42"><a href="Latex.html#cb36-42" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
 
 </div>
 </div>
