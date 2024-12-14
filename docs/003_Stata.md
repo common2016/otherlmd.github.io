@@ -18,10 +18,12 @@ local yvar `xvar'_y
 
 - `#`是所有分类交互，`##`是仅仅两个分类交互。
 - 获得残差。估计完以后，使用命令：`predict e, r //e是生成的残差变量名，r表明生成残差`。
-- 将回归后的系数存入数据集中，然后即可导出。
-```
+- 将回归后的系数存入数据集中，然后即可导出。将回归后的宏存储，然后导出。
+```stata
 mat b = e(b)'
 svmat double b, n(beta)
+gen str cnt = "" // 创造新的字符变量
+replace cnt = e(predvar_all) in 1 //修改该变量的第一个观测值
 ```
 
 - 滞后、超前、差分变量。`L.x L2.x F.x F2.x D.x D2.x`
