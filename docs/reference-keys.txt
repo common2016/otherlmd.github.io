@@ -90,3 +90,4 @@ noteexpress样式设置
 filezilla
 spyder下配置python
 利用python进行局域网文件传输
+spyder下安装pip

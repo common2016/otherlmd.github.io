@@ -27,3 +27,9 @@ python3 -m http.server
 - 你可以通过“偏好”设置来改变python解释器，即不用它的默认解释器。
 - F9等价于RStudio的`ctl + Enter`.
 - 在Spyder的控制台中安装包，可以使用`conda install <包名>`命令而不能使用`pip`，你可以通过该命令先安装`pip`，然后再用`pip`安装包。不过现在新版本的python都自带`pip`了。
+
+### spyder下安装pip
+
+1. 去pypi官网下载pip的源文件, 后缀名是.whl
+2. 把.whl改成.zip，然后解压缩可以看到两个文件，将其复制到sypder安装路径下，如`D:\spyder6\envs\spyder-runtime\Lib\site-packages`。
+3. 重启spyder, 然后在控制台使用pip命令即可，脚本里面无法使用。
