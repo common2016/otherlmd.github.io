@@ -67,7 +67,7 @@ MathJax.Hub.Config({
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -77,7 +77,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -259,6 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2" data-path="OS.html"><a href="OS.html#安装和配置latex"><i class="fa fa-check"></i><b>9.2</b> 安装和配置Latex</a></li>
 <li class="chapter" data-level="9.3" data-path="OS.html"><a href="OS.html#homebrew"><i class="fa fa-check"></i><b>9.3</b> Homebrew</a></li>
 <li class="chapter" data-level="9.4" data-path="OS.html"><a href="OS.html#挂载外置磁盘"><i class="fa fa-check"></i><b>9.4</b> 挂载外置磁盘</a></li>
+<li class="chapter" data-level="9.5" data-path="OS.html"><a href="OS.html#定点运行r程序"><i class="fa fa-check"></i><b>9.5</b> 定点运行R程序</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="Mathematica.html"><a href="Mathematica.html"><i class="fa fa-check"></i><b>10</b> Mathematica</a>
 <ul>
@@ -266,7 +267,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="Python.html"><a href="Python.html"><i class="fa fa-check"></i><b>11</b> python</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="Python.html"><a href="Python.html#vscode下配置python"><i class="fa fa-check"></i><b>11.1</b> VSCode下配置python</a></li>
+<li class="chapter" data-level="11.1" data-path="Python.html"><a href="Python.html#利用python进行局域网文件传输"><i class="fa fa-check"></i><b>11.1</b> 利用Python进行局域网文件传输</a></li>
+<li class="chapter" data-level="11.2" data-path="Python.html"><a href="Python.html#vscode下配置python"><i class="fa fa-check"></i><b>11.2</b> VSCode下配置python</a></li>
+<li class="chapter" data-level="11.3" data-path="Python.html"><a href="Python.html#spyder下配置python"><i class="fa fa-check"></i><b>11.3</b> Spyder下配置python</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="Python.html"><a href="Python.html#spyder下安装pip"><i class="fa fa-check"></i><b>11.3.1</b> spyder下安装pip</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="Other.html"><a href="Other.html"><i class="fa fa-check"></i><b>12</b> 其他小众软件</a>
 <ul>
@@ -353,6 +359,36 @@ HOMEBREW_CORE_DEFAULT_GIT_REMOTE = &quot;https://mirrors.ustc.edu.cn/homebrew-co
 </ol>
 <pre><code>UUID=06A19C31-BED5-36E9-BEC9-616E398C77FD /Users/yangnay/elements exfat rw,auto</code></pre>
 <p>注意，<code>exfat</code>是你的硬盘的文件格式，<code>elements</code>需要提前建好文件夹。</p>
+</div>
+<div id="定点运行r程序" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">9.5</span> 定点运行R程序<a href="OS.html#定点运行r程序" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>在Mac电脑上，可以使用“Automator”来定点运行一个程序。以下是详细步骤：</p>
+<ol style="list-style-type: decimal">
+<li><strong>打开Automator</strong>：
+<ul>
+<li>在“应用程序”文件夹中找到并打开“Automator”。</li>
+</ul></li>
+<li><strong>创建新文档</strong>：
+<ul>
+<li>选择“新建文档”，然后选择“日历提醒”作为文档类型。</li>
+</ul></li>
+<li><strong>添加运行程序的操作</strong>：
+<ul>
+<li><p>在左侧的“库”中，找到“实用工具”。</p></li>
+<li><p>拖动“运行Shell脚本”或“运行AppleScript”到右侧的工作区。</p></li>
+<li><p>在脚本中输入启动R程序的命令。例如，如果要启动“终端”，可以输入：</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="OS.html#cb3-1" tabindex="-1"></a><span class="ex">Rscript</span> ~/检测.R</span></code></pre></div></li>
+</ul></li>
+<li><strong>保存Automator工作流</strong>：
+<ul>
+<li>点击“文件” &gt; “保存”，为工作流命名，并选择“日历”作为保存位置。</li>
+</ul></li>
+<li><strong>设置日历事件</strong>：
+<ul>
+<li>打开“日历”应用，创建一个快速日程。里面可以修改程序运行的时间、周期等。</li>
+<li>在事件的提醒中选择“打开文件”，然后选择你刚刚创建的Automator工作流。</li>
+</ul></li>
+</ol>
 
 </div>
 </div>

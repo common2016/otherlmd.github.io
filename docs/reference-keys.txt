@@ -91,3 +91,4 @@ filezilla
 spyder下配置python
 利用python进行局域网文件传输
 spyder下安装pip
+定点运行r程序

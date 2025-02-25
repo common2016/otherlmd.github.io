@@ -46,3 +46,29 @@ HOMEBREW_CORE_DEFAULT_GIT_REMOTE = "https://mirrors.ustc.edu.cn/homebrew-core.gi
 UUID=06A19C31-BED5-36E9-BEC9-616E398C77FD /Users/yangnay/elements exfat rw,auto
 ```
 注意，`exfat`是你的硬盘的文件格式，`elements`需要提前建好文件夹。
+
+## 定点运行R程序
+
+在Mac电脑上，可以使用“Automator”来定点运行一个程序。以下是详细步骤：
+
+1. **打开Automator**：
+   - 在“应用程序”文件夹中找到并打开“Automator”。
+
+2. **创建新文档**：
+   - 选择“新建文档”，然后选择“日历提醒”作为文档类型。
+
+3. **添加运行程序的操作**：
+   - 在左侧的“库”中，找到“实用工具”。
+   - 拖动“运行Shell脚本”或“运行AppleScript”到右侧的工作区。
+   - 在脚本中输入启动R程序的命令。例如，如果要启动“终端”，可以输入：
+     ```bash
+     Rscript ~/检测.R
+     ```
+
+4. **保存Automator工作流**：
+   - 点击“文件” > “保存”，为工作流命名，并选择“日历”作为保存位置。
+
+5. **设置日历事件**：
+   - 打开“日历”应用，创建一个快速日程。里面可以修改程序运行的时间、周期等。
+   - 在事件的提醒中选择“打开文件”，然后选择你刚刚创建的Automator工作流。
+
