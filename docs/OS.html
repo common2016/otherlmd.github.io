@@ -256,10 +256,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9" data-path="OS.html"><a href="OS.html"><i class="fa fa-check"></i><b>9</b> macOS操作系统</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="OS.html"><a href="OS.html#一句话tips-4"><i class="fa fa-check"></i><b>9.1</b> 一句话Tips</a></li>
-<li class="chapter" data-level="9.2" data-path="OS.html"><a href="OS.html#安装和配置latex"><i class="fa fa-check"></i><b>9.2</b> 安装和配置Latex</a></li>
-<li class="chapter" data-level="9.3" data-path="OS.html"><a href="OS.html#homebrew"><i class="fa fa-check"></i><b>9.3</b> Homebrew</a></li>
-<li class="chapter" data-level="9.4" data-path="OS.html"><a href="OS.html#挂载外置磁盘"><i class="fa fa-check"></i><b>9.4</b> 挂载外置磁盘</a></li>
-<li class="chapter" data-level="9.5" data-path="OS.html"><a href="OS.html#定点运行r程序"><i class="fa fa-check"></i><b>9.5</b> 定点运行R程序</a></li>
+<li class="chapter" data-level="9.2" data-path="OS.html"><a href="OS.html#安装windows上的方正字体"><i class="fa fa-check"></i><b>9.2</b> 安装windows上的方正字体</a></li>
+<li class="chapter" data-level="9.3" data-path="OS.html"><a href="OS.html#安装和配置latex"><i class="fa fa-check"></i><b>9.3</b> 安装和配置Latex</a></li>
+<li class="chapter" data-level="9.4" data-path="OS.html"><a href="OS.html#homebrew"><i class="fa fa-check"></i><b>9.4</b> Homebrew</a></li>
+<li class="chapter" data-level="9.5" data-path="OS.html"><a href="OS.html#挂载外置磁盘"><i class="fa fa-check"></i><b>9.5</b> 挂载外置磁盘</a></li>
+<li class="chapter" data-level="9.6" data-path="OS.html"><a href="OS.html#定点运行r程序"><i class="fa fa-check"></i><b>9.6</b> 定点运行R程序</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="Mathematica.html"><a href="Mathematica.html"><i class="fa fa-check"></i><b>10</b> Mathematica</a>
 <ul>
@@ -323,16 +324,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>chromedriver</code>可以放在<code>/usr/local/bin</code>目录下，在命令行使用<code>open /usr/local/bin</code>打开该目录。</li>
 </ul>
 </div>
-<div id="安装和配置latex" class="section level2 hasAnchor" number="9.2">
-<h2><span class="header-section-number">9.2</span> 安装和配置Latex<a href="OS.html#安装和配置latex" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="安装windows上的方正字体" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> 安装windows上的方正字体<a href="OS.html#安装windows上的方正字体" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>mac中打开word文件，在windows上正常显示的仿宋、楷体等在mac中均不能正常显示。解决办法如下：</p>
+<ol style="list-style-type: decimal">
+<li>去方正字库官网下载它的字体就行了。 <a href="https://www.foundertype.com/" class="uri">https://www.foundertype.com/</a></li>
+<li>官网会给你安装一个“方正字库”的app，你在app里面找到方正仿宋，激活就可以了。</li>
+</ol>
+</div>
+<div id="安装和配置latex" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> 安装和配置Latex<a href="OS.html#安装和配置latex" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>安装texlive，在macOS下就是Mactex。进入Texlive官网，下载安装包，双击安装即可。</li>
 <li>安装TexStudio更加简单，下载后双击，把弹出的窗口中的程序复制到Applications里面即可。</li>
 <li>配置TexStudio，一是Build里面，引擎要换成xepdf，这是专门为中文进行渲染的。二是各种命令要换过来，具体可以参见旧的界面，或者https://blog.csdn.net/qq_14925953/article/details/126590499。</li>
 </ol>
 </div>
-<div id="homebrew" class="section level2 hasAnchor" number="9.3">
-<h2><span class="header-section-number">9.3</span> Homebrew<a href="OS.html#homebrew" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="homebrew" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Homebrew<a href="OS.html#homebrew" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>macOS上有一个优秀的包管理器Homebrew,进它的主页https://brew.sh/，一行代码让你装上该软件。注意，该软件同样要求你能够顺利连上github。很多情况下速度很慢，导致安装不上。可以如下步骤更换代码存储的源：</p>
 <ul>
@@ -350,8 +359,8 @@ HOMEBREW_CORE_DEFAULT_GIT_REMOTE = &quot;https://mirrors.ustc.edu.cn/homebrew-co
 <li><p>当有了brew命令之后，安装jdk是非常简单的一件事。可以在homebrew搜索jdk的安装命令，它是<code>brew install --cask oracle-jdk</code>。有了jdk，我们就能愉快地使用R语言的xlsx包了。</p></li>
 </ul>
 </div>
-<div id="挂载外置磁盘" class="section level2 hasAnchor" number="9.4">
-<h2><span class="header-section-number">9.4</span> 挂载外置磁盘<a href="OS.html#挂载外置磁盘" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="挂载外置磁盘" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">9.5</span> 挂载外置磁盘<a href="OS.html#挂载外置磁盘" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>首先利用<code>diskutil list</code>查看你的外置磁盘的设备名称，在IDENTIFIER列中，一般是<code>/dev/disk4s2</code>之类的。</li>
 <li>然后利用<code>diskutil info disk4s2</code>查询磁盘的UUID</li>
@@ -360,8 +369,8 @@ HOMEBREW_CORE_DEFAULT_GIT_REMOTE = &quot;https://mirrors.ustc.edu.cn/homebrew-co
 <pre><code>UUID=06A19C31-BED5-36E9-BEC9-616E398C77FD /Users/yangnay/elements exfat rw,auto</code></pre>
 <p>注意，<code>exfat</code>是你的硬盘的文件格式，<code>elements</code>需要提前建好文件夹。</p>
 </div>
-<div id="定点运行r程序" class="section level2 hasAnchor" number="9.5">
-<h2><span class="header-section-number">9.5</span> 定点运行R程序<a href="OS.html#定点运行r程序" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="定点运行r程序" class="section level2 hasAnchor" number="9.6">
+<h2><span class="header-section-number">9.6</span> 定点运行R程序<a href="OS.html#定点运行r程序" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>在Mac电脑上，可以使用“Automator”来定点运行一个程序。以下是详细步骤：</p>
 <ol style="list-style-type: decimal">
 <li><strong>打开Automator</strong>：

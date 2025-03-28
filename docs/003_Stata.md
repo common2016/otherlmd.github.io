@@ -23,7 +23,7 @@ local yvar `xvar'_y
 mat b = e(b)'
 svmat double b, n(beta)
 gen str cnt = "" // 创造新的字符变量
-replace cnt = e(predvar_all) in 1 //修改该变量的第一个观测值
+replace cnt = e(predvar_all) in 1 //修改该变量的第一个观测值，即把回归后产生的宏存入第一个观测值
 ```
 
 - 滞后、超前、差分变量。`L.x L2.x F.x F2.x D.x D2.x`
