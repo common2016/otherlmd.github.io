@@ -371,33 +371,65 @@ HOMEBREW_CORE_DEFAULT_GIT_REMOTE = &quot;https://mirrors.ustc.edu.cn/homebrew-co
 </div>
 <div id="定点运行r程序" class="section level2 hasAnchor" number="9.6">
 <h2><span class="header-section-number">9.6</span> 定点运行R程序<a href="OS.html#定点运行r程序" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>在Mac电脑上，可以使用“Automator”来定点运行一个程序。以下是详细步骤：</p>
+<p>在mac中，可以使用<code>cron</code>定点运行R文件。</p>
 <ol style="list-style-type: decimal">
-<li><strong>打开Automator</strong>：
-<ul>
-<li>在“应用程序”文件夹中找到并打开“Automator”。</li>
-</ul></li>
-<li><strong>创建新文档</strong>：
-<ul>
-<li>选择“新建文档”，然后选择“日历提醒”作为文档类型。</li>
-</ul></li>
-<li><strong>添加运行程序的操作</strong>：
-<ul>
-<li><p>在左侧的“库”中，找到“实用工具”。</p></li>
-<li><p>拖动“运行Shell脚本”或“运行AppleScript”到右侧的工作区。</p></li>
-<li><p>在脚本中输入启动R程序的命令。例如，如果要启动“终端”，可以输入：</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="OS.html#cb3-1" tabindex="-1"></a><span class="ex">Rscript</span> ~/检测.R</span></code></pre></div></li>
-</ul></li>
-<li><strong>保存Automator工作流</strong>：
-<ul>
-<li>点击“文件” &gt; “保存”，为工作流命名，并选择“日历”作为保存位置。</li>
-</ul></li>
-<li><strong>设置日历事件</strong>：
-<ul>
-<li>打开“日历”应用，创建一个快速日程。里面可以修改程序运行的时间、周期等。</li>
-<li>在事件的提醒中选择“打开文件”，然后选择你刚刚创建的Automator工作流。</li>
-</ul></li>
+<li>指定nano编辑器，打开crontab进行编辑。</li>
 </ol>
+<div class="sourceCode" id="cb80"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb80-1"><a href="OS.html#cb80-1" tabindex="-1"></a><span class="va">EDITOR</span><span class="op">=</span>nano <span class="fu">crontab</span> <span class="at">-e</span></span></code></pre></div>
+<ul>
+<li><code>ctrl+X</code>退出，然后按<code>y</code>保存，再按<code>enter</code>确认。</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>crontab中每一行代表一个定时任务，因此，可以添加一行如下：</li>
+</ol>
+<div class="sourceCode" id="cb81"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb81-1"><a href="OS.html#cb81-1" tabindex="-1"></a><span class="ex">0</span> 9 <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> /usr/local/bin/Rscript /path/to/daily_task.R <span class="op">&gt;&gt;</span> /tmp/dailyr.log <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span></span></code></pre></div>
+<ul>
+<li><code>0 9 * * *</code>表示每天九点运行。语法如下：</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>含义</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>第1个 *</td>
+<td>分钟</td>
+<td>0-59</td>
+</tr>
+<tr class="even">
+<td>第2个 *</td>
+<td>小时</td>
+<td>0-23</td>
+</tr>
+<tr class="odd">
+<td>第3个 *</td>
+<td>日期</td>
+<td>1-31</td>
+</tr>
+<tr class="even">
+<td>第4个 *</td>
+<td>月份</td>
+<td>1-12</td>
+</tr>
+<tr class="odd">
+<td>第5个 *</td>
+<td>星期</td>
+<td>0-7（0和7均为周日）</td>
+</tr>
+</tbody>
+</table>
+<p>再给语法实例如下：</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb82-1"><a href="OS.html#cb82-1" tabindex="-1"></a><span class="ex">0</span> 9 <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> /usr/bin/backup.sh      <span class="co"># 每天 9:00 运行</span></span>
+<span id="cb82-2"><a href="OS.html#cb82-2" tabindex="-1"></a><span class="ex">*/5</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> /usr/bin/check-status <span class="co"># 每 5 分钟运行</span></span></code></pre></div>
+<ul>
+<li><code>/usr/local/bin/Rscript</code>表示用R软件运行</li>
+<li><code>/path/to/daily_task.R</code>这是R脚本的位置</li>
+<li><code>/tmp/dailyr.log</code>这是运行日记的保存位置</li>
+</ul>
 
 </div>
 </div>
