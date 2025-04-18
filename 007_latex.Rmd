@@ -106,6 +106,50 @@ This is a landscape page.
 - `\pagestyle{empty}`当前及后续页无页眉,第一页因为包含标题等可能有特殊格式，要消掉它的页码的话则用`\thispagestyle{empty}`。但如果还是无法去除第一页的页码，一定是使用了`\maketitle`命令，该命令内部调用了`\thispagestyle{\plain}`，为了解决这个问题，只要在该命令行里面调用`\thispagestyle{\empty}`，空行也不要留下。
 - `\renewcommand\refname{参考文献}`把"Reference"变成“参考文献”。
 
+## beamer分栏
+
+在 LaTeX 的 beamer 文档类中，可以使用 columns 环境来实现某一页的分栏排版。以下是一个简单的示例，展示如何在 beamer 的某一页中进行分栏排版：
+
+```tex
+\documentclass{beamer}
+
+\begin{document}
+
+\begin{frame}{分栏示例}
+    \begin{columns}[T] % T 表示对齐顶部，也可以使用 c（居中）或 b（底部对齐）
+        \begin{column}{0.48\textwidth} % 第一栏宽度为文本宽度的 48%
+            \begin{itemize}
+                \item 这是第一栏的内容
+                \item 可以包含项目符号列表
+                \item 或者其他文本内容
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\textwidth} % 第二栏宽度为文本宽度的 48%
+            \begin{itemize}
+                \item 这是第二栏的内容
+                \item 可以包含项目符号列表
+                \item 或者其他文本内容
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\end{document}
+```
+
+代码说明:
+
+1. columns 环境：
+ - columns 环境用于创建分栏布局。
+ - 可选参数 [T] 表示对齐顶部，也可以使用 [c]（居中对齐）或 [b]（底部对齐）。
+2. column 环境：
+ - 每个 column 环境表示一栏。
+ - 参数 {0.48\textwidth} 定义了该栏的宽度，这里设置为文本宽度的 48%。可以根据需要调整宽度比例，例如 0.5\textwidth 表示宽度为文本宽度的 50%。
+3. 内容排版：
+ - 每个 column 环境中可以包含任意内容，例如文本、列表、图片等。
+4. 注意外面的是colums环境，里面的是colum环境，相差一个`s`。
+5. 如果需要调整栏间距，可以使用 \columnsep 命令，例如：`\setlength{\columnsep}{1cm} % 设置栏间距为 1cm`.
+
 ## 使用`pdfpages`包插入PDF页面
 
 - 命令比如：`\includepdf[pages={1,2}]{1.pdf} `就是插入这个PDF文件的第1和第二页
