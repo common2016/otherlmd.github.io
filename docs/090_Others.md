@@ -68,6 +68,14 @@ github上有个项目，windows下压缩PDF
 
 - `/Users/yangnay/Library/Group Containers/UBF8T346G9.Office/User Content.localized/Startup.localized/Word`
 
+### 在字母下面打个勾
+
+可以使用域代码法：
+
+- 将光标定位到字母 A 的后面，按下 “Ctrl+F9” 组合键，会出现一对大括号。
+- 在大括号中输入代码 `eq \o (A,\s\down6 (√))`，其中 “A” 是要添加勾的字母，可根据需要替换，`\s\down6` 表示将对勾下移 6 个单位，数字可调整以改变对勾与字母的距离。
+- 选中输入的代码，按下 “Shift+F9” 组合键或右键点击选择 “切换域代码”，即可看到字母 A 下面出现了对勾。
+
 
 ## NoteExpress样式设置
 
