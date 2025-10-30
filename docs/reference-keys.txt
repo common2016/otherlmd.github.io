@@ -44,6 +44,7 @@ C
 一句话tips-2
 Latex
 一句话tips-3
+beamer分栏
 使用pdfpages包插入pdf页面
 记录几个快捷键
 手动安装新的宏包
@@ -91,7 +92,6 @@ word中插入公式
 自带的公式输入
 公式编号的其他方法
 利用texsword编辑器
+在字母下面打个勾
 noteexpress样式设置
 filezilla
-beamer分栏
-在字母下面打个勾

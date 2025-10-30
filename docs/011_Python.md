@@ -22,9 +22,9 @@ python3 -m http.server
 ## Spyder下配置python
 
 - Spyder有官网可以直接下载，不需要Anaconda来集成。下载时它会附带把python也给你默认装上使用。
-- 你可以通过“偏好”设置来改变python解释器，即不用它的默认解释器。但很多时候会报错，无法连上。这是因为此时的解释器没有包含`spyder-kernels`包。你可以在终端运行如下命令安装它，
+- 你可以通过“偏好”设置来改变python解释器，即不用它的默认解释器。但很多时候会报错，无法连上。这是因为此时的解释器没有包含`spyder-kernels`包。你可以在终端运行如下命令安装它，要注意的是，你指定了该包的版本是3.1左右，同时该包要用引号包住。
 ```bash
-pip install spyder-kernels
+pip install "spyder-kernels==3.1.*"
 ```
 
 - F9等价于RStudio的`ctl + Enter`.
