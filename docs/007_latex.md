@@ -170,6 +170,35 @@ sudo texhash
 ```
 此时就可以像往常一样调用tex的宏包了。
 
+## 给段落一个自定义的框
+
+用到`mdframed,xcolor`两个包。
+
+```
+\documentclass{article}
+\usepackage{mdframed} % 引入宏包
+\usepackage{xcolor}   % 用于定义颜色
+
+% 通过 \mdfsetup 进行全局样式设置
+\mdfsetup{
+  linewidth = 1pt,        % 边框粗细
+  linecolor = blue,       % 边框颜色
+  backgroundcolor = gray!10, % 背景色
+  shadow = true,          % 阴影效果
+  roundcorner = 5pt       % 圆角半径
+}
+
+\begin{document}
+
+\begin{mdframed}
+这是一个使用 mdframed 环境创建的带框段落。它支持圆角、阴影和自定义颜色。
+\end{mdframed}
+
+\end{document}
+
+
+```
+
 ## `beamer`相关
 
 - 在beamer中加入Logo的话，在`\begin{documents}`之后使用如下命令`\logo{\includegraphics[height=1.5cm]{RM.jpg}}`。Logo的位置取决于模板。
