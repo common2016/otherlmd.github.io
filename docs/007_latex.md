@@ -174,7 +174,7 @@ sudo texhash
 
 用到`mdframed,xcolor`两个包。
 
-```
+```latex
 \documentclass{article}
 \usepackage{mdframed} % 引入宏包
 \usepackage{xcolor}   % 用于定义颜色
@@ -195,8 +195,28 @@ sudo texhash
 \end{mdframed}
 
 \end{document}
+```
 
+上面这个效果不是很好，用下面这个，是一种类似强调的框，非常好看。我在《根基法学校笔记中使用了》
 
+```latex
+\usepackage[most]{tcolorbox} % 使用 `most` 库加载常用功能
+\usepackage{lipsum} % 仅为示例生成文本，你的文档中可移除
+
+% 定义一个新的强调框环境
+\newtcolorbox{emphbox}[2][]{ % 第一个可选参数用于自定义样式，第二个必选参数是标题
+	enhanced, % 启用增强模式，提供更多样式选项
+	colback=RoyalBlue!10, % 内容框背景色
+%	colframe=blue!50!black, % 内容框边框色
+	colbacktitle=CornflowerBlue!40, % 标题框背景色
+	coltitle=black, % 标题文字颜色
+	fonttitle=\bfseries, % 标题字体为加粗
+	title=#2, % 设置标题内容
+	attach boxed title to top center={yshift=-3mm,xshift=-6cm}, % 关键设置：将带背景的标题框附着到顶部中心，并向上偏移3mm以实现重叠
+	boxed title style={boxrule=0.4pt, colframe=blue!50!black}, % 标题框的样式（边框粗细和颜色）
+	top = 1em, %设置上边距
+	#1 % 允许在创建环境时传入额外的可选参数以覆盖或增加样式
+}
 ```
 
 ## `beamer`相关
