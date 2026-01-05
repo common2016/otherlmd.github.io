@@ -199,7 +199,7 @@ sudo texhash
 \end{document}
 ```
 
-上面这个效果不是很好，用下面这个，是一种类似强调的框，非常好看。我在《根基法学校笔记中使用了》
+上面这个效果不是很好，用下面这个，是一种类似强调的框，非常好看。而且这个框如果使用参数`breakable`是可以跨页的。我在《根基法学习笔记中使用了》
 
 ```latex
 \usepackage[most]{tcolorbox} % 使用 `most` 库加载常用功能
@@ -219,6 +219,11 @@ sudo texhash
 	top = 1em, %设置上边距
 	#1 % 允许在创建环境时传入额外的可选参数以覆盖或增加样式
 }
+
+% 以下是文档中的使用
+\begin{emphbox}[width=\linewidth]{提醒}
+	佛讲五蕴，根本原因是从五蕴中让你知道，没有一个我。
+\end{emphbox}
 ```
 
 ## `beamer`相关

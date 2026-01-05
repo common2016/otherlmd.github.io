@@ -48,6 +48,7 @@ beamer分栏
 使用pdfpages包插入pdf页面
 记录几个快捷键
 手动安装新的宏包
+给段落一个自定义的框
 beamer相关
 表格相关
 长表格
@@ -95,4 +96,3 @@ word中插入公式
 在字母下面打个勾
 noteexpress样式设置
 filezilla
-给段落一个自定义的框

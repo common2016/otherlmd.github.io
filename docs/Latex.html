@@ -513,7 +513,7 @@ sudo texhash</code></pre>
 <span id="cb14-18"><a href="Latex.html#cb14-18" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">mdframed</span>}</span>
 <span id="cb14-19"><a href="Latex.html#cb14-19" tabindex="-1"></a></span>
 <span id="cb14-20"><a href="Latex.html#cb14-20" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
-<p>上面这个效果不是很好，用下面这个，是一种类似强调的框，非常好看。我在《根基法学校笔记中使用了》</p>
+<p>上面这个效果不是很好，用下面这个，是一种类似强调的框，非常好看。而且这个框如果使用参数<code>breakable</code>是可以跨页的。我在《根基法学习笔记中使用了》</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb15-1"><a href="Latex.html#cb15-1" tabindex="-1"></a><span class="bu">\usepackage</span>[most]{<span class="ex">tcolorbox</span>} <span class="co">% 使用 `most` 库加载常用功能</span></span>
 <span id="cb15-2"><a href="Latex.html#cb15-2" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">lipsum</span>} <span class="co">% 仅为示例生成文本，你的文档中可移除</span></span>
 <span id="cb15-3"><a href="Latex.html#cb15-3" tabindex="-1"></a></span>
@@ -530,7 +530,12 @@ sudo texhash</code></pre>
 <span id="cb15-14"><a href="Latex.html#cb15-14" tabindex="-1"></a>    boxed title style={boxrule=0.4pt, colframe=blue!50!black}, <span class="co">% 标题框的样式（边框粗细和颜色）</span></span>
 <span id="cb15-15"><a href="Latex.html#cb15-15" tabindex="-1"></a>    top = 1em, <span class="co">%设置上边距</span></span>
 <span id="cb15-16"><a href="Latex.html#cb15-16" tabindex="-1"></a>    #1 <span class="co">% 允许在创建环境时传入额外的可选参数以覆盖或增加样式</span></span>
-<span id="cb15-17"><a href="Latex.html#cb15-17" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb15-17"><a href="Latex.html#cb15-17" tabindex="-1"></a>}</span>
+<span id="cb15-18"><a href="Latex.html#cb15-18" tabindex="-1"></a></span>
+<span id="cb15-19"><a href="Latex.html#cb15-19" tabindex="-1"></a><span class="co">% 以下是文档中的使用</span></span>
+<span id="cb15-20"><a href="Latex.html#cb15-20" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">emphbox</span>}[width=<span class="fu">\linewidth</span>]{提醒}</span>
+<span id="cb15-21"><a href="Latex.html#cb15-21" tabindex="-1"></a>    佛讲五蕴，根本原因是从五蕴中让你知道，没有一个我。</span>
+<span id="cb15-22"><a href="Latex.html#cb15-22" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">emphbox</span>}</span></code></pre></div>
 </div>
 <div id="beamer相关" class="section level2 hasAnchor" number="7.7">
 <h2><span class="header-section-number">7.7</span> <code>beamer</code>相关<a href="#beamer%E7%9B%B8%E5%85%B3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
