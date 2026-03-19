@@ -379,47 +379,47 @@ HOMEBREW_CORE_DEFAULT_GIT_REMOTE = &quot;https://mirrors.ustc.edu.cn/homebrew-co
 <ol style="list-style-type: decimal">
 <li>指定nano编辑器，打开crontab进行编辑。</li>
 </ol>
-<div class="sourceCode" id="cb84"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb84-1"><a href="OS.html#cb84-1" tabindex="-1"></a><span class="va">EDITOR</span><span class="op">=</span>nano <span class="fu">crontab</span> <span class="at">-e</span></span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb85-1"><a href="OS.html#cb85-1" tabindex="-1"></a><span class="va">EDITOR</span><span class="op">=</span>nano <span class="fu">crontab</span> <span class="at">-e</span></span></code></pre></div>
 <ul>
 <li><code>ctrl+X</code>退出，然后按<code>y</code>保存，再按<code>enter</code>确认。</li>
 </ul>
 <ol start="2" style="list-style-type: decimal">
 <li>crontab中每一行代表一个定时任务，因此，可以添加一行如下：</li>
 </ol>
-<div class="sourceCode" id="cb85"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb85-1"><a href="OS.html#cb85-1" tabindex="-1"></a><span class="ex">0</span> 9 <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> /usr/local/bin/Rscript /path/to/daily_task.R <span class="op">&gt;&gt;</span> /tmp/dailyr.log <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb86-1"><a href="OS.html#cb86-1" tabindex="-1"></a><span class="ex">0</span> 9 <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> /usr/local/bin/Rscript /path/to/daily_task.R <span class="op">&gt;&gt;</span> /tmp/dailyr.log <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span></span></code></pre></div>
 <ul>
 <li><code>0 9 * * *</code>表示每天九点运行。语法如下：</li>
 </ul>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>字段</th>
 <th>含义</th>
 <th>取值范围</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>第1个 *</td>
 <td>分钟</td>
 <td>0-59</td>
 </tr>
-<tr>
+<tr class="even">
 <td>第2个 *</td>
 <td>小时</td>
 <td>0-23</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>第3个 *</td>
 <td>日期</td>
 <td>1-31</td>
 </tr>
-<tr>
+<tr class="even">
 <td>第4个 *</td>
 <td>月份</td>
 <td>1-12</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>第5个 *</td>
 <td>星期</td>
 <td>0-7（0和7均为周日）</td>
@@ -427,8 +427,8 @@ HOMEBREW_CORE_DEFAULT_GIT_REMOTE = &quot;https://mirrors.ustc.edu.cn/homebrew-co
 </tbody>
 </table>
 <p>再给语法实例如下：</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb86-1"><a href="OS.html#cb86-1" tabindex="-1"></a><span class="ex">0</span> 9 <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> /usr/bin/backup.sh      <span class="co"># 每天 9:00 运行</span></span>
-<span id="cb86-2"><a href="OS.html#cb86-2" tabindex="-1"></a><span class="ex">*/5</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> /usr/bin/check-status <span class="co"># 每 5 分钟运行</span></span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb87-1"><a href="OS.html#cb87-1" tabindex="-1"></a><span class="ex">0</span> 9 <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> /usr/bin/backup.sh      <span class="co"># 每天 9:00 运行</span></span>
+<span id="cb87-2"><a href="OS.html#cb87-2" tabindex="-1"></a><span class="ex">*/5</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> /usr/bin/check-status <span class="co"># 每 5 分钟运行</span></span></code></pre></div>
 <ul>
 <li><code>/usr/local/bin/Rscript</code>表示用R软件运行</li>
 <li><code>/path/to/daily_task.R</code>这是R脚本的位置</li>
@@ -457,42 +457,42 @@ HOMEBREW_CORE_DEFAULT_GIT_REMOTE = &quot;https://mirrors.ustc.edu.cn/homebrew-co
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["CBook.pdf"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["CBook.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

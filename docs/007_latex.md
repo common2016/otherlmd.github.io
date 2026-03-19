@@ -513,6 +513,27 @@ a <- 3
 这是你的文本
 \endMakeFramed
 ```
+
+但上述方式会使得有浮动体时，会在垂直方向上分散对齐，不友好。更好的方式是使用`tcolorbox`包，这个包很牛逼。有边框的页面可如下设置。
+
+```latex
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}  % 允许跨页
+
+\begin{tcolorbox}[
+	left skip=-4em, % 整体框左移，可以自己调整看效果
+	breakable=true, % 可以跨页
+boxrule=0.6pt, % 框的粗细
+center = false, % 框是否居中
+fontupper=\setlength{\parindent}{2em}, % 每段文字前空两个
+	colback = white!0,  % 背景色
+	arc = 0pt % 框不要圆角
+	]
+	你的正文。
+\end{tcolorbox}
+```
+
+
 2. 一般前面有个表格。如何让表格中的横线顶到边框，通过使用零宽度的盒子实现。命令为`\makebox[0pt][r]{\rule[11pt]{0.5cm}{0.05em}}`，如果你发现横线不能顶到左边，你还可以再画一根零宽度盒子，但是修改一下`r`参数为`l`,即`\makebox[0pt][l]{\rule[11pt]{0.5cm}{0.05em}}`。
 
 

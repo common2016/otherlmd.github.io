@@ -343,7 +343,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Spyder有官网可以直接下载，不需要Anaconda来集成。下载时它会附带把python也给你默认装上使用。</li>
 <li>你可以通过“偏好”设置来改变python解释器，即不用它的默认解释器。但很多时候会报错，无法连上。这是因为此时的解释器没有包含<code>spyder-kernels</code>包。你可以在终端运行如下命令安装它，要注意的是，你指定了该包的版本是3.1左右，同时该包要用引号包住。</li>
 </ul>
-<div class="sourceCode" id="cb88"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb88-1"><a href="Python.html#cb88-1" tabindex="-1"></a><span class="ex">pip</span> install <span class="st">&quot;spyder-kernels==3.1.*&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb89-1"><a href="Python.html#cb89-1" tabindex="-1"></a><span class="ex">pip</span> install <span class="st">&quot;spyder-kernels==3.1.*&quot;</span></span></code></pre></div>
 <ul>
 <li>F9等价于RStudio的<code>ctl + Enter</code>.</li>
 <li>在Spyder的控制台中安装包，可以使用<code>conda install &lt;包名&gt;</code>命令而不能使用<code>pip</code>，你可以通过该命令先安装<code>pip</code>，然后再用<code>pip</code>安装包。不过现在新版本的python都自带<code>pip</code>了。</li>
@@ -379,42 +379,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["CBook.pdf"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["CBook.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>
